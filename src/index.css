@@ -1,6 +1,6 @@
 :root {
   --background-color: #f5e9c0;
-  --wild-color: #76C5D3;
+  --wild-color: #76c5d3;
   --navbar-color: #5c0261;
   --text-color: rgb(255, 255, 255);
   --main-color: #1f1f1f;
@@ -21,7 +21,7 @@ body {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
   height: 100%;
   width: 100%;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   color: var(--text-color);
 }
 
@@ -62,16 +62,20 @@ a {
 .particles-canvas-wrapper {
   position: absolute;
   z-index: -100;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100%; height: 100%
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.front{
+.front {
   background-position: center;
   text-align: center;
 }
 
-.FrontText{
+.FrontText {
   padding-top: 30%;
 }
 
@@ -156,7 +160,7 @@ a {
   padding-left: 5%;
   margin-top: 10%;
   margin-bottom: 3%;
-  background-color: #FAAB5B;
+  background-color: #faab5b;
   border-radius: 2px;
 }
 
@@ -171,7 +175,6 @@ a {
 .auth button {
   background-color: var(--main-color);
 }
-
 
 .react-calendar {
   width: 350px;
@@ -231,7 +234,7 @@ a {
   line-height: 16px;
 }
 
-.react-calendar { 
+.react-calendar {
   width: 400px;
   max-width: 100%;
   background-color: #fff;
@@ -240,85 +243,85 @@ a {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
- }
- .react-calendar__navigation button {
+}
+.react-calendar__navigation button {
   color: #6f48eb;
   min-width: 44px;
   background: none;
   font-size: 16px;
   margin-top: 8px;
- }
- .react-calendar__navigation button:enabled:hover,
- .react-calendar__navigation button:enabled:focus {
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
   background-color: #f8f8fa;
- }
- .react-calendar__navigation button[disabled] {
+}
+.react-calendar__navigation button[disabled] {
   background-color: #f0f0f0;
- }
- abbr[title] {
+}
+abbr[title] {
   text-decoration: none;
- }
- .react-calendar__tile:enabled:hover,
- .react-calendar__tile:enabled:focus {
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
   background: #f8f8fa;
   color: #6f48eb;
   border-radius: 6px;
- }
- .react-calendar__tile--now {
+}
+.react-calendar__tile--now {
   background: #6f48eb33;
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
- }
- .react-calendar__tile--now:enabled:hover,
- .react-calendar__tile--now:enabled:focus {
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
   background: #6f48eb33;
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
- }
- .react-calendar__tile--hasActive:enabled:hover,
- .react-calendar__tile--hasActive:enabled:focus {
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
   background: #f8f8fa;
- }
- .react-calendar__tile--active {
+}
+.react-calendar__tile--active {
   background: #6f48eb;
   border-radius: 6px;
   font-weight: bold;
   color: white;
- }
- .react-calendar__tile--active:enabled:hover,
- .react-calendar__tile--active:enabled:focus {
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
   background: #6f48eb;
   color: white;
- }
- .react-calendar--selectRange .react-calendar__tile--hover {
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #f8f8fa;
- }
- .react-calendar__tile--range {
+}
+.react-calendar__tile--range {
   background: #f8f8fa;
   color: #6f48eb;
   border-radius: 0;
- }
- .react-calendar__month-view__days__day--neighboringMonth {
+}
+.react-calendar__month-view__days__day--neighboringMonth {
   color: #757575;
 }
- .react-calendar__tile--rangeStart {
+.react-calendar__tile--rangeStart {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   background: #6f48eb;
   color: white;
- }
- .react-calendar__tile--rangeEnd {
+}
+.react-calendar__tile--rangeEnd {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   background: #6f48eb;
   color: white;
- }
+}
 
 @media only screen and (max-width: 600px) {
   h1,
