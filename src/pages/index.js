@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
 import _ from 'lodash'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { login, logout } from '../redux/user'
 
 import Home from './home'
-import { Login, Register, Schedule, Monitor, Test} from './auth'
+import { Map, List, About} from './auth'
 import Dash from './dash'
 import Setup from './setup'
 
@@ -29,7 +28,7 @@ function Navbar(props) {
     return (
         <BSNavbar expand="lg" {...props}>
             <Link to="/" className="navbar-brand">
-                RxMinder
+                The List
             </Link>
             <BSNavbar.Toggle aria-controls="navbar-nav" />
 
@@ -37,15 +36,9 @@ function Navbar(props) {
                 {_.isEmpty(user) === true ? (
                     <>
                         <Nav className="mr-auto">
-                            <NavbarLink to="/schedule">Schedule</NavbarLink>
-                            <NavbarLink to="/monitor">Monitor</NavbarLink>
-                            <NavbarLink to="/test">Test</NavbarLink>
-                            <NavbarLink to={{ pathname: '/', hash: 'about' }}>
-                                About
-                            </NavbarLink>
-                        </Nav>
-                        <Nav>
-                            <NavbarLink to="/login">Login</NavbarLink>
+                            <NavbarLink to="/map">Map</NavbarLink>
+                            <NavbarLink to="/list">List</NavbarLink>
+                            <NavbarLink to="/about">About Me</NavbarLink>
                         </Nav>
                     </>
                 ) : (
@@ -55,17 +48,6 @@ function Navbar(props) {
                             <NavbarLink to="/test">Test</NavbarLink>
                             <NavbarLink to="/profile">Profile</NavbarLink>
                             <NavbarLink to="/setup">Setup Device</NavbarLink>
-                        </Nav>
-                        <Nav>
-                            <NavbarLink
-                                to="/"
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    dispatch(logout())
-                                }}
-                            >
-                                Logout, {user.name}
-                            </NavbarLink>
                         </Nav>
                     </>
                 )}
@@ -78,33 +60,21 @@ function App() {
     const dispatch = useDispatch()
     const user = useSelector((state) => state.user)
 
-    useEffect(() => {
-        dispatch(login({}))
-    }, [])
-
     return (
         <Router>
             {_.isEmpty(user) === true ? (
                 <Switch>
-                    <Route exact path="/login">
+                    <Route exact path="/map">
                         <Navbar fixed="top" />
-                        <Login />
+                        <Map />
                     </Route>
-                    <Route exact path="/register">
+                    <Route exact path="/list">
                         <Navbar fixed="top" />
-                        <Register />
+                        <List />
                     </Route>
-                    <Route exact path="/test">
+                    <Route exact path="/about">
                         <Navbar />
-                        <Test />
-                    </Route>
-                    <Route exact path="/monitor">
-                        <Navbar />
-                        <Monitor />
-                    </Route>
-                    <Route exact path="/schedule">
-                        <Navbar />
-                        <Schedule />
+                        <About />
                     </Route>
                     <Route exact path="/">
                         <Navbar className="primary" />
@@ -118,12 +88,16 @@ function App() {
                         <Route exact path="/">
                             <Dash />
                         </Route>
-                        <Route exact path="/setup">
-                            <Setup />
+                        <Route exact path="/map">
+                            <Map />
                         </Route>
-                        <Route exact path="/test">
+                        <Route exact path="/list">
                             <Navbar />
-                            <Test />
+                            <List />
+                        </Route>
+                        <Route exact path="/about">
+                            <Navbar />
+                            <About />
                         </Route>
                     </Switch>
                 </>

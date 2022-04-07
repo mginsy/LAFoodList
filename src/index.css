@@ -1,10 +1,10 @@
 :root {
   --background-color: #f5e9c0;
   --wild-color: #76C5D3;
-  --navbar-color: #f89d42;
-  --text-color: #000;
-  --main-color: #FAAB5B;
-  --nav-link-color: #000;
+  --navbar-color: #5c0261;
+  --text-color: rgb(255, 255, 255);
+  --main-color: #1f1f1f;
+  --nav-link-color: rgb(255, 255, 255);
   --highlight-color: #d67c21;
   --footer-color: #fff;
   --cololkfjdlfkdjsjklfd: #95dd83;
@@ -59,54 +59,20 @@ a {
   color: var(--main-color);
 }
 
-.test{
-  justify-content: center;
-  text-align: center;
-  padding-top: 20%;
+.particles-canvas-wrapper {
+  position: absolute;
+  z-index: -100;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%
 }
 
-.btn-huge {
-  padding: 5rem 10rem;
-  font-size: 1.5rem;
-}
-
-.patientProgress{
-  padding-top: 7%;
-}
-
-.calendar-container{
-  padding-top: 7%;
-}
-
-.aboutTitle{
-  padding-top: 1.5%;
-}
-
-.HDTW{
-  padding-bottom: 2%;
-}
-
-.selector{
-  padding-top:2%;
-}
-
-.about{
-  background-color: var(--wild-color);
-}
-
-.scheduler{
-  justify-content: center;
-  text-align: center;
-  padding-top: 15%;
-}
-
-.col-4{
-  justify-content: center;
+.front{
+  background-position: center;
   text-align: center;
 }
 
-.frontGif{
-  width: '20%';
+.FrontText{
+  padding-top: 30%;
 }
 
 .navbar {
