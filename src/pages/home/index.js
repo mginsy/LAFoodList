@@ -11,7 +11,7 @@ function Home() {
       setVantaEffect(
         BIRDS({
           el: myRef.current,
-          color: "#89cff0",
+          color: "#5c0261",
           backgroundColor: "black",
         })
       );
@@ -33,23 +33,23 @@ function Home() {
           zIndex: -1,
         }}
       >
-        <Container style={{ margin: "auto", paddingTop: 300 }}>
-          <div className="col-6">
-            <h2 style={{ color: "#d3d3d3", fontSize: 30 }}>welcome to</h2>
-            <div style={{ height: 10 }}></div>
-            <h1 style={{ color: "white", fontSize: 70 }}>apollo</h1>
+        <Container style={{ margin: "auto", paddingTop: 350 }}>
+            <h1 style={{ color: "white", fontSize: 250, textAlign: "center" }}>
+            <span className="font-link">
+              The List
+            </span>
+              </h1>
             <div style={{ height: 10 }}></div>
             <h2
               style={{
                 margin: "auto",
-                textAlign: "left",
+                textAlign: "center",
                 color: "#d3d3d3",
-                fontSize: 30,
+                fontSize: 20,
               }}
             >
-              a smart assistant that helps you stay connected with your doctor.
+              Created deliciously by Max Ginsberg
             </h2>
-          </div>
         </Container>
       </div>
     </>

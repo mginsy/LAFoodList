@@ -59,6 +59,15 @@ a {
   color: var(--main-color);
 }
 
+.font-link {
+  font-family: 'Alex Brush', cursive;
+  font-weight: normal;
+}
+
+.mapfront{
+  background-color:var(--background-color);
+}
+
 .particles-canvas-wrapper {
   position: absolute;
   z-index: -100;
@@ -107,7 +116,6 @@ a {
 }
 
 .primary {
-  background-color: var(--main-color);
 }
 
 .box {

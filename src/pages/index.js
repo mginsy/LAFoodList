@@ -27,8 +27,10 @@ function Navbar(props) {
 
     return (
         <BSNavbar expand="lg" {...props}>
-            <Link to="/" className="navbar-brand">
-                The List
+            <Link to="/" className="navbar-brand" >
+                <span className="font-link">
+                    The List
+                </span>
             </Link>
             <BSNavbar.Toggle aria-controls="navbar-nav" />
 
