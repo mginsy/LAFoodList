@@ -7,7 +7,7 @@ function Map() {
 
     return (
         <div className="mb-5 mapfront" style={{ height: '100%'}}>
-    
+            
         </div>
     )
 }

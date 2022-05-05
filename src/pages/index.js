@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Home from './home'
 import { Map, List, About} from './auth'
-import Dash from './dash'
-import Setup from './setup'
 
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
 
@@ -87,9 +85,6 @@ function App() {
                 <>
                     <Navbar className="primary" />
                     <Switch>
-                        <Route exact path="/">
-                            <Dash />
-                        </Route>
                         <Route exact path="/map">
                             <Map />
                         </Route>
