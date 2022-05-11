@@ -5,9 +5,8 @@ import _ from 'lodash'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Home from './home'
-import { Map, List, About} from './auth'
-import Dash from './dash'
-import Setup from './setup'
+import { List, About} from './auth'
+import MapPage from './MapPage'
 
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
 
@@ -49,7 +48,6 @@ function Navbar(props) {
                             <NavbarLink to="/">Dashboard</NavbarLink>
                             <NavbarLink to="/test">Test</NavbarLink>
                             <NavbarLink to="/profile">Profile</NavbarLink>
-                            <NavbarLink to="/setup">Setup Device</NavbarLink>
                         </Nav>
                     </>
                 )}
@@ -68,7 +66,7 @@ function App() {
                 <Switch>
                     <Route exact path="/map">
                         <Navbar fixed="top" />
-                        <Map />
+                        <MapPage />
                     </Route>
                     <Route exact path="/list">
                         <Navbar fixed="top" />
@@ -87,11 +85,8 @@ function App() {
                 <>
                     <Navbar className="primary" />
                     <Switch>
-                        <Route exact path="/">
-                            <Dash />
-                        </Route>
                         <Route exact path="/map">
-                            <Map />
+                            <MapPage />
                         </Route>
                         <Route exact path="/list">
                             <Navbar />

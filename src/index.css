@@ -150,18 +150,6 @@ a {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
-.recycle-image {
-  background-image: url(public/recycle.png);
-}
-
-.reduce-image {
-  background-image: url(public/no-drink.png);
-}
-
-.compost-image {
-  background-image: url(public/flower.png);
-}
-
 .header-div {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -170,6 +158,14 @@ a {
   margin-bottom: 3%;
   background-color: #faab5b;
   border-radius: 2px;
+}
+
+.test-container{
+  margin-top: 20%;
+}
+
+.test-text{
+  color:#1f1f1f;
 }
 
 .auth input {
