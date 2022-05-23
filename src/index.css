@@ -164,6 +164,74 @@ a {
   margin-top: 20%;
 }
 
+.mapCol {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+
+.inMapRow{
+  justify-content: center;
+  align-items: center;
+}
+
+.recommend-text-small{
+  color:#000000;
+  font-size:smaller;
+  text-decoration: underline;
+}
+
+.recommend-text-big{
+  color:#000000;
+  font-size: larger;
+  text-decoration: underline;
+}
+
+.restaurant-text-big{
+  color:#000000;
+  font-size: larger;
+  font-style: italic;
+}
+.categories-text-small{
+  color:#000000;
+  font-size: small;
+}
+
+.GMap{
+  padding-top:20%;
+}
+
+.in-between-text{
+  color:#1f1f1f;
+  padding-top:1%;
+}
+
+.topMapPage{
+  padding-top:13%;
+}
+
+.colLeftSquish{
+  align-items: right;
+  justify-content: right;
+}
+
+.mapRow{
+  float: center;
+  text-align: center;
+  align-items: center;
+}
+
+.MapTagText{
+  color:#000000;
+}
+
+/* Clear floats after the columns */
+.mapRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .test-text{
   color:#1f1f1f;
 }

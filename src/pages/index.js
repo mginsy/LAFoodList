@@ -7,8 +7,27 @@ import { useDispatch, useSelector } from 'react-redux'
 import Home from './home'
 import { List, About} from './auth'
 import MapPage from './MapPage'
+import restaurantPages from './RestaurantPages'
 
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
+import RestaurantPages from './RestaurantPages'
+import classes from './RestaurantPages/index'
+
+let routes = []
+
+for (let restaurantName in classes){
+    let pathName = "/" + restaurantName.replaceAll(" ","-");
+
+    let RestaurantClass = classes[restaurantName];
+
+    routes.push(
+        <Route exact path = {pathName}>
+            <Navbar fixed="top" />
+            <RestaurantClass/>
+        </Route>
+    )
+}
+
 
 function NavbarLink(props) {
     return (
@@ -80,6 +99,7 @@ function App() {
                         <Navbar className="primary" />
                         <Home />
                     </Route>
+                    {routes}
                 </Switch>
             ) : (
                 <>
@@ -96,6 +116,7 @@ function App() {
                             <Navbar />
                             <About />
                         </Route>
+                        {routes}
                     </Switch>
                 </>
             )}

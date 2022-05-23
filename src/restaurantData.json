@@ -1,0 +1,3667 @@
+{
+    "Uzumaki": {
+        "Name": "Uzumaki",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Sushi",
+            "Japanese",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.009472,-118.411667"
+        ],
+        "Addresses": [
+            "11060 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$$"
+    },
+    "C&M Cafe": {
+        "Name": "C&M Cafe",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Breakfast",
+            "Brunch",
+            "American",
+            "Healthy",
+            "Innovative",
+            "Lunch"
+        ],
+        "Locations": [
+            "34.026040,-118.412270"
+        ],
+        "Addresses": [
+            "10640 Woodbine St Suite 104, Los Angeles, CA 90034"
+        ],
+        "Price": "$"
+    },
+    "Iron Teapot": {
+        "Name": "Iron Teapot",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Chinese",
+            "Asian",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.037540,-118.373680"
+        ],
+        "Addresses": [
+            "10306 Venice Blvd., Los Angeles, CA 90034"
+        ],
+        "Price": "$$"
+    },
+    "The Apple Pan": {
+        "Name": "The Apple Pan",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Burgers",
+            "Classic LA",
+            "Dessert",
+            "Warm Dessert",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.040699,-118.427811"
+        ],
+        "Addresses": [
+            "10801 W Pico Blvd, Los Angeles, CA 90064"
+        ],
+        "Price": "$"
+    },
+    "Maple Block BBQ": {
+        "Name": "Maple Block BBQ",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "BBQ",
+            "American",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.026040,-118.4144366"
+        ],
+        "Addresses": [
+            "3973 Sepulveda Blvd, Culver City, CA 90230"
+        ],
+        "Price": "$$"
+    },
+    "Lonzo's Restaurant": {
+        "Name": "Lonzo's Restaurant",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Peruvian",
+            "Latino",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0150876,-118.4072854"
+        ],
+        "Addresses": [
+            "10804 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$"
+    },
+    "Dolce Isola": {
+        "Name": "Dolce Isola",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Italian",
+            "Bakery",
+            "Dessert",
+            "Ice Cream",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.035737,-118.3891857"
+        ],
+        "Addresses": [
+            "2869 S Robertson Blvd, Los Angeles, CA 90034"
+        ],
+        "Price": "$"
+    },
+    "Roberta's": {
+        "Name": "Roberta's",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0275755,-118.3873473"
+        ],
+        "Addresses": [
+            "8810 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$"
+    },
+    "Little Fatty": {
+        "Name": "Little Fatty",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Chinese",
+            "Asian",
+            "Asian Fusion",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0045223,-118.431035"
+        ],
+        "Addresses": [
+            "3809 Grand View Blvd, Los Angeles, CA 90066"
+        ],
+        "Price": "$$"
+    },
+    "Pasta Sisters": {
+        "Name": "Pasta Sisters",
+        "Areas": [
+            "West LA",
+            "Mid City"
+        ],
+        "Categories": [
+            "Italian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0272415,-118.3832159",
+            "34.0475651,-118.3172101"
+        ],
+        "Addresses": [
+            "3280 Helms Ave, Culver City CA 90232",
+            "3343 W Pico Blvd, Los Angeles CA 90019"
+        ],
+        "Price": "$"
+    },
+    "Food": {
+        "Name": "Food",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Breakfast",
+            "Brunch",
+            "Lunch"
+        ],
+        "Locations": [
+            "34.043991,-118.421071"
+        ],
+        "Addresses": [
+            "10571 Pico Blvd, Los Angeles, CA 90064"
+        ],
+        "Price": "$"
+    },
+    "Brother's Cousins Tacos": {
+        "Name": "Brother's Cousins Tacos",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Tacos",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0258834,-118.4323867"
+        ],
+        "Addresses": [
+            "11341 National Blvd, Los Angeles, CA 90064"
+        ],
+        "Price": "$"
+    },
+    "Al's Hot Chicken": {
+        "Name": "Al's Hot Chicken",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "American",
+            "Spicy",
+            "Sandwiches",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.017523,-118.4095691"
+        ],
+        "Addresses": [
+            "10821 Venice Blvd., Los Angeles, CA 90034"
+        ],
+        "Price": "$"
+    },
+    "Father's Office": {
+        "Name": "Father's Office",
+        "Areas": [
+            "West LA",
+            "Downtown",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Burgers",
+            "American",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0307,-118.3848546",
+            "34.0478513,-118.2351673",
+            "34.029328,-118.4984834"
+        ],
+        "Addresses": [
+            "3229 Helms Avenue, Los Angeles, CA 90034",
+            "905 E 2nd St #105, Los Angeles, CA 90012",
+            "1018 Montana Ave, Santa Monica, CA 90403"
+        ],
+        "Price": "$$"
+    },
+    "Blasteran": {
+        "Name": "Blasteran",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian Fusion",
+            "Asian",
+            "Burgers",
+            "Innovative",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.06334,-118.376046"
+        ],
+        "Addresses": [
+            "272 S La Cienega Blvd, Beverly Hills, CA 90211"
+        ],
+        "Price": "$$"
+    },
+    "Pop's Bagels": {
+        "Name": "Pop's Bagels",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Breakfast",
+            "Brunch",
+            "Jewish"
+        ],
+        "Locations": [
+            "34.0248826,-118.3934347"
+        ],
+        "Addresses": [
+            "9300 Culver Blvd #112, Culver City, CA 90232"
+        ],
+        "Price": "$"
+    },
+    "Bianca Bakery": {
+        "Name": "Bianca Bakery",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Italian",
+            "Bakery",
+            "Brunch",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0270792,-118.3875577"
+        ],
+        "Addresses": [
+            "8850 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$"
+    },
+    "Arth": {
+        "Name": "Arth",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Indian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0231484,-118.3948083"
+        ],
+        "Addresses": [
+            "9531 Culver Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$"
+    },
+    "Pizzeria Sei": {
+        "Name": "Pizzeria Sei",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Asian Fusion",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0547598,-118.383228"
+        ],
+        "Addresses": [
+            "8781 W Pico Blvd, Los Angeles, CA 90035"
+        ],
+        "Price": "$$"
+    },
+    "Kazan": {
+        "Name": "Kazan",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Innovative",
+            "Soup",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.067484,-118.376316"
+        ],
+        "Addresses": [
+            "111 N La Cienega Blvd, Beverly Hills, CA 90211"
+        ],
+        "Price": "$$"
+    },
+    "Ramen Nagi": {
+        "Name": "Ramen Nagi",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.058913,-118.419345"
+        ],
+        "Addresses": [
+            "10250 Santa Monica Blvd Ste. #2850, Los Angeles, CA 90067"
+        ],
+        "Price": "$$"
+    },
+    "Din Tai Fung": {
+        "Name": "Din Tai Fung",
+        "Areas": [
+            "West LA",
+            "SGV",
+            "OC"
+        ],
+        "Categories": [
+            "Chinese",
+            "Asian",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.060134,-118.420435",
+            "34.135995,-118.054166",
+            "33.690939,-117.885602"
+        ],
+        "Addresses": [
+            "10250 Santa Monica Boulevard #2400 Level 2, Los Angeles, CA 90067",
+            "400 S Baldwin Ave #M5, Arcadia, CA 91007",
+            "3333 Bristol Street, Plaza Space 2071, Costa Mesa, CA 92626"
+        ],
+        "Price": "$$"
+    },
+    "Northern Cafe": {
+        "Name": "Northern Cafe",
+        "Areas": [
+            "West LA",
+            "South LA",
+            "Hollywood",
+            "SGV"
+        ],
+        "Categories": [
+            "Chinese",
+            "Asian",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0454568,-118.4659415",
+            "33.9757397,-118.2826891",
+            "34.0761263,-118.3751301",
+            "34.063902,-118.12277"
+        ],
+        "Addresses": [
+            "12009 Wilshire Blvd, Los Angeles, CA 90025",
+            "2904 S Figueroa St, Los Angeles, CA 90007",
+            "8459 Beverly Blvd, Los Angeles, CA 90048",
+            "128 N Garfield Ave #B, Monterey Park, CA 91754"
+        ],
+        "Price": "$"
+    },
+    "KazuNori Handroll Bar": {
+        "Name": "KazuNori Handroll Bar",
+        "Areas": [
+            "West LA",
+            "Santa Monica",
+            "Koreatown",
+            "Mid City",
+            "Downtown"
+        ],
+        "Categories": [
+            "Sushi",
+            "Japanese",
+            "Asian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0600999,-118.4462508",
+            "34.0131113,-118.4957991",
+            "34.0636685,-118.2970753",
+            "34.063363,-118.364067",
+            "34.047573,-118.247708"
+        ],
+        "Addresses": [
+            "1110 Gayley Ave, Los Angeles, CA 90024",
+            "120 Broadway Suite 104, Santa Monica, CA 90401",
+            "3465 W 6th St #50, Los Angeles, CA 90020",
+            "6245 Wilshire Blvd #101, Los Angeles, CA 90048",
+            "421 S Main St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$"
+    },
+    "Pitfire Pizza": {
+        "Name": "Pitfire Pizza",
+        "Areas": [
+            "West LA",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0464043,-118.4337885",
+            "33.996514,-118.4358303"
+        ],
+        "Addresses": [
+            "2018 Westwood Blvd, Los Angeles, CA 90025",
+            "12924 W Washington Blvd, Los Angeles, CA 90066"
+        ],
+        "Price": "$"
+    },
+    "Feast From The East": {
+        "Name": "Feast From The East",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Asian Fusion",
+            "Chinese",
+            "Healthy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0468337,-118.4344029"
+        ],
+        "Addresses": [
+            "1949 Westwood Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Attari": {
+        "Name": "Attari",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Persian",
+            "Middle Eastern",
+            "Sandwiches",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0556057,-118.4418006"
+        ],
+        "Addresses": [
+            "1388 Westwood Blvd, Los Angeles, CA 90024"
+        ],
+        "Price": "$"
+    },
+    "Tacos Tu Madre": {
+        "Name": "Tacos Tu Madre",
+        "Areas": [
+            "West LA",
+            "Hollywood"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Tacos",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0469334,-118.4344888",
+            "34.1044069,-118.2916172"
+        ],
+        "Addresses": [
+            "1945 Westwood Blvd, Los Angeles, CA 90025",
+            "1824 N Vermont Ave, Los Angeles, CA 90027"
+        ],
+        "Price": "$$"
+    },
+    "Sunin": {
+        "Name": "Sunin",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Mediterranean",
+            "Middle Eastern",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0503954,-118.4373735"
+        ],
+        "Addresses": [
+            "1776 Westwood Blvd, Los Angeles, CA 90024"
+        ],
+        "Price": "$$"
+    },
+    "Mogumogu": {
+        "Name": "Mogumogu",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0359172,-118.4452228"
+        ],
+        "Addresses": [
+            "11555 W Olympic Blvd Ste B, Los Angeles, CA 90064"
+        ],
+        "Price": "$$"
+    },
+    "Tsujita": {
+        "Name": "Tsujita",
+        "Areas": [
+            "West LA",
+            "Hollywood"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Classic LA",
+            "Soup",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.04031,-118.4429687",
+            "34.0744897,-118.3615223"
+        ],
+        "Addresses": [
+            "2050 Sawtelle Blvd, Los Angeles, CA 90025",
+            "109 N Fairfax Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$$"
+    },
+    "Seoul Tofu": {
+        "Name": "Seoul Tofu",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.03925,-118.4426197"
+        ],
+        "Addresses": [
+            "2101 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$$"
+    },
+    "Killer Noodle": {
+        "Name": "Killer Noodle",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Asian Fusion",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Innovative",
+            "Spicy",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0405604,-118.4431844"
+        ],
+        "Addresses": [
+            "2030 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$$"
+    },
+    "Marugame Udon": {
+        "Name": "Marugame Udon",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0404894,-118.443367"
+        ],
+        "Addresses": [
+            "2029 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Main Chick": {
+        "Name": "Main Chick",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "American",
+            "Spicy",
+            "Sandwiches",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0459982,-118.4514848"
+        ],
+        "Addresses": [
+            "11419 Santa Monica Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Cha Cha Chicken": {
+        "Name": "Cha Cha Chicken",
+        "Areas": [
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0061375,-118.4906437"
+        ],
+        "Addresses": [
+            "1906 Ocean Ave, Santa Monica, CA 90405"
+        ],
+        "Price": "$$"
+    },
+    "HiHo CheeseBurger": {
+        "Name": "HiHo CheeseBurger",
+        "Areas": [
+            "Santa Monica",
+            "Mid City"
+        ],
+        "Categories": [
+            "Burgers",
+            "American",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0156574,-118.4982257",
+            "34.0633678,-118.3641906"
+        ],
+        "Addresses": [
+            "1320 2nd St Ste. B, Santa Monica, CA 90401",
+            "6245 Wilshire Blvd Suite 102, Los Angeles, CA 90048"
+        ],
+        "Price": "$"
+    },
+    "Uovo": {
+        "Name": "Uovo",
+        "Areas": [
+            "Santa Monica",
+            "Mid City"
+        ],
+        "Categories": [
+            "Italian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0156574,-118.4982257",
+            "34.0633678,-118.3641906"
+        ],
+        "Addresses": [
+            "1320 2nd St Ste A, Santa Monica, CA 90401",
+            "6245 Wilshire Blvd Suite 103, Los Angeles, CA 90048"
+        ],
+        "Price": "$$"
+    },
+    "Plan Check": {
+        "Name": "Plan Check",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Burgers",
+            "American",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0439067,-118.4459938"
+        ],
+        "Addresses": [
+            "1800 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$$"
+    },
+    "Ippudo": {
+        "Name": "Ippudo",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0906055,-118.3716339"
+        ],
+        "Addresses": [
+            "8352 Santa Monica Blvd, West Hollywood, CA 90069"
+        ],
+        "Price": "$$"
+    },
+    "Sunny Blue": {
+        "Name": "Sunny Blue",
+        "Areas": [
+            "Santa Monica",
+            "West LA"
+        ],
+        "Categories": [
+            "Sushi",
+            "Asian",
+            "Japanese",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0006434,-118.4823286",
+            "33.9966897,-118.4325557"
+        ],
+        "Addresses": [
+            "2728 Main St, Santa Monica, CA 90405",
+            "12608 Washington Blvd A, Los Angeles, CA 90066"
+        ],
+        "Price": "$"
+    },
+    "Colapasta": {
+        "Name": "Colapasta",
+        "Areas": [
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Italian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0193773,-118.4966107"
+        ],
+        "Addresses": [
+            "1241 5th St, Santa Monica, CA 90401"
+        ],
+        "Price": "$$"
+    },
+    "Playa Provisions": {
+        "Name": "Playa Provisions",
+        "Areas": [
+            "Santa Monica"
+        ],
+        "Categories": [
+            "American",
+            "Breakfast",
+            "Brunch"
+        ],
+        "Locations": [
+            "33.9580177,-118.4497399"
+        ],
+        "Addresses": [
+            "119 Culver Blvd, Playa Del Rey, CA 90293"
+        ],
+        "Price": "$$"
+    },
+    "The Rose": {
+        "Name": "The Rose",
+        "Areas": [
+            "Santa Monica"
+        ],
+        "Categories": [
+            "American",
+            "Breakfast",
+            "Brunch",
+            "Lunch"
+        ],
+        "Locations": [
+            "33.9962903,-118.4771052"
+        ],
+        "Addresses": [
+            "220 Rose Ave, Venice, CA 90291"
+        ],
+        "Price": "$$$"
+    },
+    "Superba": {
+        "Name": "Superba",
+        "Areas": [
+            "Santa Monica",
+            "Hollywood"
+        ],
+        "Categories": [
+            "American",
+            "Breakfast",
+            "Brunch"
+        ],
+        "Locations": [
+            "33.9984113,-118.4617899",
+            "34.09762901444809,-118.33299597647647"
+        ],
+        "Addresses": [
+            "1900 Lincoln Blvd, Venice, CA 90291",
+            "6530 Sunset Blvd, Los Angeles, CA 90028",
+            "6530 Sunset Blvd, Los Angeles, CA 90028"
+        ],
+        "Price": "$$"
+    },
+    "Bludso's Bar&Que": {
+        "Name": "Bludso's Bar&Que",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "American",
+            "BBQ",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.082092,-118.3441444"
+        ],
+        "Addresses": [
+            "609 N La Brea Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$$"
+    },
+    "Salt and Straw": {
+        "Name": "Salt and Straw",
+        "Areas": [
+            "Santa Monica",
+            "West LA",
+            "Hollywood",
+            "Mid City",
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "33.9908776,-118.4665829",
+            "34.0248826,-118.3934347",
+            "34.0841791,-118.385565",
+            "34.075223,-118.3234388",
+            "34.045886,-118.235944"
+        ],
+        "Addresses": [
+            "1357 Abbot Kinney Blvd, Venice, CA 90291",
+            "9300 Culver Blvd #110, Culver City, CA 90232",
+            "8949 Santa Monica Blvd, West Hollywood, CA 90069",
+            "240 N Larchmont Blvd, Los Angeles, CA 90004",
+            "829 E 3rd St, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Guisados": {
+        "Name": "Guisados",
+        "Areas": [
+            "West LA",
+            "Hollywood",
+            "Downtown"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Tacos",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0664698,-118.407329",
+            "34.0844187,-118.3852343",
+            "34.0465999,-118.2506512"
+        ],
+        "Addresses": [
+            "120 S Linden Dr, Beverly Hills, CA 90212",
+            "8935 Santa Monica Blvd, West Hollywood, CA 90069",
+            "541 S Spring St #101, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Kismet Rotisserie": {
+        "Name": "Kismet Rotisserie",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "American",
+            "Healthy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.1005875,-118.290952"
+        ],
+        "Addresses": [
+            "4666 Hollywood Blvd, Los Angeles, CA 90027"
+        ],
+        "Price": "$$"
+    },
+    "daybird": {
+        "Name": "daybird",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "Chinese",
+            "Asian Fusion",
+            "American",
+            "Asian Fusion",
+            "Sandwiches",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0759675,-118.2867073"
+        ],
+        "Addresses": [
+            "240 N Virgil Ave Suite 5, Los Angeles, CA 90004"
+        ],
+        "Price": "$"
+    },
+    "Sonoratown": {
+        "Name": "Sonoratown",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Tacos"
+        ],
+        "Locations": [
+            "34.0415628,-118.2521722"
+        ],
+        "Addresses": [
+            "208 E 8th St, Los Angeles, CA 90014"
+        ],
+        "Price": "$"
+    },
+    "Botega Louie": {
+        "Name": "Botega Louie",
+        "Areas": [
+            "Downtown",
+            "Hollywood"
+        ],
+        "Categories": [
+            "Italian",
+            "Bakery",
+            "Pizza",
+            "Dessert",
+            "Classic LA",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.047143,-118.256605",
+            "34.084085,-118.3850163"
+        ],
+        "Addresses": [
+            "700 S Grand Ave, Los Angeles, CA 90017",
+            "8936 Santa Monica Blvd, West Hollywood, CA 90069"
+        ],
+        "Price": "$$$"
+    },
+    "Cabra": {
+        "Name": "Cabra",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Peruvian",
+            "Latino",
+            "American",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0400801,-118.258269"
+        ],
+        "Addresses": [
+            "1060 S Broadway, Los Angeles, CA 90015"
+        ],
+        "Price": "$$$"
+    },
+    "Afuri": {
+        "Name": "Afuri",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0265458,-118.2322209"
+        ],
+        "Addresses": [
+            "688 Mateo St, Los Angeles, CA 90021"
+        ],
+        "Price": "$$"
+    },
+    "The Girl and The Goat": {
+        "Name": "The Girl and The Goat",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "American",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0418898,-118.2327744"
+        ],
+        "Addresses": [
+            "555-3 Mateo St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$$"
+    },
+    "Sushi Komasa": {
+        "Name": "Sushi Komasa",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Sushi",
+            "Asian",
+            "Japanese",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.048778,-118.240932"
+        ],
+        "Addresses": [
+            "351 E 2nd St, Los Angeles, CA 90012"
+        ],
+        "Price": "$$"
+    },
+    "Luv2EatThai Bistro": {
+        "Name": "Luv2EatThai Bistro",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Thai",
+            "Asian",
+            "Soup",
+            "Noodles",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.09761199918465,-118.33593701866266"
+        ],
+        "Addresses": [
+            "6660 Sunset Blvd, Los Angeles, CA 90028"
+        ],
+        "Price": "$"
+    },
+    "26th Ave Tacos": {
+        "Name": "26th Ave Tacos",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0443446,-118.2381478"
+        ],
+        "Addresses": [
+            "353 S Alameda St, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Vito's Pizza": {
+        "Name": "Vito's Pizza",
+        "Areas": [
+            "Hollywood",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0861051,-118.3763611",
+            "34.0324402,-118.4754878"
+        ],
+        "Addresses": [
+            "846 N La Cienega Blvd, Los Angeles, CA 90069",
+            "2455 Santa Monica Blvd, Santa Monica, CA 90404"
+        ],
+        "Price": "$$"
+    },
+    "Angel's Tijuana Tacos": {
+        "Name": "Angel's Tijuana Tacos",
+        "Areas": [
+            "Eagle Rock",
+            "The Valley"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.122915,-118.2251568",
+            "34.201377,-118.475077"
+        ],
+        "Addresses": [
+            "4211 Eagle Rock Blvd, Los Angeles, CA 90065",
+            "15701 Sherman Way, Van Nuys, CA 91406"
+        ],
+        "Price": "$"
+    },
+    "CoCo Ichibanya": {
+        "Name": "CoCo Ichibanya",
+        "Areas": [
+            "West LA",
+            "Koreatown",
+            "OC"
+        ],
+        "Categories": [
+            "Japanese",
+            "Asian",
+            "Fried Chicken",
+            "Noodles",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0454598,-118.4659378",
+            "34.0630489,-118.2987218",
+            "33.6891151,-117.833125"
+        ],
+        "Addresses": [
+            "12007 Wilshire Blvd #12007, Los Angeles, CA 90049",
+            "3500 W 6th St #110, Los Angeles, CA 90020",
+            "2710 Alton Pkwy #115, Irvine, CA 92606"
+        ],
+        "Price": "$$"
+    },
+    "Loqui": {
+        "Name": "Loqui",
+        "Areas": [
+            "Downtown",
+            "West LA"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.046765,-118.2378808",
+            "34.0273784,-118.387674"
+        ],
+        "Addresses": [
+            "803 Traction Ave #150, Los Angeles, CA 90013",
+            "8830 Washington Blvd #104, Culver City, CA 90232"
+        ],
+        "Price": "$"
+    },
+    "Superfine Pizza": {
+        "Name": "Superfine Pizza",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.035179,-118.252347"
+        ],
+        "Addresses": [
+            "1101 San Pedro St unit f, Los Angeles, CA 90015"
+        ],
+        "Price": "$$"
+    },
+    "RiceBox": {
+        "Name": "RiceBox",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Chinese",
+            "Asian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0465999,-118.2506512"
+        ],
+        "Addresses": [
+            "541 S Spring St #131, Los Angeles, CA 90013"
+        ],
+        "Price": "$$"
+    },
+    "Langer's Delicatessen": {
+        "Name": "Langer's Delicatessen",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Sandwiches",
+            "Deli",
+            "Jewish",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.056359,-118.276785"
+        ],
+        "Addresses": [
+            "704 S Alvarado St, Los Angeles, CA 90057"
+        ],
+        "Price": "$$"
+    },
+    "Factor's Famous Deli": {
+        "Name": "Factor's Famous Deli",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Sandwiches",
+            "Deli",
+            "Jewish",
+            "Soup",
+            "Brunch",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0551662,-118.3946728"
+        ],
+        "Addresses": [
+            "9420 W Pico Blvd, Los Angeles, CA 90035"
+        ],
+        "Price": "$$"
+    },
+    "Lasita": {
+        "Name": "Lasita",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Filipino",
+            "Asian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.060897,-118.23916"
+        ],
+        "Addresses": [
+            "727 N Broadway #120, Los Angeles, CA 90012"
+        ],
+        "Price": "$$"
+    },
+    "Amboy Quality Meats": {
+        "Name": "Amboy Quality Meats",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "American",
+            "Burgers",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.060897,-118.23916"
+        ],
+        "Addresses": [
+            "727 N Broadway No. 117, Los Angeles, CA 90012"
+        ],
+        "Price": "$$"
+    },
+    "Danny Boy's Pizza": {
+        "Name": "Danny Boy's Pizza",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.053146,-118.252809"
+        ],
+        "Addresses": [
+            "330 S Hope St Suit 205, Los Angeles, CA 90071"
+        ],
+        "Price": "$"
+    },
+    "Howlin' Rays": {
+        "Name": "Howlin' Rays",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "American",
+            "Spicy",
+            "Sandwiches",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0615478,-118.2397115"
+        ],
+        "Addresses": [
+            "727 N Broadway #128, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Mastro's Steakhouse": {
+        "Name": "Mastro's Steakhouse",
+        "Areas": [
+            "West LA",
+            "OC"
+        ],
+        "Categories": [
+            "Steakhouse",
+            "American",
+            "Dessert",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0685412,-118.3986756",
+            "33.6165255,-117.9030277"
+        ],
+        "Addresses": [
+            "246 N Canon Dr, Beverly Hills, CA 90210",
+            "8112 East Coast Hwy, Newport Beach, CA 92657"
+        ],
+        "Price": "$$$$"
+    },
+    "Rossoblu": {
+        "Name": "Rossoblu",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0349774,-118.2536312"
+        ],
+        "Addresses": [
+            "1124 San Julian St, Los Angeles, CA 90015"
+        ],
+        "Price": "$$$"
+    },
+    "AOC": {
+        "Name": "AOC",
+        "Areas": [
+            "Hollywood",
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0734622,-118.3818603",
+            "\t34.05352398476262,-118.46335099938482"
+        ],
+        "Addresses": [
+            "8700 W 3rd St, Los Angeles, CA 90048",
+            "11648 San Vicente Blvd, Los Angeles, CA 90049"
+        ],
+        "Price": "$$$"
+    },
+    "Bavel": {
+        "Name": "Bavel",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Mediterranean",
+            "Middle Eastern",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0414422,-118.2327188"
+        ],
+        "Addresses": [
+            "500 Mateo St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$$$"
+    },
+    "Majordōmo": {
+        "Name": "Majordōmo",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "American",
+            "Chinese",
+            "Asian",
+            "Asian Fusion",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0690965,-118.2261527"
+        ],
+        "Addresses": [
+            "1725 Naud St, Los Angeles, CA 90012"
+        ],
+        "Price": "$$$"
+    },
+    "Felix Trattoria": {
+        "Name": "Felix Trattoria",
+        "Areas": [
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "33.9921564,-118.4718535"
+        ],
+        "Addresses": [
+            "1023 Abbot Kinney Blvd, Venice, CA 90291"
+        ],
+        "Price": "$$$$"
+    },
+    "Margot": {
+        "Name": "Margot",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Mediterranean",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0274769,-118.3875107"
+        ],
+        "Addresses": [
+            "8820 Washington Blvd Suite 301, Culver City, CA 90232"
+        ],
+        "Price": "$$$"
+    },
+    "Hippo": {
+        "Name": "Hippo",
+        "Areas": [
+            "Eagle Rock"
+        ],
+        "Categories": [
+            "American",
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.101517,-118.20329"
+        ],
+        "Addresses": [
+            "5916 1/2 N Figueroa St, Los Angeles, CA 90042"
+        ],
+        "Price": "$$$"
+    },
+    "Sant'olina": {
+        "Name": "Sant'olina",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Mediterranean",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.067004,-118.413179"
+        ],
+        "Addresses": [
+            "9876 Wilshire Blvd, Beverly Hills, CA 90210"
+        ],
+        "Price": "$$$"
+    },
+    "etta": {
+        "Name": "etta",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Italian",
+            "Brunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.028025,-118.387391"
+        ],
+        "Addresses": [
+            "8801 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$$$"
+    },
+    "Sushi Enya": {
+        "Name": "Sushi Enya",
+        "Areas": [
+            "Downtown",
+            "West LA",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Sushi",
+            "Asian",
+            "Japanese",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.049680,-118.239750",
+            "34.0689323,-118.3746989",
+            "33.980307,-118.464783"
+        ],
+        "Addresses": [
+            "343 1st St, Los Angeles, CA 90012",
+            "480 S San Vicente Blvd, Los Angeles, CA 90048",
+            "123 Washington Blvd, Marina Del Rey, CA 90292"
+        ],
+        "Price": "$$$"
+    },
+    "Damian": {
+        "Name": "Damian",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0334704,-118.2294405"
+        ],
+        "Addresses": [
+            "2132 E 7th Pl, Los Angeles, CA 90021"
+        ],
+        "Price": "$$$$"
+    },
+    "Antico Nuovo": {
+        "Name": "Antico Nuovo",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0763246,-118.3105399"
+        ],
+        "Addresses": [
+            "4653 Beverly Blvd, Los Angeles, CA 90004"
+        ],
+        "Price": "$$$"
+    },
+    "Bestia": {
+        "Name": "Bestia",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.033738,-118.2293095"
+        ],
+        "Addresses": [
+            "2121 E 7th Pl, Los Angeles, CA 90021"
+        ],
+        "Price": "$$$$"
+    },
+    "Mariscos Jalisco": {
+        "Name": "Mariscos Jalisco",
+        "Areas": [
+            "East LA"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Seafood",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0209549,-118.2128176"
+        ],
+        "Addresses": [
+            "3040 E Olympic Blvd, Los Angeles, CA 90023"
+        ],
+        "Price": "$"
+    },
+    "Pa Ord Noodle": {
+        "Name": "Pa Ord Noodle",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Asian",
+            "Thai",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0985309,-118.3061849"
+        ],
+        "Addresses": [
+            "5301 Sunset Blvd #8, Los Angeles, CA 90027"
+        ],
+        "Price": "$"
+    },
+    "Guerilla Tacos": {
+        "Name": "Guerilla Tacos",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0344189,-118.2321198"
+        ],
+        "Addresses": [
+            "2000 E 7th St, Los Angeles, CA 90021"
+        ],
+        "Price": "$"
+    },
+    "Tacos La Guera": {
+        "Name": "Tacos La Guera",
+        "Areas": [
+            "Koreatown",
+            "Downtown"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.047292,-118.304684",
+            "34.061853,-118.198543"
+        ],
+        "Addresses": [
+            "2949 W Pico Blvd, Los Angeles, CA 90006",
+            "1569 N Soto St, Los Angeles, CA 90033"
+        ],
+        "Price": "$"
+    },
+    "Roscoe's Chicken and Waffles": {
+        "Name": "Roscoe's Chicken and Waffles",
+        "Areas": [
+            "South LA",
+            "Mid City",
+            "Hollywood"
+        ],
+        "Categories": [
+            "American",
+            "Fried Chicken",
+            "Breakfast",
+            "Brunch",
+            "Classic LA",
+            "Lunch"
+        ],
+        "Locations": [
+            "33.959869,-118.2744751",
+            "34.0476749,-118.3461992",
+            "34.0984268,-118.3221962"
+        ],
+        "Addresses": [
+            "106 W Manchester Ave, Los Angeles, CA 90003",
+            "5006 W Pico Blvd, Los Angeles, CA 90019",
+            "1514 N Gower St, Los Angeles, CA 90028"
+        ],
+        "Price": "$$"
+    },
+    "Tacos y Birria la Unica": {
+        "Name": "Tacos y Birria la Unica",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Lunch"
+        ],
+        "Locations": [
+            "34.0229127,-118.2168866"
+        ],
+        "Addresses": [
+            "2840 E Olympic Blvd, Los Angeles, CA 90023"
+        ],
+        "Price": "$"
+    },
+    "Mizlala": {
+        "Name": "Mizlala",
+        "Areas": [
+            "Mid City",
+            "The Valley"
+        ],
+        "Categories": [
+            "Mediterranean",
+            "Middle Eastern",
+            "Jewish",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.032399,-118.360627",
+            "34.152021,-118.466811"
+        ],
+        "Addresses": [
+            "5400 W Adams Blvd, Los Angeles, CA 90016",
+            "4515 Sepulveda Blvd, Sherman Oaks, CA 91403"
+        ],
+        "Price": "$$"
+    },
+    "Biriyani Kabob House": {
+        "Name": "Biriyani Kabob House",
+        "Areas": [
+            "Downtown",
+            "Koreatown"
+        ],
+        "Categories": [
+            "Indian",
+            "Spicy",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0470782,-118.2502121",
+            "34.069132,-118.292298"
+        ],
+        "Addresses": [
+            "517 S Spring St, Los Angeles, CA 90013",
+            "3525 W 3rd St, Los Angeles, CA 90020"
+        ],
+        "Price": "$"
+    },
+    "Jerusalem Chicken": {
+        "Name": "Jerusalem Chicken",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "Mediterranean",
+            "Middle Eastern",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "33.9888235,-118.3532062"
+        ],
+        "Addresses": [
+            "4448 W Slauson Ave, View Park-Windsor Hills, CA 90043"
+        ],
+        "Price": "$"
+    },
+    "Pardis": {
+        "Name": "Pardis",
+        "Areas": [
+            "Eagle Rock"
+        ],
+        "Categories": [
+            "Persian",
+            "Middle Eastern",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.1575265,-118.2411667"
+        ],
+        "Addresses": [
+            "738 N Glendale Ave, Glendale, CA 91206"
+        ],
+        "Price": "$$"
+    },
+    "Tire Shop Taqueria": {
+        "Name": "Tire Shop Taqueria",
+        "Areas": [
+            "South LA"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.009350,-118.265520"
+        ],
+        "Addresses": [
+            "4077 S Avalon Blvd, Los Angeles, CA 90011"
+        ],
+        "Price": "$"
+    },
+    "Holbox": {
+        "Name": "Holbox",
+        "Areas": [
+            "South LA"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Seafood",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.017568,-118.277789"
+        ],
+        "Addresses": [
+            "3655 S Grand Ave #C9, Los Angeles, CA 90007"
+        ],
+        "Price": "$$"
+    },
+    "Chichen Itza": {
+        "Name": "Chichen Itza",
+        "Areas": [
+            "South LA"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.017500,-118.277859"
+        ],
+        "Addresses": [
+            "3655 S Grand Ave #C6, Los Angeles, CA 90007"
+        ],
+        "Price": "$$"
+    },
+    "La Pupusa Urban Eatery": {
+        "Name": "La Pupusa Urban Eatery",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Latino",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.038395,-118.280631"
+        ],
+        "Addresses": [
+            "1051 W Washington Blvd G, Los Angeles, CA 90015"
+        ],
+        "Price": "$"
+    },
+    "Tacos Los Guichos": {
+        "Name": "Tacos Los Guichos",
+        "Areas": [
+            "South LA"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "33.9890822,-118.2785944"
+        ],
+        "Addresses": [
+            "320 W Slauson Ave, Los Angeles, CA 90003"
+        ],
+        "Price": "$"
+    },
+    "Mian": {
+        "Name": "Mian",
+        "Areas": [
+            "SGV",
+            "Mid City"
+        ],
+        "Categories": [
+            "Noodles",
+            "Chinese",
+            "Asian",
+            "Spicy",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0796,-118.103839",
+            "34.0327853,-118.3574995"
+        ],
+        "Addresses": [
+            "301 W Valley Blvd #114-115, San Gabriel, CA 91776",
+            "5263 W Adams Blvd, Los Angeles, CA 90016"
+        ],
+        "Price": "$"
+    },
+    "Tacos Tamix": {
+        "Name": "Tacos Tamix",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Tacos",
+            "Mexican",
+            "Latino",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0382705458797,-118.28397700212643"
+        ],
+        "Addresses": [
+            "1982 S Hoover St, Los Angeles, CA 90007"
+        ],
+        "Price": "$"
+    },
+    "Phillipe The Original": {
+        "Name": "Phillipe The Original",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "American",
+            "Sandwiches",
+            "Classic LA",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.059584,-118.236854"
+        ],
+        "Addresses": [
+            "1001 N Alameda St, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "B Sweet": {
+        "Name": "B Sweet",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Warm Dessert",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0407899,-118.4436259"
+        ],
+        "Addresses": [
+            "2005 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Cool Haus": {
+        "Name": "Cool Haus",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Cookies"
+        ],
+        "Locations": [
+            "34.0302174,-118.3813391"
+        ],
+        "Addresses": [
+            "8588 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$"
+    },
+    "Nickel Diner": {
+        "Name": "Nickel Diner",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Breakfast",
+            "Dessert"
+        ],
+        "Locations": [
+            "34.046397,-118.248855"
+        ],
+        "Addresses": [
+            "524 S Main St, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Compartes": {
+        "Name": "Compartes",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "Dessert"
+        ],
+        "Locations": [
+            "34.0806118,-118.3439443"
+        ],
+        "Addresses": [
+            "516 N La Brea Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$$"
+    },
+    "Bumsan": {
+        "Name": "Bumsan",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0646633,-118.3089979"
+        ],
+        "Addresses": [
+            "534 S Western Ave, Los Angeles, CA 90020"
+        ],
+        "Price": "$"
+    },
+    "Van Leeuwen": {
+        "Name": "Van Leeuwen",
+        "Areas": [
+            "West LA",
+            "Hollywood",
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "34.0274719,-118.3875167",
+            "34.1053401,-118.3184074",
+            "34.0460899,-118.2326491"
+        ],
+        "Addresses": [
+            "8820 Washington Blvd, Culver City, CA 90232",
+            "5915 Franklin Ave, Los Angeles, CA 90028",
+            "300 S Santa Fe Ave Suite R, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "SomiSomi": {
+        "Name": "SomiSomi",
+        "Areas": [
+            "Santa Monica",
+            "West LA",
+            "Koreatown",
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0148585,-118.4952673",
+            "34.039452,-118.442749",
+            "34.06273,-118.309165",
+            "34.048753,-118.241169"
+        ],
+        "Addresses": [
+            "1456 3rd St, Santa Monica, CA 90401",
+            "11311 Mississippi Ave, Los Angeles, CA 90025",
+            "621 S Western Ave #208-A, Los Angeles, CA 90005",
+            "332 E 2nd St, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Honeymee": {
+        "Name": "Honeymee",
+        "Areas": [
+            "West LA",
+            "Koreatown",
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0381913863119,-118.44130676722824",
+            "34.0619461,-118.2974409",
+            "34.0491762,-118.2404819"
+        ],
+        "Addresses": [
+            "11301 West Olympic Boulevard Reference, Sawtelle Blvd, Los Angeles, CA 90064",
+            "3377 Wilshire Blvd, Los Angeles, CA 90010",
+            "120 Japanese Village Plaza Mall, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Midori Matcha": {
+        "Name": "Midori Matcha",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian",
+            "Matcha"
+        ],
+        "Locations": [
+            "34.050884,-118.242154"
+        ],
+        "Addresses": [
+            "123 Astronaut Ellison S Onizuka St #101-C, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Phoenix Bakery": {
+        "Name": "Phoenix Bakery",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Warm Dessert",
+            "Asian",
+            "Bakery"
+        ],
+        "Locations": [
+            "34.0659484,-118.236662"
+        ],
+        "Addresses": [
+            "969 N Broadway, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Mumu Bakery": {
+        "Name": "Mumu Bakery",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Warm Dessert",
+            "Asian",
+            "Bakery"
+        ],
+        "Locations": [
+            "34.052683,-118.303246"
+        ],
+        "Addresses": [
+            "3109 W Olympic Blvd D, Los Angeles, CA 90006"
+        ],
+        "Price": "$"
+    },
+    "Sul and Beans": {
+        "Name": "Sul and Beans",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian"
+        ],
+        "Locations": [
+            "34.06253,-118.309115"
+        ],
+        "Addresses": [
+            "621 S Western Ave #208-A, Los Angeles, CA 90005"
+        ],
+        "Price": "$"
+    },
+    "Tiger Sugar": {
+        "Name": "Tiger Sugar",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Boba",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0636685,-118.2970753"
+        ],
+        "Addresses": [
+            "3465 W 6th St STE 120, Los Angeles, CA 90020"
+        ],
+        "Price": "$"
+    },
+    "Ding Tea": {
+        "Name": "Ding Tea",
+        "Areas": [
+            "Hollywood",
+            "Eagle Rock",
+            "SGV",
+            "OC"
+        ],
+        "Categories": [
+            "Dessert",
+            "Boba",
+            "Asian"
+        ],
+        "Locations": [
+            "34.1018267,-118.3058851",
+            "34.1389841,-118.2127199",
+            "34.0786676,-118.1227397",
+            "33.7351726,-117.8123161"
+        ],
+        "Addresses": [
+            "5265 Hollywood Blvd, Los Angeles, CA 90027",
+            "2114 Colorado Blvd, Los Angeles, CA 90041",
+            "15 E Valley Blvd, Alhambra, CA 91801",
+            "13820 Red Hill Ave, Tustin, CA 92780"
+        ],
+        "Price": "$"
+    },
+    "Volcano Tea": {
+        "Name": "Volcano Tea",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Boba",
+            "Asian"
+        ],
+        "Locations": [
+            "34.0392932,-118.4423357"
+        ],
+        "Addresses": [
+            "2111 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Wanderlust Creamery": {
+        "Name": "Wanderlust Creamery",
+        "Areas": [
+            "Santa Monica",
+            "West LA",
+            "Mid City",
+            "Eagle Rock"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian"
+        ],
+        "Locations": [
+            "33.999838,-118.4654056",
+            "34.0393651,-118.4423977",
+            "34.07151,-118.3619767",
+            "34.1165506,-118.2620676"
+        ],
+        "Addresses": [
+            "609 Lincoln Blvd suite b, Venice, CA 90291",
+            "2105 Sawtelle Blvd, Los Angeles, CA 90025",
+            "7920 W 3rd St, Los Angeles, CA 90048",
+            "3134 Glendale Blvd, Los Angeles, CA 90039"
+        ],
+        "Price": "$"
+    },
+    "Tea Master Matcha Cafe": {
+        "Name": "Tea Master Matcha Cafe",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream",
+            "Asian",
+            "Matcha"
+        ],
+        "Locations": [
+            "34.047282,-118.238885"
+        ],
+        "Addresses": [
+            "450 E 2nd St, Los Angeles, CA 90012"
+        ],
+        "Price": "$"
+    },
+    "Millet Crepe": {
+        "Name": "Millet Crepe",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Warm Dessert"
+        ],
+        "Locations": [
+            "34.0407148,-118.4435611"
+        ],
+        "Addresses": [
+            "2011 Sawtelle Blvd, Los Angeles, CA 90025"
+        ],
+        "Price": "$"
+    },
+    "Zooies": {
+        "Name": "Zooies",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Warm Dessert",
+            "Cookies"
+        ],
+        "Locations": [
+            "34.0314701,-118.4000802"
+        ],
+        "Addresses": [
+            "9815 National Blvd, Los Angeles, CA 90034"
+        ],
+        "Price": "$"
+    },
+    "The Pie Hole": {
+        "Name": "The Pie Hole",
+        "Areas": [
+            "Downtown",
+            "Hollywood"
+        ],
+        "Categories": [
+            "Dessert"
+        ],
+        "Locations": [
+            "34.045298,-118.2364372",
+            "34.1015368,-118.327205"
+        ],
+        "Addresses": [
+            "714 Traction Ave, Los Angeles, CA 90013",
+            "6314 Hollywood Blvd, Los Angeles, CA 90028"
+        ],
+        "Price": "$"
+    },
+    "Sidecar Donuts": {
+        "Name": "Sidecar Donuts",
+        "Areas": [
+            "Santa Monica",
+            "Mid City"
+        ],
+        "Categories": [
+            "Dessert",
+            "Warm Dessert"
+        ],
+        "Locations": [
+            "34.0194929,-118.4978579",
+            "34.0716466,-118.3614151"
+        ],
+        "Addresses": [
+            "631 Wilshire Blvd, Santa Monica, CA 90401",
+            "175 S Fairfax Ave Unit D, Los Angeles, CA 90036"
+        ],
+        "Price": "$"
+    },
+    "The Bigg Chill": {
+        "Name": "The Bigg Chill",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "34.0440814,-118.4312273"
+        ],
+        "Addresses": [
+            "10850 W Olympic Blvd, Los Angeles, CA 90064"
+        ],
+        "Price": "$"
+    },
+    "Go Greek": {
+        "Name": "Go Greek",
+        "Areas": [
+            "West LA",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "34.0686069,-118.4056122",
+            "34.0154861,-118.4997041"
+        ],
+        "Addresses": [
+            "452 N Bedford Dr, Beverly Hills, CA 90210",
+            "1431 Ocean Ave, Santa Monica, CA 90401"
+        ],
+        "Price": "$"
+    },
+    "Jeni's Splendid Ice Creams": {
+        "Name": "Jeni's Splendid Ice Creams",
+        "Areas": [
+            "Santa Monica",
+            "Mid City"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "33.9985858,-118.4728975",
+            "34.076468,-118.3237386"
+        ],
+        "Addresses": [
+            "540 Rose Ave, Venice, CA 90291",
+            "123 N Larchmont Blvd, Los Angeles, CA 90004"
+        ],
+        "Price": "$"
+    },
+    "McConnell's Fine Ice Creams": {
+        "Name": "McConnell's Fine Ice Creams",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "34.0509997,-118.2493926"
+        ],
+        "Addresses": [
+            "317 S Broadway, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Pho 79": {
+        "Name": "Pho 79",
+        "Areas": [
+            "OC"
+        ],
+        "Categories": [
+            "Asian",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "33.7522901,-117.9573182"
+        ],
+        "Addresses": [
+            "9941 Hazard Ave, Garden Grove, CA 92844"
+        ],
+        "Price": "$"
+    },
+    "La Super Birria": {
+        "Name": "La Super Birria",
+        "Areas": [
+            "OC"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "33.7453337,-117.8791572"
+        ],
+        "Addresses": [
+            "1041 W 1st St, Santa Ana, CA 92703"
+        ],
+        "Price": "$"
+    },
+    "Rye Goods": {
+        "Name": "Rye Goods",
+        "Areas": [
+            "OC"
+        ],
+        "Categories": [
+            "American",
+            "Bakery"
+        ],
+        "Locations": [
+            "33.6181665,-117.9285467"
+        ],
+        "Addresses": [
+            "3418 Via Lido, Newport Beach, CA 92663"
+        ],
+        "Price": "$"
+    },
+    "Teddy's Red Tacos": {
+        "Name": "Teddy's Red Tacos",
+        "Areas": [
+            "Santa Monica",
+            "Downtown",
+            "South LA"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Tacos",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "33.987241,-118.4728143",
+            "34.0664694,-118.2497427",
+            "33.989338,-118.262232"
+        ],
+        "Addresses": [
+            "46 Windward Ave, Venice, CA 90291",
+            "1140 Sunset Blvd, Los Angeles, CA 90012",
+            "731 E Slauson Ave, Los Angeles, CA 90011"
+        ],
+        "Price": "$"
+    },
+    "Kinn": {
+        "Name": "Kinn",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Asian Fusion",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.063597,-118.307929"
+        ],
+        "Addresses": [
+            "3905 W 6th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$$$$"
+    },
+    "Xiang La Hui": {
+        "Name": "Xiang La Hui",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.092145,-118.133395"
+        ],
+        "Addresses": [
+            "621 W Main St, Alhambra, CA 91801"
+        ],
+        "Price": "$$"
+    },
+    "Noodle Harmony": {
+        "Name": "Noodle Harmony",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Noodles",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.062539,-118.132662"
+        ],
+        "Addresses": [
+            "735 W Garvey Ave, Monterey Park, CA 91754"
+        ],
+        "Price": "$$"
+    },
+    "Mama Lu's Dumpling House": {
+        "Name": "Mama Lu's Dumpling House",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.062621,-118.121734"
+        ],
+        "Addresses": [
+            "153 E Garvey Ave, Monterey Park, CA 91755"
+        ],
+        "Price": "$$"
+    },
+    "Mason's Dumpling Shop": {
+        "Name": "Mason's Dumpling Shop",
+        "Areas": [
+            "Eagle Rock"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.1105418,-118.191903"
+        ],
+        "Addresses": [
+            "5803 N Figueroa St, Los Angeles, CA 90042"
+        ],
+        "Price": "$"
+    },
+    "Yang's Kitchen": {
+        "Name": "Yang's Kitchen",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Asian Fusion",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.094543,-118.127974"
+        ],
+        "Addresses": [
+            "112 W Main St, Alhambra, CA 91801"
+        ],
+        "Price": "$$"
+    },
+    "Lunasia Dumplings": {
+        "Name": "Lunasia Dumplings",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.092653,-118.132173"
+        ],
+        "Addresses": [
+            "500 W Main St, Alhambra, CA 91801"
+        ],
+        "Price": "$$"
+    },
+    "Chongqing Special Noodles": {
+        "Name": "Chongqing Special Noodles",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Noodles",
+            "Soup",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.103335,-118.09217"
+        ],
+        "Addresses": [
+            "708 E Las Tunas Dr, San Gabriel, CA 91776"
+        ],
+        "Price": "$"
+    },
+    "Sichuan Impression": {
+        "Name": "Sichuan Impression",
+        "Areas": [
+            "SGV",
+            "West LA",
+            "OC"
+        ],
+        "Categories": [
+            "Asian",
+            "Chinese",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.077256,-118.14451",
+            "34.0482305,-118.4432821",
+            "33.7352403,-117.8122489"
+        ],
+        "Addresses": [
+            "1900 W Valley Blvd, Alhambra, CA 91803",
+            "11057 Santa Monica Blvd, Los Angeles, CA 90025",
+            "13816 Red Hill Ave, Tustin, CA 92780"
+        ],
+        "Price": "$$"
+    },
+    "Slurpin' Ramen": {
+        "Name": "Slurpin' Ramen",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.05759,-118.306725"
+        ],
+        "Addresses": [
+            "3500 W 8th St, Los Angeles, CA 90005"
+        ],
+        "Price": "$"
+    },
+    "Twozone Chicken": {
+        "Name": "Twozone Chicken",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "Korean",
+            "Asian Fusion",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.057588,-118.3070407"
+        ],
+        "Addresses": [
+            "addr"
+        ],
+        "Price": "$"
+    },
+    "Surawon Tofu House": {
+        "Name": "Surawon Tofu House",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Soup",
+            "KBBQ",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0527276,-118.2955297"
+        ],
+        "Addresses": [
+            "2833 W Olympic Blvd, Los Angeles, CA 90006"
+        ],
+        "Price": "$$"
+    },
+    "Michin Dak": {
+        "Name": "Michin Dak",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "Korean",
+            "Asian Fusion",
+            "Sandwiches",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.063524,-118.294384"
+        ],
+        "Addresses": [
+            "3324 W 6th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$"
+    },
+    "88 Hotdog": {
+        "Name": "88 Hotdog",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "American",
+            "Asian Fusion",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.063606,-118.306291"
+        ],
+        "Addresses": [
+            "3825 W 6th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$"
+    },
+    "La Cevicheria": {
+        "Name": "La Cevicheria",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Peruvian",
+            "Latino",
+            "Seafood",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.04768,-118.3229229"
+        ],
+        "Addresses": [
+            "3809 W Pico Blvd, Los Angeles, CA 90019"
+        ],
+        "Price": "$"
+    },
+    "Dave's Hot Chicken": {
+        "Name": "Dave's Hot Chicken",
+        "Areas": [
+            "Koreatown",
+            "West LA",
+            "Hollywood",
+            "Mid City"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "American",
+            "Spicy",
+            "Sandwiches",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0616656,-118.2995829",
+            "34.018543,-118.406917",
+            "34.088164,-118.30909",
+            "34.0794644,-118.3615469"
+        ],
+        "Addresses": [
+            "3462 Wilshire Blvd, Los Angeles, CA 90010",
+            "10704 Venice Blvd., Culver City, CA 90232",
+            "970 N Western Ave, Los Angeles, CA 90029",
+            "465 N Fairfax Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$"
+    },
+    "hanchic.": {
+        "Name": "hanchic.",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Asian Fusion",
+            "Italian",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.056752,-118.282244"
+        ],
+        "Addresses": [
+            "2500 W 8th St #103, Los Angeles, CA 90057"
+        ],
+        "Price": "$$"
+    },
+    "Hae Jang Chon": {
+        "Name": "Hae Jang Chon",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.063606,-118.306244"
+        ],
+        "Addresses": [
+            "3821 W 6th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$$"
+    },
+    "Man Soo Korean BBQ": {
+        "Name": "Man Soo Korean BBQ",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.057810,-118.303970"
+        ],
+        "Addresses": [
+            "3429 W 8th St, Los Angeles, CA 90005"
+        ],
+        "Price": "$$"
+    },
+    "Meat Love Korean BBQ": {
+        "Name": "Meat Love Korean BBQ",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Lunch",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0497242,-118.3091417"
+        ],
+        "Addresses": [
+            "1145 S Western Ave, Los Angeles, CA 90006"
+        ],
+        "Price": "$$"
+    },
+    "mdk noodles": {
+        "Name": "mdk noodles",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0616378,-118.3043657"
+        ],
+        "Addresses": [
+            "3630 Wilshire Blvd, Los Angeles, CA 90010"
+        ],
+        "Price": "$$"
+    },
+    "Isaan Station": {
+        "Name": "Isaan Station",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Thai",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0738706,-118.3091623"
+        ],
+        "Addresses": [
+            "25 N Western Ave unit 111, Los Angeles, CA 90004"
+        ],
+        "Price": "$"
+    },
+    "Saikai Ramen": {
+        "Name": "Saikai Ramen",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Japanese",
+            "Ramen",
+            "Noodles",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.074763,-118.309216"
+        ],
+        "Addresses": [
+            "209 N Western Ave # B, Los Angeles, CA 90004"
+        ],
+        "Price": "$$"
+    },
+    "Kobawoo House": {
+        "Name": "Kobawoo House",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0600337,-118.2909312"
+        ],
+        "Addresses": [
+            "698 S Vermont Ave #109, Los Angeles, CA 90005"
+        ],
+        "Price": "$$"
+    },
+    "Myung In Dumplings": {
+        "Name": "Myung In Dumplings",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Dumplings",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.052683,-118.303246"
+        ],
+        "Addresses": [
+            "3109 W Olympic Blvd B, Los Angeles, CA 90006"
+        ],
+        "Price": "$"
+    },
+    "Guelaguetza": {
+        "Name": "Guelaguetza",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Classic LA",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0525385,-118.3006177"
+        ],
+        "Addresses": [
+            "3014 W Olympic Blvd, Los Angeles, CA 90006"
+        ],
+        "Price": "$$"
+    },
+    "Dan Sung Sa": {
+        "Name": "Dan Sung Sa",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Bars",
+            "Loud",
+            "Dinner",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.063674,-118.294302"
+        ],
+        "Addresses": [
+            "3317 W 6th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$$"
+    },
+    "Park's BBQ": {
+        "Name": "Park's BBQ",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "KBBQ",
+            "Classic LA",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.053996,-118.291692"
+        ],
+        "Addresses": [
+            "955 S Vermont Ave G, Los Angeles, CA 90006"
+        ],
+        "Price": "$$$"
+    },
+    "Han Bat Shul Lung Tang": {
+        "Name": "Han Bat Shul Lung Tang",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Soup",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0654079,-118.3097484"
+        ],
+        "Addresses": [
+            "4163 W 5th St, Los Angeles, CA 90020"
+        ],
+        "Price": "$$"
+    },
+    "Kogi": {
+        "Name": "Kogi",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "Asian Fusion",
+            "Korean",
+            "Mexican",
+            "Tacos",
+            "Innovative",
+            "Asian",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.025360,-118.411620"
+        ],
+        "Addresses": [
+            "3434 Overland Ave, Los Angeles, CA 90034"
+        ],
+        "Price": "$"
+    },
+    "Tilt Coffee": {
+        "Name": "Tilt Coffee",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Asian",
+            "Coffee",
+            "Matcha"
+        ],
+        "Locations": [
+            "34.0481785,-118.2463485"
+        ],
+        "Addresses": [
+            "334 S Main St Kiosk#1, Los Angeles, CA 90013"
+        ],
+        "Price": "$"
+    },
+    "Bohemian House of Espresso + Chai": {
+        "Name": "Bohemian House of Espresso + Chai",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Coffee",
+            "Good to Work"
+        ],
+        "Locations": [
+            "34.045468,-118.250285"
+        ],
+        "Addresses": [
+            "109 W 6th St, Los Angeles, CA 90014"
+        ],
+        "Price": "$"
+    },
+    "The Varnish": {
+        "Name": "The Varnish",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Bars",
+            "Quiet",
+            "Speakeasy"
+        ],
+        "Locations": [
+            "34.0448335,-118.2495584"
+        ],
+        "Addresses": [
+            "118 E 6th St, Los Angeles, CA 90014"
+        ],
+        "Price": "$$"
+    },
+    "Death & Co.": {
+        "Name": "Death & Co.",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Bars",
+            "Loud",
+            "Speakeasy"
+        ],
+        "Locations": [
+            "34.045724,-118.236008"
+        ],
+        "Addresses": [
+            "818 E 3rd St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$"
+    },
+    "Alchemist Coffee Project": {
+        "Name": "Alchemist Coffee Project",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Coffee",
+            "Matcha",
+            "Good to Work"
+        ],
+        "Locations": [
+            "34.0600357,-118.2909322"
+        ],
+        "Addresses": [
+            "698 S Vermont Ave Ste 103, Los Angeles, CA 90005"
+        ],
+        "Price": "$"
+    },
+    "The Wolves": {
+        "Name": "The Wolves",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Bars",
+            "Quiet"
+        ],
+        "Locations": [
+            "34.047082,-118.2503445"
+        ],
+        "Addresses": [
+            "519 S Spring St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$"
+    },
+    "Cognoscenti Coffee": {
+        "Name": "Cognoscenti Coffee",
+        "Areas": [
+            "Downtown",
+            "West LA"
+        ],
+        "Categories": [
+            "Coffee"
+        ],
+        "Locations": [
+            "34.0441539,-118.2576822",
+            "34.0315273,-118.3776783"
+        ],
+        "Addresses": [
+            "868 S Olive St, Los Angeles, CA 90014",
+            "6114 Washington Blvd, Culver City, CA 90232"
+        ],
+        "Price": "$"
+    },
+    "The Thirsty Crow": {
+        "Name": "The Thirsty Crow",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Bars",
+            "Quiet"
+        ],
+        "Locations": [
+            "34.0837033,-118.2737478"
+        ],
+        "Addresses": [
+            "2939 Sunset Blvd, Los Angeles, CA 90026"
+        ],
+        "Price": "$$"
+    },
+    "The Queensberry": {
+        "Name": "The Queensberry",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Bars",
+            "Speakeasy"
+        ],
+        "Locations": [
+            "34.04717,-118.26108"
+        ],
+        "Addresses": [
+            "Figueroa Alley on 8th Street, between Flower &, Figueroa St, Los Angeles, CA 90017"
+        ],
+        "Price": "$$"
+    },
+    "Wushiland Boba": {
+        "Name": "Wushiland Boba",
+        "Areas": [
+            "West LA",
+            "SGV"
+        ],
+        "Categories": [
+            "Dessert",
+            "Boba",
+            "Asian"
+        ],
+        "Locations": [
+            "34.058905,-118.419345",
+            "34.0797408,-118.101253"
+        ],
+        "Addresses": [
+            "10250 Santa Monica Blvd Ste 2770, Los Angeles, CA 90067",
+            "140 W Valley Blvd Ste 104, San Gabriel, CA 91776"
+        ],
+        "Price": "$"
+    },
+    "Hilltop Coffee + Kitchen": {
+        "Name": "Hilltop Coffee + Kitchen",
+        "Areas": [
+            "South LA",
+            "Eagle Rock"
+        ],
+        "Categories": [
+            "Coffee",
+            "Good to Work"
+        ],
+        "Locations": [
+            "33.9889715,-118.35288",
+            "34.1225809,-118.2240093"
+        ],
+        "Addresses": [
+            "4427 W Slauson Ave, Los Angeles, CA 90043",
+            "4253 Eagle Rock Blvd, Los Angeles, CA 90065"
+        ],
+        "Price": "$"
+    },
+    "Lodge Bread Co.": {
+        "Name": "Lodge Bread Co.",
+        "Areas": [
+            "West LA"
+        ],
+        "Categories": [
+            "American",
+            "Breakfast",
+            "Brunch",
+            "Bakery",
+            "Lunch"
+        ],
+        "Locations": [
+            "33.9977951,-118.4202667"
+        ],
+        "Addresses": [
+            "11918 Washington Blvd, Los Angeles, CA 90066"
+        ],
+        "Price": "$$"
+    },
+    "Animal": {
+        "Name": "Animal",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "American",
+            "Innovative",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0789326,-118.3615441"
+        ],
+        "Addresses": [
+            "435 N Fairfax Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$$$$"
+    },
+    "Churros Don Abel": {
+        "Name": "Churros Don Abel",
+        "Areas": [
+            "East LA"
+        ],
+        "Categories": [
+            "Mexican",
+            "Latino",
+            "Dessert",
+            "Warm Dessert",
+            "Late Night"
+        ],
+        "Locations": [
+            "34.0192099,-118.1520412"
+        ],
+        "Addresses": [
+            "5458 Whittier Blvd, Los Angeles, CA 90022"
+        ],
+        "Price": "$"
+    },
+    "Pitchoun!": {
+        "Name": "Pitchoun!",
+        "Areas": [
+            "Mid City",
+            "Downtown"
+        ],
+        "Categories": [
+            "French",
+            "Bakery",
+            "Brunch"
+        ],
+        "Locations": [
+            "34.076037,-118.376589",
+            "34.0488687,-118.2535311"
+        ],
+        "Addresses": [
+            "8500 Beverly Blvd #103, Los Angeles, CA 90048",
+            "545 S Olive St, Los Angeles, CA 90013"
+        ],
+        "Price": "$$"
+    },
+    "Republique": {
+        "Name": "Republique",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "French",
+            "Bakery",
+            "Brunch",
+            "Classic LA",
+            "Innovative",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0632438659668,-118.3440170288086"
+        ],
+        "Addresses": [
+            "624 S La Brea Ave, Los Angeles, CA 90036"
+        ],
+        "Price": "$$$"
+    },
+    "Yardbird": {
+        "Name": "Yardbird",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "Fried Chicken",
+            "American",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.074920,-118.377520"
+        ],
+        "Addresses": [
+            "8500 Beverly Blvd Suite 112, Los Angeles, CA 90048"
+        ],
+        "Price": "$$"
+    }
+}

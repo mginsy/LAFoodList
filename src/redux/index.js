@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import userReducer from './user'
+import updateReducer from './updateSlice'
 
-const store = configureStore({
-    reducer: {
-        user: userReducer,
-    },
+export default configureStore({
+  reducer: {
+    updater: updateReducer
+  },
 })
-
-export default store

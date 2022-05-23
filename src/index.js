@@ -4,14 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './pages'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux'
 import store from './redux'
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+    <BrowserRouter>
+        <Provider store={store}>
+            <App /> 
+        </Provider>
+    </BrowserRouter>,
     document.getElementById('root')
 )
 

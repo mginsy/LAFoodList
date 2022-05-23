@@ -1,0 +1,28 @@
+{
+    "AreasADMINONLY": {
+        "Downtown": [],
+        "DowntownNames": [],
+        "Eagle Rock": [],
+        "Eagle RockNames": [],
+        "East LA": [],
+        "East LANames": [],
+        "Hollywood": [],
+        "HollywoodNames": [],
+        "Koreatown": [],
+        "KoreatownNames": [],
+        "Mid City": [],
+        "Mid CityNames": [],
+        "OC": [],
+        "OCNames": [],
+        "SGV": [],
+        "SGVNames": [],
+        "Santa Monica": [],
+        "Santa MonicaNames": [],
+        "South LA": [],
+        "South LANames": [],
+        "The Valley": [],
+        "The ValleyNames": [],
+        "West LA": [],
+        "West LANames": []
+    }
+}
