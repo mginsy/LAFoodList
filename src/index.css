@@ -115,9 +115,6 @@ a {
   transition: 0.25s all;
 }
 
-.primary {
-}
-
 .box {
   border: 1px solid black;
   min-height: 50px;
@@ -175,6 +172,21 @@ a {
   align-items: center;
 }
 
+.inMapRowText{
+  text-align: left;
+}
+
+.fullMapRestaurantText{
+  text-align: left;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.restLinkMoney{
+  display: flex;
+  justify-content: space-between;
+}
+
 .recommend-text-small{
   color:#000000;
   font-size:smaller;
@@ -192,9 +204,19 @@ a {
   font-size: larger;
   font-style: italic;
 }
+
+.lol-text-big{
+  color:#000000;
+  font-size: larger;
+}
+
 .categories-text-small{
   color:#000000;
   font-size: small;
+}
+.dollar-text-med{
+  color:#000000;
+  font-size: medium;
 }
 
 .GMap{

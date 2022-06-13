@@ -18,6 +18,8 @@ let totAreas = otherData["AreasADMINONLY"]
 const totAreasReset = structuredClone(totAreas)
 delete data.AreasADMINONLY
 
+const priceOptions = ["","$","$$","$$$","$$$$"]
+
 //initialize all values
 
 let markerList=[];
@@ -25,9 +27,17 @@ let markerList=[];
 let categoryList = [];
 let areaList = [];
 let listList = [];
+let gleList = [];
+let priceList = [];
+let restaurantList = [];
 
 let categoryListValues = [];
 let areaListValues = [];
+let gleListValues = [];
+let priceListValues = [];
+
+let gleFlag = false;
+let priceFlag = false;
 
 function resetLists(){
   markerList=[];
@@ -35,6 +45,7 @@ function resetLists(){
   categoryList = [];
   areaList = [];
   listList = [];
+  restaurantList = [];
 
   categoryListValues = [];
   areaListValues = [];
@@ -42,11 +53,19 @@ function resetLists(){
   totAreas = structuredClone(totAreasReset)
 }
 
-function createPath(selectedPlace){
-  console.log(selectedPlace);
-  let restName = selectedPlace.name
+function resetPrices(){
+  gleList = [];
+  priceList = [];
+  
+  gleListValues = [];
+  priceListValues = [];
+
+  gleFlag = false;
+  priceFlag = false;
+}
+
+function createPath(restName, locationNumber){
   if(!restName) return
-  let locationNumber = selectedPlace.locationNumber
   return "/" + restName.replaceAll(" ","-") + locationNumber
 }
 
@@ -59,6 +78,8 @@ class MapPage extends Component {
     refreshMap: true,
     category: "",
     area: "",
+    gle: "",
+    price: "",
     screenWidth: 0,
     screenHeight: 0,
   };
@@ -81,13 +102,56 @@ class MapPage extends Component {
     {this.setState({ category: event.target.value, 
                      showingInfoWindow: false, 
                      activeMarker: null,
-                     refreshMap: true, });}
+                     refreshMap: true,
+                     gle: "",
+                     price: "" });}
 
   handleAreaChange = (event) =>
-    {this.setState({ area: event.target.value, 
+    {
+      this.setState({ area: event.target.value, 
                      showingInfoWindow: false, 
                      activeMarker: null,
-                     refreshMap: true, });}
+                     refreshMap: true,
+                     gle: "",
+                     price: "" });}
+
+  handleAreaChangeClick = param => e => {
+    this.setState({ area: param, 
+      showingInfoWindow: false, 
+      activeMarker: null,
+      refreshMap: true,
+      gle: "",
+      price: "" });
+  };
+
+  handlePriceChange = (event) =>
+    {
+      let refMap = this.state.gle !== ""
+      this.setState({ price: event.target.value, 
+                     showingInfoWindow: false, 
+                     activeMarker: null,
+                     refreshMap: refMap, });}
+                
+  handleGLEChange = (event) =>
+    {
+      let refMap = this.state.price !== ""
+      this.setState({ gle: event.target.value, 
+                     showingInfoWindow: false, 
+                     activeMarker: null,
+                     refreshMap: refMap });}
+
+  recommendCategory = (event) =>
+  {
+    let randomCategoryPick =  Math.floor(Math.random() * categoryList.length);
+    this.setState({
+      category: categoryListValues[randomCategoryPick], 
+      showingInfoWindow: false, 
+      activeMarker: null,
+      refreshMap: true,
+      gle: "",
+      price: ""
+    })
+  }
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -118,46 +182,54 @@ render() {
 
     for (let key in data){ // creates markers and filters categories
       let currentRestaurant = new Restaurant(key, data)
-      
-      if ((this.state.area === "" || currentRestaurant.Areas.includes(this.state.area))){
-        for (let categoryNum in currentRestaurant.Categories){ // creates categories
-          let category = currentRestaurant.Categories[categoryNum];
-          if (!categoryListValues.includes(category)){
-            categoryListValues.splice(d3.bisectLeft(categoryListValues,category),0,category)
-            categoryList.splice(d3.bisectLeft(categoryListValues,category),0,<MenuItem value={category}>{category}</MenuItem>)
-          }
-        }
-      }
-  
-      if ((this.state.category === "" || currentRestaurant.Categories.includes(this.state.category))){ // markers + areas
-        for (let areaNum in currentRestaurant.Areas){ // creates areas
-          let area = currentRestaurant.Areas[areaNum];
-          if (!areaListValues.includes(area)){
-            areaListValues.splice(d3.bisectLeft(areaListValues,area),0,area)
-            areaList.splice(d3.bisectLeft(areaListValues,area),0,<MenuItem value={area}>{area}</MenuItem>)
-          }
-        }
-        if (this.state.area === "" || currentRestaurant.Areas.includes(this.state.area)){ //markers + map list text
-          if (this.state.area === ""){ // if no area is selected
-            for (let locationNum in currentRestaurant.Locations){
-              let location = currentRestaurant.Locations[locationNum];
 
-              let currentArea = currentRestaurant.Areas[locationNum];
-              let mapListText = currentRestaurant.createMapListText();
-              totAreas[currentArea+"Names"].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
-              totAreas[currentArea].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
-
-              markerList = currentRestaurant.createMarker(locationNum, location, markerList, this.onMarkerClick);
+      if(currentRestaurant.fitsPrice(this.state.gle, this.state.price))
+      {
+        if ((this.state.area === "" || currentRestaurant.Areas.includes(this.state.area))){
+          for (let categoryNum in currentRestaurant.Categories){ // creates categories
+            let category = currentRestaurant.Categories[categoryNum];
+            if (!categoryListValues.includes(category)){
+              categoryListValues.splice(d3.bisectLeft(categoryListValues,category),0,category)
+              categoryList.splice(d3.bisectLeft(categoryListValues,category),0,<MenuItem value={category}>{category}</MenuItem>)
             }
           }
-          else{ // if area is selected
-            let location = currentRestaurant.Locations[currentRestaurant.Areas.indexOf(this.state.area)];
+        }
+    
+        if ((this.state.category === "" || currentRestaurant.Categories.includes(this.state.category))){ // markers + areas
+          for (let areaNum in currentRestaurant.Areas){ // creates areas
+            let area = currentRestaurant.Areas[areaNum];
+            if (!areaListValues.includes(area)){
+              areaListValues.splice(d3.bisectLeft(areaListValues,area),0,area)
+              areaList.splice(d3.bisectLeft(areaListValues,area),0,<MenuItem value={area}>{area}</MenuItem>)
+            }
+          }
+          if (this.state.area === "" || currentRestaurant.Areas.includes(this.state.area)){ //markers + map list text
+            if (this.state.area === ""){ // if no area is selected
+              for (let locationNum in currentRestaurant.Locations){
+                let location = currentRestaurant.Locations[locationNum];
 
-            let mapListText = currentRestaurant.createMapListText();
-            totAreas[this.state.area+"Names"].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
-            totAreas[this.state.area].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
+                let currentArea = currentRestaurant.Areas[locationNum];
+                let mapListText = currentRestaurant.createMapListText(locationNum);
+                totAreas[currentArea+"Names"].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
+                totAreas[currentArea].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
+                
+                restaurantList.push({restaurant: currentRestaurant,
+                                    locationNum: locationNum});
+                markerList = currentRestaurant.createMarker(locationNum, location, markerList, this.onMarkerClick);
+              }
+            }
+            else{ // if area is selected
+              let locationNum = currentRestaurant.Areas.indexOf(this.state.area)
+              let location = currentRestaurant.Locations[locationNum];
 
-            markerList = currentRestaurant.createMarker(location, markerList, this.onMarkerClick);
+              let mapListText = currentRestaurant.createMapListText(locationNum);
+              totAreas[this.state.area+"Names"].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
+              totAreas[this.state.area].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
+
+              restaurantList.push({restaurant: currentRestaurant,
+                                  locationNum: locationNum});
+              markerList = currentRestaurant.createMarker(locationNum, location, markerList, this.onMarkerClick);
+            }
           }
         }
       }
@@ -166,8 +238,8 @@ render() {
       let currentArea = areaListValues[areaNum]
       if (totAreas[currentArea].length !== 0){
         listList.push(
-          <div className = "row inMapRow">
-            <p className='recommend-text-big'>{currentArea}</p>
+          <div className = "fullMapRestaurantText">
+            <Link className='recommend-text-big' value={currentArea} onClick={this.handleAreaChangeClick(currentArea)} >{currentArea}</Link>
           </div>
         )
         listList.push(
@@ -176,6 +248,108 @@ render() {
       }
     }
   }
+
+  resetPrices()
+  for (let restNum in restaurantList){
+    let currentRestaurant = restaurantList[restNum].restaurant;
+    if (this.state.gle !== "" && priceListValues.length !== 4){ //creates price list
+      let originalLength = priceListValues.length;
+      console.log(currentRestaurant.Name)
+      if(this.state.gle==="≤"){
+        for (let currPrice = currentRestaurant.Price.length; currPrice <= 4-originalLength; currPrice++){
+          priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,priceOptions[currPrice])
+          priceList.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,
+            <MenuItem value={priceOptions[currPrice]}>
+            {priceOptions[currPrice]}
+            </MenuItem>)
+        }
+      }
+      else if (this.state.gle==="≥"){
+        for (let currPrice = currentRestaurant.Price.length; currPrice >= originalLength; currPrice--){
+          priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,priceOptions[currPrice])
+          priceList.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,
+            <MenuItem value={priceOptions[currPrice]}>
+              {priceOptions[currPrice]}
+            </MenuItem>)
+        }
+      }
+      else{
+        if (!priceListValues.includes(currentRestaurant.Price)){
+          priceListValues.splice(d3.bisectLeft(priceListValues,currentRestaurant.Price),0,currentRestaurant.Price)
+          priceList.splice(d3.bisectLeft(priceListValues,currentRestaurant.Price),0,
+            <MenuItem value={currentRestaurant.Price}>
+              {currentRestaurant.Price}
+            </MenuItem>)
+        }
+      }
+      if (priceListValues.length === 4){
+        priceFlag = true;
+      }
+    }
+    else if (!priceFlag){
+      for (let i = 1; i <= 4; i++){
+        priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[i]),0,priceOptions[i])
+        priceList.splice(d3.bisectLeft(priceListValues,priceOptions[i]),0,
+          <MenuItem value={priceOptions[i]}>
+            {priceOptions[i]}
+          </MenuItem>)
+      }
+      priceFlag = true;
+    }
+    
+    if (this.state.price !== "" && gleListValues.length !== 3){ //creates GLE list
+      if (this.state.price.length === currentRestaurant.Price.length && !gleListValues.includes("=")){
+        gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
+        gleList.splice(d3.bisectLeft(gleListValues,"="),0,
+        <MenuItem value="=">
+          Equal To
+        </MenuItem>
+        )
+      }
+      else if (this.state.price.length >= currentRestaurant.Price.length && !gleListValues.includes("≤")){
+        gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
+        gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
+        <MenuItem value="≤">
+          Less Than || =
+        </MenuItem>
+        )
+      }
+      else if (this.state.price.length <= currentRestaurant.Price.length && !gleListValues.includes("≥")){
+        gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
+        gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
+        <MenuItem value="≥">
+          Greater Than || =
+        </MenuItem>
+        )
+      }
+      if (gleListValues.length === 3){
+        gleFlag = true;
+      }
+    }
+    else if (!gleFlag){
+      gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
+      gleList.splice(d3.bisectLeft(gleListValues,"="),0,
+      <MenuItem value="=">
+        Equal To
+      </MenuItem>
+      )
+      gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
+      gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
+      <MenuItem value="≤">
+        Less Than || =
+      </MenuItem>
+      )
+      gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
+      gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
+      <MenuItem value="≥">
+        Greater Than || =
+      </MenuItem>
+      )
+      gleFlag = true;
+    }
+  }
+  
+  let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
 
   const mapStyles = {
     width: '50%',
@@ -188,13 +362,6 @@ render() {
         <div className="column mapCol">
           <div className = "row inMapRow topMapPage">
             <div className = "col">
-            <BrowserRouter>
-            <Link className="MapTagText" to={{
-                      pathname: '/restaurantPage',
-                      state: {restaurantName: "hi"}
-                    }} >dflkfdkljfds
-            </Link>
-                  </BrowserRouter>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <InputLabel id="demo-select-small">Category</InputLabel>
                 <Select
@@ -210,7 +377,7 @@ render() {
                   {categoryList}
                 </Select>
               </FormControl>
-              <p className='recommend-text-small'>Recommend Me!</p>
+              <Link className='recommend-text-small' onClick={this.recommendCategory} >Recommend Me!</Link>
             </div>
             <div className = "col">
               <h4 className='in-between-text'>in</h4>
@@ -232,13 +399,52 @@ render() {
                 </Select>
               </FormControl>
             </div>
+            <div className = "col">
+              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={this.state.gle}
+                  label="Area"
+                  onChange={this.handleGLEChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {gleList}
+                </Select>
+              </FormControl>
+            </div>
+            <div className = "col">
+              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="demo-select-small">Price</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={this.state.price}
+                  label="Price"
+                  onChange={this.handlePriceChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {priceList}
+                </Select>
+              </FormControl>
+            </div>
           </div>
           <FullPage>
             {listList}
           </FullPage>
         </div>
         <div className ="column mapCol">
-          <p className='recommend-text-big topMapPage'>Recommend Me!</p>
+          <Link className='recommend-text-big' to={{
+                      pathname: restaurantList[randomRestaurantPick].restaurant.createPath(restaurantList[randomRestaurantPick].locationNum),
+                      }} >
+            Recommend Me!
+          </Link>
+          
           <Map
             google={this.props.google}
             zoom={10}
@@ -260,18 +466,10 @@ render() {
             >
                   <BrowserRouter>
                     <Link  to={{
-                      pathname: createPath(this.state.selectedPlace),
+                      pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
                     }} >{this.state.selectedPlace.name}
                     </Link>
                   </BrowserRouter>
-                  {/* 
-                    <Link className="MapTagText" to={{
-                        pathname: '/restaurantPage',
-                        state: {restaurantName: "bye"}
-                      }} >dflkfdkljfds
-                    </Link>
-                  </BrowserRouter> */}
-                  
             </InfoWindow>
             
           </Map>
@@ -283,7 +481,7 @@ render() {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "GOOGLEMAPSAPIKEY"
+  apiKey: "GMAPSKEY"
 })(MapPage)
 
 //export default MapPage

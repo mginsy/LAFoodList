@@ -1,4 +1,5 @@
 import { Marker } from 'google-maps-react';
+import {Link, Router, BrowserRouter, MemoryRouter} from 'react-router-dom';
 
 export default class Restaurant{
     constructor(key, data){
@@ -7,6 +8,12 @@ export default class Restaurant{
         this.Categories = data[key].Categories
         this.Locations = data[key].Locations
         this.Name = data[key].Name
+        this.Price = data[key].Price
+    }
+
+    createPath(locationNumber){
+        if(!this.Name) return
+        return "/" + this.Name.replaceAll(" ","-") + locationNumber
     }
 
     createMarker(locationNum, location, markerList, onMarkerClick){
@@ -31,17 +38,36 @@ export default class Restaurant{
         return markerList;
     }
 
-    createMapListText(){
+    createMapListText(locationNum){
         let catStr = this.Categories.toString().replaceAll(",",", ")
         return(
-          <div>
-            <div className = "row inMapRow">
-              <p className='restaurant-text-big'>{this.Name}</p>
-            </div>
-            <div className = "row inMapRow">
+          <div className="fullMapRestaurantText">
+            <div className = "inMapRowText">
+              <div className = "restLinkMoney">
+                  <Link className='restaurant-text-big' to={{
+                      pathname: this.createPath(locationNum),
+                      }} >{this.Name}
+                  </Link>
+                  <p className='dollar-text-med'>{this.Price}</p>
+              </div>
               <p className='categories-text-small'>{catStr}</p>
             </div>
           </div>
         )
+    }
+
+    fitsPrice(gle,price){
+      if(gle==="" || price===""){
+        return true;
+      }
+      if(gle==="≤"){
+        return this.Price <= price;
+      }
+      else if (gle==="≥"){
+        return this.Price >= price;
+      }
+      else{
+        return this.Price === price;
+      }
     }
 }
