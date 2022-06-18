@@ -17,7 +17,8 @@
         "Addresses": [
             "11060 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "A lovely sushi place with great ambiance, relatively affordable omakase, and delicious, fresh fish.\n"
     },
     "C&M Cafe": {
         "Name": "C&M Cafe",
@@ -38,7 +39,8 @@
         "Addresses": [
             "10640 Woodbine St Suite 104, Los Angeles, CA 90034"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "The breakfast/brunch game changer. Best breakfast burritos on the block and you can quote me on that.\n"
     },
     "Iron Teapot": {
         "Name": "Iron Teapot",
@@ -58,7 +60,8 @@
         "Addresses": [
             "10306 Venice Blvd., Los Angeles, CA 90034"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "A stylish new-age dim sum restaurant with robotic cat servers and the cutest dim sum making classes.\n"
     },
     "The Apple Pan": {
         "Name": "The Apple Pan",
@@ -80,10 +83,11 @@
         "Addresses": [
             "10801 W Pico Blvd, Los Angeles, CA 90064"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "The Apple Pan's slogan, \"Quality Forever\", seems like it's coming true with how long this place has been around. I am a fourth generation Angelino to have visited this spot and for good reason. Their hickory cheese burger is one of my favorite burgers in town, and if you get well done fries they come out perfectly crispy and soft inside. However, don't forget the finishing touch with their famous Apple or Banana Cream Pies, which create a perfect ending to a meal that's been around for decades.\n"
     },
-    "Maple Block BBQ": {
-        "Name": "Maple Block BBQ",
+    "Maple Block Meat Co.": {
+        "Name": "Maple Block Meat Co.",
         "Areas": [
             "West LA"
         ],
@@ -99,7 +103,8 @@
         "Addresses": [
             "3973 Sepulveda Blvd, Culver City, CA 90230"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "A staple for BBQ on the westside, Maple Block puts out amazing smoked brisket and some of the best turkey I have ever tasted. And I hate turkey. Watch for their usual DineLA deals twice a year.\n"
     },
     "Lonzo's Restaurant": {
         "Name": "Lonzo's Restaurant",
@@ -109,7 +114,9 @@
         "Categories": [
             "Peruvian",
             "Latino",
-            "Dinner"
+            "Lunch",
+            "Dinner",
+            "Bakery"
         ],
         "Locations": [
             "34.0150876,-118.4072854"
@@ -117,7 +124,8 @@
         "Addresses": [
             "10804 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "A fantastic Peruvian restaurant and bakery serving up the best Lomo Saltado and Ceviche you can find on this side of town.\n"
     },
     "Dolce Isola": {
         "Name": "Dolce Isola",
@@ -138,7 +146,8 @@
         "Addresses": [
             "2869 S Robertson Blvd, Los Angeles, CA 90034"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "The cute bakery for The Ivy (which isn't even on this list lmao). It comes with the best breads, delicoius crunchy cookies, gelato, and great casual italian lunch food.\n"
     },
     "Roberta's": {
         "Name": "Roberta's",
@@ -157,7 +166,8 @@
         "Addresses": [
             "8810 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Hailing from New York, this Culver City Italian restaurant hosts amazing salads and pizza, including my personal favorite, The Bee Sting, which comes with salty, spicy pepperoni and sweet honey.\n"
     },
     "Little Fatty": {
         "Name": "Little Fatty",
@@ -177,7 +187,8 @@
         "Addresses": [
             "3809 Grand View Blvd, Los Angeles, CA 90066"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "This trendy \"Taiwanese Soul Food\" restaurant really does touch the soul. I showed my dad this restaurant one time and he proceeded to go probably 7 times in the next 5 months. The entire menu is stellar and delicious.\n"
     },
     "Pasta Sisters": {
         "Name": "Pasta Sisters",
@@ -198,7 +209,8 @@
             "3280 Helms Ave, Culver City CA 90232",
             "3343 W Pico Blvd, Los Angeles CA 90019"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "The perfect casual dinner or lunch spot for pasta lovers. Very reasonable prices for their quality product.\n"
     },
     "Food": {
         "Name": "Food",
@@ -217,7 +229,8 @@
         "Addresses": [
             "10571 Pico Blvd, Los Angeles, CA 90064"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "This cute West LA brunch spot may not have the best SEO game, but don't let the fact that you can't search them up on google fool you. They have great, healthy breakfast through lunch and is a fantastic casual spot.\n"
     },
     "Brother's Cousins Tacos": {
         "Name": "Brother's Cousins Tacos",
@@ -237,7 +250,8 @@
         "Addresses": [
             "11341 National Blvd, Los Angeles, CA 90064"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "It's hard to get good authentic tacos on the westside, but Brother's Cousins certainly delivers that. Hit up this cash only taco stand to get fantastic various tortilla-wrapped delights.\n"
     },
     "Al's Hot Chicken": {
         "Name": "Al's Hot Chicken",
@@ -258,7 +272,8 @@
         "Addresses": [
             "10821 Venice Blvd., Los Angeles, CA 90034"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Al's is a great place to get hot chicken in West LA among the larger chains. Their spicy chicken seasoning is delicious, and certainly rivals even the most popular spots around town.\n"
     },
     "Father's Office": {
         "Name": "Father's Office",
@@ -283,7 +298,8 @@
             "905 E 2nd St #105, Los Angeles, CA 90012",
             "1018 Montana Ave, Santa Monica, CA 90403"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "One of the classic new-age burger places in Los Angeles, Father's Office has been serving up modern sandwiches and drinks for more than a decade.\n"
     },
     "Blasteran": {
         "Name": "Blasteran",
@@ -304,7 +320,8 @@
         "Addresses": [
             "272 S La Cienega Blvd, Beverly Hills, CA 90211"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "This innovative Indonesian restaurant is serving up dishes from their delightful Rendang Noodles to the heavy-hitting Cowboy BBQ burger. Their fusion is right on the money, offering a new and modern take on a classic American menu.\n"
     },
     "Pop's Bagels": {
         "Name": "Pop's Bagels",
@@ -322,7 +339,8 @@
         "Addresses": [
             "9300 Culver Blvd #112, Culver City, CA 90232"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "You may never buy a bagel from the supermarket again... (jk). But for real, Pop's has delicious, chewy, bread-annuli, paired with equally compelling topping options. This makes for the ideal breakfast or brunch for the bagel lover.\n"
     },
     "Bianca Bakery": {
         "Name": "Bianca Bakery",
@@ -342,7 +360,8 @@
         "Addresses": [
             "8850 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Bianca Bakery is just as much a delicious Italian restaurant as a lovely bakery. They serve up delicious traditional Italian food and delightful pastries, highly recommend dropping by for any occasion.\n"
     },
     "Arth": {
         "Name": "Arth",
@@ -359,7 +378,8 @@
         "Addresses": [
             "9531 Culver Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Arth is a fantastic new take on classic Indian dishes. It stays true to its roots while venturing out just the slightest, making a great experience for Indian food connoisseurs and first-timers alike.\n"
     },
     "Pizzeria Sei": {
         "Name": "Pizzeria Sei",
@@ -379,7 +399,8 @@
         "Addresses": [
             "8781 W Pico Blvd, Los Angeles, CA 90035"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Pizzeria Sei is the baby of a pizza restaurant and sushi bar. You walk in and expect to be served a 10 course omakase, but in reality get served the most delightful pizzas and salads. Their crust is phenomenal and every pizza on the menu is a home run.\n"
     },
     "Kazan": {
         "Name": "Kazan",
@@ -401,7 +422,8 @@
         "Addresses": [
             "111 N La Cienega Blvd, Beverly Hills, CA 90211"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "From the founder of the sadly now-comoditized Tatsu comes Kazan, the Michelin starred ramen restaurant. If you like ramen, this place is worth going to at least once, if not time and time again. The broth is magical and the noodles are perfectly al dente: it doesn't get better than this.\n"
     },
     "Ramen Nagi": {
         "Name": "Ramen Nagi",
@@ -423,7 +445,8 @@
         "Addresses": [
             "10250 Santa Monica Blvd Ste. #2850, Los Angeles, CA 90067"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Hailing from Japan, Ramen Nagi shakes up the Westfield Century City dining landscape, with its \"King\" ramen flavors. These range from original to spicy to even pesto (I have yet to try that one I am a litle scared).\n"
     },
     "Din Tai Fung": {
         "Name": "Din Tai Fung",
@@ -449,7 +472,8 @@
             "400 S Baldwin Ave #M5, Arcadia, CA 91007",
             "3333 Bristol Street, Plaza Space 2071, Costa Mesa, CA 92626"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "If you haven't heard of Din Tai Fung at this point, you're probably living under a rock, or a massive Xiao Long Bao ready to burst delicious pork juices on your head.\n"
     },
     "Northern Cafe": {
         "Name": "Northern Cafe",
@@ -478,7 +502,8 @@
             "8459 Beverly Blvd, Los Angeles, CA 90048",
             "128 N Garfield Ave #B, Monterey Park, CA 91754"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Northern Cafe is a great place for a cheap, casual meal and has a lot of different Chinese specialties that are fantastic for the pricepoint. My favorites are the xiao long bao and the beef rolls!\n"
     },
     "KazuNori Handroll Bar": {
         "Name": "KazuNori Handroll Bar",
@@ -510,7 +535,8 @@
             "6245 Wilshire Blvd #101, Los Angeles, CA 90048",
             "421 S Main St, Los Angeles, CA 90013"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "KazuNori, owned by the same people as Sugarfish, comes in similar style. They have different options for a small omakase of handrolls, each with crispy seaweed, warm rice, and the freshest fish. Cannot ever go wrong with Kazu!\n"
     },
     "Pitfire Pizza": {
         "Name": "Pitfire Pizza",
@@ -532,7 +558,8 @@
             "2018 Westwood Blvd, Los Angeles, CA 90025",
             "12924 W Washington Blvd, Los Angeles, CA 90066"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Pitfire has some of the best crust in the pizza came. Additionally, they have a fantastic rotating seasonal pie selection and salads that is perfect for a casual meal anytime!\n"
     },
     "Feast From The East": {
         "Name": "Feast From The East",
@@ -553,7 +580,8 @@
         "Addresses": [
             "1949 Westwood Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you want the best Chinese Chicken Salad ever made, Feast from the East is for you. Serving it up from their Westwood location for more than 40 years, FFTE is a westside staple for cheap, filling, and delicious salad as well as amazing crispy sesame wings.\n"
     },
     "Attari": {
         "Name": "Attari",
@@ -573,7 +601,8 @@
         "Addresses": [
             "1388 Westwood Blvd, Los Angeles, CA 90024"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Attari has two parts: Attari Sandwich Shop and Attari Grill, both serving up incredible Persian food. Their namesakes describe accurately what they serve, and if you're craving Persian food this place is certainly a great option in Westwood.\n"
     },
     "Tacos Tu Madre": {
         "Name": "Tacos Tu Madre",
@@ -596,10 +625,11 @@
             "1945 Westwood Blvd, Los Angeles, CA 90025",
             "1824 N Vermont Ave, Los Angeles, CA 90027"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Tacos Tu Madre does a great job with the upscale taco experience. They have a variety of interesting, multifaceted flavors and you can't go wrong with any combo of them!\n"
     },
-    "Sunin": {
-        "Name": "Sunin",
+    "Sunnin": {
+        "Name": "Sunnin",
         "Areas": [
             "West LA"
         ],
@@ -614,7 +644,8 @@
         "Addresses": [
             "1776 Westwood Blvd, Los Angeles, CA 90024"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Sunnin is known for their amazing Lebanese/Mediterranean faire, with a chill, relaxed atmosphere. If you like eggplant, the babaganouj is one of my faves!\n"
     },
     "Mogumogu": {
         "Name": "Mogumogu",
@@ -636,10 +667,11 @@
         "Addresses": [
             "11555 W Olympic Blvd Ste B, Los Angeles, CA 90064"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Roy Choi once upon a time (I am not sure the validity of this statement at the moment) said that MoguMogu was his favorite restaurant in LA. I am close to agreeing with him. The deluxe mazemen will change your life that is all I have to say.\n"
     },
-    "Tsujita": {
-        "Name": "Tsujita",
+    "Tsujita LA Artisan Noodle": {
+        "Name": "Tsujita LA Artisan Noodle",
         "Areas": [
             "West LA",
             "Hollywood"
@@ -663,7 +695,8 @@
             "2050 Sawtelle Blvd, Los Angeles, CA 90025",
             "109 N Fairfax Ave, Los Angeles, CA 90036"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Their first and most popular store, Tsujita LA Artisan Noodle, is Tsujita's claim to fame in LA. Since the birth of this tsukemen restaurant, the group has expanded into other amazing ventures, but to this day their original store is always an amazing experience for ramen and especially their specialty tsukemen.\n"
     },
     "Seoul Tofu": {
         "Name": "Seoul Tofu",
@@ -682,7 +715,8 @@
         "Addresses": [
             "2101 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Seoul Tofu is a great place to get Korean food on the westside. Their meats, soon tofu, and bimimbap bowls are all lovely and certainly live up to the Koreatown standard.\n"
     },
     "Killer Noodle": {
         "Name": "Killer Noodle",
@@ -708,7 +742,8 @@
         "Addresses": [
             "2030 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Killer Noodle, owned by Tsujita, is the take on ramen I didn't know I needed. Introducing the Sichuan ma-la flavor profile into ramen was truly a life changing idea, and I have had troves of people tell me this was the best meal they have had in their life after taking them here.\n"
     },
     "Marugame Udon": {
         "Name": "Marugame Udon",
@@ -729,7 +764,8 @@
         "Addresses": [
             "2029 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Marugame is a perfect fast, cheap, delicious, and filling meal. Their udons range from very simple broth and noodles to a complex broth complete with toppings and the works. My favorite is the mentai kamatama and don't forget to pick up those delicious tempuras!\n"
     },
     "Main Chick": {
         "Name": "Main Chick",
@@ -751,7 +787,8 @@
         "Addresses": [
             "11419 Santa Monica Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Located in a ghost kitchen near Sawtelle, Main Chick is a great addition to the ever expanding hot chicken scene in LA. Their spicy rub on top of the perfectly juicy chicken is actually spicy, so beware. Definitely head over there or order on delivery apps where they are most popular.\n"
     },
     "Cha Cha Chicken": {
         "Name": "Cha Cha Chicken",
@@ -769,10 +806,11 @@
         "Addresses": [
             "1906 Ocean Ave, Santa Monica, CA 90405"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "As is their namesake, Cha Cha Chicken serves amazing chicken. I usually go with the coconut fried version, but their entire carribean menu is filled with great carribean favorites.\n"
     },
-    "HiHo CheeseBurger": {
-        "Name": "HiHo CheeseBurger",
+    "HiHo Cheeseburger": {
+        "Name": "HiHo Cheeseburger",
         "Areas": [
             "Santa Monica",
             "Mid City"
@@ -791,7 +829,8 @@
             "1320 2nd St Ste. B, Santa Monica, CA 90401",
             "6245 Wilshire Blvd Suite 102, Los Angeles, CA 90048"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "HiHo is kind of like a high-end and better In-N-Out. Yes, I am somewhat of an In-N-Out hater and I am proud. Their burgers, shakes, and fries are all delicious and it's a great place to fill that burger craving.\n"
     },
     "Uovo": {
         "Name": "Uovo",
@@ -812,7 +851,8 @@
             "1320 2nd St Ste A, Santa Monica, CA 90401",
             "6245 Wilshire Blvd Suite 103, Los Angeles, CA 90048"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Uovo is a great place to get high quality pasta for a relatively reasonable price. They somehow also import their pasta all the way from Bologna, Italy, and it forms a lovely product on the plate.\n"
     },
     "Plan Check": {
         "Name": "Plan Check",
@@ -831,7 +871,8 @@
         "Addresses": [
             "1800 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Plan Check has always been a place for burger innovation. From ketchup leather to peach fry sauce and even pig candy, Plan Check's burgers and burger accoutrements will never fail to disappoint.\n"
     },
     "Ippudo": {
         "Name": "Ippudo",
@@ -852,7 +893,8 @@
         "Addresses": [
             "8352 Santa Monica Blvd, West Hollywood, CA 90069"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Founded in Japan, Ippudo has blessed us with their classic ramens here in LA. If you're looking for a traditional, yet modern and delightful approach to ramen, Ippudo is the place to be.\n"
     },
     "Sunny Blue": {
         "Name": "Sunny Blue",
@@ -875,7 +917,8 @@
             "2728 Main St, Santa Monica, CA 90405",
             "12608 Washington Blvd A, Los Angeles, CA 90066"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Sunny blue does omusubi right. They have a variety of delicious fillings, some hitting heavy, some umami, and some fishy and light. It is additionally always topped with perfectly balanced furikake, completing this wonderful experience.\n"
     },
     "Colapasta": {
         "Name": "Colapasta",
@@ -893,7 +936,8 @@
         "Addresses": [
             "1241 5th St, Santa Monica, CA 90401"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "This restaurant does Italian food right. Perfect freshly made pasta, farm-to-table ingredients, and a lovely selection of dishes, Colapasta has already made its mark on the Santa Monica food scene in their short time here.\n"
     },
     "Playa Provisions": {
         "Name": "Playa Provisions",
@@ -903,7 +947,9 @@
         "Categories": [
             "American",
             "Breakfast",
-            "Brunch"
+            "Brunch",
+            "Lunch",
+            "Dinner"
         ],
         "Locations": [
             "33.9580177,-118.4497399"
@@ -911,7 +957,8 @@
         "Addresses": [
             "119 Culver Blvd, Playa Del Rey, CA 90293"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "After a walk along the bike path or the beach, Playa Provisions is the perfect place to settle in and relax. They have fantastic brunch and dinner options from both land and sea, and have a lovely outdoor patio to relax and enjoy.\n"
     },
     "The Rose": {
         "Name": "The Rose",
@@ -922,7 +969,8 @@
             "American",
             "Breakfast",
             "Brunch",
-            "Lunch"
+            "Lunch",
+            "Dinner"
         ],
         "Locations": [
             "33.9962903,-118.4771052"
@@ -930,7 +978,8 @@
         "Addresses": [
             "220 Rose Ave, Venice, CA 90291"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "The Rose has a variety of strong options for both breakfast/brunch and dinner. They have a beautiful patio and it is such a lovely experience to sit and chat with friends and family. Everyone will be able to get something they enjoy and The Rose will do it right.\n"
     },
     "Superba": {
         "Name": "Superba",
@@ -952,7 +1001,8 @@
             "6530 Sunset Blvd, Los Angeles, CA 90028",
             "6530 Sunset Blvd, Los Angeles, CA 90028"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Superba is a brunch staple. From their toasts to their salads, sandwiches, and eggs, Superba has a variety of stellar food done right. There is a reason there is always a short wait to sit down: but don't worry, it's usually pretty short. (Efficiency!)\n"
     },
     "Bludso's Bar&Que": {
         "Name": "Bludso's Bar&Que",
@@ -971,7 +1021,8 @@
         "Addresses": [
             "609 N La Brea Ave, Los Angeles, CA 90036"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "This is my favorite BBQ in LA and I don't believe there is a competitor. The best brisket, the best hot links, the best ribs. It's all there. If you're missing BBQ or you're a meat lover, Bludso's is a must-go.\n"
     },
     "Salt and Straw": {
         "Name": "Salt and Straw",
@@ -1000,7 +1051,8 @@
             "240 N Larchmont Blvd, Los Angeles, CA 90004",
             "829 E 3rd St, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "They removed my old favorite flavor in Avocado Oaxacan Chocolate :(. Then they removed my favorite flavor in Almond Brittle :(. However, I am still here to support Salt and Straw because their flavors are still innovative and delicious. They occasionally have seasonal flavors that are great and it's a great place to go wherever you are in LA.\n"
     },
     "Guisados": {
         "Name": "Guisados",
@@ -1027,7 +1079,8 @@
             "8935 Santa Monica Blvd, West Hollywood, CA 90069",
             "541 S Spring St #101, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Guisado means stew in English. This is why all of their tacos are a little mini tortilla-wrapped stew! I believe I have tried almost every single one of these guisados on the menu at this point and I can safely say they are all bomb. However, I highly recommend trying the Bistek en Salsa Roja, Cochinita Pibil, and Quesadilla with Chorizo!\n"
     },
     "Kismet Rotisserie": {
         "Name": "Kismet Rotisserie",
@@ -1046,7 +1099,8 @@
         "Addresses": [
             "4666 Hollywood Blvd, Los Angeles, CA 90027"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "I have my opinions about their parent restaurant that shall not be shared here, but Kismet Rotisserie is a great healthy place to pick up classic chicken sandwiches, salads, or just chicken itself! Their sides are also fab and this is a great go-to if you need healthy and fast!\n"
     },
     "daybird": {
         "Name": "daybird",
@@ -1069,12 +1123,14 @@
         "Addresses": [
             "240 N Virgil Ave Suite 5, Los Angeles, CA 90004"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "daybird is the Killer Noodle of the chicken sandwich boom. Their HUGE chicken protruding out of the bread is quite the sight to see, but it is not the visuals that are my favorite part. The chicken is moist and has great flavor and the szechuan influence is a great take on an increasingly popular American classic.\n"
     },
     "Sonoratown": {
         "Name": "Sonoratown",
         "Areas": [
-            "Downtown"
+            "Downtown",
+            "Mid City"
         ],
         "Categories": [
             "Mexican",
@@ -1082,12 +1138,15 @@
             "Tacos"
         ],
         "Locations": [
-            "34.0415628,-118.2521722"
+            "34.0415628,-118.2521722",
+            "34.053975,-118.3551443"
         ],
         "Addresses": [
-            "208 E 8th St, Los Angeles, CA 90014"
+            "208 E 8th St, Los Angeles, CA 90014",
+            "5610 San Vicente Blvd, Los Angeles, CA 90019"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "These tortillas melt in your mouth. However, I don't just eat tortillas when I go to Sonoratown. Their meats that fill these tortillas are just as good, and if you;re feeling adventurous I highly recommend the tripa which is crispy and packs a huge punch of flavor.\n"
     },
     "Botega Louie": {
         "Name": "Botega Louie",
@@ -1112,7 +1171,8 @@
             "700 S Grand Ave, Los Angeles, CA 90017",
             "8936 Santa Monica Blvd, West Hollywood, CA 90069"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "When I took my girlfriend's mom to this place, she came back for the next 5 consecutive times she returned to LA. Botega Louie does everything right from pizzas to pastas to pastries and desserts. My two highest recommendations and must-haves though are the portobello mushroom fries and the croissants. Do not take these recommendations lightly.\n"
     },
     "Cabra": {
         "Name": "Cabra",
@@ -1132,7 +1192,8 @@
         "Addresses": [
             "1060 S Broadway, Los Angeles, CA 90015"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Cabra is Stephanie Izard's second venture into LA after her smash sensation The Girl and The Goat and the restaurant without The Girl does just as much. The skewers, various fish dishes, and the pork shank are my highlights of the menu, but I am sure Izard will not disappoint with anything of your choosing. I have yet to be anything but astounded by a single dish of hers at any of her restaurants so far.\n"
     },
     "Afuri": {
         "Name": "Afuri",
@@ -1154,7 +1215,8 @@
         "Addresses": [
             "688 Mateo St, Los Angeles, CA 90021"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "When my family went to Tokyo, I went to this very popular ramen shop called Afuri, known for their light yuzu flavored broth that my mom wouldn't be upset at being too heavy. Two years later, Afuri opens in my backyard and I could not be happier. They bring the same fervor and uniqueness into the LA ramen scene and you can't go wrong with any ramen or dumpling ordered.\n"
     },
     "The Girl and The Goat": {
         "Name": "The Girl and The Goat",
@@ -1172,7 +1234,8 @@
         "Addresses": [
             "555-3 Mateo St, Los Angeles, CA 90013"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "The Girl and the Goat was not only fantastic, but every dish I had was unlike anything I had ever had before. From the mousse to the quinoa salad to even the branzino, each dish was a combination of unique flavors that until that point had never had the fortune of combining on my tongue in that fashion. I highly recommend The Girl and the Goat to experience Stephanie Izard's genius and wonderful dishes.\n"
     },
     "Sushi Komasa": {
         "Name": "Sushi Komasa",
@@ -1191,7 +1254,8 @@
         "Addresses": [
             "351 E 2nd St, Los Angeles, CA 90012"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Sushi Komasa may be the best bang for your buck sushi place in LA. Tucked away in the middle of Little Tokyo, this cute sushi bar serves up some of the best non-high-end sushi I have had. You can get bowls, combos, or individual pieces! Make sure to get there early though because there are no reservations. So make sure to put your name down and walk around while you wait!\n"
     },
     "Luv2EatThai Bistro": {
         "Name": "Luv2EatThai Bistro",
@@ -1213,7 +1277,8 @@
         "Addresses": [
             "6660 Sunset Blvd, Los Angeles, CA 90028"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Luv2EatThai Bistro, while sounding like a boomer trying to imitate Gen Z speak, actually serves up some of the best Thai food in LA. They're known 4 their phuket style crab curry, which is phenomenal, but their more typical Thai dishes certainly pass the test as well.\n"
     },
     "26th Ave Tacos": {
         "Name": "26th Ave Tacos",
@@ -1233,7 +1298,8 @@
         "Addresses": [
             "353 S Alameda St, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "I've been going to this place for probably around 5 years now, but around 2 years ago it completely blew up on TikTok. The once lone taco stand became a street food haven, with the entire street lined with vendors. Unfortunately, that was shut down by the Health Department, so we are left with this Little Tokyo parking lot location, which I highly recommend for some of the best late night cheap eats in town.\n"
     },
     "Vito's Pizza": {
         "Name": "Vito's Pizza",
@@ -1255,7 +1321,8 @@
             "846 N La Cienega Blvd, Los Angeles, CA 90069",
             "2455 Santa Monica Blvd, Santa Monica, CA 90404"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Chill, classic, NY-style pizza. Walk up to the counter, order, and it will be ready shortly. If you're craving this style of pizza this is definitely a spot you should try out.\n"
     },
     "Angel's Tijuana Tacos": {
         "Name": "Angel's Tijuana Tacos",
@@ -1278,7 +1345,8 @@
             "4211 Eagle Rock Blvd, Los Angeles, CA 90065",
             "15701 Sherman Way, Van Nuys, CA 91406"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Angel's is one of my favorite taco stands in LA. They have amazing Al Pastor, Carne Asada, salsas and the works. Highly recommend if you're craving this style of taco there's a reason they have a lot of locations.\n"
     },
     "CoCo Ichibanya": {
         "Name": "CoCo Ichibanya",
@@ -1305,7 +1373,8 @@
             "3500 W 6th St #110, Los Angeles, CA 90020",
             "2710 Alton Pkwy #115, Irvine, CA 92606"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "CoCo Ichibanya is a classic for Japanese curry, and my favorite addition, katsu. My go-to is usualy the pork or chicken cutlet, topping their curry udon. However, getting it with rice is just as delicious.\n"
     },
     "Loqui": {
         "Name": "Loqui",
@@ -1328,7 +1397,8 @@
             "803 Traction Ave #150, Los Angeles, CA 90013",
             "8830 Washington Blvd #104, Culver City, CA 90232"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Loqui does a great job with their niche in the huge LA taco scene. They have massive, delicious tacos which pile on the meat and toppings (so don't worry about the steep price too much), and their plates turn these meats and toppings into a more formal meal. It's a great place to get casual, mordern Mexican food either in the Arts District or Culver City.\n"
     },
     "Superfine Pizza": {
         "Name": "Superfine Pizza",
@@ -1346,7 +1416,8 @@
         "Addresses": [
             "1101 San Pedro St unit f, Los Angeles, CA 90015"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "From the group behind Rossoblu, Superfine Pizza is a window to pizza heaven. Just walk up and order one of their 7 or so great pizzas and enjoy their lovely quiet patio in the middle of DTLA.\n"
     },
     "RiceBox": {
         "Name": "RiceBox",
@@ -1365,7 +1436,8 @@
         "Addresses": [
             "541 S Spring St #131, Los Angeles, CA 90013"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Between the char siu, the crackling pork belly, the eggplant, and the duck, it's very difficult to order at RiceBox. Their Cantonese concepts strike home with just about anyone who is fortunate enough to stroll upon their stall at the Spring St Arcade, and it is great for a casual meal with bursting flavors.\n"
     },
     "Langer's Delicatessen": {
         "Name": "Langer's Delicatessen",
@@ -1385,7 +1457,8 @@
         "Addresses": [
             "704 S Alvarado St, Los Angeles, CA 90057"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Of all the Jewish Delis in LA, Langer's is definitely the most famous. Their pastrami consistently ranks supreme in most journalistic publications, and I can attest that it is quite delicious. Definitely get the classic pastrami sandwich or a pastrami rueben and don't forget to get it on rye bread!\n"
     },
     "Factor's Famous Deli": {
         "Name": "Factor's Famous Deli",
@@ -1407,7 +1480,8 @@
         "Addresses": [
             "9420 W Pico Blvd, Los Angeles, CA 90035"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Factor's has my favorite pastrami in LA. Definitely go with the thick cut, this is what separates it from other sandwiches across LA. My preference is the pastrami rueben, but you can go with a variety of things like the matzo ball soup, pastrami sandwich, tongue sandwich, or even their chopped salads are amazing.\n"
     },
     "Lasita": {
         "Name": "Lasita",
@@ -1426,7 +1500,8 @@
         "Addresses": [
             "727 N Broadway #120, Los Angeles, CA 90012"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "While they went from Lasa to Lasita, don't let that fool you into thinking their depths of flavor are any smaller. This Filipino restaurant has unreal rotisserie and Filipno classics, and you will certainly walk away a happier person after visiting.\n"
     },
     "Amboy Quality Meats": {
         "Name": "Amboy Quality Meats",
@@ -1445,7 +1520,8 @@
         "Addresses": [
             "727 N Broadway No. 117, Los Angeles, CA 90012"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Alvin Cailan, the host of the hit YouTube show The Burger Show on First We Feast, shows his meat and burger prowess with Amboy. Come here to get some of the best made burgers in LA or a cut of meat to take home from their butchery.\n"
     },
     "Danny Boy's Pizza": {
         "Name": "Danny Boy's Pizza",
@@ -1464,7 +1540,8 @@
         "Addresses": [
             "330 S Hope St Suit 205, Los Angeles, CA 90071"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "This is the most authentic NY style pizza in LA. Serving up classics like pepperoni, white mushroom, and margherita, you truly cannot go wrong. They primarly serve lunch to workers on weekdays, so either go then or for their dinner hours on Thursdays and Fridays (hours as of June 2022).\n"
     },
     "Howlin' Rays": {
         "Name": "Howlin' Rays",
@@ -1485,7 +1562,8 @@
         "Addresses": [
             "727 N Broadway #128, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Howlin' Rays is of the pioneers who brought the hot chicken craze to California, and there is certainly a reason why they helped boost this sandwich's popularity so much. The sandwich is perfectly spiced and balanced, and its hard to find competitors for this spicy sandwich giant.\n"
     },
     "Mastro's Steakhouse": {
         "Name": "Mastro's Steakhouse",
@@ -1496,6 +1574,7 @@
         "Categories": [
             "Steakhouse",
             "American",
+            "Seafood",
             "Dessert",
             "Dinner"
         ],
@@ -1507,7 +1586,8 @@
             "246 N Canon Dr, Beverly Hills, CA 90210",
             "8112 East Coast Hwy, Newport Beach, CA 92657"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "Of all the steakhouses that come through LA, Mastro's has always been my favorite. From the sushi, to the perfectly cooked steak (get ribeye/tomahawk ribeye pls you'll thank me later), and finishing with the buttercake, it is hard to find a more satisfying celebratory meal than Mastro's. I must reemphasize getting the buttercake as dessert. This is one of my favorite desserts to ever exist it is the most deeply favored, moist, and crunchy cake and I cannot recommend it enough. Do not skip this.\n"
     },
     "Rossoblu": {
         "Name": "Rossoblu",
@@ -1524,7 +1604,8 @@
         "Addresses": [
             "1124 San Julian St, Los Angeles, CA 90015"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "One of the premier Italian restaurants in LA, Rossoblu does a great job doing the simple things right. All the way from the starters like the tuna tartare to the pastas like the ragu, Rossoblu certainly will not disappoint.\n"
     },
     "AOC": {
         "Name": "AOC",
@@ -1544,7 +1625,8 @@
             "8700 W 3rd St, Los Angeles, CA 90048",
             "11648 San Vicente Blvd, Los Angeles, CA 90049"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "AOC introduced one of my all time favorite dishes to the world: the bacon wrapped date with parmesean cheese. However, this is not where their stellar food ends. The fried chicken, salads, and every other dish I have tried has been exquisite and they foster a lovely environment for a perfect dinner.\n"
     },
     "Bavel": {
         "Name": "Bavel",
@@ -1563,7 +1645,8 @@
         "Addresses": [
             "500 Mateo St, Los Angeles, CA 90013"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "Bavel is a spin on Mediterranean food I didn't know I needed. The spreads are fabulous versions of the classics we all know and love; combined with innovative appetizers and deeply tasty entrees, it is such a lovely experience.\n"
     },
     "Majordōmo": {
         "Name": "Majordōmo",
@@ -1584,7 +1667,8 @@
         "Addresses": [
             "1725 Naud St, Los Angeles, CA 90012"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "From beginning to end, Majordōmo is one of the best dining experiences I have ever had. Inspired by the multi-cultural landscape of California, you can find innovative takes on many trendy and classic dishes alike. David Chang does a fabulous job of incorporating a slew of ingredients and techniques from across the world to make this concept come to life.\n"
     },
     "Felix Trattoria": {
         "Name": "Felix Trattoria",
@@ -1601,16 +1685,18 @@
         "Addresses": [
             "1023 Abbot Kinney Blvd, Venice, CA 90291"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "The half of the menu at Felix is an assortment of pastas sorted by area of Italy. No matter where your tastebuds decide to travel that night, it will certainly be a lovely culinary experience.\n"
     },
-    "Margot": {
-        "Name": "Margot",
+    "margot": {
+        "Name": "margot",
         "Areas": [
             "West LA"
         ],
         "Categories": [
             "American",
             "Mediterranean",
+            "Italian",
             "Dinner"
         ],
         "Locations": [
@@ -1619,10 +1705,11 @@
         "Addresses": [
             "8820 Washington Blvd Suite 301, Culver City, CA 90232"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Looking over the Culver City Platform, margot is a great place to get Mediterranean and Italian inspired dishes, presented in a modern American style. This is one of the few rooftop places I personally endorse (I'd say it's a 1/2 rooftop).\n"
     },
-    "Hippo": {
-        "Name": "Hippo",
+    "HiPPO": {
+        "Name": "HiPPO",
         "Areas": [
             "Eagle Rock"
         ],
@@ -1637,10 +1724,11 @@
         "Addresses": [
             "5916 1/2 N Figueroa St, Los Angeles, CA 90042"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "HiPPO takes the roots of Italian cuisine and scrubs contemporary Los Angeles into its pores. Their pastas range from light and bright to deep and meaty and the starters are a plethora of unique and delicious concepts. However, you cannot forget the proteins, which are adorned with the perfect pairings of toppings and sides, finishing the menu of amazing dishes.\n"
     },
-    "Sant'olina": {
-        "Name": "Sant'olina",
+    "Sant'Olina": {
+        "Name": "Sant'Olina",
         "Areas": [
             "West LA"
         ],
@@ -1654,7 +1742,8 @@
         "Addresses": [
             "9876 Wilshire Blvd, Beverly Hills, CA 90210"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "When you walk out onto the rooftop of the Beverly Hilton, Sant'Onlina makes it a special place. Make sure to get at least one dip, which is paired with the most delightful warm Za'atar-covered bread. As the meal continues, you can go which ever direction you choose: a slew of delicious, light appetizers, meaty kebabs, or a big entree, surrounded by a medley of Mediterranean complements.\n"
     },
     "etta": {
         "Name": "etta",
@@ -1673,7 +1762,8 @@
         "Addresses": [
             "8801 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "You look through the menu at etta and its extraordinarily challenging to decide what to pick. Each category has at least four dishes I could see myself enjoying. Things I have enjoyed from the menu include the bubbling shrimp, little gem salad and orecchiette. However, I'm sure that wherever you go, it would be difficult to go wrong.\n"
     },
     "Sushi Enya": {
         "Name": "Sushi Enya",
@@ -1698,7 +1788,8 @@
             "480 S San Vicente Blvd, Los Angeles, CA 90048",
             "123 Washington Blvd, Marina Del Rey, CA 90292"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Sushi Enya is the best sushi experience I have had in LA. The fish has a soft texture and deep flavor, and they do both traditional and experiemental sushi just right. There are the classics like tuna, toro, salmon and other fish, but something a litle out of the box that I highly suggest trying is the sweet shrimp— and don't forget to down the fried head on the side!\n"
     },
     "Damian": {
         "Name": "Damian",
@@ -1717,12 +1808,13 @@
         "Addresses": [
             "2132 E 7th Pl, Los Angeles, CA 90021"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "Enrique Olivera flexes his culinary muscles with Damian. This modern Mexican concept hits on every single front. Of the things I tried, the ceviche is perfectly balanced in every form, the duck al pastor is a fantastic and innovative take on the popular taco filling, and the highlight of my dinner was the pescado al la brasa (charred fish), which was one of the best seafood dishes I have truly ever eaten. Damian showcases Mexican food in a light I have never seen before and in a way that is needed more often in Los Angeles.\n"
     },
     "Antico Nuovo": {
         "Name": "Antico Nuovo",
         "Areas": [
-            "Downtown"
+            "Koreatown"
         ],
         "Categories": [
             "Italian",
@@ -1734,7 +1826,8 @@
         "Addresses": [
             "4653 Beverly Blvd, Los Angeles, CA 90004"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Antico Nuovo is an ode to the Italian countryside. The starters, which have the option of coming with their addicting focaccia, are a fantastic way to start the meal. It will then transition into the heavier pasta and meat dishes, all ingrained with traditional Italian cuisine and executed phenomenally to your plate.\n"
     },
     "Bestia": {
         "Name": "Bestia",
@@ -1751,7 +1844,8 @@
         "Addresses": [
             "2121 E 7th Pl, Los Angeles, CA 90021"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "Bestia is a titan of the LA restaurant scene. They have been serving the new-style modern Italian food that everyone lines up for for years now. My favorite on the menu is the roasted bone marrow, that is scooped onto a plate of spinach gnocchi. Truly cannot get any better than that.\n"
     },
     "Mariscos Jalisco": {
         "Name": "Mariscos Jalisco",
@@ -1772,7 +1866,8 @@
         "Addresses": [
             "3040 E Olympic Blvd, Los Angeles, CA 90023"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Of all the seafood tacos in LA, Mariscos Jalisco does it best with their famous crispy shrimp taco topped with avocado and a fantastic red salsa. However, don't pass up their other tostadas or cocteles as those also certainly pass the test as well.\n"
     },
     "Pa Ord Noodle": {
         "Name": "Pa Ord Noodle",
@@ -1794,27 +1889,8 @@
         "Addresses": [
             "5301 Sunset Blvd #8, Los Angeles, CA 90027"
         ],
-        "Price": "$"
-    },
-    "Guerilla Tacos": {
-        "Name": "Guerilla Tacos",
-        "Areas": [
-            "Downtown"
-        ],
-        "Categories": [
-            "Tacos",
-            "Mexican",
-            "Latino",
-            "Lunch",
-            "Dinner"
-        ],
-        "Locations": [
-            "34.0344189,-118.2321198"
-        ],
-        "Addresses": [
-            "2000 E 7th St, Los Angeles, CA 90021"
-        ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Pa Ord is my personal go-to Thai restaurant in Los Angeles. Pad Thai, Pad See Ew, Tom Kha, Panang Curry, they do it all well. Don't forget to order a side of sticky rice instead of regular steamed! That's my favorite :).\n"
     },
     "Tacos La Guera": {
         "Name": "Tacos La Guera",
@@ -1836,7 +1912,8 @@
             "2949 W Pico Blvd, Los Angeles, CA 90006",
             "1569 N Soto St, Los Angeles, CA 90033"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "For around 4 months, I was lucky enough to have lived a single block from the Tacos La Guera Koreatown location. However, this wasn't a place I went out of pure convenience. They do tacos, quesadillas, burritos, and I'm sure much more with extraordinarily flavorful meats such as al pastor and carne asada. However, their most famous is the suadero, which is Mexican osso buco. It is unlike anything I have had before and unbelievably tasty.\n"
     },
     "Roscoe's Chicken and Waffles": {
         "Name": "Roscoe's Chicken and Waffles",
@@ -1863,7 +1940,8 @@
             "5006 W Pico Blvd, Los Angeles, CA 90019",
             "1514 N Gower St, Los Angeles, CA 90028"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Everyone loves Snoop Dogg, but usually for the same reason as me: because he revived the famous Roscoe's Chicken and Waffles restaurants from bankrupcy. This place is a true classic and for good reason; they have some of the best chicken and waffles in the city. My go-to is the Obama special, renamed when he ordered it there. Obama knows best.\n"
     },
     "Tacos y Birria la Unica": {
         "Name": "Tacos y Birria la Unica",
@@ -1882,7 +1960,8 @@
         "Addresses": [
             "2840 E Olympic Blvd, Los Angeles, CA 90023"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "In the LA birria scene, there are only a few big names. La Unica is definitely one of them. Sitting right outside downtown in Boyle Heights, Tacos y Birria la Unica quietly serves some of the best birria in the city out of their ombre truck. If you have a friend who doesn't like birria though, don't worry as they have other delicious meats too.\n"
     },
     "Mizlala": {
         "Name": "Mizlala",
@@ -1905,7 +1984,8 @@
             "5400 W Adams Blvd, Los Angeles, CA 90016",
             "4515 Sepulveda Blvd, Sherman Oaks, CA 91403"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Mizlala is home to the best brussels sprout dish on the planet and I will never stand down from this opinion. From there, their Mid City and Valley locations differ a lot. Mid City is more casual and has great Israeli comfort food on a beautiful patio, while The Valley is more sit-down and has a variety of Mediterranean dishes. If you are in The Valley location, do not miss the Moroccan Fried Chicken; it is addicting.\n"
     },
     "Biriyani Kabob House": {
         "Name": "Biriyani Kabob House",
@@ -1928,7 +2008,8 @@
             "517 S Spring St, Los Angeles, CA 90013",
             "3525 W 3rd St, Los Angeles, CA 90020"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Biriyani Kabob House should be on everyone's radar as not only a great place to get Indian/Bangladeshi food, but also a place to get cheap and late night food. They truly do it all and they do it well. All of their kebabs are delicious and their curries are extraordinarily flavorful. Biriyani Kabob House is a cheat code tbh I don't know how they do it.\n"
     },
     "Jerusalem Chicken": {
         "Name": "Jerusalem Chicken",
@@ -1947,7 +2028,8 @@
         "Addresses": [
             "4448 W Slauson Ave, View Park-Windsor Hills, CA 90043"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Jerusalem Chicken brings Palestinean-inspired roast chicken to the forefront. The chicken has a great garlicy and crispy outside while being deliciously juicy on the inside. It's not just chicken though, their sides are just as good, so be sure to get a plate where you can get the best of everything.\n"
     },
     "Pardis": {
         "Name": "Pardis",
@@ -1966,7 +2048,8 @@
         "Addresses": [
             "738 N Glendale Ave, Glendale, CA 91206"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Pardis is the best Persian restaurant I have visited in LA. The gormeh sabzi and kebabs are all intensely flavorful while the tahdig and laffa are perfect sides. I suggest going with three or more because there are big portions, or be ready to eat with two.\n"
     },
     "Tire Shop Taqueria": {
         "Name": "Tire Shop Taqueria",
@@ -1986,7 +2069,8 @@
         "Addresses": [
             "4077 S Avalon Blvd, Los Angeles, CA 90011"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "A dollop of guacamole on top of a juicy meat pile wrapped in floury goodness... Is there anything better? The aptly named Tire Shop Taqueria makes these creations with the utmost care. It is one of my favorite taco stands in LA and it doesn't get much better than this.\n"
     },
     "Holbox": {
         "Name": "Holbox",
@@ -2006,7 +2090,8 @@
         "Addresses": [
             "3655 S Grand Ave #C9, Los Angeles, CA 90007"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "In the Mercado La Paloma next to its sister and original restaurant, Chichen Itza, Holbox is an island of superior seafood. Every dish is incredibly fresh and jam-packed with perfectly balanced flavor with a Latino flair. One dish that stood out to me was the shrimp aguachiles, whose shrimp were as creamy as a sweet shrimp dish from a high end sushi restaurant, but surrounded by its tart limey, green sauce. Delightful.\n"
     },
     "Chichen Itza": {
         "Name": "Chichen Itza",
@@ -2025,7 +2110,8 @@
         "Addresses": [
             "3655 S Grand Ave #C6, Los Angeles, CA 90007"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "The sister restaurant to Holbox inside the Mercado La Paloma, Chichen Itza is a monument to Yucatan culture and food. From stews to soups, tortas and more, Chichen Itza will not let you down and is dedicated to serving authentic, crave-worthy food right to your plate.\n"
     },
     "La Pupusa Urban Eatery": {
         "Name": "La Pupusa Urban Eatery",
@@ -2043,7 +2129,8 @@
         "Addresses": [
             "1051 W Washington Blvd G, Los Angeles, CA 90015"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "I love pupusas. They're like the little cousin of quesadillas that deserve more love. La Pupusa Urban Eatery is trying to make that come true. They have a myriad of traditional pupusa flavors, each better than the last. However, don't sleep on their experiemental premium pupusas which come with a range of ridiculously good toppings that can change a pupusa from delicious to extraordinary.\n"
     },
     "Tacos Los Guichos": {
         "Name": "Tacos Los Guichos",
@@ -2063,7 +2150,8 @@
         "Addresses": [
             "320 W Slauson Ave, Los Angeles, CA 90003"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "A truck in a tire shop next to the freeway... does it get any more classic than this? Tacos Los Guichos serves up some fantastic classic tacos. My favorites are the al pastor and asada, but I'm sure that any which way you go will be delicious.\\\n"
     },
     "Mian": {
         "Name": "Mian",
@@ -2088,7 +2176,8 @@
             "301 W Valley Blvd #114-115, San Gabriel, CA 91776",
             "5263 W Adams Blvd, Los Angeles, CA 90016"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you like spice and noodles, Mian is the place for you. The main attraction is the Chengdu Zajiang Noodle, which has a mild spice but kicks up the numbing to make a very balanced, savory noodle dish. My other favorite is the Spicy Beef Soup Noodles, which is more on the spicy side and comes in a red broth topped with tender pieces of beef. Mian is one of my go-tos for Sichuan and noodles and it should be for you too.\n"
     },
     "Tacos Tamix": {
         "Name": "Tacos Tamix",
@@ -2108,7 +2197,8 @@
         "Addresses": [
             "1982 S Hoover St, Los Angeles, CA 90007"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Tacos Tamix is great if you're looking for a classic taco truck. They serve up some great meats and tortillas and are perfect for a late night bite. I usually either go with tacos or a burrito here, but I'm sure everything is delicious.\n"
     },
     "Phillipe The Original": {
         "Name": "Phillipe The Original",
@@ -2128,10 +2218,11 @@
         "Addresses": [
             "1001 N Alameda St, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Phillipe is a true LA classic. Whether it's before a Dodger game or just a casual meal, their French Dip is unrivaled in cost, convenience, and most importantly, deliciousness. I usually go with the lamb double dipped with swiss, but I've tried most of their other options and you really cannot go wrong. Make sure to try their famous mustard which will have your nose a bit firey, but it has incredible flavor. Also, don't get a wet dip unless you know what you're doing ahaha.\n"
     },
-    "B Sweet": {
-        "Name": "B Sweet",
+    "B Sweet Dessert Bar": {
+        "Name": "B Sweet Dessert Bar",
         "Areas": [
             "West LA"
         ],
@@ -2147,7 +2238,8 @@
         "Addresses": [
             "2005 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "One of the first of its kind, B Sweet Dessert Bar is iconic at this point. Their bread pudding, halo halo and sluttiest brownie are all unreal and they have continously upped the ante on the dessert business in LA. I'm a little bit of a sucker for the salted caramel bread pudding with ice cream, but all of their options are so so good.\n"
     },
     "Cool Haus": {
         "Name": "Cool Haus",
@@ -2165,7 +2257,8 @@
         "Addresses": [
             "8588 Washington Blvd, Culver City, CA 90232"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Cool haus has been around for awhile now, and for good reason. They serve up some of the best cookies and the best ice cream, putting it together to make an almost infinite amount of extraordinary sandwich combos.\n"
     },
     "Nickel Diner": {
         "Name": "Nickel Diner",
@@ -2174,6 +2267,9 @@
         ],
         "Categories": [
             "Breakfast",
+            "Brunch",
+            "Lunch",
+            "American",
             "Dessert"
         ],
         "Locations": [
@@ -2182,7 +2278,8 @@
         "Addresses": [
             "524 S Main St, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Nickel Diner serves up some of the meanest, classic breakfast and lunch food in DTLA. It's rare to find diners these days, and Nickel Diner executes on this niche perfectly. However, one of the (not so secret) secrets of Nickel Diner are their donuts. My favorites are the coffee and maple bacon, but each flavor always looks sooooo good coming by.\n"
     },
     "Compartes": {
         "Name": "Compartes",
@@ -2198,7 +2295,8 @@
         "Addresses": [
             "516 N La Brea Ave, Los Angeles, CA 90036"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "If you're looking for a nice gift or want to go to a *civilized* place to get desserts, Compartes makes some of the best fancy chocolates in LA. Their truffles taste as good as they look, and their chocolate bars are sticks of goodness. I always remember the gifts I get from Compartes, even if they last only two days...\n"
     },
     "Bumsan": {
         "Name": "Bumsan",
@@ -2216,7 +2314,8 @@
         "Addresses": [
             "534 S Western Ave, Los Angeles, CA 90020"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Korean-inspired ice cream shop Bumsan swirls some of the best soft serve in town. They have a great variety of flavors, cones, and swirls to make a perfect dessert experience.\n"
     },
     "Van Leeuwen": {
         "Name": "Van Leeuwen",
@@ -2239,7 +2338,8 @@
             "5915 Franklin Ave, Los Angeles, CA 90028",
             "300 S Santa Fe Ave Suite R, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Van Leeuwen is one of my favorite ice cream shops. They have fantastic flavors like brown sugar chunk and my favorite, fresh mint chip. Definitely stop by for a cold sweet treat after dinner.\n"
     },
     "SomiSomi": {
         "Name": "SomiSomi",
@@ -2266,7 +2366,8 @@
             "621 S Western Ave #208-A, Los Angeles, CA 90005",
             "332 E 2nd St, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "SomiSomi has exploded in popularity in the past couple years, and for good reason. Their tayaki cones are delicious and have addicting fillings, while they soft serve ice creams are just as delightful. My favorites are red bean, matcha, and ube!\n"
     },
     "Honeymee": {
         "Name": "Honeymee",
@@ -2290,7 +2391,8 @@
             "3377 Wilshire Blvd, Los Angeles, CA 90010",
             "120 Japanese Village Plaza Mall, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you want to save the bees and love ice cream, Honeymee is for you. They have a variety of fantastic vanilla and matcha flavors, topped with a perfect drizzling of honey. However, one of my other favorites is the chocolate, which is also a bit salty and creates a lovely salty sweet combo.\n"
     },
     "Midori Matcha": {
         "Name": "Midori Matcha",
@@ -2309,7 +2411,8 @@
         "Addresses": [
             "123 Astronaut Ellison S Onizuka St #101-C, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Using matcha grown in Japan, Midori Matcha serves up some of the best green drinks and ice cream in the city. They are incredibly flavorful and the ice cream has an light powdering of matcha on top, creating an intense and delicious matcha experience.\n"
     },
     "Phoenix Bakery": {
         "Name": "Phoenix Bakery",
@@ -2320,7 +2423,8 @@
             "Dessert",
             "Warm Dessert",
             "Asian",
-            "Bakery"
+            "Bakery",
+            "Classic LA"
         ],
         "Locations": [
             "34.0659484,-118.236662"
@@ -2328,7 +2432,8 @@
         "Addresses": [
             "969 N Broadway, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "My grandma used to be a judge who worked all the way in Downtown although her family lived in Northridge. For my moms birthday every year, after work she would bring her back the strawberry short cake from Phoenix Bakery; this was 40 years ago. To this day, this cake holds up and is stellar. If you like nuts, definitely get the almonds on the side, but if not it is just as great without.\n"
     },
     "Mumu Bakery": {
         "Name": "Mumu Bakery",
@@ -2347,7 +2452,8 @@
         "Addresses": [
             "3109 W Olympic Blvd D, Los Angeles, CA 90006"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Mumu Bakery is one of the cutest and most delicious bakeries I've visited in LA. They have croissant taiyaki with a variety of delightful fillings, different flavors of madelines, and many other wonderful asian baked goods. Their drinks are also designed so adorably and are equally as yummy: they're great for a surprise or gift!\n"
     },
     "Sul and Beans": {
         "Name": "Sul and Beans",
@@ -2365,7 +2471,8 @@
         "Addresses": [
             "621 S Western Ave #208-A, Los Angeles, CA 90005"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "When I had Sul and Beans for the first time, my life changed forever. I hate shaved ice. Sorry if that's a hot take. Sul and Beans is not regular shaved ice though; their bingsoos are made up of finely shaved milk that melts in your mouth, topped with your choice of powder that is layered in the bowl throughout. To top it off, there is a scoop of red bean and condensed milk that finishes one of my favorite desserts in the world. There is a reason this place is constantly incredibly busy.\n"
     },
     "Tiger Sugar": {
         "Name": "Tiger Sugar",
@@ -2383,7 +2490,8 @@
         "Addresses": [
             "3465 W 6th St STE 120, Los Angeles, CA 90020"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Tiger Sugar brings milk tea to a new level. Their signature drinks feature a cream mousse, which gives them a perfect texture to complement the outstanding flavor the drinks bring to the table. I usually get the #3, black sugar boba + pearl milk cream mousse. It not only has full sized boba, but also smaller pearls which adds a fun texture difference.\n"
     },
     "Ding Tea": {
         "Name": "Ding Tea",
@@ -2410,10 +2518,11 @@
             "15 E Valley Blvd, Alhambra, CA 91801",
             "13820 Red Hill Ave, Tustin, CA 92780"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Ding Tea is my personal favorite boba shop. Their signature, oolong, taro, and thai teas are all excellent, and they have ice + sugar level customization for all drinks. If this was it, I would still be happy; however, they also have amazing yakult drinks as well, something I cannot find in many places around LA. My personal favorites are the mango and grapefruit!\n"
     },
-    "Volcano Tea": {
-        "Name": "Volcano Tea",
+    "Volcano Tea House": {
+        "Name": "Volcano Tea House",
         "Areas": [
             "West LA"
         ],
@@ -2428,7 +2537,8 @@
         "Addresses": [
             "2111 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "One of the OG boba places in LA, Volcano Tea, still makes some of the best. They have a wide variety of delicious milk teas, but I usually keep it simple with the oolong milk tea with boba. Sawtelle is a difficult area to choose your dessert, but Volcano is a great option for the boba lovers out there.\n"
     },
     "Wanderlust Creamery": {
         "Name": "Wanderlust Creamery",
@@ -2455,7 +2565,8 @@
             "7920 W 3rd St, Los Angeles, CA 90048",
             "3134 Glendale Blvd, Los Angeles, CA 90039"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Wanderlust makes some of the most unique and delicious ice cream I have ever had. Inspired by places around the world, they have flavors you would not find anywhere else. My personal favorites are their famous Ube Malted Crunch, Passionfruit Cacao, and Japanese Neopolitan. When I first had Wanderlust it blew me away, and I am always anticipating my return.\n"
     },
     "Tea Master Matcha Cafe": {
         "Name": "Tea Master Matcha Cafe",
@@ -2474,7 +2585,8 @@
         "Addresses": [
             "450 E 2nd St, Los Angeles, CA 90012"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Tea Master Matcha Cafe lives up to its name. Their drinks and ice cream are extremely flavorful, and they use matcha powder sourced from Japan. You can buy a variety of matcha products in their store, talk to employees, or just come to get some of the best matcha drinks and soft serve in the city.\n"
     },
     "Millet Crepe": {
         "Name": "Millet Crepe",
@@ -2491,7 +2603,8 @@
         "Addresses": [
             "2011 Sawtelle Blvd, Los Angeles, CA 90025"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Millet Crepe blew up on TikTok, and it wasn't for just visuals. Their famous crème brûlée crepe not only looks ridiculously good, but the taste certainly rivals your other senses. If you like crepes, this is a great take on the classic French dish and will rock your world a lil.\n"
     },
     "Zooies": {
         "Name": "Zooies",
@@ -2509,7 +2622,8 @@
         "Addresses": [
             "9815 National Blvd, Los Angeles, CA 90034"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "You have to go to the United Oil on National Blvd not only for the cheapest gas around, but for the unassuming cookie store sitting inside their shop. Zooies makes some of the best cookies I have ever had. Their flavors range from four different types of chocolate chip, panda (oreo), mooie (pretzel + choco chip), snickerdoodle and so many more. They even additionally make perfectly tart lemon bars. Their cookies are not too sweet, as many others overdo it, and are made with perfectly balanced flavor and texture.\n"
     },
     "The Pie Hole": {
         "Name": "The Pie Hole",
@@ -2528,10 +2642,11 @@
             "714 Traction Ave, Los Angeles, CA 90013",
             "6314 Hollywood Blvd, Los Angeles, CA 90028"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "The Pie Hole is dedicated to making some of the best pies in LA. They have apple, chocolate, berry, and my personal favorite and best seller, earl grey. It's a great place to get dessert in the Arts District, especially if you're craving some flavorful, buttery goodness.\n"
     },
-    "Sidecar Donuts": {
-        "Name": "Sidecar Donuts",
+    "Sidecar Doughnuts & Coffee": {
+        "Name": "Sidecar Doughnuts & Coffee",
         "Areas": [
             "Santa Monica",
             "Mid City"
@@ -2548,7 +2663,8 @@
             "631 Wilshire Blvd, Santa Monica, CA 90401",
             "175 S Fairfax Ave Unit D, Los Angeles, CA 90036"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Sidecar is where doughnuts go from an unhealthy breakfast to an unhealthy gourmet experience. Their doughnuts have perfect texture throughout, and some of my favorite flavors include huckleberry, maple bacon and saigon cinnamon. Don't miss out on this place if you like doughnuts, it's a great experience.\n"
     },
     "The Bigg Chill": {
         "Name": "The Bigg Chill",
@@ -2565,7 +2681,8 @@
         "Addresses": [
             "10850 W Olympic Blvd, Los Angeles, CA 90064"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "When Demi Lovato roasted The Bigg Chill a couple years ago, she was effectively cancelled in West LA circles. This place has a cult following and it's understandable why. Their signature froyo, the Chill Berry, is their take on the classic tart flavor and it's uniquely delicious compared to others. While they are not titularly named, their other flavors do not drop in quality as well. To make the most bang out of your buck, what I do is share large portions with friends and get toppings on the side to get much more. You'll thank me later.\n"
     },
     "Go Greek": {
         "Name": "Go Greek",
@@ -2585,7 +2702,8 @@
             "452 N Bedford Dr, Beverly Hills, CA 90210",
             "1431 Ocean Ave, Santa Monica, CA 90401"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Go Greek takes frozen yogurt to a new level. Their froyo actually tastes like a combination of the classic we are all used to with the tartness of regular greek yogurt injected in. They have a variety of great flavors and toppings, ranging from classic desserty to healthy and bright.\n"
     },
     "Jeni's Splendid Ice Creams": {
         "Name": "Jeni's Splendid Ice Creams",
@@ -2605,7 +2723,8 @@
             "540 Rose Ave, Venice, CA 90291",
             "123 N Larchmont Blvd, Los Angeles, CA 90004"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Jeni's Splendid Ice Creams doesn't live down from its boastful (yet deserved) name. They scoop some of the best in LA, and their best flavors usually include some sort of dichotomous relationship like salty and sweet, fruity and creamy, or smooth and crunchy. It is this that sets them apart and creates interesting heterogenous flavors that will keep your tongue guessing with every bite. My favorites are the brambleberry crisp, brown butter almond brittle, and salted peanut butter with chocolate flecks, but there are so many more delicious ones on top of that.\n"
     },
     "McConnell's Fine Ice Creams": {
         "Name": "McConnell's Fine Ice Creams",
@@ -2622,7 +2741,8 @@
         "Addresses": [
             "317 S Broadway, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Hailing from Santa Barbara, McConnell's is an ice cream paradise. They have extraordinary, unique flavors made from high quality ingredients. My favorites are the eureka lemon & marionberries, mint chip, and sea salt cream and cookies, although most flavors that I tasted were very good as well.\n"
     },
     "Pho 79": {
         "Name": "Pho 79",
@@ -2641,7 +2761,8 @@
         "Addresses": [
             "9941 Hazard Ave, Garden Grove, CA 92844"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "LA county just doesn't have very good pho⁠— it's very sad. However, just a short drive away is Phở 79, a haven of Vietnamese food in SoCal. The pho broth is incredibly flavorful, and the toppings provided add such a punch to an already incredible dish. In addition, their side dishes are also fabulous like their curry chicken and egg rolls. Highly recommend stopping by ⁠Phở 79 if you are in the area to get some of the best Vietnamese soup around.\n"
     },
     "La Super Birria": {
         "Name": "La Super Birria",
@@ -2660,7 +2781,8 @@
         "Addresses": [
             "1041 W 1st St, Santa Ana, CA 92703"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "La Super Birria has some of the best Mexican food I have had in Orange County. They have birria comparable to Los Angeles and you cannot go wrong with their variety of wrappings for this delicious, juicy, pulled meat.\n"
     },
     "Rye Goods": {
         "Name": "Rye Goods",
@@ -2677,7 +2799,8 @@
         "Addresses": [
             "3418 Via Lido, Newport Beach, CA 92663"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Did you know that Rye is very important for our fields? It replentishes the soil with the nutrients it needs for the next batch of nutrient-hungry crops. However, that is not the best reason to support Rye Goods. They have incredible pastries and breads unlike I have ever seen before. Their croissant was savory, yet light and crispy and was unlike anything I have ever had before. There were so many things in the case that I could not get, but desperately wished I could. There is always a short line here at Rye Goods and that is for a reason.\n"
     },
     "Teddy's Red Tacos": {
         "Name": "Teddy's Red Tacos",
@@ -2704,7 +2827,8 @@
             "1140 Sunset Blvd, Los Angeles, CA 90012",
             "731 E Slauson Ave, Los Angeles, CA 90011"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you look up the LA Times video-article on Teddy's Red Tacos, you can actually see me in the background enjoying one of my favorite tacos of all time. They have exploded from a truck on Slauson Ave. to nine locations across Southern California, and absolutely deserve it. Their birria is so flavorful, and the way they dip their tortillas makes a world of difference. I highly suggest getting the deluxe plate, which allows you to try all their forms of birria deliciousness. Additionally, ensure you are dipping them into the consomé, which is the strongly flavored broth the birria is cooking in. That is a combo that will not be forgotten.\n"
     },
     "Kinn": {
         "Name": "Kinn",
@@ -2724,7 +2848,8 @@
         "Addresses": [
             "3905 W 6th St, Los Angeles, CA 90020"
         ],
-        "Price": "$$$$"
+        "Price": "$$$$",
+        "Description": "Kinn was a life-changing meal. They take traditional Korean dishes and put their own little spin on it. I could talk extensively about literally every course I had that night, but my favorite part was the gyeranjjim, which was adorned with clam, mushrooms, and crispy spinach. Although it sounds mundane, it was one of the most exquisite combination of flavors I have ever experienced, and I could say that about every course I had. This was in May 2022, and their menu changed often so it is possible that they do not have this dish anymore. However, I would be shocked if their new items do not live up to the consistent quality I experienced that night.\n"
     },
     "Xiang La Hui": {
         "Name": "Xiang La Hui",
@@ -2744,7 +2869,8 @@
         "Addresses": [
             "621 W Main St, Alhambra, CA 91801"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Xiang La Hui is one of my favorite Sichuan places in LA. Their dishes perfectly showcase the balance between the spice and numbness, or the Ma La flavor profile. My favorite dishes there include the toothpick lamb, mapo tofu, and the fish in spicy hot pot.\n"
     },
     "Noodle Harmony": {
         "Name": "Noodle Harmony",
@@ -2755,6 +2881,7 @@
             "Asian",
             "Chinese",
             "Noodles",
+            "Spicy",
             "Lunch",
             "Dinner"
         ],
@@ -2764,7 +2891,8 @@
         "Addresses": [
             "735 W Garvey Ave, Monterey Park, CA 91754"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Noodle Harmony is a great place to get spicy Chinese noodles. They're most well known for their dan dan and signature beef noodles, but they have a wide variety of mouth-watering selections.\n"
     },
     "Mama Lu's Dumpling House": {
         "Name": "Mama Lu's Dumpling House",
@@ -2784,7 +2912,8 @@
         "Addresses": [
             "153 E Garvey Ave, Monterey Park, CA 91755"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Mama Lu's has some of the best dumplings around. Starting with the xiao long bao and spicy wontons, the meal only gets better with their fantastic menu of Chinese classics. Every dumpling I have tried there has been phenomenal, and you can't go wrong ordering a big selection from Mama Lu's.\n"
     },
     "Mason's Dumpling Shop": {
         "Name": "Mason's Dumpling Shop",
@@ -2804,7 +2933,8 @@
         "Addresses": [
             "5803 N Figueroa St, Los Angeles, CA 90042"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Mason's has a large seletion of incredible dumplings, ranging from boiled to steamed and pan fried. The fillings are incredibly delicious and you cannot go wrong with anything you order here. In addition to the dumplings, their buns are also very good and Mason's does a great job of putting out a high-quality product that is made fresh every day.\n"
     },
     "Yang's Kitchen": {
         "Name": "Yang's Kitchen",
@@ -2815,8 +2945,9 @@
             "Asian",
             "Chinese",
             "Asian Fusion",
-            "Lunch",
-            "Dinner"
+            "Breakfast",
+            "Brunch",
+            "Lunch"
         ],
         "Locations": [
             "34.094543,-118.127974"
@@ -2824,10 +2955,11 @@
         "Addresses": [
             "112 W Main St, Alhambra, CA 91801"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Yang's Kitchen occupies an incredibly interesting niche: chinese brunch food. Their cold noodles, braised rice, and mochi pancake are all highlights, but I have heard that most things on the menu are incredibly good, including the pastries!\n"
     },
-    "Lunasia Dumplings": {
-        "Name": "Lunasia Dumplings",
+    "Lunasia Dim Sum House": {
+        "Name": "Lunasia Dim Sum House",
         "Areas": [
             "SGV"
         ],
@@ -2844,7 +2976,8 @@
         "Addresses": [
             "500 W Main St, Alhambra, CA 91801"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "From the har gao, to the siu mai and the BBQ pork buns, Lunasia is one of my favorite places to go for dim sum. They are especially known for their dim sum made with rice-made wrappings, so make sure you get the har gao and noodle rolls!\n"
     },
     "Chongqing Special Noodles": {
         "Name": "Chongqing Special Noodles",
@@ -2866,7 +2999,8 @@
         "Addresses": [
             "708 E Las Tunas Dr, San Gabriel, CA 91776"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Chongqing Special Noodles really lives up to its name. These noodles truly are special because it's really hard to find anything comparable in and around LA. The dan dan, biang biang, and Chongqing hand pulled noodles are all stand outs, but what separates it from the rest is their selection of hand pulled noodles. These noodles have a perfect chewy bite and are truly hand-pulled so every one looks and feels different. Chongqing's noodle experience is like none other and if you are a noodle afficionado, this should definitely be on your list to try out.\n"
     },
     "Sichuan Impression": {
         "Name": "Sichuan Impression",
@@ -2892,7 +3026,8 @@
             "11057 Santa Monica Blvd, Los Angeles, CA 90025",
             "13816 Red Hill Ave, Tustin, CA 92780"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Sichuan Impression does so many dishes well. The tea smoked ribs, mapo tofu and cold chicken are all bursting with flavor and are my personal favorites. If you like spicy or Sichuan food and have never been here before, I have no doubt that this restaurant will leave you with a fantastic first impression.\n"
     },
     "Slurpin' Ramen": {
         "Name": "Slurpin' Ramen",
@@ -2915,7 +3050,8 @@
         "Addresses": [
             "3500 W 8th St, Los Angeles, CA 90005"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Slurpin' makes great ramen at a great price point. It's creamy, rich, and if you want, flavorfully spicy. They have an assortment of toppings to choose from, from an egg to extra meat, shiitake mushroom and corn. It's a great place to come to casually with friends and will leave you feeling warm and soulful inside.\n"
     },
     "Twozone Chicken": {
         "Name": "Twozone Chicken",
@@ -2936,7 +3072,8 @@
         "Addresses": [
             "addr"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Twozone chicken takes classic American fried chicken and sauces it up with Korean-inspired glazes. They have spicy soy, soy garlic, gochujang, and much more. I've tried most of their options and can say all that I've tried are quite delicious. Definitely head down if you're looking to mix up your classic chicken experience; you won't regret it.\n"
     },
     "Surawon Tofu House": {
         "Name": "Surawon Tofu House",
@@ -2957,7 +3094,8 @@
         "Addresses": [
             "2833 W Olympic Blvd, Los Angeles, CA 90006"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Surawon is BCD but better (sorry hardcore BCD fans). To start, their banchan is excellent, highlights including the fish cakes and two types of tofu they make in house everyday. Then, comes the soontofu and combo options if you got one. The soup is spicy and extraordinarily flavorful, with many delicious options to choose from. The combos are also delightful and they put just as much care into the proteins as they do the rest of the meal. I highly recommend trying out Surawon if you like BCD, spicy food, or Korean food; it will make you want to come right back!\n"
     },
     "Michin Dak": {
         "Name": "Michin Dak",
@@ -2979,7 +3117,8 @@
         "Addresses": [
             "3324 W 6th St, Los Angeles, CA 90020"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Michin Dak, or crazy chicken, does a great job of injecting Korean soul into a classic American fried chicken sandwich. Their sandwich has a fantastic seasoning, able to be adjusted to your spice preference, and is topped with creamy cole slaw and balancing pickles. Their fries are also perfectly cooked and seasoned, completing an awesome Korean-American experience.\n"
     },
     "88 Hotdog": {
         "Name": "88 Hotdog",
@@ -3001,7 +3140,8 @@
         "Addresses": [
             "3825 W 6th St, Los Angeles, CA 90020"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "I had never heard of Korean corndogs before, but looking them up got me instantly intrigued. 88 Hotdog sells these marvelous creations, which are just like a classic corn dog but with interesting twists. First, you can either get cheese or meat in the middle, or a combination of both. Second, you can choose to embed little pieces of potato in the corndog batter before frying, creating an exterior of not just corndog, but little fries as well. Lastly, the corndog can be topped with a sugary coating and served with ketchup, mustard, or sweet chili sauce. This will change your perspective on corndogs forever and make you wonder why this hadn't been invented sooner.\n"
     },
     "La Cevicheria": {
         "Name": "La Cevicheria",
@@ -3021,7 +3161,8 @@
         "Addresses": [
             "3809 W Pico Blvd, Los Angeles, CA 90019"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "This Guatemalan / Peruvian / Latino seafood restaurant is what every seafood lover should crave. Not only are the prices cheaper than pretty much any seafood restaurant around, but the quality matches or exceeds these options as La Cevicheria was recognized by Michelin as a Bib Gourmand selection in 2019. Their mouthwatering selections include the aguachiles, chapin ceviche (which is not seen in many other places around LA), and tostadas, all of which will make you wanting more.\n"
     },
     "Dave's Hot Chicken": {
         "Name": "Dave's Hot Chicken",
@@ -3052,7 +3193,8 @@
             "970 N Western Ave, Los Angeles, CA 90029",
             "465 N Fairfax Ave, Los Angeles, CA 90036"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Started in an East Hollywood parking lot, Dave's has gone from a humble stand to a massive franchise and brand name chicken restaurant. While that usually stops me from putting them on a list like this, I've watched Dave's grow into the behemoth it has become and still have a soft spot for them as their quality has not deteriorated whatsoever (at least at the locations that I visit). The chicken that they serve is not only spiced perfectly, but it is legitimately soft and incredibly juicy. You can't go wrong with any of their combos, but know that the spicier you get, the more flavorful the chicken's exterior will be— so go for it, but beware.\n"
     },
     "hanchic.": {
         "Name": "hanchic.",
@@ -3072,7 +3214,8 @@
         "Addresses": [
             "2500 W 8th St #103, Los Angeles, CA 90057"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Hanchic takes traditional Korean cuisine and throws it all out the window. Aggressively. Normally, I would say that is a bad thing, but hanchic has found a way to successfully incorporate cuisines across the world into their Korean selection, creating fusions dishes that will literally make you say WTF when seeing them written, but speechess when eaten. My favorites include the iconic bulgogi risotto, hoe buns, and dubbap rice bowl. However, I am fiending to go back and try more to see what else hanchic has to blow my mind next. As much as I do like hanchic, I would like to give a slight warning to individuals expecting more traditional Korean cuisine: do not go here if you want that or have guests that expect that. They may be overwhelmed LOL.\n"
     },
     "Hae Jang Chon": {
         "Name": "Hae Jang Chon",
@@ -3093,7 +3236,8 @@
         "Addresses": [
             "3821 W 6th St, Los Angeles, CA 90020"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Hae Jang Chon is a Koreatown favorite for AYCE kbbq. To be transparent, they are a bit more expensive than the other places I wrote about here BUT has incredible quality and variety. I would highly recommend both their marinated and unmarinated short rib and their USDA Prime Steak. Hae Jang Chon also grills its meat on the more traditional hot rock as opposed to the more common metal grill. If you are looking for AYCE + good quality meat, Hae Jang Chon is the place to go! -J\n"
     },
     "Man Soo Korean BBQ": {
         "Name": "Man Soo Korean BBQ",
@@ -3114,7 +3258,8 @@
         "Addresses": [
             "3429 W 8th St, Los Angeles, CA 90005"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "If you like AYCE Korean BBQ and you are partial to marinated meats, I would highly recommend Man Soo. Man Soo is a reasonably priced AYCE, and has a variety of options given the relatively cheap price. I highly recommend their marinated beef short plate, which has thinly sliced beef that is marinated in a light soy sauce based marinade. If you like bulgogi or LA galbi, you will love this dish. Man Soo also used to have a cold bar with various side dishes and sauces, but has stopped since the pandemic- maybe they will bring it back soon? A great place to go and have a KBBQ night with friends 😊 -J\n"
     },
     "Meat Love Korean BBQ": {
         "Name": "Meat Love Korean BBQ",
@@ -3135,7 +3280,8 @@
         "Addresses": [
             "1145 S Western Ave, Los Angeles, CA 90006"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "As the name implies, Meat Love is for TRUE lovers of meat. Their collection is reasonably priced and offers a surprising variety of meat given the cost. Some items that you can get on the Meat Love basic menu that is not common everywhere else include intestines, rib finger, and pork rind. If you are not feeling experimental, their basics are still good quality and delicious. They also have amazing side salads- try the green onion salad for pork and the onion salad for beef! Meat Love is THE kbbq place I recommend for going out with friends. They are accommodating of large parties, outside, and relatively affordable. -J\n"
     },
     "mdk noodles": {
         "Name": "mdk noodles",
@@ -3156,7 +3302,8 @@
         "Addresses": [
             "3630 Wilshire Blvd, Los Angeles, CA 90010"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "A meal at mdk starts with two of their well known kimchis. The white, which is acidic and pungent, and the red, which is spicy, fresh, and has hints of pepper and garlic. However, next comes the main attraction: the soups. My favorites are the spicy arrowhead noodles with skate and the chicken noodle soup. The green arrowhead noodles are perfectly cooked with a thick, red, savory sauce coating each one. The chicken noodle soup is like a variation on the American version, but frankly better. The broth is packed with flavor and the knife-cut noodles have a great bite. It is filled with delicious dumplings and topped with ground pork and veggies, making it my favorite sickness cure in LA. I used it to get over covid (delivery ofc)!\n"
     },
     "Isaan Station": {
         "Name": "Isaan Station",
@@ -3175,7 +3322,8 @@
         "Addresses": [
             "25 N Western Ave unit 111, Los Angeles, CA 90004"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Isaan Station occupies a niche that most Thai restaurants do not cover: Northern Thai and Thai street food. Make sure to get the papaya salad, topped with pickled blue crab, and other delicacies you cannot find elsewhere in LA. \n"
     },
     "Saikai Ramen": {
         "Name": "Saikai Ramen",
@@ -3197,7 +3345,8 @@
         "Addresses": [
             "209 N Western Ave # B, Los Angeles, CA 90004"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Saikai is one of my favorite ramen places in LA. This place is CRIMINALLY overlooked in just about every way as they prepare some of the deepest, most flavorful broths I have ever tasted. Their spicy shoyu tonkotsu is to die for and has a plethora of delightful toppings that adorn their addicting broth. They gyukotsu is also phenomenal, and is basically a representation of umami in a bowl. However, for your first time there I highly recommend trying the spicy shoyu tonkotsu as it will certainly have you coming back again and again.\n"
     },
     "Kobawoo House": {
         "Name": "Kobawoo House",
@@ -3217,7 +3366,8 @@
         "Addresses": [
             "698 S Vermont Ave #109, Los Angeles, CA 90005"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Bossam is a Korean dish that many Americans probably have not heard of before. It is spiced, boiled, then sliced pork shoulder, served with an assortment of side dishes. Kobawoo House is known worldwide for their bossam, and they serve their pork with sides of cabbage, pickled daikon, radish kimchi, and salt fermented shrimp. Assemble all of these things together and you have a lettuce-wrapped sandwich that will rock your entire world. It is the perfect balance of saltiness, fat, acidity, vegetables, and meat and when I went for the first time I was shocked that a place this good had been sitting under my nose for years. Kobawoo House serves one of my favorite dishes ever and I highly recommend stopping by and trying bossam for the first time if you have never had it before.\n"
     },
     "Myung In Dumplings": {
         "Name": "Myung In Dumplings",
@@ -3237,7 +3387,8 @@
         "Addresses": [
             "3109 W Olympic Blvd B, Los Angeles, CA 90006"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "People typically associate dumplings with Chinese food, but Myung In will change that. Their Korean meat-filled pockets of goodness are truly unbelievable. I believe at this point I have tried every single dumpling on the menu and I can fairly say they are all extraordinarily good. My favorites are the pork and kimchi bun, which has a slight kimchi flavor that really elevates the dish, the pork and shrimp steam roll dumpling, which comes with a delicious spicy sauce, and the shrimp, pork, and vegetables fried dumpling, which adds a lovely crunch to the equation. Make sure to use a lot of their addicting sauce and I always end up asking for extra banchan because their pickled radishes are that good.\n"
     },
     "Guelaguetza": {
         "Name": "Guelaguetza",
@@ -3256,7 +3407,8 @@
         "Addresses": [
             "3014 W Olympic Blvd, Los Angeles, CA 90006"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "The url to visit Guelaguetza's website is ilovemole.com. After visiting their restaurant, I couldn't agree more. Their red and black moles are unlike anything I have had before in LA. The chocolate sauces are perfectly balanced between savory and sweet, and go well with just about anything you put on them: enchiladas, chicken, steak, or chips. If you've never had mole before, go out and try it at Guelaguetza. If you have, go out and try it at Guelaguetza. It will give you perspective on how good this dish can be.\n"
     },
     "Dan Sung Sa": {
         "Name": "Dan Sung Sa",
@@ -3278,7 +3430,8 @@
         "Addresses": [
             "3317 W 6th St, Los Angeles, CA 90020"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Dan Sung Sa was created to mimic Korean bars in the 1980s. It is fully outfitted with classic wooden tables and chairs, walls graffitied with the signatures of customers, and a skewer grill in the middle. You can choose to eat a full meal here, but I would recommend you get a large variety of freshly grilled skewers. The skewers are small but range from around to one to three dollars a skewer so you can try a couple different kinds! Regarding alcohol, I would recommend YoJu (yogurt soju). Even though the ambience and the food is fantastic here, unfortunately the owner is a bit unscrupulous. Make sure to clearly count your orders and write it down, or she may overcharge you.\n"
     },
     "Park's BBQ": {
         "Name": "Park's BBQ",
@@ -3299,7 +3452,8 @@
         "Addresses": [
             "955 S Vermont Ave G, Los Angeles, CA 90006"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Park’s is a Koreatown classic when it comes to KBBQ. Park’s is quite pricey, but the price is justified by using high quality meat and providing a high class KBBQ experience. If you want to give it a try without committing to the cost, I would try the lunch menu, where you can try some of their other dishes that are quite delicious for a fraction of the cost. The side dishes there are also notable in itself- possibly the best I have had in Koreatown! -J\n"
     },
     "Han Bat Shul Lung Tang": {
         "Name": "Han Bat Shul Lung Tang",
@@ -3319,7 +3473,8 @@
         "Addresses": [
             "4163 W 5th St, Los Angeles, CA 90020"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Are you looking for a bowl of warm soup to warm up your frosty heart? If so, (or you just want some bone broth), make sure to go to Han Bat Shul Lung Tang. Shul Lung Tang is a traditional Korean soup that is made by boiling ox bones for a very long time, and is served with boiled meat, kimchi, and rice. The flavor is a bit difficult to describe, but it is one of my all-time favorite places to go to for its rich and hot soup. If you are tired of going to kbbq, give Han Bat Shul Lung Tang a try! -J\n"
     },
     "Kogi": {
         "Name": "Kogi",
@@ -3342,7 +3497,8 @@
         "Addresses": [
             "3434 Overland Ave, Los Angeles, CA 90034"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "Roy Choi is one of the pioneers of not only food trucks, but Asian Fusion cuisine itself. First started in 2008, Kogi has exploded in popularity since then, largely fueled by their famous short rib taco. This culture-changing creation is filled with succulent, spiced short rib and topped with an asian inspired slaw that is acidic, umami, and almost fruity. This taco is tied for my favorite item on the menu however- because the PacMan quesadilla will always have a place in my heart. This monstrosity combines all of the trucks meats (short rib, chicken, pork), cheeses, and signature salsas (green, orange, blue) into the single greatest quesadilla ever constructed.\n"
     },
     "Tilt Coffee": {
         "Name": "Tilt Coffee",
@@ -3352,7 +3508,8 @@
         "Categories": [
             "Asian",
             "Coffee",
-            "Matcha"
+            "Matcha",
+            "Innovative"
         ],
         "Locations": [
             "34.0481785,-118.2463485"
@@ -3360,7 +3517,8 @@
         "Addresses": [
             "334 S Main St Kiosk#1, Los Angeles, CA 90013"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you are looking to impress even the most ardent coffee haters, Tilt Coffee absolutely is the place for you. They are known for their cloud lattes, which are creamy and foamy lattes that retain their “cloudy” texture even when cold. I would highly recommend the original iced cloud latte or their iced matcha cloud. They are a bit hard to find as they are in the courtyard area of an apartment complex, but the slight search is undoubtably worth it. If my personal endorsement is not enough, check Yelp- 5 stars from 500 people. My personal favorite coffee place in LA! -J\n"
     },
     "Bohemian House of Espresso + Chai": {
         "Name": "Bohemian House of Espresso + Chai",
@@ -3377,7 +3535,8 @@
         "Addresses": [
             "109 W 6th St, Los Angeles, CA 90014"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "This is one of the cutest spots in LA to grab a cup of coffee and study for finals. The owner of the shop is so friendly and welcoming and always encourages USC students to study at his shop. There are plenty of chargers for your electronic devices, so you can study here for a long time. As the name implies, they have excellent chai and tea, and I would personally recommend their dirty chai latte. Bohemian House of Espresso and Chai uses real toasted spices to make their chai and does not use concentrate like most places. -J\n"
     },
     "The Varnish": {
         "Name": "The Varnish",
@@ -3395,7 +3554,8 @@
         "Addresses": [
             "118 E 6th St, Los Angeles, CA 90014"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "The Varnish is THE bar I recommend to anyone trying to find a bar with good drinks in LA. The Varnish has speakeasy vibes and is a great place to go if you are trying to try good drinks and sit down with your group- if you are looking to dance, I would not recommend! My favorite drink at the Varnish is the bartender’s choice because the bartenders will craft a drink based on your favorite flavors. This lets you guarantee that you will like your drink as well as lets you try something new! Could not recommend enough, and this is coming from someone who borders on hating alcohol! -J\n"
     },
     "Death & Co.": {
         "Name": "Death & Co.",
@@ -3413,7 +3573,8 @@
         "Addresses": [
             "818 E 3rd St, Los Angeles, CA 90013"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "This is a cute little spot that is located squarely in the Arts District, which makes it a tempting option for post-dinner drinks. Death & Co has great energy- the music is loud but not annoying, and the atmosphere is always lively. I personally loved their drinks, which are almost identical to the selection offered at their ICONIC New York location. The drink menu is thoughtfully crafted, with detailed descriptions and images to ensure that you will enjoy your drinks! Of course, the drinks are delightful. -J\n"
     },
     "Alchemist Coffee Project": {
         "Name": "Alchemist Coffee Project",
@@ -3431,7 +3592,8 @@
         "Addresses": [
             "698 S Vermont Ave Ste 103, Los Angeles, CA 90005"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "This is a high contender for my favorite coffee spot in LA, just for their hot lattes and their matcha! I would personally recommend their hazelnut latte, which is the perfect mix of creamy, sweet, and bitter. If you are a matcha lover, I would recommend their mint matcha. The interior is so very cute and is a great spot to study as they have many outlets and tables. There is always a bit of a line here, which is a testament to how fantastic their coffee is. This is a great introduction to coffee and matcha but be careful as you may literally become addicted. -J\n"
     },
     "The Wolves": {
         "Name": "The Wolves",
@@ -3448,26 +3610,8 @@
         "Addresses": [
             "519 S Spring St, Los Angeles, CA 90013"
         ],
-        "Price": "$$"
-    },
-    "Cognoscenti Coffee": {
-        "Name": "Cognoscenti Coffee",
-        "Areas": [
-            "Downtown",
-            "West LA"
-        ],
-        "Categories": [
-            "Coffee"
-        ],
-        "Locations": [
-            "34.0441539,-118.2576822",
-            "34.0315273,-118.3776783"
-        ],
-        "Addresses": [
-            "868 S Olive St, Los Angeles, CA 90014",
-            "6114 Washington Blvd, Culver City, CA 90232"
-        ],
-        "Price": "$"
+        "Price": "$$",
+        "Description": "If you want to visit possibly the most beautiful bar in LA, The Wolves is the place for you. The Wolves is outfitted with black spiral staircases, a beautiful bar, and a gorgeous stained-glass ceiling. There are two levels so you can choose to stay downstairs to stay close to the bar or migrate upstairs for more privacy. The drinks here are solidly good- I would recommend Tiger’s Milk for a smoky and spicy flavor profile. Would highly recommend for the good drinks, immaculate vibes, and gorgeous place! -J\n"
     },
     "The Thirsty Crow": {
         "Name": "The Thirsty Crow",
@@ -3484,24 +3628,8 @@
         "Addresses": [
             "2939 Sunset Blvd, Los Angeles, CA 90026"
         ],
-        "Price": "$$"
-    },
-    "The Queensberry": {
-        "Name": "The Queensberry",
-        "Areas": [
-            "Downtown"
-        ],
-        "Categories": [
-            "Bars",
-            "Speakeasy"
-        ],
-        "Locations": [
-            "34.04717,-118.26108"
-        ],
-        "Addresses": [
-            "Figueroa Alley on 8th Street, between Flower &, Figueroa St, Los Angeles, CA 90017"
-        ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "The Thirsty Crow is a very fun + cute spot located centrally in Silverlake on Sunset Blvd. I think it straddles the line between it being a regular bar and a dive bar. On specific days they have discounts for cheaper drinks, and their drinks are a tad bit cheaper than traditional LA prices, but I do not think it is quite a dive bar. The décor inside is very cute, and there are plenty of spots to sit down even though it is busy! I would recommend the whiskey sour- very foamy and has balanced flavors. Stop by if you are in Silverlake! -J\n"
     },
     "Wushiland Boba": {
         "Name": "Wushiland Boba",
@@ -3522,7 +3650,8 @@
             "10250 Santa Monica Blvd Ste 2770, Los Angeles, CA 90067",
             "140 W Valley Blvd Ste 104, San Gabriel, CA 91776"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you are a boba lover, you must try Wushiland Boba! This is a fun boba store with a wide variety of teas and toppings. My personal favorite is the Oolong Milk Tea with BOTH regular and mini boba. A texture nightmare for some, but the mini boba adds a fun twist to the boba we all know and love. The boba balls are always perfectly chewy and never bloated, the tea is not too sweet, and the tea flavor comes in powerfully. Stop by Wushiland Boba if you are ever shopping at Century City Westfield- it will elevate your shopping experience. -J\n"
     },
     "Hilltop Coffee + Kitchen": {
         "Name": "Hilltop Coffee + Kitchen",
@@ -3542,7 +3671,8 @@
             "4427 W Slauson Ave, Los Angeles, CA 90043",
             "4253 Eagle Rock Blvd, Los Angeles, CA 90065"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you are looking for a cool place to work and get some breakfast + coffee, I would recommend Hilltop Coffee + Kitchen! The interior is well lit and decorated and is a great place to catch up with a friend, read a book, or answer some emails. The coffee is on the stronger side (which I personally appreciate), and the taste of the coffee itself is quite good. Check it out if you are in the area! -J\n"
     },
     "Lodge Bread Co.": {
         "Name": "Lodge Bread Co.",
@@ -3562,25 +3692,8 @@
         "Addresses": [
             "11918 Washington Blvd, Los Angeles, CA 90066"
         ],
-        "Price": "$$"
-    },
-    "Animal": {
-        "Name": "Animal",
-        "Areas": [
-            "Mid City"
-        ],
-        "Categories": [
-            "American",
-            "Innovative",
-            "Dinner"
-        ],
-        "Locations": [
-            "34.0789326,-118.3615441"
-        ],
-        "Addresses": [
-            "435 N Fairfax Ave, Los Angeles, CA 90036"
-        ],
-        "Price": "$$$$"
+        "Price": "$$",
+        "Description": "Bread can come in many forms. A lot of it is made just to be a vehicle for other items, and I think that is sad. Lodge agrees. These breads are some of the finest I've had in my entire life. Ranging from the seeded country loaf to the sourdough, these will literally change your entire perspective on bread and it's existence. The story doesn't end there though. Lodge serves the best shakshuka I have ever had hands down and it's not even close. Their version of this Israeli dish has such a deep tomato flavor, with a perfect balance of spices and toppings that my mom and I have pondered how it's made for a solid three years. We have made zero progress. I haven't even talked about the pastries yet and this review is already long, so I'll let Lodge do the rest of the talking.\n"
     },
     "Churros Don Abel": {
         "Name": "Churros Don Abel",
@@ -3600,7 +3713,8 @@
         "Addresses": [
             "5458 Whittier Blvd, Los Angeles, CA 90022"
         ],
-        "Price": "$"
+        "Price": "$",
+        "Description": "If you like Disneyland churros, get ready to have them ruined for you forever. Churros Don Abel takes this seemingly simple dessert and does it better than anyone else. These churros have crispy outsides, soft insides, and are sugared as to not be too overwhelming. You can also get a side of caramel sauce which some of my friends enjoy, but I personally enjoy the pure churro deliciousness itself.\n"
     },
     "Pitchoun!": {
         "Name": "Pitchoun!",
@@ -3621,7 +3735,8 @@
             "8500 Beverly Blvd #103, Los Angeles, CA 90048",
             "545 S Olive St, Los Angeles, CA 90013"
         ],
-        "Price": "$$"
+        "Price": "$$",
+        "Description": "Pitchoun! is a cute French bakery specializing in pastries and brunchy food. Their striped croissants look as good as they taste, and I'm sure their other pastries live up to this one. For my brunch, I ordered the croque madame, which was a fabulous version of the dish topped with just the right amount of bechamel and a perfectly done sunny side up egg. Their tartines also looked fabulous and are created with their artisan bread that I will certainly pick up on my next visit.\n"
     },
     "Republique": {
         "Name": "Republique",
@@ -3643,7 +3758,8 @@
         "Addresses": [
             "624 S La Brea Ave, Los Angeles, CA 90036"
         ],
-        "Price": "$$$"
+        "Price": "$$$",
+        "Description": "Republique is an LA powerhouse at this point. From the start of the day until the end they are packed and serving some of the most delicious food in the city. In the morning, some of the favorites are the broiche french toast and mushroom toast, while at the end of the day my highlight is the cooks pasture raised chicken. In my opinion, this is a non-negociable for diners going for dinner. This chicken has crispy, flavorful skin while being incredibly juicy on the inside and is surrounded by a medley of complementary vegetables that elevate the flavor of the chicken immensely. \n"
     },
     "Yardbird": {
         "Name": "Yardbird",
@@ -3662,6 +3778,177 @@
         "Addresses": [
             "8500 Beverly Blvd Suite 112, Los Angeles, CA 90048"
         ],
-        "Price": "$$"
+        "Price": "$$$",
+        "Description": "Yardbird does high end fried chicken and southern cuisine. They have excellent mac and cheese, made from five tasty cheeses and crusted on top for a lovely texture difference. The main attraction however, is the chicken. This bird is treated like a queen. I'm not sure what magic they work back there, but the fried chicken with honey hot sauce, chicken and waffles, and hot sandwich are all phenomenal ways to enjoy this special chicken. It has an incredibly satisfying crust and flavor, while being extraordinarily succulent and juicy on the inside. It's very difficult to find a fried chicken prepared better than Yardbird.\n"
+    },
+    "Jitlada": {
+        "Name": "Jitlada",
+        "Areas": [
+            "Hollywood"
+        ],
+        "Categories": [
+            "Thai",
+            "Asian",
+            "Soup",
+            "Noodles",
+            "Spicy",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0981514,-118.2912164"
+        ],
+        "Addresses": [
+            "5233 Sunset Blvd, Los Angeles, CA 90027"
+        ],
+        "Price": "$$",
+        "Description": "Jitlada is known for their spicy Thai food, so BEWARE. Just kidding, it's customizable, but they still are known for that! If you go to Jitlada, stray away from your comfort zone in Pad Thai and try some of their most popular dishes- the classics will be essentially the same! Some of the highlights include the crispy morning glory salad, crying tiger beef, and Taepo chicken curry, but there are so many fabulous dishes to choose from that you likely have never heard of. Jitlada earned itself a Bib Gourmand recommendation from Michelin in 2019 and it was certainly well deserved.\n"
+    },
+    "San Soo Dang": {
+        "Name": "San Soo Dang",
+        "Areas": [
+            "Koreatown"
+        ],
+        "Categories": [
+            "Asian",
+            "Korean",
+            "Bakery"
+        ],
+        "Locations": [
+            "34.0583163,-118.2917273"
+        ],
+        "Addresses": [
+            "761 S Vermont Ave, Los Angeles, CA 90005"
+        ],
+        "Price": "$",
+        "Description": "San Soo Dang is one of LA’s finest stores for selling rice cakes. Korean rice cakes come in an incredible variety and range from sweet, and dessert-like to savory. For those who cannot decide which kind they like the best, San Soo Dang offers a very vast variety, and cannot be compared to the offerings at Korean markets. If you have never tried sweet rice cakes, I recommend you try their song-pyeon, which is a rice cake filled with honey and sesame filling. Just a word of caution- they are cash only and the employees speak limited English. However, if you want to try authentic rice cakes, don’t let that scare you and visit with a 20 dollar bill and google translate! -J\n"
+    },
+    "Sweet Rose Creamery": {
+        "Name": "Sweet Rose Creamery",
+        "Areas": [
+            "West LA",
+            "Santa Monica"
+        ],
+        "Categories": [
+            "Dessert",
+            "Ice Cream"
+        ],
+        "Locations": [
+            "34.0479314,-118.4912473",
+            "34.0006561,-118.4823411"
+        ],
+        "Addresses": [
+            "225 26th St #51, Santa Monica, CA 90402",
+            "2726 Main St, Santa Monica, CA 90405"
+        ],
+        "Price": "$",
+        "Description": "Sweet Rose has some of the finest ice creams in LA. Their fresh mint chip is something I find myself craving and it's so much better than any store bought version you will find. Additionally, their milk and cookies is a phenomenal version of the classic cookies and cream. They source all their ingredients from local farmers markets, and it certainly shows with the quality of the products they put out on a day to day basis.\n"
+    },
+    "Wexler's Deli": {
+        "Name": "Wexler's Deli",
+        "Areas": [
+            "Santa Monica",
+            "Downtown"
+        ],
+        "Categories": [
+            "Sandwiches",
+            "Deli",
+            "Seafood",
+            "Jewish",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0180193,-118.493018",
+            "34.050,-118.2494"
+        ],
+        "Addresses": [
+            "616 Santa Monica Blvd, Santa Monica, CA 90401",
+            "317 S Broadway, Los Angeles, CA 90013"
+        ],
+        "Price": "$$",
+        "Description": "Wexler's is the only deli in Los Angeles that smokes and cures their meat in house. This is the basis for their two specialties, lox and pastrami. Their pastrami sandwiches rival any in LA and the lox is some of the freshest and best tasting I have ever had. I have heard up and down reviews on the freshness of the bagels themselves, but I have never had a problem personally. If you'd just like to cut that out, you can certainly just buy lox and take it home like you do at the supermarket and enjoy it at home.\n"
+    },
+    "Lawry's The Prime Rib": {
+        "Name": "Lawry's The Prime Rib",
+        "Areas": [
+            "Mid City"
+        ],
+        "Categories": [
+            "Steakhouse",
+            "American",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.06725311279297,-118.37627410888672"
+        ],
+        "Addresses": [
+            "100 La Cienega Blvd, Beverly Hills, CA 90211"
+        ],
+        "Price": "$$$$",
+        "Description": "Lawry's has been around forever (1938, thats pretty much forever). They are so well known that you can find their steak seasoning in pretty much any supermarket around Los Angeles. This sort of recognition and endurance throughout the years doesn't come out of nothing. Lawry's has some of the best steak and best service of any restaurant in LA. The meal starts with the delicious chips at the foyer, but make sure to not eat too many as you will be full for the main attraction. When it's time for that, the servers will come around with massive silver carts, ready to cut your prime rib right off the meat and onto your plate. If you really love the meal, you can go with the Diamond Jim Brady Cut, who was known for having a stomach 6 times the size of the average human. Actually, probably don't do that unless you want to die.\n"
+    },
+    "Mulberry Street Pizzeria": {
+        "Name": "Mulberry Street Pizzeria",
+        "Areas": [
+            "West LA",
+            "The Valley"
+        ],
+        "Categories": [
+            "Italian",
+            "Pizza",
+            "Lunch",
+            "Dinner"
+        ],
+        "Locations": [
+            "34.0638281,-118.3989722",
+            "34.1531314,-118.4625803"
+        ],
+        "Addresses": [
+            "240 S Beverly Dr, Beverly Hills, CA 90212",
+            "15136 Ventura Blvd, Sherman Oaks, CA 91403"
+        ],
+        "Price": "$$",
+        "Description": "Mulberry St. is the original place that has served NY style pizza in LA for decades. Their pizzas are MASSIVE, and can easily feed 3-4 people each so they are great for parties. However, their size isn't their biggest selling point, it's the taste. The crust is thin and has a complex taste, while the cheese is perfectly melted and charred and the toppings they put are great as well. Some of their best options are the pepperoni, tomato and artichoke, and rigatoni. Yes, rigatoni. They have pasta pizza and it's great. Come for me. Lastly, don't forget to order the lorna luft chopped salad, which is stellar and one of my favorite chopped salads in LA.\n"
+    },
+    "The Original Pantry Cafe": {
+        "Name": "The Original Pantry Cafe",
+        "Areas": [
+            "Downtown"
+        ],
+        "Categories": [
+            "Breakfast",
+            "Brunch",
+            "Lunch",
+            "American",
+            "Classic LA"
+        ],
+        "Locations": [
+            "34.046452,-118.262543"
+        ],
+        "Addresses": [
+            "877 S Figueroa St, Los Angeles, CA 90017"
+        ],
+        "Price": "$",
+        "Description": "When my grandfather and his father originally came to LA around the 50's, they worked in the produce market on 8th street (that's still there!). Every morning at 5 AM, they would go to The Original Pantry for breakfast before work. This diner has stood the test of time and is an LA icon today. Get your favorite American breakfast classics like french toast, eggs, and pancakes and enjoy an establishment that has been around since 1924.\n"
+    },
+    "Yomie's Rice X Yogurt": {
+        "Name": "Yomie's Rice X Yogurt",
+        "Areas": [
+            "SGV"
+        ],
+        "Categories": [
+            "Dessert",
+            "Boba",
+            "Asian"
+        ],
+        "Locations": [
+            "34.080010,-118.102310"
+        ],
+        "Addresses": [
+            "227 W Valley Blvd #168A, San Gabriel, CA 91776"
+        ],
+        "Price": "$",
+        "Description": "DISCLAIMER: This is not boba, but I literally could not think of another category to put it in sorry. When I had this drink for the first time I was shocked I had never had it before. The restaurant is aptly named: their specialty is a liquidy yogurt drink filled with purple rice. I know, sounds weird. However, if you like frozen yogurt and yogurt in general, I can assure you that you will love this drink. It's a very interesting combination of tart, sweet, and savory and is a very popular drink in mainland China that is just starting to get traction here."
     }
 }

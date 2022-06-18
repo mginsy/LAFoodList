@@ -5,7 +5,8 @@ import _ from 'lodash'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Home from './home'
-import { List, About} from './auth'
+import { About} from './auth'
+import List from './ListPage'
 import MapPage from './MapPage'
 import restaurantPages from './RestaurantPages'
 

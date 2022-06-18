@@ -119,9 +119,15 @@ class MapPage extends Component {
     this.setState({ area: param, 
       showingInfoWindow: false, 
       activeMarker: null,
+      refreshMap: true });
+  };
+
+  handleCategoryChangeClick = param => e => {
+    this.setState({ category: param, 
+      showingInfoWindow: false, 
+      activeMarker: null,
       refreshMap: true,
-      gle: "",
-      price: "" });
+    });
   };
 
   handlePriceChange = (event) =>
@@ -209,7 +215,7 @@ render() {
                 let location = currentRestaurant.Locations[locationNum];
 
                 let currentArea = currentRestaurant.Areas[locationNum];
-                let mapListText = currentRestaurant.createMapListText(locationNum);
+                let mapListText = currentRestaurant.createMapListText(locationNum, this.handleCategoryChangeClick);
                 totAreas[currentArea+"Names"].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
                 totAreas[currentArea].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
                 
@@ -222,7 +228,7 @@ render() {
               let locationNum = currentRestaurant.Areas.indexOf(this.state.area)
               let location = currentRestaurant.Locations[locationNum];
 
-              let mapListText = currentRestaurant.createMapListText(locationNum);
+              let mapListText = currentRestaurant.createMapListText(locationNum, this.handleCategoryChangeClick);
               totAreas[this.state.area+"Names"].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
               totAreas[this.state.area].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
 
@@ -302,7 +308,7 @@ render() {
         gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
         gleList.splice(d3.bisectLeft(gleListValues,"="),0,
         <MenuItem value="=">
-          Equal To
+          =
         </MenuItem>
         )
       }
@@ -310,7 +316,7 @@ render() {
         gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
         gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
         <MenuItem value="≤">
-          Less Than || =
+          ≤
         </MenuItem>
         )
       }
@@ -318,7 +324,7 @@ render() {
         gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
         gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
         <MenuItem value="≥">
-          Greater Than || =
+          ≥
         </MenuItem>
         )
       }
@@ -330,19 +336,19 @@ render() {
       gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
       gleList.splice(d3.bisectLeft(gleListValues,"="),0,
       <MenuItem value="=">
-        Equal To
+        =
       </MenuItem>
       )
       gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
       gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
       <MenuItem value="≤">
-        Less Than || =
+        ≤
       </MenuItem>
       )
       gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
       gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
       <MenuItem value="≥">
-        Greater Than || =
+        ≥
       </MenuItem>
       )
       gleFlag = true;
@@ -360,7 +366,7 @@ render() {
     <div>
       <div className="row mapRow">
         <div className="column mapCol">
-          <div className = "row inMapRow topMapPage">
+          <div className = "row topMapPage">
             <div className = "col">
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <InputLabel id="demo-select-small">Category</InputLabel>
@@ -400,7 +406,7 @@ render() {
               </FormControl>
             </div>
             <div className = "col">
-              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+              <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
                 <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
                 <Select
                   labelId="demo-select-small"
@@ -439,12 +445,11 @@ render() {
           </FullPage>
         </div>
         <div className ="column mapCol">
-          <Link className='recommend-text-big' to={{
+        <Link className='recommend-text-big' to={{
                       pathname: restaurantList[randomRestaurantPick].restaurant.createPath(restaurantList[randomRestaurantPick].locationNum),
                       }} >
             Recommend Me!
           </Link>
-          
           <Map
             google={this.props.google}
             zoom={10}
@@ -481,7 +486,7 @@ render() {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "GMAPSKEY"
+  apiKey: "AIzaSyD7PF3dtTMKX_0e045Ez3nvc_X5-c8so9I"
 })(MapPage)
 
 //export default MapPage
