@@ -157,7 +157,7 @@ for (let key in data){ // creates markers and filters categories
         }
       }
       classes[currentRestaurant.Name + locationNum.toString()] = (GoogleApiWrapper({
-        apiKey: 'AIzaSyAGCEM1ayLKFv8yQk257bNS7GHt3oZTPME'
+        apiKey: 'GMAPSKEY'
       })(withRouter(RestaurantPage)))
       //classes[currentRestaurant.Name + locationNum.toString()] = RestaurantPage;
   }

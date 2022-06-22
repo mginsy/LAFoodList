@@ -584,7 +584,7 @@ render() {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAGCEM1ayLKFv8yQk257bNS7GHt3oZTPME"
+  apiKey: "GMAPSKEY"
 })(withRouter(MapPage))
 
 //export default MapPage
