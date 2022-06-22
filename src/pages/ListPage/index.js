@@ -1,4 +1,5 @@
 import { Component }from 'react';
+import { Container, Row, Col } from "react-bootstrap";
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -6,7 +7,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Restaurant from '../../Restaurant';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {Link, Router, BrowserRouter, MemoryRouter, useLocation, useParams} from 'react-router-dom';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
+import {motion} from 'framer-motion';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const d3 = require('d3-array'); 
 const data = require('../../restaurantData.json');
@@ -17,6 +22,13 @@ const totAreasReset = structuredClone(totAreas)
 delete data.AreasADMINONLY
 
 const priceOptions = ["","$","$$","$$$","$$$$"]
+
+const formColor = '#F3F0D7'
+const StyledForm = styled(FormControl)({
+  '& .MuiInputBase-input': {
+    backgroundColor: formColor
+  },
+});
 
 //initialize all values
 
@@ -59,15 +71,29 @@ function resetPrices(){
   priceFlag = false;
 }
 
+const withRouter = WrappedComponent => props => {
+  const params = useParams();
+  const location = useLocation();
+  // etc... other react-router-dom v6 hooks
+
+  return (
+    <WrappedComponent
+      {...props}
+      params={params}
+      locState={(typeof(location.state) != "undefined" && location.state != null ? location.state : "")}
+      // etc...
+    />
+  );
+};
 
 
 class ListPage extends Component {
 
   state = {
-    category: "",
-    area: "",
-    gle: "",
-    price: "",
+    category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""),
+    area: (typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""),
+    gle: (typeof(this.props.locState.gle) != "undefined" ? this.props.locState.gle : ""),
+    price: (typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : ""),
     screenWidth: 0,
     screenHeight: 0,
   };
@@ -126,12 +152,20 @@ class ListPage extends Component {
     })
   }
 
-render() {
+  resetCategories = (event) =>
+  {
+    this.setState({
+      category: "",
+      area: "", 
+      showingInfoWindow: false, 
+      activeMarker: null,
+      refreshMap: true,
+      gle: "",
+      price: ""
+    })
+  }
 
-  const FullPage = styled.div`
-      overflow-y: scroll;
-      max-height: ${this.state.screenHeight-200}px
-  `;  
+render() {
 
   resetLists();
 
@@ -164,7 +198,7 @@ render() {
               let location = currentRestaurant.Locations[locationNum];
 
               let currentArea = currentRestaurant.Areas[locationNum];
-              let listListText = currentRestaurant.createListListText(locationNum, this.handleCategoryChangeClick);
+              let listListText = currentRestaurant.createListListText(locationNum, this.handleCategoryChangeClick, this.state.category, this.state.area, this.state.gle, this.state.price);
               totAreas[currentArea+"Names"].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
               totAreas[currentArea].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,listListText);
               
@@ -176,7 +210,7 @@ render() {
             let locationNum = currentRestaurant.Areas.indexOf(this.state.area)
             let location = currentRestaurant.Locations[locationNum];
 
-            let listListText = currentRestaurant.createListListText(locationNum, this.handleCategoryChangeClick);
+            let listListText = currentRestaurant.createListListText(locationNum, this.handleCategoryChangeClick, this.state.category, this.state.area, this.state.gle, this.state.price);
             totAreas[this.state.area+"Names"].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
             totAreas[this.state.area].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,listListText);
 
@@ -192,7 +226,7 @@ render() {
     if (totAreas[currentArea].length !== 0){
       listList.push(
         <div className = "listAreaText">
-          <Link className='recommend-text-big' value={currentArea} onClick={this.handleAreaChangeClick(currentArea)} >{currentArea}</Link>
+          <Link className='recommend-text-big' value={currentArea} onClick={this.handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
         </div>
       )
       let listingNum = 0
@@ -258,7 +292,6 @@ render() {
     let currentRestaurant = restaurantList[restNum].restaurant;
     if (this.state.gle !== "" && priceListValues.length !== 4){ //creates price list
       let originalLength = priceListValues.length;
-      console.log(currentRestaurant.Name)
       if(this.state.gle==="≤"){
         for (let currPrice = currentRestaurant.Price.length; currPrice <= 4-originalLength; currPrice++){
           priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,priceOptions[currPrice])
@@ -359,10 +392,14 @@ render() {
   };
 
   return (
-    <div>
-      <div className="row topListPage">
-        <div className = "col">
-          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <motion.div className="bigNoScrollContainer"
+      key={"ListKey"}
+      exit={{opacity: 0}}
+      initial={{opacity: 0, y: -30}}
+      animate={{opacity: 1, y: 0, transition: {duration: 1}}}>
+      <Row className="listStartRow">
+        <Col className="firstListForm">
+          <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">Area</InputLabel>
             <Select
               labelId="demo-select-small"
@@ -376,10 +413,10 @@ render() {
               </MenuItem>
               {areaList}
             </Select>
-          </FormControl>
-        </div>
-        <div className = "col">
-          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+          </StyledForm>
+        </Col>
+        <Col className="midListForm">
+          <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">Category</InputLabel>
             <Select
               labelId="demo-select-small"
@@ -393,51 +430,62 @@ render() {
               </MenuItem>
               {categoryList}
             </Select>
-          </FormControl>
-        </div>
-        <div className = "col">
-          <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
-            <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.gle}
-              label="Area"
-              onChange={this.handleGLEChange}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              {gleList}
-            </Select>
-          </FormControl>
-        </div>
-        <div className = "col">
-          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small">Price</InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.price}
-              label="Price"
-              onChange={this.handlePriceChange}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              {priceList}
-            </Select>
-          </FormControl>
-        </div>   
-      </div>
-      <div className='listList'>
-        <FullPage>
-          {listList}
-        </FullPage>
-      </div>
-    </div>
+          </StyledForm>
+        </Col>
+        <Col className="lastListForm">
+          <Row className="listFormLastCol">
+            <Col className="mapFormCol">
+              <StyledForm sx={{ m: 1, minWidth: 80 }} size="small">
+                <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={this.state.gle}
+                  label="Area"
+                  onChange={this.handleGLEChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {gleList}
+                </Select>
+              </StyledForm>
+            </Col>
+            <Col className="mapFormCol">
+              <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="demo-select-small">Price</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={this.state.price}
+                  label="Price"
+                  onChange={this.handlePriceChange}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {priceList}
+                </Select>
+              </StyledForm>
+            </Col>
+            <Col className="mapFormCol">
+              <Link className='recommend-text-big' onClick={this.resetCategories} to="#" >Reset</Link>
+            </Col>
+          </Row>   
+        </Col> 
+      </Row>
+      <Row className='listPaddingRow'></Row>
+      <Row className='listList'>
+        <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight-215, width:this.state.screenWidth }}
+                        autoHide
+                        autoHideTimeout={1000}
+                        autoHideDuration={200}>
+            {listList}
+        </Scrollbars>
+      </Row>
+    </motion.div>
   );
 }
 }
 
-export default ListPage
+export default withRouter(ListPage)

@@ -1,6 +1,6 @@
 import { width } from '@mui/system';
 import { Marker } from 'google-maps-react';
-import {Link, Router, BrowserRouter, MemoryRouter} from 'react-router-dom';
+import {Link, Router, BrowserRouter, MemoryRouter, useParams, useLocation} from 'react-router-dom';
 
 export default class Restaurant{
     constructor(key, data){
@@ -45,14 +45,14 @@ export default class Restaurant{
         return markerList;
     }
 
-    createMapListText(locationNum, handleCategoryChangeClick){
+    createMapListText(locationNum, handleCategoryChangeClick, category, area, gle, price){
         let catStr = this.Categories.toString().replaceAll(",",", ")
         let catArr = []
         for (let catNum in this.Categories){
           let cat = this.Categories[catNum]
           let catName = (catNum != this.Categories.length-1 ? cat + ", " : cat)
           catArr.push(
-            <Link value={cat} onClick={handleCategoryChangeClick(cat)} ><p className='categories-text-small'>{catName}</p></Link>
+            <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{catName}</p></Link>
           )
         }
         return(
@@ -60,8 +60,9 @@ export default class Restaurant{
             <div className = "inMapRowText">
               <div className = "restLinkMoney">
                   <Link className='restaurant-text-big' to={{
-                      pathname: this.createPath(locationNum),
-                      }} >{this.Name}
+                      pathname: this.createPath(locationNum)
+                      }}
+                      state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/Map"}} >{this.Name}
                   </Link>
                   <p className='dollar-text-med'>{this.Price}</p>
               </div>
@@ -73,14 +74,14 @@ export default class Restaurant{
         )
     }
     
-    createListListText(locationNum, handleCategoryChangeClick){
+    createListListText(locationNum, handleCategoryChangeClick, category, area, gle, price){
       let catStr = this.Categories.toString().replaceAll(",",", ")
       let catArr = []
       for (let catNum in this.Categories){
         let cat = this.Categories[catNum]
         let catName = (catNum != this.Categories.length-1 ? cat + ", " : cat)
         catArr.push(
-          <Link value={cat} onClick={handleCategoryChangeClick(cat)} ><p className='categories-text-small'>{catName}</p></Link>
+          <Link value={cat} onClick={handleCategoryChangeClick(cat)}  to="#"><p className='categories-text-small'>{catName}</p></Link>
         )
       }
       return(
@@ -88,8 +89,9 @@ export default class Restaurant{
           <div className = "inMapRowText">
             <div className = "restLinkMoney">
                 <Link className='restaurant-text-big' to={{
-                    pathname: this.createPath(locationNum),
-                    }} >{this.Name}
+                      pathname: this.createPath(locationNum)
+                      }} 
+                      state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/List"}}>{this.Name}
                 </Link>
                 <p className='dollar-text-med'>{this.Price}</p>
             </div>
@@ -98,8 +100,9 @@ export default class Restaurant{
             </div>
           </div>
           <Link className="listPic" to={{
-              pathname: this.createPath(locationNum),
-              }} >{this.Picture}
+              pathname: this.createPath(locationNum)
+              }} 
+              state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/List"}}>{this.Picture}
           </Link>
         </div>
       )
