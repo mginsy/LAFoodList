@@ -492,7 +492,7 @@
         ],
         "Locations": [
             "34.0454568,-118.4659415",
-            "33.9757397,-118.2826891",
+            "34.025551,-118.277443",
             "34.0761263,-118.3751301",
             "34.063902,-118.12277"
         ],
@@ -589,7 +589,6 @@
             "West LA"
         ],
         "Categories": [
-            "Persian",
             "Middle Eastern",
             "Sandwiches",
             "Lunch",
@@ -608,7 +607,8 @@
         "Name": "Tacos Tu Madre",
         "Areas": [
             "West LA",
-            "Hollywood"
+            "Hollywood",
+            "Mid City"
         ],
         "Categories": [
             "Mexican",
@@ -619,11 +619,13 @@
         ],
         "Locations": [
             "34.0469334,-118.4344888",
-            "34.1044069,-118.2916172"
+            "34.1044069,-118.2916172",
+            "34.07461929321289,-118.3236312866211"
         ],
         "Addresses": [
             "1945 Westwood Blvd, Los Angeles, CA 90025",
-            "1824 N Vermont Ave, Los Angeles, CA 90027"
+            "1824 N Vermont Ave, Los Angeles, CA 90027",
+            "203 N Larchmont Blvd, Los Angeles, CA 90004"
         ],
         "Price": "$$",
         "Description": "Tacos Tu Madre does a great job with the upscale taco experience. They have a variety of interesting, multifaceted flavors and you can't go wrong with any combo of them!\n"
@@ -1072,7 +1074,7 @@
         "Locations": [
             "34.0664698,-118.407329",
             "34.0844187,-118.3852343",
-            "34.0465999,-118.2506512"
+            "34.0467,-118.25065"
         ],
         "Addresses": [
             "120 S Linden Dr, Beverly Hills, CA 90212",
@@ -1328,7 +1330,8 @@
         "Name": "Angel's Tijuana Tacos",
         "Areas": [
             "Eagle Rock",
-            "The Valley"
+            "The Valley",
+            "Downtown"
         ],
         "Categories": [
             "Tacos",
@@ -1339,11 +1342,13 @@
         ],
         "Locations": [
             "34.122915,-118.2251568",
-            "34.201377,-118.475077"
+            "34.201377,-118.475077",
+            "34.0681188,-118.2500583"
         ],
         "Addresses": [
             "4211 Eagle Rock Blvd, Los Angeles, CA 90065",
-            "15701 Sherman Way, Van Nuys, CA 91406"
+            "15701 Sherman Way, Van Nuys, CA 91406",
+            "1197 Sunset Blvd, Los Angeles, CA 90012"
         ],
         "Price": "$",
         "Description": "Angel's is one of my favorite taco stands in LA. They have amazing Al Pastor, Carne Asada, salsas and the works. Highly recommend if you're craving this style of taco there's a reason they have a lot of locations.\n"
@@ -2037,7 +2042,6 @@
             "Eagle Rock"
         ],
         "Categories": [
-            "Persian",
             "Middle Eastern",
             "Lunch",
             "Dinner"
@@ -2182,7 +2186,9 @@
     "Tacos Tamix": {
         "Name": "Tacos Tamix",
         "Areas": [
-            "Downtown"
+            "Downtown",
+            "West LA",
+            "Mid City"
         ],
         "Categories": [
             "Tacos",
@@ -2192,10 +2198,14 @@
             "Late Night"
         ],
         "Locations": [
-            "34.0382705458797,-118.28397700212643"
+            "34.0382705458797,-118.28397700212643",
+            "34.013038635253906,-118.41729736328125",
+            "34.0484078,-118.3414885"
         ],
         "Addresses": [
-            "1982 S Hoover St, Los Angeles, CA 90007"
+            "1982 S Hoover St, Los Angeles, CA 90007",
+            "3801 S Sepulveda Blvd, Los Angeles, CA 90230",
+            "4817 W Pico Blvd, Los Angeles, CA 90019"
         ],
         "Price": "$",
         "Description": "Tacos Tamix is great if you're looking for a classic taco truck. They serve up some great meats and tortillas and are perfect for a late night bite. I usually either go with tacos or a burrito here, but I'm sure everything is delicious.\n"
@@ -2649,7 +2659,8 @@
         "Name": "Sidecar Doughnuts & Coffee",
         "Areas": [
             "Santa Monica",
-            "Mid City"
+            "Mid City",
+            "West LA"
         ],
         "Categories": [
             "Dessert",
@@ -2657,11 +2668,13 @@
         ],
         "Locations": [
             "34.0194929,-118.4978579",
-            "34.0716466,-118.3614151"
+            "34.0716466,-118.3614151",
+            "34.0167506,-118.4057374"
         ],
         "Addresses": [
             "631 Wilshire Blvd, Santa Monica, CA 90401",
-            "175 S Fairfax Ave Unit D, Los Angeles, CA 90036"
+            "175 S Fairfax Ave Unit D, Los Angeles, CA 90036",
+            "10705 Washington Blvd, Culver City, CA 90232"
         ],
         "Price": "$",
         "Description": "Sidecar is where doughnuts go from an unhealthy breakfast to an unhealthy gourmet experience. Their doughnuts have perfect texture throughout, and some of my favorite flavors include huckleberry, maple bacon and saigon cinnamon. Don't miss out on this place if you like doughnuts, it's a great experience.\n"
@@ -3877,7 +3890,8 @@
         "Categories": [
             "Steakhouse",
             "American",
-            "Dinner"
+            "Dinner",
+            "Classic LA"
         ],
         "Locations": [
             "34.06725311279297,-118.37627410888672"
