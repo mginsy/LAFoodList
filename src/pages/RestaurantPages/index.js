@@ -70,7 +70,7 @@ for (let areaNum in otherData["totAreas"]){
             initial={{opacity: 0}}
             exit={{opacity: 0}}
             animate={{opacity: 1, transition: {duration: 1}}}>
-            <Row style={{height:this.state.screenHeight}}>
+            <Row style={{height:this.state.screenHeight-86}}>
               <Col className="mapCol">
                 <Row>
                   <Col>
@@ -155,7 +155,7 @@ for (let areaNum in otherData["totAreas"]){
       RestaurantPage.defaultProps = googleMapStyles;
 
       classes[currentRestaurant.Name + currentRestaurant.locationNum.toString()] = (GoogleApiWrapper({
-        apiKey: 'GMAPSAPI'
+        apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
       })(withRouter(RestaurantPage)))
       //classes[currentRestaurant.Name + locationNum.toString()] = RestaurantPage;
   }

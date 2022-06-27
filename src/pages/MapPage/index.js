@@ -624,10 +624,8 @@ render() {
             </Select>
           </StyledForm>
         </Col>
-        <Col className="mapFormCol">
+        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-750}}>
           <Link className='recommend-text-big' onClick={this.resetCategories}  to="#">Reset</Link>
-        </Col>
-        <Col xs={7}>
         </Col>
       </Row>
       <Row className="mapPaddingRow">
@@ -700,7 +698,7 @@ render() {
 MapPage.defaultProps = googleMapStyles;
 
 export default GoogleApiWrapper({
-  apiKey: "GMAPSAPI"
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 })(withRouter(MapPage))
 
 //export default MapPage

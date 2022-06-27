@@ -1,5 +1,5 @@
 :root {
-  --background-color: #b9d3bc;
+  --background-color: #b9d3c4;
   --wild-color: #76c5d3;
   --navbar-color: #5E454B;
   --text-color: rgb(255, 255, 255);
@@ -111,6 +111,13 @@ a {
   transition: 0.25s all;
 }
 
+.navbar-title-text{
+  padding-top: 9%;
+  color: var(--background-color);
+  justify-content: center;
+  align-items: center;
+}
+
 .box {
   border: 1px solid black;
   min-height: 50px;
@@ -163,6 +170,7 @@ a {
   justify-content: center;
   padding-top:1%;
 }
+
 
 .mapStartRow {
   padding-left:2%;
@@ -263,19 +271,23 @@ a {
 }
 
 .aboutCol{
-  padding-top:1%;
   padding-left:4%;
   padding-right:2%;
+  vertical-align: auto;
+  display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .aboutPic{
-  padding-top:6.5%;
   padding-left:2%;
   padding-right:4%;
   justify-content: center;
   align-items: center;
+  vertical-align: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .homeRow{
@@ -460,7 +472,7 @@ a {
 
 .recommend-text-big{
   color:#000000;
-  font-size: larger;
+  font-size: 20px;
   text-decoration: underline;
 }
 

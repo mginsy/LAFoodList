@@ -138,10 +138,10 @@ function Contact() {
             </Row>
             <Row className="contactRow">
                 <Col className="contactCol">
-                    <StyledText id="outlined-basic" label="Name" variant="outlined" name="from_name" onChange={onNameChange} />
+                    <StyledText error={nameVal.length === 0} id="outlined-basic" label="Name" variant="outlined" name="from_name" onChange={onNameChange} />
                 </Col>
                 <Col className="contactCol">
-                    <StyledText id="outlined-basic" label="Email" variant="outlined" name="from_email" onChange={onEmailChange} />
+                    <StyledText error={emailVal.length === 0 || !emailVal.includes("@") || !emailVal.includes(".")}  id="outlined-basic" label="Email" variant="outlined" name="from_email" onChange={onEmailChange} />
                 </Col>
             </Row>  
             <Row className="contactRow">
@@ -154,6 +154,7 @@ function Contact() {
                     name="message"
                     size="small"
                     onChange={onCommentsChange}
+                    error={commentsVal.length === 0}
                 />
             </Row>
             <Row className="contactRow">

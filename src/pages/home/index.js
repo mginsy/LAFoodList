@@ -14,7 +14,7 @@ import {motion} from 'framer-motion'
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
 
-const fadeLen = 5000;
+const fadeLen = 4000;
 const submitFadeLen = 2500;
 
 let totAreas = otherData["AreasADMINONLY"]
@@ -48,6 +48,7 @@ function pushCatList(catData){
   console.log(catData)
   for (let catNum in catData["Cats"]){
     categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
+    categoryListValues.push(catData["Cats"][catNum])
   }
 }
 
@@ -169,7 +170,7 @@ render() {
       key={"HomeKey"}
       initial={{opacity: 1}}
       exit={{opacity: 0}}
-      animate={{opacity: 1, transition: {duration: 3}}}>
+      animate={{opacity: 1, transition: {duration: .1}}}>
       <Fade in={this.state.isStart}
           timeout={fadeLen}
         >

@@ -1,9 +1,8 @@
 {
-    "name": "web",
-    "version": "0.1.0",
+    "name": "LAFoodList",
+    "version": "1.0.0",
+    "homepage":"http://lafoodlist.com",
     "private": true,
-    "proxy": "http://localhost:3000",
-    "homepage": ".",
     "dependencies": {
         "@emailjs/browser": "^3.6.2",
         "@emotion/react": "^11.8.2",
