@@ -74,7 +74,7 @@ for (let areaNum in otherData["totAreas"]){
               <Col className="mapCol">
                 <Row>
                   <Col>
-                    <Link className='recommend-text-big back-text' to={{pathname: (typeof(this.props.locState.Page) != "undefined" ? this.props.locState.Page : "/")}}
+                    <Link className='recommend-text-big back-text' to={{pathname: (typeof(this.props.locState.Page) != "undefined" ? this.props.locState.Page : "/map")}}
                       state={{ 
                         Category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""), 
                         Area:(typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""), 
