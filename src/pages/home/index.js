@@ -5,16 +5,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Restaurant from '../../Restaurant';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import Fade from '@mui/material/Fade';
 import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion'
-import InputBase from '@mui/material/InputBase';
 
-const d3 = require('d3-array'); 
-const data = require('../../restaurantData.json');
+const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
 
 const fadeLen = 5000;
@@ -24,32 +21,34 @@ let totAreas = otherData["AreasADMINONLY"]
 const totAreasReset = structuredClone(totAreas)
 delete data.AreasADMINONLY
 
-const priceOptions = ["","$","$$","$$$","$$$$"]
-
 //initialize all values
-
-let markerList=[];
 
 let categoryList = [];
 let areaList = [];
-let listList = [];
-let restaurantList = [];
 
 let categoryListValues = [];
-let areaListValues = [];
 
 function resetLists(){
-  markerList=[];
 
   categoryList = [];
   areaList = [];
-  listList = [];
-  restaurantList = [];
 
   categoryListValues = [];
-  areaListValues = [];
 
   totAreas = structuredClone(totAreasReset)
+}
+
+function pushAreaList(areaData){
+  for (let areaNum in areaData["Areas"]){
+    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}>{areaData["Areas"][areaNum]}</MenuItem>)
+  }
+}
+
+function pushCatList(catData){
+  console.log(catData)
+  for (let catNum in catData["Cats"]){
+    categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
+  }
 }
 
 const formColor = '#F3F0D7'
@@ -130,35 +129,37 @@ class MapPage extends Component {
   }
 
 render() {
-
-  const FullPage = styled.div`
-      overflow-y: scroll;
-      max-height: ${this.state.screenHeight-250}px
-  `;  
+ 
 
   if (this.state.refreshMap){
-    resetLists();
 
-    for (let key in data){ // creates markers and filters categories
-      let currentRestaurant = new Restaurant(key, data)
-      if ((this.state.area === "" || currentRestaurant.Areas.includes(this.state.area))){
-        for (let categoryNum in currentRestaurant.Categories){ // creates categories
-          let category = currentRestaurant.Categories[categoryNum];
-          if (!categoryListValues.includes(category)){
-            categoryListValues.splice(d3.bisectLeft(categoryListValues,category),0,category)
-            categoryList.splice(d3.bisectLeft(categoryListValues,category),0,<MenuItem value={category}>{category}</MenuItem>)
-          }
-        }
-      }
+    resetLists();
     
-      if ((this.state.category === "" || currentRestaurant.Categories.includes(this.state.category))){ // markers + areas
-        for (let areaNum in currentRestaurant.Areas){ // creates areas
-          let area = currentRestaurant.Areas[areaNum];
-          if (!areaListValues.includes(area)){
-            areaListValues.splice(d3.bisectLeft(areaListValues,area),0,area)
-            areaList.splice(d3.bisectLeft(areaListValues,area),0,<MenuItem value={area}>{area}</MenuItem>)
-          }
-        }
+    let selectedData = {};
+    //category area gle price
+
+    if (this.state.area === ""){
+      if(this.state.category === ""){//none selected
+        selectedData = data;
+        pushAreaList(selectedData);
+        pushCatList(selectedData);
+      }
+      else{//just category selected
+        selectedData = data[this.state.category]
+        pushAreaList(selectedData);
+        pushCatList(data);
+      }
+    }
+    else{ 
+      if(this.state.category === ""){//just area selected
+        selectedData = data[this.state.area]
+        pushAreaList(data);
+        pushCatList(selectedData);
+      }
+      else{//area and category selected
+        selectedData = data[this.state.category][this.state.area]
+        pushAreaList(data[this.state.category]);
+        pushCatList(data[this.state.area]);
       }
     }
   }

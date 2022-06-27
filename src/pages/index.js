@@ -1,15 +1,6 @@
-import { useEffect } from 'react'
-import { BrowserRouter, Router, Switch, Link, Route, Routes } from 'react-router-dom'
-import _ from 'lodash'
-
-import Home from './Home'
-import { About} from './About'
-import List from './ListPage'
-import MapPage from './MapPage'
-import restaurantPages from './RestaurantPages'
+import { Link } from 'react-router-dom'
 
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
-import RestaurantPages from './RestaurantPages'
 import AnimatedRoutes from './AnimatedRoutes'
 
 function NavbarLink(props) {

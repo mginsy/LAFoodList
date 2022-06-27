@@ -1,38 +1,37 @@
-import { width } from '@mui/system';
 import { Marker } from 'google-maps-react';
-import {Link, Router, BrowserRouter, MemoryRouter, useParams, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class Restaurant{
-    constructor(key, data){
-        this.Addresses = data[key].Addresses
-        this.Areas = data[key].Areas
-        this.Categories = data[key].Categories
-        this.Locations = data[key].Locations
-        this.Name = data[key].Name
-        this.Price = data[key].Price
-        this.Description = data[key].Description
+    constructor(restObj, currentArea){
+        this.Addresses = restObj.Addresses
+        this.Areas = restObj.Areas
+        this.Categories = restObj.Categories
+        this.Locations = restObj.Locations
+        this.Name = restObj.Name
+        this.Price = restObj.Price
+        this.Description = restObj.Description
+        this.locationNum = restObj.Areas.indexOf(currentArea)
         this.Picture = <img 
-                        src={require(`./photos/${data[key].Name.replaceAll("!","").replaceAll(" ","-")}.jpg`)}
+                        src={require(`./photos/${restObj.Name.replaceAll("!","").replaceAll(" ","-")}.jpg`)}
                         className='img-fluid listPic'
-                        alt="loading..."
+                        alt="cooking..."
                         />
     }
 
-    createPath(locationNumber){
+    createPath(){
         if(!this.Name) return
-        return "/" + this.Name.replaceAll(" ","-") + locationNumber
+        return "/" + this.Name.replaceAll(" ","-") + this.locationNum
     }
 
-    createMarker(locationNum, location, markerList, onMarkerClick){
-        let locArrayStrings = location.split(",")
+    createMarker(onMarkerClick){
+        let locArrayStrings = this.Locations[this.locationNum].split(",")
         let locArrayFloats = []
         for (let locNum in locArrayStrings){
           locArrayFloats.push(parseFloat(locArrayStrings[locNum]))
         }
-        markerList.push( 
-          <Marker
+        return( <Marker
             name={this.Name}
-            locationNumber = {locationNum.toString()}
+            locationNumber = {this.locationNum.toString()}
             position={
               {
               lat: locArrayFloats[0],
@@ -40,13 +39,10 @@ export default class Restaurant{
               }
             }
             onClick={onMarkerClick}
-            />
-        )
-        return markerList;
+            />)
     }
 
-    createMapListText(locationNum, handleCategoryChangeClick, category, area, gle, price){
-        let catStr = this.Categories.toString().replaceAll(",",", ")
+    createMapListText(handleCategoryChangeClick, category, area, gle, price){
         let catArr = []
         for (let catNum in this.Categories){
           let cat = this.Categories[catNum]
@@ -60,7 +56,7 @@ export default class Restaurant{
             <div className = "inMapRowText">
               <div className = "restLinkMoney">
                   <Link className='restaurant-text-big' to={{
-                      pathname: this.createPath(locationNum)
+                      pathname: this.createPath()
                       }}
                       state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/Map"}} >{this.Name}
                   </Link>
@@ -74,8 +70,7 @@ export default class Restaurant{
         )
     }
     
-    createListListText(locationNum, handleCategoryChangeClick, category, area, gle, price){
-      let catStr = this.Categories.toString().replaceAll(",",", ")
+    createListListText(handleCategoryChangeClick, category, area, gle, price){
       let catArr = []
       for (let catNum in this.Categories){
         let cat = this.Categories[catNum]
@@ -89,7 +84,7 @@ export default class Restaurant{
           <div className = "inMapRowText">
             <div className = "restLinkMoney">
                 <Link className='restaurant-text-big' to={{
-                      pathname: this.createPath(locationNum)
+                      pathname: this.createPath()
                       }} 
                       state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/List"}}>{this.Name}
                 </Link>
@@ -100,7 +95,7 @@ export default class Restaurant{
             </div>
           </div>
           <Link className="listPic" to={{
-              pathname: this.createPath(locationNum)
+              pathname: this.createPath()
               }} 
               state={{Category: category, Area:area, Gle:gle, Price:price, Page:"/List"}}>{this.Picture}
           </Link>

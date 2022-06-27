@@ -1,24 +1,16 @@
-import { Component }from 'react';
 import * as React from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import { Container, Col, Row } from "react-bootstrap";
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import {  Col, Row } from "react-bootstrap";
 import {useLocation, useParams} from 'react-router-dom';
 import Restaurant from '../../Restaurant';
 import {Link} from 'react-router-dom';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import {RemoveScrollBar} from 'react-remove-scroll-bar';
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
+import googleMapStyles from "../mapStyles";
 
 
 
-const data = require('../../restaurantData.json');
-
-/*function reactHookHOC(Component) {
-  return function WrappedComponent(props) {
-    const location = useLocation();
-    return <Component {...props} location={location} />;
-  }
-}*/
+const data = require('../../restaurantData2.json');
+const otherData = require('../../otherData.json');
 
 const withRouter = WrappedComponent => props => {
   const params = useParams();
@@ -38,12 +30,14 @@ const withRouter = WrappedComponent => props => {
 
 let classes = {};
 
-for (let key in data){ // creates markers and filters categories
-  let currentRestaurant = new Restaurant(key, data);
+for (let areaNum in otherData["totAreas"]){
+  let currentArea = otherData["totAreas"][areaNum]
+  for (let restNum in data[currentArea]["restaurants"]){
 
-  let locations = currentRestaurant.Locations;
+  let currentRestaurant = new Restaurant(data[currentArea]["restaurants"][restNum], currentArea)
+  console.log(currentRestaurant.Name)
 
-  for (let locationNum in locations){
+  
     class RestaurantPage extends React.Component {
 
       state = {
@@ -63,7 +57,7 @@ for (let key in data){ // creates markers and filters categories
 
       render() {
 
-        let location = locations[locationNum]
+        let location = currentRestaurant.Locations[currentRestaurant.locationNum]
         let locArrayStrings = location.split(",")
         let locArrayFloats = []
         for (let locNum in locArrayStrings){
@@ -72,7 +66,7 @@ for (let key in data){ // creates markers and filters categories
       
         return (
           <motion.div className="bigNoScrollContainer"
-            key={`${currentRestaurant.Name + locationNum.toString()}Key`}
+            key={`${currentRestaurant.Name + currentRestaurant.locationNum.toString()}Key`}
             initial={{opacity: 0}}
             exit={{opacity: 0}}
             animate={{opacity: 1, transition: {duration: 1}}}>
@@ -96,8 +90,8 @@ for (let key in data){ // creates markers and filters categories
                   <Col xs={10} className="restInfo">
                     <h4 className="restTitleText">{currentRestaurant.Name}</h4>
                     <div className="row locRestpage">
-                      <p className="col restLocText">{currentRestaurant.Addresses[locationNum]}</p>
-                      <p className="col test-text">{currentRestaurant.Areas[locationNum]}</p>
+                      <p className="col restLocText">{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
+                      <p className="col test-text">{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
                     </div>
                     <p className="test-text">{currentRestaurant.Description}</p>
                     <Row>
@@ -125,11 +119,12 @@ for (let key in data){ // creates markers and filters categories
                   <Col xs={11}>
                     <Map
                         google={this.props.google}
-                        zoom={10}
+                        zoom={13}
+                        styles={this.props.mapStyle}
                         initialCenter={
                             {
-                            lat: 34.0344189,
-                            lng: -118.2321198
+                            lat: locArrayFloats[0],
+                            lng: locArrayFloats[1]
                             }
                         }
                         onClick={this.onMapClicked}
@@ -156,8 +151,11 @@ for (let key in data){ // creates markers and filters categories
           );
         }
       }
-      classes[currentRestaurant.Name + locationNum.toString()] = (GoogleApiWrapper({
-        apiKey: 'GMAPSKEY'
+
+      RestaurantPage.defaultProps = googleMapStyles;
+
+      classes[currentRestaurant.Name + currentRestaurant.locationNum.toString()] = (GoogleApiWrapper({
+        apiKey: 'GMAPSAPI'
       })(withRouter(RestaurantPage)))
       //classes[currentRestaurant.Name + locationNum.toString()] = RestaurantPage;
   }

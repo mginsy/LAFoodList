@@ -1,5 +1,5 @@
 :root {
-  --background-color: #CEE5D0;
+  --background-color: #b9d3bc;
   --wild-color: #76c5d3;
   --navbar-color: #5E454B;
   --text-color: rgb(255, 255, 255);
@@ -254,7 +254,7 @@ a {
 
 .about-text{
   color:#000000;
-  font-size:large;
+  font-size: 30px;
 }
 
 .link-text{
@@ -301,7 +301,7 @@ a {
 }
 
 .mapPaddingRow2{
-  padding-top:3%;
+  padding-top:3.5%;
 }
 
 .listPaddingRow{

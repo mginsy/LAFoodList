@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
 import React from 'react'
-import {BrowserRouter as Router, Switch, Link, Route, useLocation, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Route, useLocation, Routes} from 'react-router-dom'
 import _ from 'lodash'
 
 import Home from './Home'
@@ -9,9 +8,7 @@ import List from './ListPage'
 import MapPage from './MapPage'
 import {Contact} from './Contact'
 
-import {AnimatePresence, Loading} from 'framer-motion'
-
-import { Navbar } from 'react-bootstrap'
+import {AnimatePresence} from 'framer-motion'
 
 import classes from './RestaurantPages/index'
 

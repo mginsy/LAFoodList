@@ -1,23 +1,19 @@
-import React, { Component, Fragment, useState, useRef } from 'react'
-import {Col, Row, Container} from 'react-bootstrap'
+import React, { useState} from 'react'
+import {Col, Row} from 'react-bootstrap'
 import {motion} from 'framer-motion'
 import {Link} from 'react-router-dom'
-import { useFormControl } from '@mui/material/FormControl';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField'
 import ToggleButton  from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import {MuiThemeProvider, createTheme} from "@material-ui/core/styles";
-import emailjs from '@emailjs/browser';
 import axios from 'axios';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Fade from '@mui/material/Fade';
 //import 'react-calendar/dist/Calendar.css';
 
 const formColor = '#F3F0D7'
 const StyledText = styled(TextField)({
-  '& .MuiInputBase-input': {
+  '& .MuiInputBase-formControl': {
     backgroundColor: formColor
   },
 });
@@ -25,32 +21,11 @@ const StyledText = styled(TextField)({
 
 function Contact() {
 
-    const yellowButton = styled(ToggleButton)({
-        color: "#5E454B",
-        textTransform: 'none',
-        backgroundColor: "#f3f0d7",
-        '&:hover': {
-            backgroundColor: "#EDE8BF",
-        },
-    });
-
-    const purpleButton = styled(ToggleButton)({
-        color: '#D8B384',
-        textTransform: 'none',
-        backgroundColor: '#5E454B',
-        '&:hover': {
-            backgroundColor: "#56383F",
-        },
-    });
-
-    const [nameVal, setNameValue] = useState();
-    const [emailVal, setEmailValue] = useState();
-    const [commentsVal, setCommentsValue] = useState();
+    const [nameVal, setNameValue] = useState("");
+    const [emailVal, setEmailValue] = useState("");
+    const [commentsVal, setCommentsValue] = useState("");
     const [alignment, setAlignment] = React.useState('Restaurant Rec');
-
-    let StyledButton = styled(ToggleButton)({
-        textTransform: 'none'
-    });
+    const [isFilled, setFilled] = useState(false);
 
     const handleAlignment = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -59,20 +34,41 @@ function Contact() {
     };
     const onNameChange = (e) => {
         setNameValue(e.target.value);
-        if (e.target.value.length !== 0 && emailVal.length !== 0 && emailVal.includes("@") && emailVal.includes(".") && commentsVal.length !== 0){
-            isFilled = true;
+        if (e.target.value.length > 0 && 
+            emailVal.length > 0 && 
+            emailVal.includes("@") && 
+            emailVal.includes(".") && 
+            commentsVal.length > 0){
+            setFilled(true);
+        }
+        else{
+            setFilled(false);
         }
     }
     const onEmailChange = (e) => {
         setEmailValue(e.target.value);
-        if (nameVal.length !== 0 && e.target.value.length !== 0 && emailVal.includes("@") && emailVal.includes(".") && commentsVal.length !== 0){
-            isFilled = true;
+        if (nameVal.length > 0 && 
+            e.target.value.length > 0 && 
+            emailVal.includes("@") && 
+            emailVal.includes(".") && 
+            commentsVal.length > 0){
+            setFilled(true);
+        }
+        else{
+            setFilled(false);
         }
     }
     const onCommentsChange = (e) => {
         setCommentsValue(e.target.value);
-        if (nameVal.length !== 0 && emailVal.length !== 0 && emailVal.includes("@") && emailVal.includes(".") && e.target.value.length !== 0){
-            isFilled = true;
+        if (nameVal.length > 0 && 
+            emailVal.length > 0 && 
+            emailVal.includes("@") && 
+            emailVal.includes(".") && 
+            e.target.value.length > 0){
+            setFilled(true);
+        }
+        else{
+            setFilled(false);
         }
     }
 
@@ -95,20 +91,23 @@ function Contact() {
       };
 
       const StyledToggleButtonGroup = styled(ToggleButtonGroup)({
-        color: "#5E454B",
-        backgroundColor: "#EDE8BF",
+        color: "#5E454B !important",
+        backgroundColor: "#e3bd8c",
         textTransform: 'none',
+        '&.MuiToggleButtonGroup':{
+            color:'#111111'
+        }
       });
 
       const StyledToggleButton = styled(ToggleButton)({
-        color: "#5E454B",
+        color: "#5E454B !important",
+        backgroundColor: "#EDE8BF",
         textTransform: 'none',
         '&:hover': {
             backgroundColor: "#E7E0AD"
         },
-      });
 
-    let isFilled = false;
+      });
 
     return (
         <motion.div
@@ -133,7 +132,7 @@ function Contact() {
                         <p className="buttonText">Grammar / Spelling Fix</p>
                     </StyledToggleButton >
                     <StyledToggleButton  variant="contained" value="Other / General" size="large" className="contactButton">
-                        <p className="buttonText">Other / General</p>
+                        <p className="buttonText">General / Suggestion / Other</p>
                     </StyledToggleButton >
                 </StyledToggleButtonGroup>
             </Row>
@@ -148,9 +147,12 @@ function Contact() {
             <Row className="contactRow">
                 <StyledText
                     label="Comments"
+                    fullWidth
+                    multiline
+                    rows={5}
                     style={{textAlign: 'left'}}
-                    
                     name="message"
+                    size="small"
                     onChange={onCommentsChange}
                 />
             </Row>

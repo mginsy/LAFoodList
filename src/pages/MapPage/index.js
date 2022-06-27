@@ -1,29 +1,30 @@
 import { Component }from 'react';
 import * as React from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker,InfoBox  } from 'google-maps-react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Map, GoogleApiWrapper, InfoWindow,  } from 'google-maps-react';
+import { Row, Col } from "react-bootstrap";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Restaurant from '../../Restaurant';
 import styled from 'styled-components';
-import {Link, Router, BrowserRouter, MemoryRouter, useLocation, useParams} from 'react-router-dom';
-import SimpleBar from 'simplebar-react';
+import {Link, BrowserRouter, useLocation, useParams} from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import googleMapStyles from "../mapStyles";
 
-const d3 = require('d3-array'); 
-const data = require('../../restaurantData.json');
+const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
+
 
 let totAreas = otherData["AreasADMINONLY"]
 const totAreasReset = structuredClone(totAreas)
 delete data.AreasADMINONLY
 
-const priceOptions = ["","$","$$","$$$","$$$$"]
-
+const priceMenuOptions = ["$","$$","$$$","$$$$"]
+const gleOptions = ["≤","≥","="]
+ 
 const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
@@ -43,14 +44,9 @@ let priceList = [];
 let restaurantList = [];
 
 let categoryListValues = [];
-let areaListValues = [];
-let gleListValues = [];
-let priceListValues = [];
 
-let itemsPushed = 0;
-
-let gleFlag = false;
-let priceFlag = false;
+let selectedData = {};
+let priceData = {};
 
 function resetLists(){
   markerList=[];
@@ -59,9 +55,10 @@ function resetLists(){
   areaList = [];
   listList = [];
   restaurantList = [];
+  gleList = [];
+  priceList = [];
 
   categoryListValues = [];
-  areaListValues = [];
 
   totAreas = structuredClone(totAreasReset)
 }
@@ -69,12 +66,6 @@ function resetLists(){
 function resetPrices(){
   gleList = [];
   priceList = [];
-  
-  gleListValues = [];
-  priceListValues = [];
-
-  gleFlag = false;
-  priceFlag = false;
 }
 
 function createPath(restName, locationNumber){
@@ -97,6 +88,229 @@ const withRouter = WrappedComponent => props => {
   );
 };
 
+
+function pushAreaList(areaData){
+  for (let areaNum in areaData["Areas"]){
+    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}>{areaData["Areas"][areaNum]}</MenuItem>)
+  }
+}
+
+function pushCatList(catData){
+  for (let catNum in catData["Cats"]){
+    categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
+    categoryListValues.push(catData["Cats"][catNum])
+  }
+}
+
+function pushPriceLists(priceData, currentState){
+  
+  if (currentState.gle !== ""){
+    let gleOpt = "";
+    let priceOpt = "";
+    for (let itemNum in priceData["Prices"]){
+      [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
+      if (gleOpt === currentState.gle){
+        priceList.push(<MenuItem value={priceOpt}>{priceOpt}</MenuItem>)
+      }
+    }
+  }
+  else{
+    for (let priceNum in priceMenuOptions){
+      priceList.push(<MenuItem value={priceMenuOptions[priceNum]}>{priceMenuOptions[priceNum]}</MenuItem>)
+    }
+  }
+  
+  if (currentState.price !== ""){
+    let gleOpt = "";
+    let priceOpt = "";
+    for (let itemNum in priceData["Prices"]){
+      [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
+      if (priceOpt === currentState.price){
+        gleList.push(<MenuItem value={gleOpt}>{gleOpt}</MenuItem>)
+      }
+    }
+  }
+  else{
+    for (let gleNum in gleOptions){
+      gleList.push(<MenuItem value={gleOptions[gleNum]}>{gleOptions[gleNum]}</MenuItem>)
+    }
+  }
+}
+
+
+function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, handleCategoryChangeClick, onMarkerClick){
+  const speedOfAnim = 1;
+  const delayConst = .15;
+  let itemsPushed = 0;
+  const itemsPushedDiv = 7;
+  const distance = -75;
+  
+  if (currentState.firstLoadFlag){
+    if (byArea){
+      let currentArea = currentState.area
+      listList.push(
+        <motion.div className = "fullMapRestaurantText"
+        initial={{opacity: 0}}
+        animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
+        >
+          <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+        </motion.div>
+      )
+      itemsPushed++;
+      for (let restNum in selectedData["restaurants"]){
+        let currentRestaurant = new Restaurant(selectedData["restaurants"][restNum], currentArea)
+        if (itemsPushed < 12){
+          let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+          listList.push(
+            <motion.div
+            initial={{opacity: 1, x: distance}}
+            animate={{opacity: 1, x: 0, transition: {delay: delayConst + itemsPushed/itemsPushedDiv, duration: speedOfAnim}}}
+            >
+              {mapListText}
+            </motion.div>
+          )
+          markerList.push(currentRestaurant.createMarker(onMarkerClick));
+          restaurantList.push(currentRestaurant)
+          itemsPushed++;
+        }
+        else{
+          let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+          listList.push(
+            <div>
+              {mapListText}
+            </div>
+          )
+          markerList.push(currentRestaurant.createMarker(onMarkerClick));
+          restaurantList.push(currentRestaurant)
+          itemsPushed++;
+        }
+      }
+    }
+    else{
+      for (let areaNum in selectedData["Areas"]){
+        let currentArea = selectedData["Areas"][areaNum]
+        if (itemsPushed === 0){
+          listList.push(
+            <motion.div className = "fullMapRestaurantText"
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData[currentArea]["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
+            >
+              <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            </motion.div>
+          )
+          itemsPushed++;
+        }
+        else if (itemsPushed < 12){
+          listList.push(
+            <motion.div className = "fullMapRestaurantText mapAreaTitle"
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData[currentArea]["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
+            >
+              <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            </motion.div>
+          )
+          itemsPushed++;
+        }
+        else{
+          listList.push(
+            <div className = "fullMapRestaurantText mapAreaTitle">
+              <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            </div>
+          )
+          itemsPushed++;
+        }
+        for (let restNum in selectedData[currentArea]["restaurants"]){
+          if (itemsPushed < 12){
+            let currentRestaurant = new Restaurant(selectedData[currentArea]["restaurants"][restNum], currentArea)
+              let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+              listList.push(
+                <motion.div className = "Anim"
+                initial={{opacity: 1, x: distance}}
+                animate={{opacity: 1, x: 0, transition: {delay: delayConst + itemsPushed/itemsPushedDiv, duration: speedOfAnim}}}
+                >
+                  {mapListText}
+                </motion.div>
+              )
+              markerList.push(currentRestaurant.createMarker(onMarkerClick));
+              restaurantList.push(currentRestaurant)
+              itemsPushed++;
+          }
+          else{
+            let currentRestaurant = new Restaurant(selectedData[currentArea]["restaurants"][restNum], currentArea)
+              let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+              listList.push(
+                <div className="noAnim">
+                  {mapListText}
+                </div>
+              )
+              markerList.push(currentRestaurant.createMarker(onMarkerClick));
+              restaurantList.push(currentRestaurant)
+              itemsPushed++;
+          }
+          
+        }
+        
+      }
+    }
+  }
+  else{ // after first load
+    if (byArea){
+      let currentArea = currentState.area
+      listList.push(
+        <div className = "fullMapRestaurantText">
+          <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+        </div>
+      )
+      itemsPushed++;
+      for (let restNum in selectedData["restaurants"]){
+        let currentRestaurant = new Restaurant(selectedData["restaurants"][restNum], currentArea)
+        let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+        listList.push(
+          <div>
+            {mapListText}
+          </div>
+        )
+        markerList.push(currentRestaurant.createMarker(onMarkerClick));
+        restaurantList.push(currentRestaurant)
+        itemsPushed++;
+      }
+    }
+    else{
+      for (let areaNum in selectedData["Areas"]){
+        let currentArea = selectedData["Areas"][areaNum]
+        if (itemsPushed === 0){
+          listList.push(
+            <div className = "fullMapRestaurantText">
+              <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            </div>
+          )
+          itemsPushed++;
+        }
+        else{
+          listList.push(
+            <div className = "fullMapRestaurantText mapAreaTitle">
+              <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            </div>
+          )
+          itemsPushed++;
+        }
+        for (let restNum in selectedData[currentArea]["restaurants"]){
+          let currentRestaurant = new Restaurant(selectedData[currentArea]["restaurants"][restNum], currentArea)
+          let mapListText = currentRestaurant.createMapListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price);
+          listList.push(
+            <div className="noAnim">
+              {mapListText}
+            </div>
+          )
+          markerList.push(currentRestaurant.createMarker(onMarkerClick));
+          restaurantList.push(currentRestaurant)
+          itemsPushed++;
+        }
+      }
+    }
+  }
+}
+
 class MapPage extends Component {
 
   state = {
@@ -104,10 +318,12 @@ class MapPage extends Component {
     activeMarker: {},          // Shows the active marker upon click
     selectedPlace: {},          // Shows the InfoWindow to the selected place upon a marker
     refreshMap: true,
+    refreshPrices: false,
     category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""),
     area: (typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""),
     gle: (typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""),
     price: (typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : ""),
+    firstLoadFlag: true,
     screenWidth: 0,
     screenHeight: 0,
   };
@@ -127,10 +343,13 @@ class MapPage extends Component {
   }
 
   handleCategoryChange = (event) =>
-    {this.setState({ category: event.target.value, 
+    {
+      this.setState({ category: event.target.value, 
                      showingInfoWindow: false, 
                      activeMarker: null,
                      refreshMap: true,
+                     firstLoadFlag: false,
+                     refreshPrices: false, 
                      gle: "",
                      price: "" });}
 
@@ -140,6 +359,8 @@ class MapPage extends Component {
                      showingInfoWindow: false, 
                      activeMarker: null,
                      refreshMap: true,
+                     refreshPrices: false, 
+                     firstLoadFlag: false,
                      gle: "",
                      price: "" });}
 
@@ -147,14 +368,18 @@ class MapPage extends Component {
     this.setState({ area: param, 
       showingInfoWindow: false, 
       activeMarker: null,
-      refreshMap: true });
+      refreshMap: true,
+      firstLoadFlag: false,
+      refreshPrices: false });
   };
 
   handleCategoryChangeClick = param => e => {
     this.setState({ category: param, 
       showingInfoWindow: false, 
       activeMarker: null,
+      firstLoadFlag: false,
       refreshMap: true,
+      refreshPrices: false, 
     });
   };
 
@@ -164,7 +389,9 @@ class MapPage extends Component {
       this.setState({ price: event.target.value, 
                      showingInfoWindow: false, 
                      activeMarker: null,
-                     refreshMap: refMap, });}
+                     refreshMap: refMap,
+                     firstLoadFlag: false,
+                     refreshPrices: true  });}
                 
   handleGLEChange = (event) =>
     {
@@ -172,16 +399,20 @@ class MapPage extends Component {
       this.setState({ gle: event.target.value, 
                      showingInfoWindow: false, 
                      activeMarker: null,
-                     refreshMap: refMap });}
+                     refreshMap: refMap,
+                     firstLoadFlag: false,
+                     refreshPrices: true,  });}
 
   recommendCategory = (event) =>
   {
-    let randomCategoryPick =  Math.floor(Math.random() * categoryList.length);
+    let randomCategoryPick =  Math.floor(Math.random() * categoryListValues.length);
     this.setState({
       category: categoryListValues[randomCategoryPick], 
       showingInfoWindow: false, 
       activeMarker: null,
       refreshMap: true,
+      firstLoadFlag: false,
+      refreshPrices: false, 
       gle: "",
       price: ""
     })
@@ -195,6 +426,8 @@ class MapPage extends Component {
       showingInfoWindow: false, 
       activeMarker: null,
       refreshMap: true,
+      firstLoadFlag: false,
+      refreshPrices: false, 
       gle: "",
       price: ""
     })
@@ -205,7 +438,9 @@ class MapPage extends Component {
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true,
-      refreshMap: false
+      refreshMap: false,
+      firstLoadFlag: false,
+      refreshPrices: false, 
     });
 
   onClose = props => {
@@ -219,210 +454,88 @@ class MapPage extends Component {
 
 render() {
 
-  const FullPage = styled.div`
-      overflow-y: scroll;
-      max-height: ${this.state.screenHeight-250}px;
-  `;  
-  let restInList = 0;
+  
 
   if (this.state.refreshMap){
+
     resetLists();
 
-    for (let key in data){ // creates markers and filters categories
-      let currentRestaurant = new Restaurant(key, data)
+    //category area gle price
 
-      if(currentRestaurant.fitsPrice(this.state.gle, this.state.price))
-      {
-        if ((this.state.area === "" || currentRestaurant.Areas.includes(this.state.area))){
-          for (let categoryNum in currentRestaurant.Categories){ // creates categories
-            let category = currentRestaurant.Categories[categoryNum];
-            if (!categoryListValues.includes(category)){
-              categoryListValues.splice(d3.bisectLeft(categoryListValues,category),0,category)
-              categoryList.splice(d3.bisectLeft(categoryListValues,category),0,<MenuItem value={category}>{category}</MenuItem>)
-            }
-          }
+    if (this.state.area === ""){
+      if(this.state.category === ""){
+        if(this.state.gle === "" || this.state.price === ""){//none selected
+          selectedData = data;
+          pushAreaList(selectedData);
+          pushCatList(selectedData);
+          priceData = selectedData;
+          pushPriceLists(priceData, this.state);
         }
-    
-        if ((this.state.category === "" || currentRestaurant.Categories.includes(this.state.category))){ // markers + areas
-          for (let areaNum in currentRestaurant.Areas){ // creates areas
-            let area = currentRestaurant.Areas[areaNum];
-            if (!areaListValues.includes(area)){
-              areaListValues.splice(d3.bisectLeft(areaListValues,area),0,area)
-              areaList.splice(d3.bisectLeft(areaListValues,area),0,<MenuItem value={area}>{area}</MenuItem>)
-            }
-          }
-          if (this.state.area === "" || currentRestaurant.Areas.includes(this.state.area)){ //markers + map list text
-            if (this.state.area === ""){ // if no area is selected
-              for (let locationNum in currentRestaurant.Locations){
-                let location = currentRestaurant.Locations[locationNum];
-
-                let currentArea = currentRestaurant.Areas[locationNum];
-                let mapListText = currentRestaurant.createMapListText(locationNum, this.handleCategoryChangeClick, this.state.category, this.state.area, this.state.gle, this.state.price, restInList);
-                totAreas[currentArea+"Names"].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
-                totAreas[currentArea].splice(d3.bisectLeft(totAreas[currentArea+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
-                
-                restaurantList.push({restaurant: currentRestaurant,
-                                    locationNum: locationNum});
-                markerList = currentRestaurant.createMarker(locationNum, location, markerList, this.onMarkerClick);
-              }
-            }
-            else{ // if area is selected
-              let locationNum = currentRestaurant.Areas.indexOf(this.state.area)
-              let location = currentRestaurant.Locations[locationNum];
-
-              let mapListText = currentRestaurant.createMapListText(locationNum, this.handleCategoryChangeClick, this.state.category, this.state.area, this.state.gle, this.state.price, restInList);
-              totAreas[this.state.area+"Names"].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,currentRestaurant.Name.toLowerCase());
-              totAreas[this.state.area].splice(d3.bisectLeft(totAreas[this.state.area+"Names"],currentRestaurant.Name.toLowerCase()),0,mapListText);
-
-              restaurantList.push({restaurant: currentRestaurant,
-                                  locationNum: locationNum});
-              markerList = currentRestaurant.createMarker(locationNum, location, markerList, this.onMarkerClick);
-            }
-          }
-        }
-      }
-      
-    }
-    for (let areaNum in areaListValues){
-      let currentArea = areaListValues[areaNum]
-      if (totAreas[currentArea].length !== 0){
-        listList.push(
-          <div className = "fullMapRestaurantText mapAreaTitle">
-            <Link className='recommend-text-big' value={currentArea} onClick={this.handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
-          </div>
-        )
-        listList.push(
-          totAreas[currentArea]
-        )
-      }
-    }
-  }
-
-  /*
-  for (let areaNum in areaListValues){
-      let currentArea = areaListValues[areaNum]
-      if (totAreas[currentArea].length !== 0){
-        listList.push(
-          <motion.div className = "fullMapRestaurantText"
-          initial={{x: -50}}
-          animate={{x: 0, transition: {duration: itemsPushed/8}}}
-          >
-            <Link className='recommend-text-big' value={currentArea} onClick={this.handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
-          </motion.div>
-        )
-        itemsPushed++;
-        for (let itemNum in totAreas[currentArea]){
-          listList.push(
-            <motion.div
-            initial={{opacity: 1, x: -50}}
-            animate={{opacity: 1, x: 0, transition: {duration: itemsPushed/8}}}
-            >
-              {totAreas[currentArea][itemNum]}
-            </motion.div>
-          )
-          itemsPushed++;
-        }
-      }
-    }
-    */
-
-  resetPrices()
-  for (let restNum in restaurantList){
-    let currentRestaurant = restaurantList[restNum].restaurant;
-    if (this.state.gle !== "" && priceListValues.length !== 4){ //creates price list
-      let originalLength = priceListValues.length;
-      if(this.state.gle==="≤"){
-        for (let currPrice = currentRestaurant.Price.length; currPrice <= 4-originalLength; currPrice++){
-          priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,priceOptions[currPrice])
-          priceList.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,
-            <MenuItem value={priceOptions[currPrice]}>
-            {priceOptions[currPrice]}
-            </MenuItem>)
-        }
-      }
-      else if (this.state.gle==="≥"){
-        for (let currPrice = currentRestaurant.Price.length; currPrice >= originalLength; currPrice--){
-          priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,priceOptions[currPrice])
-          priceList.splice(d3.bisectLeft(priceListValues,priceOptions[currPrice]),0,
-            <MenuItem value={priceOptions[currPrice]}>
-              {priceOptions[currPrice]}
-            </MenuItem>)
+        else{//just price selected
+          selectedData = data[this.state.gle + " " + this.state.price]
+          pushAreaList(selectedData);
+          pushCatList(selectedData);
+          priceData = data;
+          pushPriceLists(priceData, this.state);
         }
       }
       else{
-        if (!priceListValues.includes(currentRestaurant.Price)){
-          priceListValues.splice(d3.bisectLeft(priceListValues,currentRestaurant.Price),0,currentRestaurant.Price)
-          priceList.splice(d3.bisectLeft(priceListValues,currentRestaurant.Price),0,
-            <MenuItem value={currentRestaurant.Price}>
-              {currentRestaurant.Price}
-            </MenuItem>)
+        if(this.state.gle === "" || this.state.price === ""){//just category selected
+          selectedData = data[this.state.category]
+          pushAreaList(selectedData);
+          pushCatList(data);
+          priceData = selectedData;
+          pushPriceLists(priceData, this.state);
+        }
+        else{//category and price selected
+          selectedData = data[this.state.category][this.state.gle + " " + this.state.price]
+          pushAreaList(selectedData);
+          pushCatList(data[this.state.gle + " " + this.state.price]);
+          priceData = data[this.state.category];
+          pushPriceLists(priceData, this.state);
         }
       }
-      if (priceListValues.length === 4){
-        priceFlag = true;
-      }
+      listsPush(selectedData, false, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
     }
-    else if (!priceFlag){
-      for (let i = 1; i <= 4; i++){
-        priceListValues.splice(d3.bisectLeft(priceListValues,priceOptions[i]),0,priceOptions[i])
-        priceList.splice(d3.bisectLeft(priceListValues,priceOptions[i]),0,
-          <MenuItem value={priceOptions[i]}>
-            {priceOptions[i]}
-          </MenuItem>)
+    else{ 
+      if(this.state.category === ""){
+        if(this.state.gle === "" || this.state.price === ""){ //just area selected
+          selectedData = data[this.state.area]
+          pushAreaList(data);
+          pushCatList(selectedData);
+          priceData = selectedData;
+          pushPriceLists(priceData, this.state);
+        }
+        else{//area and price selected
+          selectedData = data[this.state.gle + " " + this.state.price][this.state.area]
+          pushAreaList(data[this.state.gle + " " + this.state.price]);
+          pushCatList(selectedData);
+          priceData = data[this.state.area];
+          pushPriceLists(data[this.state.area], this.state);
+        }
       }
-      priceFlag = true;
+      else{
+        if(this.state.gle === "" || this.state.price === ""){//area and category selected
+          selectedData = data[this.state.category][this.state.area]
+          pushAreaList(data[this.state.category]);
+          pushCatList(data[this.state.area]);
+          priceData = selectedData;
+          pushPriceLists(selectedData, this.state);
+        }
+        else{//all selected
+          selectedData = data[this.state.category][this.state.gle + " " + this.state.price][this.state.area]
+          pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price]);
+          pushCatList(data[this.state.gle + " " + this.state.price][this.state.area]);
+          priceData = data[this.state.category][this.state.area];
+          pushPriceLists(priceData, this.state);
+        }
+      }
+      listsPush(selectedData, true, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
     }
-    
-    if (this.state.price !== "" && gleListValues.length !== 3){ //creates GLE list
-      if (this.state.price.length === currentRestaurant.Price.length && !gleListValues.includes("=")){
-        gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
-        gleList.splice(d3.bisectLeft(gleListValues,"="),0,
-        <MenuItem value="=">
-          =
-        </MenuItem>
-        )
-      }
-      else if (this.state.price.length >= currentRestaurant.Price.length && !gleListValues.includes("≤")){
-        gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
-        gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
-        <MenuItem value="≤">
-          ≤
-        </MenuItem>
-        )
-      }
-      else if (this.state.price.length <= currentRestaurant.Price.length && !gleListValues.includes("≥")){
-        gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
-        gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
-        <MenuItem value="≥">
-          ≥
-        </MenuItem>
-        )
-      }
-      if (gleListValues.length === 3){
-        gleFlag = true;
-      }
-    }
-    else if (!gleFlag){
-      gleListValues.splice(d3.bisectLeft(gleListValues,"="),0,"=")
-      gleList.splice(d3.bisectLeft(gleListValues,"="),0,
-      <MenuItem value="=">
-        =
-      </MenuItem>
-      )
-      gleListValues.splice(d3.bisectLeft(gleListValues,"≤"),0,"≤")
-      gleList.splice(d3.bisectLeft(gleListValues,"≤"),0,
-      <MenuItem value="≤">
-        ≤
-      </MenuItem>
-      )
-      gleListValues.splice(d3.bisectLeft(gleListValues,"≥"),0,"≥")
-      gleList.splice(d3.bisectLeft(gleListValues,"≥"),0,
-      <MenuItem value="≥">
-        ≥
-      </MenuItem>
-      )
-      gleFlag = true;
-    }
+  }
+  else if (this.state.refreshPrices){
+    resetPrices();
+    pushPriceLists(priceData, this.state);
   }
   
   let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
@@ -521,7 +634,7 @@ render() {
       </Row>
       <Row>
         <Col xs={5}>
-          <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight-350 }}
+          <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight*.80-86 }}
                       autoHide
                       autoHideTimeout={1000}
                       autoHideDuration={200}>
@@ -535,6 +648,7 @@ render() {
               <Map
                   google={this.props.google}
                   zoom={11}
+                  styles={this.props.mapStyle}
                   initialCenter={
                       {
                       lat: 34.0744189,
@@ -566,7 +680,7 @@ render() {
           <Row className="rightMapRow">
             <Col md={12} className="recCol">
               <Link className='recommend-text-big' to={{
-                              pathname: restaurantList[randomRestaurantPick].restaurant.createPath(restaurantList[randomRestaurantPick].locationNum),
+                              pathname: restaurantList[randomRestaurantPick].createPath(),
                               }}
                               state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}} >
                     Recommend Me!
@@ -583,8 +697,10 @@ render() {
 }
 }
 
+MapPage.defaultProps = googleMapStyles;
+
 export default GoogleApiWrapper({
-  apiKey: "GMAPSKEY"
+  apiKey: "GMAPSAPI"
 })(withRouter(MapPage))
 
 //export default MapPage
