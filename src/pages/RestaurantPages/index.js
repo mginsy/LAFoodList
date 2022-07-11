@@ -85,14 +85,17 @@ for (let areaNum in otherData["totAreas"]){
                     
                   </Col>   
                 </Row>
-                <Row>
-                  <Col></Col>
+                <Row className="bigRestInfo" style={{minHeight:this.state.screenHeight-120}}>
                   <Col xs={10} className="restInfo">
                     <h4 className="restTitleText">{currentRestaurant.Name}</h4>
-                    <div className="row locRestpage">
-                      <p className="col restLocText">{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
-                      <p className="col test-text">{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
-                    </div>
+                    <Row className="locRestpage">
+                      <Col xs={5}>
+                        <p className="test-text">{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
+                      </Col>
+                      <Col xs={5}>
+                        <p className="price-text">{currentRestaurant.Price}</p>
+                      </Col>
+                    </Row>
                     <p className="test-text">{currentRestaurant.Description}</p>
                     <Row>
                       <Col></Col>
@@ -100,20 +103,11 @@ for (let areaNum in otherData["totAreas"]){
                       <Col></Col>
                     </Row> 
                   </Col>
-                  <Col></Col>
                 </Row>
               </Col>
               <Col className="mapCol">
-                <Row>
-                  <Col xs={10}>
-
-                  </Col>   
-                  <Col>
-                    <p className="price-text">{currentRestaurant.Price}</p>
-                  </Col>   
-                </Row>
-                <Row className = "paddingRow">
-
+                <Row className = "addrRow">
+                    <p className="restLocText">{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
                 </Row>
                 <Row className="mapRow">
                   <Col xs={11}>

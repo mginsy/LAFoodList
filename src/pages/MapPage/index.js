@@ -13,6 +13,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion'
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import googleMapStyles from "../mapStyles";
+import LoadingButton from '@mui/lab/LoadingButton';
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -29,6 +30,24 @@ const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
     backgroundColor: formColor
+  },
+});
+
+const exitVariants = {
+  regular: {opacity: 0, transition: {duration: .5}},
+  slideLeft: {opacity: 0, x: -100, transition: {duration: .5}}
+}
+
+const StyledButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#D8B384',
+  borderColor: '#D8B384',
+  '&:hover': {
+    textTransform: 'none',
+    color: '#5E454B',
+    backgroundColor: '#cfa978',
+    borderColor: '#cfa978',
   },
 });
 
@@ -323,9 +342,11 @@ class MapPage extends Component {
     area: (typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""),
     gle: (typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""),
     price: (typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : ""),
+    fromMapList: (typeof(this.props.locState.fromMapList) != "undefined" ? this.props.locState.fromMapList : false),
     firstLoadFlag: true,
     screenWidth: 0,
     screenHeight: 0,
+    toMapList: false
   };
 
   componentDidMount() {
@@ -414,7 +435,8 @@ class MapPage extends Component {
       firstLoadFlag: false,
       refreshPrices: false, 
       gle: "",
-      price: ""
+      price: "",
+      leavingToList: false
     })
   }
 
@@ -450,6 +472,12 @@ class MapPage extends Component {
         activeMarker: null
       });
     }
+  };
+
+  setToMapList = (event) => {
+    this.setState({
+      toMapList: true
+    })
   };
 
 render() {
@@ -540,17 +568,19 @@ render() {
   
   let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
 
+  console.log(this.state.toMapList)
   return (
     <motion.div className="bigNoScrollContainer"
       key={"MapKey"}
-      exit={{opacity: 0}}
-      initial={{opacity: 0, y: -30}}
-      animate={{opacity: 1, y: 0, transition: {duration: 1}}}
+      exit={this.state.toMapList ? "slideLeft" : "regular"}
+      initial={(this.state.fromMapList) ? {opacity: 0, x: -100, transition: {duration: 1}} : {opacity: 0, y: -30, transition: {duration: 1}}}
+      animate={{opacity: 1, y: 0, x: 0, transition: {duration: 1}}}
+      variants={exitVariants}
       >
       <Row className="mapStartRow">
         <Col className="mapFormColOne">
           <Row className="mapFormRow">
-            <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+            <StyledForm sx={{ m: 1, minWidth: 155 }} size="small">
               <InputLabel id="demo-select-small">Category</InputLabel>
               <Select
                 labelId="demo-select-small"
@@ -560,21 +590,27 @@ render() {
                 onChange={this.handleCategoryChange}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 {categoryList}
               </Select>
             </StyledForm>
           </Row>
           <Row className="mapFormRow">
-            <Link className='recommend-text-small' onClick={this.recommendCategory}  to="#">Recommend Me!</Link>
+            <StyledButton
+              size="small"
+              onClick={this.recommendCategory}
+              loadingIndicator="Loading…"
+              variant="outlined">
+              Recommend Me!
+            </StyledButton>
           </Row>
         </Col>
         <Col className="mapFormCol">
-          <h4 className='in-between-text'>in</h4>
+          <h4 className='in-between-text-map'>in</h4>
         </Col>
         <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+          <StyledForm sx={{ m: 1, minWidth: 140 }} size="small">
             <InputLabel id="demo-select-small">Area</InputLabel>
             <Select
               labelId="demo-select-small"
@@ -584,7 +620,7 @@ render() {
               onChange={this.handleAreaChange}
             >
               <MenuItem value="">
-                <em>None</em>
+                <em>Any</em>
               </MenuItem>
               {areaList}
             </Select>
@@ -624,8 +660,36 @@ render() {
             </Select>
           </StyledForm>
         </Col>
-        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-750}}>
-          <Link className='recommend-text-big' onClick={this.resetCategories}  to="#">Reset</Link>
+        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-1000, paddingTop: this.state.screenHeight*.02+8}}>
+          <StyledButton
+            size="medium"
+            onClick={this.resetCategories}
+            loadingIndicator="Loading…"
+            variant="outlined"
+            style={{
+                    fontStyle: 'bold', maxHeight:40
+                    }}>
+            Reset
+          </StyledButton>
+        </Col>
+        <Col className="mapFormCol" style={{minWidth: 170, paddingRight: 30, paddingTop: this.state.screenHeight*.02+8}}>
+          <StyledButton
+            component={Link}
+            onClick={this.setToMapList}
+            size="large"
+            to={{pathname: "/list"}}
+            state={{ 
+              Category: this.state.category, 
+              Area: this.state.area, 
+              Gle: this.state.gle, 
+              Price: this.state.price,
+              fromMapList: true}}
+            loadingIndicator="Loading…"
+            variant="outlined"
+            style={{
+                    fontStyle: 'italic', maxHeight:40}}>
+            {"To List →"}
+          </StyledButton>
         </Col>
       </Row>
       <Row className="mapPaddingRow">
@@ -677,12 +741,17 @@ render() {
           </Row>
           <Row className="rightMapRow">
             <Col md={12} className="recCol">
-              <Link className='recommend-text-big' to={{
-                              pathname: restaurantList[randomRestaurantPick].createPath(),
-                              }}
-                              state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}} >
-                    Recommend Me!
-              </Link>
+              <StyledButton
+                component={Link}
+                size="large"
+                to={{
+                  pathname: restaurantList[randomRestaurantPick].createPath(),
+                  }}
+                  state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
+                loadingIndicator="Loading…"
+                variant="outlined">
+                Recommend Me!
+              </StyledButton>
             </Col>
             <Col>
             </Col>

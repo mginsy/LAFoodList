@@ -9,6 +9,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import axios from 'axios';
 import 'reactjs-popup/dist/index.css';
 import Fade from '@mui/material/Fade';
+import LoadingButton from '@mui/lab/LoadingButton';
 //import 'react-calendar/dist/Calendar.css';
 
 const formColor = '#F3F0D7'
@@ -109,6 +110,19 @@ function Contact() {
 
       });
 
+      const StyledButton = styled(LoadingButton)({
+        textTransform: 'none',
+        color: '#5E454B',
+        backgroundColor: '#D8B384',
+        borderColor: '#D8B384',
+        '&:hover': {
+          textTransform: 'none',
+          color: '#5E454B',
+          backgroundColor: '#cfa978',
+          borderColor: '#cfa978',
+        },
+      });
+
     return (
         <motion.div className="bigNoScrollContainer"
         exit={{opacity: 0}}
@@ -161,7 +175,17 @@ function Contact() {
                 <Fade in={isFilled}
                     timeout={1000}
                 >
-                    <Link className='recommend-text-big' onClick={sendEmail}  to="/">Submit</Link>    
+                    <StyledButton
+                        component={Link}
+                        onClick={sendEmail}
+                        size="large"
+                        to={{pathname: "/"}}
+                        loadingIndicator="Loading…"
+                        variant="outlined"
+                        style={{
+                                fontStyle: 'bold'}}>
+                        Submit
+                    </StyledButton>
                 </Fade>
             </Row>
         </motion.div>

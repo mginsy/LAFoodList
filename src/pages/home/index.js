@@ -5,11 +5,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import Fade from '@mui/material/Fade';
 import 'simplebar-react/dist/simplebar.min.css';
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
+import LoadingButton from '@mui/lab/LoadingButton';
+import { styled } from '@mui/material/styles';
+
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -45,7 +47,6 @@ function pushAreaList(areaData){
 }
 
 function pushCatList(catData){
-  console.log(catData)
   for (let catNum in catData["Cats"]){
     categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
     categoryListValues.push(catData["Cats"][catNum])
@@ -55,11 +56,32 @@ function pushCatList(catData){
 const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
-    backgroundColor: formColor
+    backgroundColor: formColor,
+    fontSize: 18
   },
 });
 
-class MapPage extends Component {
+const StyledButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#D8B384',
+  borderColor: '#D8B384',
+  '&:hover': {
+    textTransform: 'none',
+    color: '#5E454B',
+    backgroundColor: '#cfa978',
+    borderColor: '#cfa978',
+  },
+});
+
+const StyledViewButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#F3F0D7',
+  borderColor: '#F3F0D7'
+});
+
+class HomePage extends Component {
 
   state = {
     isStart:true,
@@ -91,46 +113,50 @@ class MapPage extends Component {
   handleCategoryChange = (event) =>
     {
       let fadeSubmit = false;
-      if (this.state.area !== "" && event.target.value !== ""){
+      if (this.state.area !== "" || event.target.value !== ""){
         fadeSubmit = true;
       }
       this.setState({ category: event.target.value, 
                      refreshMap: true,
-                     isFilled: fadeSubmit});
+                     isFilled: fadeSubmit,
+                     isStart: false});
     }
 
   handleAreaChange = (event) =>
     {
       let fadeSubmit = false;
-      if (this.state.category !== "" && event.target.value !== ""){
+      if (this.state.category !== "" || event.target.value !== ""){
         fadeSubmit = true;
       }
       this.setState({ area: event.target.value, 
                      refreshMap: true,
-                     isFilled: fadeSubmit});
+                     isFilled: fadeSubmit,
+                     isStart: false});
     }
   recommendCategory = (event) =>
   {
     let randomCategoryPick =  Math.floor(Math.random() * categoryList.length);
-    let fadeSubmit = false;
-    if (this.state.area !== ""){
-      fadeSubmit = true;
-    }
+    let fadeSubmit = true;
     this.setState({
       category: categoryListValues[randomCategoryPick], 
       refreshMap: true,
-      isFilled: fadeSubmit
-    })
-  }
-
-  initFadeOver = (event) =>{
-    this.setState({
+      isFilled: fadeSubmit,
       isStart: false
     })
   }
 
 render() {
  
+  let midHomeVariants = {
+    center : {x: this.state.screenWidth*.5-270, transition: {duration: this.state.isStart ? .01 : .5}},
+    side: {opacity: 1, x: this.state.screenWidth*.20-150, transition: {duration: .5}}
+  }
+  
+  let picsHomeVariants = {
+    unfilled : {opacity: 0, x: 0, transition: {duration: .5}},
+    filled: {opacity: 1, x: 0, transition: {duration: 1}}
+  }
+
 
   if (this.state.refreshMap){
 
@@ -166,90 +192,137 @@ render() {
   }
 
   return (
-    <motion.div className="bigNoScrollContainer"
+    <div className="bigNoScrollContainer">
+      <motion.div
       key={"HomeKey"}
-      initial={{opacity: 1}}
+      initial={{opacity: 0}}
       exit={{opacity: 0}}
-      animate={{opacity: 1, transition: {duration: .1}}}>
-      <Fade in={this.state.isStart}
-          timeout={fadeLen}
-        >
-          <Container className="topHome">
-            <Row className="homeStartRow homeRow">
-              <p className="starterText">What Are You Looking For Today?</p>
-            </Row>
-            <Row className="homeRow">
-              <Col className="homeCol">
-                <Row className="inMapRow homeCat">
-                  <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
-                    <InputLabel id="demo-select-small">Category</InputLabel>
+      animate={{opacity: 1, transition: {duration: 1.4, delay: .1}}}>
+        <Row style={{minHeight: this.state.screenHeight*.98-86}}>
+          <Col style={{minWidth:540, maxWidth: 540, zIndex: '2'}}>
+            <motion.div
+            animate={this.state.isFilled ? "side" : "center"}
+            variants={midHomeVariants}
+            style={{paddingTop: this.state.screenHeight*.35}}>
+              <Row className = "homeFormRow">
+                <p className="topStarterText">What Are You Looking For Today?</p>
+              </Row>
+              <Row>
+                <Col className="homeCatCol">
+                  <Row className = "homeDropdown">
+                    <StyledForm sx={{ m: 1, minWidth: 200}} size="small">
+                      <InputLabel id="demo-select-small">Category</InputLabel>
+                      <Select
+                        labelId="demo-select-small"
+                        id="demo-select-small"
+                        value={this.state.category}
+                        label="Category"
+                        onChange={this.handleCategoryChange}
+                      >
+                        <MenuItem value="">
+                          <em>Any</em>
+                        </MenuItem>
+                        {categoryList}
+                      </Select>
+                    </StyledForm>
+                  </Row>
+                  <Row className = "homeDropdown">
+                    <StyledButton
+                      size="medium"
+                      onClick={this.recommendCategory}
+                      loadingIndicator="Loading…"
+                      variant="outlined">
+                      Recommend Me!
+                    </StyledButton>
+                  </Row>
+                </Col>
+                <Col className='homeInCol'>
+                  <h4 className='in-between-text-home'>in</h4>
+                </Col>
+                <Col className = "homeDropdown">
+                  <StyledForm sx={{ m: 1, minWidth: 170 }} size="small">
+                    <InputLabel id="demo-select-small">Area</InputLabel>
                     <Select
                       labelId="demo-select-small"
                       id="demo-select-small"
-                      value={this.state.category}
-                      label="Category"
-                      onChange={this.handleCategoryChange}
+                      value={this.state.area}
+                      label="Area"
+                      onChange={this.handleAreaChange}
                     >
                       <MenuItem value="">
-                        <em>None</em>
+                        <em>Any</em>
                       </MenuItem>
-                      {categoryList}
+                      {areaList}
                     </Select>
                   </StyledForm>
-                </Row>
-                <Row className="inMapRow">
-                  <Link className='recommend-text-small' onClick={this.recommendCategory} to="#" >Recommend Me!</Link>
-                </Row>
-              </Col>
-              <Col className="homeCol">
-                <h4 className='in-between-text-home'>in</h4>
-              </Col>
-              <Col className="homeCol">
-                <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
-                  <InputLabel id="demo-select-small">Area</InputLabel>
-                  <Select
-                    labelId="demo-select-small"
-                    id="demo-select-small"
-                    value={this.state.area}
-                    label="Area"
-                    onChange={this.handleAreaChange}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    {areaList}
-                  </Select>
-                </StyledForm>
-              </Col>
-            </Row>
-          </Container>
-      </Fade>
-      <Fade in={this.state.isFilled}
-          timeout={submitFadeLen}
-      >
-        <Container>
-          <Row className="inMapRow homeSubmitRow">
-            <Col className="homeSubmitCol">
-              <Link className='recommend-text-big' to={{pathname: `/Map`}}
-                    state={{Category: this.state.category, Area:this.state.area, Page:""}}>Map View</Link>
+                </Col>
+              </Row>
+            </motion.div>
+            <motion.div
+              animate={{x: this.state.screenWidth*.5-270, transition: {duration: .01}}}>
+              <Row className = "homeRow" style={{paddingTop: this.state.screenHeight*.57-148-86}}>
+                <p className="starterText">Created Deliciously by Max Ginsberg</p>
+              </Row>
+            </motion.div>
+          </Col>
+          <Fade in={this.state.isFilled}
+                      timeout={.1}>
+            <Col style={{paddingLeft: this.state.screenWidth*.08, zIndex: '1'}}>
+                <motion.div
+                initial={{opacity:0}}
+                animate={this.state.isFilled ? "filled" : "unfilled"}
+                variants={picsHomeVariants}
+                className="homePicCol">
+                  <Col className = "homePicCol">
+                    <Row className = "homePicRow">
+                      <StyledViewButton
+                        size="large"
+                        component={Link}
+                        to={{pathname: `/Map`}}
+                        state={{Category: this.state.category, Area:this.state.area, Page:""}}
+                        loadingIndicator="Loading…"
+                        variant="outlined">
+                        Map View
+                      </StyledViewButton>
+                      <Link to={{pathname: `/Map`}}
+                            state={{Category: this.state.category, Area:this.state.area, Page:""}}>
+                            <img 
+                            src={require(`./mapViewBlur.jpg`)}
+                            style={{maxHeight:this.state.screenHeight*.3}}
+                            className='img-fluid'
+                            alt="cooking..."
+                            />
+                      </Link>
+                    </Row>
+                    <Row className = "homePicRow">
+                      <StyledViewButton
+                        size="large"
+                        component={Link}
+                        to={{pathname: `/List`}}
+                        state={{Category: this.state.category, Area:this.state.area, Page:""}}
+                        loadingIndicator="Loading…"
+                        variant="outlined">
+                        List View
+                      </StyledViewButton>
+                      <Link to={{pathname: `/List`}}
+                            state={{Category: this.state.category, Area:this.state.area, Page:""}}>
+                            <img 
+                            src={require(`./listViewBlur.jpg`)}
+                            style={{maxHeight:this.state.screenHeight*.3}}
+                            className='img-fluid'
+                            alt="cooking..."
+                            />
+                      </Link>
+                    </Row>
+                  </Col>
+                </motion.div>
             </Col>
-            <Col className="homeSubmitCol">
-              <Link className='recommend-text-big listBruh' to={{pathname: `/List`}}
-                    state={{Category: this.state.category, Area:this.state.area, Page:""}}>List View</Link>
-            </Col>
-          </Row>
-        </Container>
-      </Fade>
-      <Fade in={this.state.isStart}
-          timeout={fadeLen}
-      >
-        <Row className="inMapRow homeCreatedRow">
-          <p className="starterText">Created Deliciously by Max Ginsberg</p>
+          </Fade>
         </Row>
-      </Fade>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 }
 
-export default MapPage
+export default HomePage

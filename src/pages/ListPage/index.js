@@ -11,6 +11,8 @@ import {Link, useLocation, useParams} from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion';
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import LoadingButton from '@mui/lab/LoadingButton';
+
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -26,6 +28,24 @@ const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
     backgroundColor: formColor
+  },
+});
+
+const exitVariants = {
+  regular: {opacity: 0, transition: {duration: .5}},
+  slideRight: {opacity: 0, x: 100, transition: {duration: .5}}
+}
+
+const StyledButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#D8B384',
+  borderColor: '#D8B384',
+  '&:hover': {
+    textTransform: 'none',
+    color: '#5E454B',
+    backgroundColor: '#cfa978',
+    borderColor: '#cfa978',
   },
 });
 
@@ -138,16 +158,19 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
         let listing2 = new Restaurant(selectedData["restaurants"][listingNum+1], currentArea)
         let listing3 = new Restaurant(selectedData["restaurants"][listingNum+2], currentArea)
         listList.push(
-          <div className="listPics row">
-            <div className="col listPicCol">
-              {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+          <div>
+            <div className="listPics row">
+              <div className="col listPicCol">
+                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
+              <div className="col listPicCol">
+                {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
+              <div className="col listPicCol">
+                {listing3.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
             </div>
-            <div className="col listPicCol">
-              {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-            </div>
-            <div className="col listPicCol">
-              {listing3.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-            </div>
+            <div className="listPicsBuffer row"></div>
           </div>
         )
       }
@@ -155,32 +178,38 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
         let listing1 = new Restaurant(selectedData["restaurants"][listingNum], currentArea)
         let listing2 = new Restaurant(selectedData["restaurants"][listingNum+1], currentArea)
         listList.push(
-          <div className="listPics row">
-            <div className="col listPicCol">
-              {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-            </div>
-            <div className="col listPicCol">
-              {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-            </div>
-            <div className="col listPicCol">
+          <div>
+           <div className="listPics row">
+              <div className="col listPicCol">
+                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
+              <div className="col listPicCol">
+                {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
+              <div className="col listPicCol">
 
+              </div>
             </div>
+            <div className="listPicsBuffer row"></div>
           </div>
         )
       }
       else{
         let listing1 = new Restaurant(selectedData["restaurants"][listingNum], currentArea)
         listList.push(
-          <div className="listPics row">
-            <div className="col listPicCol">
-              {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+          <div>
+            <div className="listPics row">
+              <div className="col listPicCol">
+                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+              </div>
+              <div className="col listPicCol">
+              
+              </div>
+              <div className="col listPicCol">
+    
+              </div>
             </div>
-            <div className="col listPicCol">
-            
-            </div>
-            <div className="col listPicCol">
-  
-            </div>
+            <div className="listPicsBuffer row"></div>
           </div>
         )
       }
@@ -213,16 +242,19 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
           let listing2 = new Restaurant(selectedData[currentArea]["restaurants"][listingNum+1], currentArea)
           let listing3 = new Restaurant(selectedData[currentArea]["restaurants"][listingNum+2], currentArea)
           listList.push(
-            <div className="listPics row">
-              <div className="col listPicCol">
-                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+            <div>
+              <div className="listPics row">
+                <div className="col listPicCol">
+                  {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
+                <div className="col listPicCol">
+                  {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
+                <div className="col listPicCol">
+                  {listing3.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
               </div>
-              <div className="col listPicCol">
-                {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-              </div>
-              <div className="col listPicCol">
-                {listing3.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-              </div>
+              <div className="listPicsBuffer row"></div>
             </div>
           )
         }
@@ -230,32 +262,38 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
           let listing1 = new Restaurant(selectedData[currentArea]["restaurants"][listingNum], currentArea)
           let listing2 = new Restaurant(selectedData[currentArea]["restaurants"][listingNum+1], currentArea)
           listList.push(
-            <div className="listPics row">
-              <div className="col listPicCol">
-                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+            <div>
+              <div className="listPics row">
+                <div className="col listPicCol">
+                  {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
+                <div className="col listPicCol">
+                  {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
+                <div className="col listPicCol">
+    
+                </div>
               </div>
-              <div className="col listPicCol">
-                {listing2.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
-              </div>
-              <div className="col listPicCol">
-  
-              </div>
+              <div className="listPicsBuffer row"></div>
             </div>
           )
         }
         else{
           let listing1 = new Restaurant(selectedData[currentArea]["restaurants"][listingNum], currentArea)
           listList.push(
-            <div className="listPics row">
-              <div className="col listPicCol">
-                {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+            <div>
+              <div className="listPics row">
+                <div className="col listPicCol">
+                  {listing1.createListListText(handleCategoryChangeClick, currentState.category, currentState.area, currentState.gle, currentState.price)}
+                </div>
+                <div className="col listPicCol">
+                
+                </div>
+                <div className="col listPicCol">
+      
+                </div>
               </div>
-              <div className="col listPicCol">
-              
-              </div>
-              <div className="col listPicCol">
-    
-              </div>
+              <div className="listPicsBuffer row"></div>
             </div>
           )
         }
@@ -272,14 +310,17 @@ class ListPage extends Component {
     area: (typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""),
     gle: (typeof(this.props.locState.gle) != "undefined" ? this.props.locState.gle : ""),
     price: (typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : ""),
+    fromMapList: (typeof(this.props.locState.fromMapList) != "undefined" ? this.props.locState.fromMapList : false),
     screenWidth: 0,
     screenHeight: 0,
+    toMapList: false
   };
 
   componentDidMount() {
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
 }
+
 
   resize() {
       this.setState({screenWidth: window.innerWidth,
@@ -340,6 +381,12 @@ class ListPage extends Component {
     })
   }
 
+  setToMapList = (event) => {
+    this.setState({
+      toMapList: true
+    })
+  };
+
 render(){
 
   resetLists();
@@ -348,7 +395,6 @@ render(){
   if (this.state.area === ""){
     if(this.state.category === ""){
       if(this.state.gle === "" || this.state.price === ""){//none selected
-        console.log("hi3")
         selectedData = data;
         pushAreaList(selectedData);
         pushCatList(selectedData);
@@ -423,17 +469,37 @@ render(){
     pushPriceLists(priceData, this.state);
   }
 
-
+  console.log(this.state.fromMapList)
   return (
     <div className="bigNoScrollContainer">
       <motion.div 
         key={"ListKey"}
-        exit={{opacity: 0}}
-        initial={{opacity: 0, y: -30}}
-        animate={{opacity: 1, y: 0, transition: {duration: 1}}}>
+        exit={this.state.toMapList ? "slideRight" : "regular"}
+        initial={(this.state.fromMapList) ? {opacity: 0, x: 100, transition: {duration: 1}} : {opacity: 0, y: -30, transition: {duration: 1}}}
+        animate={{opacity: 1, y: 0, x: 0, transition: {duration: 1}}}
+        variants={exitVariants}>
         <Row className="listStartRow">
-          <Col className="firstListForm">
-            <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+        <Col xs={2} className="firstListForm" style={{minWidth: 180, paddingRight: 30}}>
+          <StyledButton
+            component={Link}
+            onClick={this.setToMapList}
+            size="large"
+            to={{pathname: "/map"}}
+            state={{ 
+              Category: this.state.category, 
+              Area: this.state.area, 
+              Gle: this.state.gle, 
+              Price: this.state.price,
+              fromMapList: true}}
+            loadingIndicator="Loading…"
+            variant="outlined"
+            style={{
+                    fontStyle: 'italic'}}>
+            {"← To Map"}
+          </StyledButton>
+        </Col>
+          <Col xs={2} className="firstListForm">
+            <StyledForm sx={{ m: 1, minWidth: 140 }} size="small">
               <InputLabel id="demo-select-small">Area</InputLabel>
               <Select
                 labelId="demo-select-small"
@@ -443,14 +509,14 @@ render(){
                 onChange={this.handleAreaChange}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 {areaList}
               </Select>
             </StyledForm>
           </Col>
           <Col className="midListForm">
-            <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+            <StyledForm sx={{ m: 1, minWidth: 155 }} size="small">
               <InputLabel id="demo-select-small">Category</InputLabel>
               <Select
                 labelId="demo-select-small"
@@ -460,15 +526,15 @@ render(){
                 onChange={this.handleCategoryChange}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 {categoryList}
               </Select>
             </StyledForm>
           </Col>
-          <Col className="lastListForm">
+          <Col className="lastListForm" style={{minWidth: 480}}>
             <Row className="listFormLastCol">
-              <Col className="mapFormCol">
+              <Col className="lastListCol">
                 <StyledForm sx={{ m: 1, minWidth: 80 }} size="small">
                   <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
                   <Select
@@ -485,7 +551,7 @@ render(){
                   </Select>
                 </StyledForm>
               </Col>
-              <Col className="mapFormCol">
+              <Col className="lastListCol">
                 <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
                   <InputLabel id="demo-select-small">Price</InputLabel>
                   <Select
@@ -502,8 +568,17 @@ render(){
                   </Select>
                 </StyledForm>
               </Col>
-              <Col className="mapFormCol">
-                <Link className='recommend-text-big' onClick={this.resetCategories} to="#" >Reset</Link>
+              <Col className="lastListCol">
+                <StyledButton
+                  size="medium"
+                  onClick={this.resetCategories}
+                  loadingIndicator="Loading…"
+                  variant="outlined"
+                  style={{
+                          fontStyle: 'bold'
+                          }}>
+                  Reset
+                </StyledButton>
               </Col>
             </Row>   
           </Col> 
@@ -511,15 +586,17 @@ render(){
       </motion.div>
       <motion.div
       key={"ListKey"}
-      exit={{opacity: 0}}
-      initial={{opacity: 0, }}
-      animate={{opacity: 1, transition: {duration: 2}}}>
+      exit={this.state.toMapList ? "slideRight" : "regular"}
+      initial={(this.state.fromMapList) ? {opacity: 0, x: 100 } : {opacity: 0 }}
+      animate={{opacity: 1, x: 0, transition: {duration: 1}}}
+      variants={exitVariants}>
         <Row className='listPaddingRow'></Row>
         <Row className='listList'>
           <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight-215, width:this.state.screenWidth }}
                           autoHide
                           autoHideTimeout={1000}
-                          autoHideDuration={200}>
+                          autoHideDuration={200}
+                          renderTrackHorizontal={props => <div {...props} style={{width:0}} className="track-horizontal"/>}>
               {listList}
           </Scrollbars>
         </Row>
