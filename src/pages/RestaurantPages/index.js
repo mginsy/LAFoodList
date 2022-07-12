@@ -6,11 +6,26 @@ import Restaurant from '../../Restaurant';
 import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
 import googleMapStyles from "../mapStyles";
+import LoadingButton from '@mui/lab/LoadingButton';
+import { styled } from '@mui/material/styles';
 
 
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
+
+const StyledButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#D8B384',
+  borderColor: '#D8B384',
+  '&:hover': {
+    textTransform: 'none',
+    color: '#5E454B',
+    backgroundColor: '#cfa978',
+    borderColor: '#cfa978',
+  },
+});
 
 const withRouter = WrappedComponent => props => {
   const params = useParams();
@@ -35,8 +50,6 @@ for (let areaNum in otherData["totAreas"]){
   for (let restNum in data[currentArea]["restaurants"]){
 
   let currentRestaurant = new Restaurant(data[currentArea]["restaurants"][restNum], currentArea)
-  console.log(currentRestaurant.Name)
-
   
     class RestaurantPage extends React.Component {
 
@@ -73,17 +86,24 @@ for (let areaNum in otherData["totAreas"]){
             <Row style={{height:this.state.screenHeight-86}}>
               <Col className="mapCol">
                 <Row>
-                  <Col>
-                    <Link className='recommend-text-big back-text' to={{pathname: (typeof(this.props.locState.Page) != "undefined" ? this.props.locState.Page : "/map")}}
-                      state={{ 
-                        Category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""), 
-                        Area:(typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""), 
-                        Gle:(typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""), 
-                        Price:(typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : "")}}>Back</Link>
-                  </Col>   
-                  <Col xs={10}>
-                    
-                  </Col>   
+                  <Col style={{paddingRight: this.state.screenWidth/2*.85}}>
+                    <StyledButton
+                        component={Link}
+                        size="large"
+                        to={{pathname: (typeof(this.props.locState.Page) != "undefined" ? this.props.locState.Page : "/map")}}
+                        state={{ 
+                          Category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""), 
+                          Area:(typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""), 
+                          Gle:(typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""), 
+                          Price:(typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : "")}}
+                        loadingIndicator="Loading…"
+                        variant="outlined"
+                        style={{
+                                fontStyle: 'bold',
+                                fontSize: 16}}>
+                        Back
+                    </StyledButton>
+                  </Col> 
                 </Row>
                 <Row className="bigRestInfo" style={{minHeight:this.state.screenHeight-120}}>
                   <Col xs={10} className="restInfo">

@@ -173,6 +173,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
         animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
         >
           <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+          <div
+          style={{
+            backgroundColor: '#000000',
+            height: '2px',
+                
+          }}
+          />
+          <div
+          style={{
+            height: '4px',
+          }}
+          />
         </motion.div>
       )
       itemsPushed++;
@@ -215,6 +227,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
             animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData[currentArea]["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
             >
               <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+              <div
+                style={{
+                    backgroundColor: '#000000',
+                    height: '2px',
+                
+                  }}
+              />
+              <div
+              style={{
+                height: '4px',
+              }}
+              />
             </motion.div>
           )
           itemsPushed++;
@@ -226,6 +250,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
             animate={{opacity: 1, transition: {duration: delayConst + (itemsPushed+Math.min(selectedData[currentArea]["restaurants"].length,12))/itemsPushedDiv + speedOfAnim}}}
             >
               <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+              <div
+              style={{
+                backgroundColor: '#000000',
+                height: '2px',
+                
+              }}
+              />
+              <div
+                style={{
+                  height: '4px',
+                }}
+              />
             </motion.div>
           )
           itemsPushed++;
@@ -234,6 +270,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
           listList.push(
             <div className = "fullMapRestaurantText mapAreaTitle">
               <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+              <div
+                style={{
+                  backgroundColor: '#000000',
+                  height: '2px',
+                
+                }}
+              />
+              <div
+                style={{
+                  height: '4px',
+                }}
+              />
             </div>
           )
           itemsPushed++;
@@ -278,6 +326,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
       listList.push(
         <div className = "fullMapRestaurantText">
           <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+          <div
+            style={{
+              backgroundColor: '#000000',
+              height: '2px',
+                
+            }}
+          />
+          <div
+                style={{
+                  height: '4px',
+                }}
+              />
         </div>
       )
       itemsPushed++;
@@ -301,6 +361,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
           listList.push(
             <div className = "fullMapRestaurantText">
               <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+              <div
+              style={{
+                backgroundColor: '#000000',
+                height: '2px',
+                
+              }}
+              />
+              <div
+                style={{
+                  height: '4px',
+                }}
+              />
             </div>
           )
           itemsPushed++;
@@ -309,6 +381,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
           listList.push(
             <div className = "fullMapRestaurantText mapAreaTitle">
               <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+              <div
+              style={{
+                backgroundColor: '#000000',
+                height: '2px',
+                
+              }}
+              />
+              <div
+                style={{
+                  height: '4px',
+                }}
+              />
             </div>
           )
           itemsPushed++;
@@ -331,7 +415,6 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
 }
 
 class MapPage extends Component {
-
   state = {
     showingInfoWindow: false,  // Hides or shows the InfoWindow
     activeMarker: {},          // Shows the active marker upon click
@@ -482,8 +565,6 @@ class MapPage extends Component {
 
 render() {
 
-  
-
   if (this.state.refreshMap){
 
     resetLists();
@@ -568,7 +649,6 @@ render() {
   
   let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
 
-  console.log(this.state.toMapList)
   return (
     <motion.div className="bigNoScrollContainer"
       key={"MapKey"}
@@ -667,7 +747,7 @@ render() {
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'bold', maxHeight:40
+                    fontStyle: 'bold', maxHeight:40, fontSize: 16
                     }}>
             Reset
           </StyledButton>
@@ -687,7 +767,7 @@ render() {
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'italic', maxHeight:40}}>
+                    fontStyle: 'italic', maxHeight:40, fontSize: 16}}>
             {"To List →"}
           </StyledButton>
         </Col>
@@ -749,7 +829,10 @@ render() {
                   }}
                   state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
                 loadingIndicator="Loading…"
-                variant="outlined">
+                variant="outlined"
+                style={{
+                  fontSize: 16
+                }}>
                 Recommend Me!
               </StyledButton>
             </Col>

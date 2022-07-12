@@ -316,11 +316,12 @@ a {
   justify-content: center;
   align-items:center;
   flex-direction: column;
-  padding-top: 2%;
+  padding-top:3%;
+  padding-bottom:3%;
 }
 
 .homePicCol{
-  padding-top:2%;
+  padding-top:1%;
   justify-content: center;
   align-items: center;
   vertical-align: auto;
@@ -369,15 +370,20 @@ a {
   padding-bottom:130%;
 }
 
+
 .in-between-text-map{
   color:#1f1f1f;
-  padding-left:60%;
-  padding-top:30%;
+  padding-left:13px;
+  padding-top:17px;
 }
 
 .restInfo{
   padding-top:2%;
   padding-bottom:3%;
+}
+
+.restButton{
+  padding-left: 1%;
 }
 
 .bigRestInfo{
@@ -519,6 +525,7 @@ a {
   text-align: left;
   padding-left: 25%;
   padding-right: 25%;
+  padding-top: .5%;
 }
 
 .mapAreaTitle{
@@ -571,7 +578,7 @@ a {
 .recommend-text-big{
   color:#000000;
   font-size: 20px;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 .restaurant-text-big{

@@ -149,6 +149,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
     listList.push(
       <div className = "listAreaText">
         <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+        <div
+          style={{
+            backgroundColor: '#000000',
+            height: '2px',
+                
+          }}
+          />
+          <div
+          style={{
+            height: '4px',
+          }}
+          />
       </div>
     )
     let listingNum = 0
@@ -223,6 +235,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
         listList.push(
           <div className = "listAreaText">
             <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            <div
+            style={{
+              backgroundColor: '#000000',
+              height: '2px',
+                  
+            }}
+            />
+            <div
+            style={{
+              height: '4px',
+            }}
+            />
           </div>
         )
         itemsPushed++;
@@ -231,6 +255,18 @@ function listsPush(selectedData, byArea, currentState, handleAreaChangeClick, ha
         listList.push(
           <div className = "listAreaText mapAreaTitle">
             <Link className='recommend-text-big' value={currentArea} onClick={handleAreaChangeClick(currentArea)}  to="#">{currentArea}</Link>
+            <div
+            style={{
+              backgroundColor: '#000000',
+              height: '2px',
+                  
+            }}
+            />
+            <div
+            style={{
+              height: '4px',
+            }}
+            />
           </div>
         )
         itemsPushed++;
@@ -308,7 +344,7 @@ class ListPage extends Component {
   state = {
     category: (typeof(this.props.locState.Category) != "undefined" ? this.props.locState.Category : ""),
     area: (typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""),
-    gle: (typeof(this.props.locState.gle) != "undefined" ? this.props.locState.gle : ""),
+    gle: (typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""),
     price: (typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : ""),
     fromMapList: (typeof(this.props.locState.fromMapList) != "undefined" ? this.props.locState.fromMapList : false),
     screenWidth: 0,
@@ -425,7 +461,6 @@ render(){
         pushPriceLists(priceData, this.state);
       }
     }
-    console.log(selectedData)
     listsPush(selectedData, false, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
   }
   else{ 
@@ -469,7 +504,6 @@ render(){
     pushPriceLists(priceData, this.state);
   }
 
-  console.log(this.state.fromMapList)
   return (
     <div className="bigNoScrollContainer">
       <motion.div 
@@ -494,7 +528,7 @@ render(){
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'italic'}}>
+                    fontStyle: 'italic', fontSize: 16, maxHeight: 40}}>
             {"← To Map"}
           </StyledButton>
         </Col>
@@ -575,7 +609,7 @@ render(){
                   loadingIndicator="Loading…"
                   variant="outlined"
                   style={{
-                          fontStyle: 'bold'
+                          fontStyle: 'bold', fontSize: 16
                           }}>
                   Reset
                 </StyledButton>

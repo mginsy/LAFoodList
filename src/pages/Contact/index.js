@@ -183,7 +183,7 @@ function Contact() {
                         loadingIndicator="Loading…"
                         variant="outlined"
                         style={{
-                                fontStyle: 'bold'}}>
+                                fontStyle: 'bold', fontSize: 16}}>
                         Submit
                     </StyledButton>
                 </Fade>

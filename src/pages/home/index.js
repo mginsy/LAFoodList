@@ -11,17 +11,75 @@ import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import ButtonBase from '@mui/material/ButtonBase';
+import Typography from '@mui/material/Typography';
+
+import mapPic from './mapViewBlur.jpg'
+import listPic from './listViewBlur.jpg'
 
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
 
-const fadeLen = 4000;
-const submitFadeLen = 2500;
+const aspectRatio = 1900/860
 
 let totAreas = otherData["AreasADMINONLY"]
 const totAreasReset = structuredClone(totAreas)
 delete data.AreasADMINONLY
+
+const imageButtonTextColor = "#5E454B";
+
+const StyledButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#D8B384',
+  borderColor: '#D8B384',
+  '&:hover': {
+    textTransform: 'none',
+    color: '#5E454B',
+    backgroundColor: '#cfa978',
+    borderColor: '#cfa978',
+  },
+});
+
+const StyledViewButton = styled(LoadingButton)({
+  textTransform: 'none',
+  color: '#5E454B',
+  backgroundColor: '#F3F0D7',
+  borderColor: '#F3F0D7'
+});
+
+const ImageSrc = styled('span')({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center 40%',
+});
+
+const ImageBackdrop = styled('span')(({ theme }) => ({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  backgroundColor: theme.palette.common.black,
+  opacity: 0,
+  transition: theme.transitions.create('opacity'),
+}));
+
+const ImageMarked = styled('span')(({ theme }) => ({
+  height: 3,
+  width: 18,
+  backgroundColor: imageButtonTextColor,
+  position: 'absolute',
+  bottom: -2,
+  left: 'calc(50% - 9px)',
+  transition: theme.transitions.create('opacity'),
+}));
 
 //initialize all values
 
@@ -61,25 +119,6 @@ const StyledForm = styled(FormControl)({
   },
 });
 
-const StyledButton = styled(LoadingButton)({
-  textTransform: 'none',
-  color: '#5E454B',
-  backgroundColor: '#D8B384',
-  borderColor: '#D8B384',
-  '&:hover': {
-    textTransform: 'none',
-    color: '#5E454B',
-    backgroundColor: '#cfa978',
-    borderColor: '#cfa978',
-  },
-});
-
-const StyledViewButton = styled(LoadingButton)({
-  textTransform: 'none',
-  color: '#5E454B',
-  backgroundColor: '#F3F0D7',
-  borderColor: '#F3F0D7'
-});
 
 class HomePage extends Component {
 
@@ -149,13 +188,53 @@ render() {
  
   let midHomeVariants = {
     center : {x: this.state.screenWidth*.5-270, transition: {duration: this.state.isStart ? .01 : .5}},
-    side: {opacity: 1, x: this.state.screenWidth*.20-150, transition: {duration: .5}}
+    side: {opacity: 1, x: this.state.screenWidth*.363-380, transition: {duration: .5}}
   }
+
+  //1504*.235 = 368.5 - 200 = 168.5
   
   let picsHomeVariants = {
     unfilled : {opacity: 0, x: 0, transition: {duration: .5}},
     filled: {opacity: 1, x: 0, transition: {duration: 1}}
   }
+
+  let Image = styled('span')(({ theme }) => ({
+    position: 'absolute',
+    left: this.state.screenWidth*.22,
+    right: 0,
+    top: 0,
+    bottom: this.state.screenHeight*.19,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.common.white,
+  }));
+  
+  let ImageButton = styled(ButtonBase)(({ theme }) => ({
+    position: 'relative',
+    height: this.state.screenHeight*.31,
+    [theme.breakpoints.down('sm')]: {
+      width: '100% !important', // Overrides inline-style
+    },
+    '& .MuiTypography-root': {
+      backgroundColor: 'rgba(0, 0, 0, .1)',
+      color:imageButtonTextColor,
+      fontSize:24
+    },
+    '&:hover, &.Mui-focusVisible': {
+      zIndex: 1,
+      '& .MuiImageBackdrop-root': {
+        opacity: 0.05,
+      },
+      '& .MuiImageMarked-root': {
+        opacity: 0,
+      },
+      '& .MuiTypography-root': {
+        border: '4px solid currentColor',
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+      },
+    },
+  }));
 
 
   if (this.state.refreshMap){
@@ -231,7 +310,8 @@ render() {
                       size="medium"
                       onClick={this.recommendCategory}
                       loadingIndicator="Loading…"
-                      variant="outlined">
+                      variant="outlined"
+                      style={{fontStyle:'bold', fontSize: 14}}>
                       Recommend Me!
                     </StyledButton>
                   </Row>
@@ -267,52 +347,74 @@ render() {
           </Col>
           <Fade in={this.state.isFilled}
                       timeout={.1}>
-            <Col style={{paddingLeft: this.state.screenWidth*.08, zIndex: '1'}}>
+            <Col style={{paddingLeft: this.state.screenWidth*.35-300, zIndex: '1'}}>
                 <motion.div
                 initial={{opacity:0}}
                 animate={this.state.isFilled ? "filled" : "unfilled"}
                 variants={picsHomeVariants}
                 className="homePicCol">
-                  <Col className = "homePicCol">
+                  <Col className = "homePicCol" style={{minHeight:this.state.screenHeight*.8}}>
                     <Row className = "homePicRow">
-                      <StyledViewButton
-                        size="large"
+                      <ImageButton
+                        focusRipple
+                        key={'Map View'}
+                        style={{
+                          width: this.state.screenWidth*.35,
+                          height: this.state.screenWidth*.35/aspectRatio
+                        }}
                         component={Link}
                         to={{pathname: `/Map`}}
                         state={{Category: this.state.category, Area:this.state.area, Page:""}}
-                        loadingIndicator="Loading…"
-                        variant="outlined">
-                        Map View
-                      </StyledViewButton>
-                      <Link to={{pathname: `/Map`}}
-                            state={{Category: this.state.category, Area:this.state.area, Page:""}}>
-                            <img 
-                            src={require(`./mapViewBlur.jpg`)}
-                            style={{maxHeight:this.state.screenHeight*.3}}
-                            className='img-fluid'
-                            alt="cooking..."
-                            />
-                      </Link>
+                      >
+                        <ImageSrc style={{ backgroundImage: `url(${mapPic})` }} />
+                        <ImageBackdrop className="MuiImageBackdrop-root" />
+                        <Image>
+                          <Typography
+                            component="span"
+                            variant="subtitle2"
+                            sx={{
+                              position: 'relative',
+                              p: 4,
+                              pt: 2,
+                              pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                            }}
+                          >
+                            Map View
+                            <ImageMarked className="MuiImageMarked-root" />
+                          </Typography>
+                        </Image>
+                      </ImageButton>
                     </Row>
                     <Row className = "homePicRow">
-                      <StyledViewButton
-                        size="large"
-                        component={Link}
-                        to={{pathname: `/List`}}
-                        state={{Category: this.state.category, Area:this.state.area, Page:""}}
-                        loadingIndicator="Loading…"
-                        variant="outlined">
-                        List View
-                      </StyledViewButton>
-                      <Link to={{pathname: `/List`}}
-                            state={{Category: this.state.category, Area:this.state.area, Page:""}}>
-                            <img 
-                            src={require(`./listViewBlur.jpg`)}
-                            style={{maxHeight:this.state.screenHeight*.3}}
-                            className='img-fluid'
-                            alt="cooking..."
-                            />
-                      </Link>
+                      <ImageButton
+                          focusRipple
+                          key={'List View'}
+                          style={{
+                            width: this.state.screenWidth*.35,
+                            height: this.state.screenWidth*.35/aspectRatio
+                          }}
+                          component={Link}
+                          to={{pathname: `/List`}}
+                          state={{Category: this.state.category, Area:this.state.area, Page:""}}
+                        >
+                          <ImageSrc style={{ backgroundImage: `url(${listPic})` }} />
+                          <ImageBackdrop className="MuiImageBackdrop-root" />
+                          <Image>
+                            <Typography
+                              component="span"
+                              variant="subtitle2"
+                              sx={{
+                                position: 'relative',
+                                p: 4,
+                                pt: 2,
+                                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                              }}
+                            >
+                            List View
+                            <ImageMarked className="MuiImageMarked-root" />
+                          </Typography>
+                        </Image>
+                      </ImageButton>
                     </Row>
                   </Col>
                 </motion.div>
