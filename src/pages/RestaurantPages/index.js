@@ -6,7 +6,7 @@ import Restaurant from '../../Restaurant';
 import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
 import googleMapStyles from "../mapStyles";
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
 
@@ -14,7 +14,7 @@ import { styled } from '@mui/material/styles';
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
 
-const StyledButton = styled(LoadingButton)({
+const StyledButton = styled(Button)({
   textTransform: 'none',
   color: '#5E454B',
   backgroundColor: '#D8B384',

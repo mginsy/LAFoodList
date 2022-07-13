@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 import Fade from '@mui/material/Fade';
 import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion';
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
@@ -30,7 +30,7 @@ delete data.AreasADMINONLY
 
 const imageButtonTextColor = "#5E454B";
 
-const StyledButton = styled(LoadingButton)({
+const StyledButton = styled(Button)({
   textTransform: 'none',
   color: '#5E454B',
   backgroundColor: '#D8B384',
@@ -41,13 +41,6 @@ const StyledButton = styled(LoadingButton)({
     backgroundColor: '#cfa978',
     borderColor: '#cfa978',
   },
-});
-
-const StyledViewButton = styled(LoadingButton)({
-  textTransform: 'none',
-  color: '#5E454B',
-  backgroundColor: '#F3F0D7',
-  borderColor: '#F3F0D7'
 });
 
 const ImageSrc = styled('span')({
@@ -200,10 +193,10 @@ render() {
 
   let Image = styled('span')(({ theme }) => ({
     position: 'absolute',
-    left: this.state.screenWidth*.22,
+    left: 0,
     right: 0,
     top: 0,
-    bottom: this.state.screenHeight*.19,
+    bottom: 0,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

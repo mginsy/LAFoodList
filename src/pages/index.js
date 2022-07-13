@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
 import AnimatedRoutes from './AnimatedRoutes'
+import background from '../background.jpg'
 
 function NavbarLink(props) {
     return (
@@ -40,11 +41,19 @@ function Navbar(props) {
     )
 }
 
+const myStyle={
+    backgroundImage: `url(${background})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    width: '100vw',
+    height: '100vh'
+};
 
 function App() {
 
     return (
-        <div className ="App"> 
+        <div className ="App" style={myStyle}> 
             <Navbar className="primary" />
             <AnimatedRoutes/>
         </div>

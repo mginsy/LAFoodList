@@ -6,12 +6,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Restaurant from '../../Restaurant';
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 import {Link, useLocation, useParams} from 'react-router-dom';
 import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion';
 import { Scrollbars } from 'react-custom-scrollbars-2';
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 
 
 const data = require('../../restaurantData2.json');
@@ -36,7 +36,7 @@ const exitVariants = {
   slideRight: {opacity: 0, x: 100, transition: {duration: .5}}
 }
 
-const StyledButton = styled(LoadingButton)({
+const StyledButton = styled(Button)({
   textTransform: 'none',
   color: '#5E454B',
   backgroundColor: '#D8B384',
@@ -528,7 +528,8 @@ render(){
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'italic', fontSize: 16, maxHeight: 40}}>
+                    fontStyle: 'italic', fontSize: 16, maxHeight: 40,
+                    }}>
             {"← To Map"}
           </StyledButton>
         </Col>

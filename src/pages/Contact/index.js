@@ -9,7 +9,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import axios from 'axios';
 import 'reactjs-popup/dist/index.css';
 import Fade from '@mui/material/Fade';
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 //import 'react-calendar/dist/Calendar.css';
 
 const formColor = '#F3F0D7'
@@ -110,7 +110,7 @@ function Contact() {
 
       });
 
-      const StyledButton = styled(LoadingButton)({
+      const StyledButton = styled(Button)({
         textTransform: 'none',
         color: '#5E454B',
         backgroundColor: '#D8B384',
