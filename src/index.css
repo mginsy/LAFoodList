@@ -10,7 +10,7 @@
   --footer-color: rgb(0, 0, 0);
   --cololkfjdlfkdjsjklfd: #95dd83;
 }
-
+/* rgba(185, 211, 196, .5) */
 html {
   height: 100%;
   width: 100%;
@@ -392,7 +392,6 @@ a {
   vertical-align: auto;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   padding-bottom: 60px;
 }
 
@@ -500,6 +499,8 @@ a {
 
 .inMapRowText{
   text-align: left;
+  background-color:rgba(185, 211, 196, .6);
+  border-radius: 10px;
 }
 
 .map-container, .map {
@@ -579,6 +580,7 @@ a {
   color:#000000;
   font-size: 20px;
   font-weight: 600;
+  background-color:rgba(185, 211, 196, .5);
 }
 
 .restaurant-text-big{

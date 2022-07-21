@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Fragment} from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import {  Col, Row } from "react-bootstrap";
 import {useLocation, useParams} from 'react-router-dom';
@@ -76,7 +77,7 @@ for (let areaNum in otherData["totAreas"]){
         for (let locNum in locArrayStrings){
           locArrayFloats.push(parseFloat(locArrayStrings[locNum]))
         }
-      
+        console.log(this.state.screenHeight)
         return (
           <motion.div className="bigNoScrollContainer"
             key={`${currentRestaurant.Name + currentRestaurant.locationNum.toString()}Key`}
@@ -107,16 +108,16 @@ for (let areaNum in otherData["totAreas"]){
                 </Row>
                 <Row className="bigRestInfo" style={{minHeight:this.state.screenHeight-120}}>
                   <Col xs={10} className="restInfo">
-                    <h4 className="restTitleText">{currentRestaurant.Name}</h4>
+                    <h4 className="restTitleText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Name}</h4>
                     <Row className="locRestpage">
                       <Col xs={5}>
-                        <p className="test-text">{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
+                        <p className="test-text" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
                       </Col>
                       <Col xs={5}>
-                        <p className="price-text">{currentRestaurant.Price}</p>
+                        <p className="price-text" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Price}</p>
                       </Col>
                     </Row>
-                    <p className="test-text">{currentRestaurant.Description}</p>
+                    <p className="test-text" style={{fontSize: this.state.screenHeight < 860 ? this.state.screenHeight < 730 ? 10 : 13 : 16,backgroundColor:"rgba(185, 211, 196, .6)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
                     <Row>
                       <Col></Col>
                       <Col xs={10}>{currentRestaurant.Picture}</Col>
@@ -127,7 +128,7 @@ for (let areaNum in otherData["totAreas"]){
               </Col>
               <Col className="mapCol">
                 <Row className = "addrRow">
-                    <p className="restLocText">{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
+                    <p className="restLocText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
                 </Row>
                 <Row className="mapRow">
                   <Col xs={11}>

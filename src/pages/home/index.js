@@ -49,6 +49,7 @@ const ImageSrc = styled('span')({
   right: 0,
   top: 0,
   bottom: 0,
+  opacity: .8,
   backgroundSize: 'cover',
   backgroundPosition: 'center 40%',
 });
@@ -212,7 +213,7 @@ render() {
     '& .MuiTypography-root': {
       backgroundColor: 'rgba(0, 0, 0, .1)',
       color:imageButtonTextColor,
-      fontSize:24
+      fontSize:24,
     },
     '&:hover, &.Mui-focusVisible': {
       zIndex: 1,
@@ -226,6 +227,9 @@ render() {
         border: '4px solid currentColor',
         backgroundColor: 'rgba(0, 0, 0, 0)',
       },
+      '& .css-utcns5':{
+        opacity: 1
+      }
     },
   }));
 
@@ -271,11 +275,12 @@ render() {
       exit={{opacity: 0}}
       animate={{opacity: 1, transition: {duration: 1.4, delay: .1}}}>
         <Row style={{minHeight: this.state.screenHeight*.98-86}}>
-          <Col style={{minWidth:540, maxWidth: 540, zIndex: '2'}}>
+          <Col style={{minWidth:540, maxWidth: 540}}>
+            <div style={{paddingTop: this.state.screenHeight*.33}}></div>
             <motion.div
             animate={this.state.isFilled ? "side" : "center"}
             variants={midHomeVariants}
-            style={{paddingTop: this.state.screenHeight*.35}}>
+            style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'1vh', borderRadius: '10px', zIndex: '2', position: 'relative'}}>
               <Row className = "homeFormRow">
                 <p className="topStarterText">What Are You Looking For Today?</p>
               </Row>
@@ -304,8 +309,8 @@ render() {
                       onClick={this.recommendCategory}
                       loadingIndicator="Loading…"
                       variant="outlined"
-                      style={{fontStyle:'bold', fontSize: 14}}>
-                      Recommend Me!
+                      style={{fontWeight:550, fontSize: 14}}>
+                      Category Inspo
                     </StyledButton>
                   </Row>
                 </Col>
@@ -334,7 +339,7 @@ render() {
             <motion.div
               animate={{x: this.state.screenWidth*.5-270, transition: {duration: .01}}}>
               <Row className = "homeRow" style={{paddingTop: this.state.screenHeight*.57-148-86}}>
-                <p className="starterText">Created Deliciously by Max Ginsberg</p>
+                <p className="starterText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>Created Deliciously by Max Ginsberg</p>
               </Row>
             </motion.div>
           </Col>
@@ -353,7 +358,8 @@ render() {
                         key={'Map View'}
                         style={{
                           width: this.state.screenWidth*.35,
-                          height: this.state.screenWidth*.35/aspectRatio
+                          height: this.state.screenWidth*.35/aspectRatio,
+                          borderRadius: '10px'
                         }}
                         component={Link}
                         to={{pathname: `/Map`}}
@@ -384,7 +390,8 @@ render() {
                           key={'List View'}
                           style={{
                             width: this.state.screenWidth*.35,
-                            height: this.state.screenWidth*.35/aspectRatio
+                            height: this.state.screenWidth*.35/aspectRatio,
+                            borderRadius: '10px'
                           }}
                           component={Link}
                           to={{pathname: `/List`}}

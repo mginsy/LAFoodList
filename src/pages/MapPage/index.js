@@ -682,7 +682,7 @@ render() {
               onClick={this.recommendCategory}
               loadingIndicator="Loading…"
               variant="outlined">
-              Recommend Me!
+              Category Inspo
             </StyledButton>
           </Row>
         </Col>
