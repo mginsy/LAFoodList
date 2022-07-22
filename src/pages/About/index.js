@@ -59,14 +59,14 @@ function About() {
                                 initial={{x: -50}}
                                 animate={{x: 0, transition: {duration: newAnimConst+newAnimMult*3}}}
                                 style ={{backgroundColor:'rgba(185, 211, 196, .6)', borderRadius: '10px', paddingLeft:'.5vw', paddingRight:'.5vw'}}>
-                                    <Fragment >{"I would also like to give a special shout out to my lovely girlfriend Jenny who did some of these reviews and also edited a lot of them. There are over 180 reviews here so that was a very daunting task and I could not have gotten through those painful couple weeks without her. Look for her -J sign off to see which ones she did! However, not only did she contribute on the writing side, she also designed all of the background drawings from scratch which provided so much to the feel of the website. Thank you sosososo much <3."}</Fragment>
+                                    <Fragment >{"I would also like to give a special shout out to my lovely girlfriend Jenny who did some of these reviews and also edited a lot of them. There are over 200 reviews here so that was a very daunting task and I could not have gotten through those painful couple weeks without her. Look for her -J sign off to see which ones she did! However, not only did she contribute on the writing side, she also designed all of the background drawings from scratch which provided so much to the feel of the website. Thank you sosososo much <3."}</Fragment>
                             </motion.div>
                             <br></br>
                             <motion.div
                                 initial={{x: -50}}
                                 animate={{x: 0, transition: {duration: newAnimConst+newAnimMult*4}}}
                                 style ={{backgroundColor:'rgba(185, 211, 196, .6)', borderRadius: '10px', paddingLeft:'.5vw', paddingRight:'.5vw'}}>
-                                    <Fragment >{"Also a huge thank you to my friend Devin who helped me learn ReactJS and has truly gone above and beyond in helping so many people I know. You efforts are not forgotten!"}</Fragment>             
+                                    <Fragment >{"Also a huge thank you to my friend Devin who helped me learn ReactJS and has truly gone above and beyond in helping so many people I know. Your efforts are not forgotten!"}</Fragment>             
                             </motion.div>
                             <br></br>
                             <motion.div

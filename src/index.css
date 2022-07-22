@@ -290,6 +290,7 @@ a {
 .aboutCol{
   padding-left:4%;
   padding-right:2%;
+  padding-top:1%;
   vertical-align: auto;
   display: flex;
   justify-content: center;
@@ -415,7 +416,7 @@ a {
 }
 
 .mapPaddingRow2{
-  padding-top:3.5%;
+  padding-top:2%;
 }
 
 .listPaddingRow{
@@ -424,10 +425,6 @@ a {
 
 .mapRow{
   height:500px;
-}
-
-.mapRowMapPage{
-  height:575px;
 }
 
 .recCol{

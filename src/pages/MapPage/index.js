@@ -453,9 +453,7 @@ class MapPage extends Component {
                      activeMarker: null,
                      refreshMap: true,
                      firstLoadFlag: false,
-                     refreshPrices: false, 
-                     gle: "",
-                     price: "" });}
+                     refreshPrices: false });}
 
   handleAreaChange = (event) =>
     {
@@ -464,9 +462,7 @@ class MapPage extends Component {
                      activeMarker: null,
                      refreshMap: true,
                      refreshPrices: false, 
-                     firstLoadFlag: false,
-                     gle: "",
-                     price: "" });}
+                     firstLoadFlag: false, });}
 
   handleAreaChangeClick = param => e => {
     this.setState({ area: param, 
@@ -517,8 +513,6 @@ class MapPage extends Component {
       refreshMap: true,
       firstLoadFlag: false,
       refreshPrices: false, 
-      gle: "",
-      price: "",
       leavingToList: false
     })
   }
@@ -641,6 +635,8 @@ render() {
       }
       listsPush(selectedData, true, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
     }
+    resetPrices();
+    pushPriceLists(priceData, this.state);
   }
   else if (this.state.refreshPrices){
     resetPrices();
@@ -785,7 +781,7 @@ render() {
         </Col>
         <Col>
           <Row className='mapPaddingRow2'></Row>
-          <Row className="mapRowMapPage">
+          <Row style={{height:this.state.screenHeight*.7-86}}>
             <Col md={11}>
               <Map
                   google={this.props.google}

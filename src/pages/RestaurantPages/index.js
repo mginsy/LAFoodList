@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Fragment} from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import {  Col, Row } from "react-bootstrap";
 import {useLocation, useParams} from 'react-router-dom';
@@ -10,7 +9,7 @@ import googleMapStyles from "../mapStyles";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
-
+const solve = require("quadratic-equations-solver");
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -74,10 +73,23 @@ for (let areaNum in otherData["totAreas"]){
         let location = currentRestaurant.Locations[currentRestaurant.locationNum]
         let locArrayStrings = location.split(",")
         let locArrayFloats = []
+        
+        let chars = currentRestaurant.Description.length;
+
+
+        let a = chars;
+        let b = 6*chars+2*(this.state.screenWidth/2.56);
+        let c = -(this.state.screenHeight/4-20)*(2*this.state.screenWidth/2.56);
+        let solutions = solve(a, b, c);
+        let solution1 = solutions[0];  // Give you the first solution possible
+        let solution2 = solutions[1];
+        let quadFontSize = Math.min(Math.max(solution1,solution2)-1, 19);
+         
+
         for (let locNum in locArrayStrings){
           locArrayFloats.push(parseFloat(locArrayStrings[locNum]))
         }
-        console.log(this.state.screenHeight)
+ 
         return (
           <motion.div className="bigNoScrollContainer"
             key={`${currentRestaurant.Name + currentRestaurant.locationNum.toString()}Key`}
@@ -86,7 +98,7 @@ for (let areaNum in otherData["totAreas"]){
             animate={{opacity: 1, transition: {duration: 1}}}>
             <Row style={{height:this.state.screenHeight-86}}>
               <Col className="mapCol">
-                <Row>
+                <Row style={{paddingLeft: this.state.screenWidth < 1400 ? '15px' : '0px'}}>
                   <Col style={{paddingRight: this.state.screenWidth/2*.85}}>
                     <StyledButton
                         component={Link}
@@ -101,7 +113,8 @@ for (let areaNum in otherData["totAreas"]){
                         variant="outlined"
                         style={{
                                 fontStyle: 'bold',
-                                fontSize: 16}}>
+                                fontSize: 16,
+                                }}>
                         Back
                     </StyledButton>
                   </Col> 
@@ -117,12 +130,12 @@ for (let areaNum in otherData["totAreas"]){
                         <p className="price-text" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Price}</p>
                       </Col>
                     </Row>
-                    <p className="test-text" style={{fontSize: this.state.screenHeight < 860 ? this.state.screenHeight < 730 ? 10 : 13 : 16,backgroundColor:"rgba(185, 211, 196, .6)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
+                    <p className="test-text" style={{fontSize: quadFontSize,backgroundColor:"rgba(185, 211, 196, .6)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
                     <Row>
                       <Col></Col>
-                      <Col xs={10}>{currentRestaurant.Picture}</Col>
+                      <Col xs={9}>{currentRestaurant.Picture}</Col>
                       <Col></Col>
-                    </Row> 
+                    </Row>
                   </Col>
                 </Row>
               </Col>
@@ -130,7 +143,7 @@ for (let areaNum in otherData["totAreas"]){
                 <Row className = "addrRow">
                     <p className="restLocText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
                 </Row>
-                <Row className="mapRow">
+                <Row style={{height:this.state.screenHeight*.7-86}}>
                   <Col xs={11}>
                     <Map
                         google={this.props.google}
