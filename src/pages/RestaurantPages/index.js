@@ -8,6 +8,7 @@ import {motion} from 'framer-motion';
 import googleMapStyles from "../mapStyles";
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 const solve = require("quadratic-equations-solver");
 
@@ -83,8 +84,9 @@ for (let areaNum in otherData["totAreas"]){
         let solutions = solve(a, b, c);
         let solution1 = solutions[0];  // Give you the first solution possible
         let solution2 = solutions[1];
-        let quadFontSize = Math.min(Math.max(solution1,solution2)-1, 19);
+        let quadFontSize = Math.min(Math.max(solution1,solution2)+1, 22);
          
+        let mapLink = 'https://www.google.com/maps/place/' + currentRestaurant.Addresses[currentRestaurant.locationNum].replaceAll(" ","+")
 
         for (let locNum in locArrayStrings){
           locArrayFloats.push(parseFloat(locArrayStrings[locNum]))
@@ -113,9 +115,13 @@ for (let areaNum in otherData["totAreas"]){
                         variant="outlined"
                         style={{
                                 fontStyle: 'bold',
-                                fontSize: 16,
+                                fontSize: 18,
                                 }}>
-                        Back
+                        <Typography
+                          component="span"
+                          className="buttonTitleBold">
+                          Back
+                        </Typography>
                     </StyledButton>
                   </Col> 
                 </Row>
@@ -124,10 +130,10 @@ for (let areaNum in otherData["totAreas"]){
                     <h4 className="restTitleText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Name}</h4>
                     <Row className="locRestpage">
                       <Col xs={5}>
-                        <p className="test-text" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
+                        <p className="test-text" style={{fontSize:20,backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>
                       </Col>
                       <Col xs={5}>
-                        <p className="price-text" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Price}</p>
+                        <p className="price-text" style={{fontSize:20,backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Price}</p>
                       </Col>
                     </Row>
                     <p className="test-text" style={{fontSize: quadFontSize,backgroundColor:"rgba(185, 211, 196, .6)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
@@ -141,7 +147,7 @@ for (let areaNum in otherData["totAreas"]){
               </Col>
               <Col className="mapCol">
                 <Row className = "addrRow">
-                    <p className="restLocText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Addresses[currentRestaurant.locationNum]}</p>
+                <a href={mapLink} target="_blank" rel="noreferrer" className="restLocText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.8vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Addresses[currentRestaurant.locationNum]}</a>
                 </Row>
                 <Row style={{height:this.state.screenHeight*.7-86}}>
                   <Col xs={11}>

@@ -1,6 +1,6 @@
 import { Component }from 'react';
 import * as React from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -11,7 +11,6 @@ import 'simplebar-react/dist/simplebar.min.css';
 import {motion} from 'framer-motion';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 
@@ -92,15 +91,15 @@ function resetLists(){
   totAreas = structuredClone(totAreasReset)
 }
 
-function pushAreaList(areaData){
+function pushAreaList(areaData, areaState){
   for (let areaNum in areaData["Areas"]){
-    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}>{areaData["Areas"][areaNum]}</MenuItem>)
+    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}><Typography component="p" className={areaState === areaData["Areas"][areaNum] ? "menuOptionSelected":"menuOptionList"}>{areaData["Areas"][areaNum]}</Typography></MenuItem>)
   }
 }
 
-function pushCatList(catData){
+function pushCatList(catData, catState){
   for (let catNum in catData["Cats"]){
-    categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
+    categoryList.push(<MenuItem value={catData["Cats"][catNum]}><Typography component="p" className={catState === catData["Cats"][catNum] ? "menuOptionSelected":"menuOptionList"}>{catData["Cats"][catNum]}</Typography></MenuItem>)
     categoryListValues.push(catData["Cats"][catNum])
   }
 }
@@ -109,7 +108,7 @@ const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
     backgroundColor: formColor,
-    fontSize: 18
+    fontSize: '23px'
   },
 });
 
@@ -182,14 +181,19 @@ render() {
  
   let midHomeVariants = {
     center : {x: this.state.screenWidth*.5-270, transition: {duration: this.state.isStart ? .01 : .5}},
-    side: {opacity: 1, x: this.state.screenWidth*.363-380, transition: {duration: .5}}
+    side: {opacity: 1, x: 0.2713*this.state.screenWidth - 200, y:0.2684*this.state.screenHeight - 263.68,transition: {duration: .5}}
+  }
+
+  let topHomeVariants = {
+    shown: {opacity: 1, transition: {duration: 1.4, delay: .1}},
+    notShown:{opacity: 0, transition: {duration: .5}} 
   }
 
   //1504*.235 = 368.5 - 200 = 168.5
   
   let picsHomeVariants = {
-    unfilled : {opacity: 0, x: 0, transition: {duration: .5}},
-    filled: {opacity: 1, x: 0, transition: {duration: 1}}
+    unfilled : {opacity: 0, x: 0, y:-196, transition: {duration: .5}},
+    filled: {opacity: 1, x: 0, y:-196, transition: {duration: 1}}
   }
 
   let Image = styled('span')(({ theme }) => ({
@@ -216,7 +220,7 @@ render() {
       fontSize:24,
     },
     '&:hover, &.Mui-focusVisible': {
-      zIndex: 1,
+      zIndex: 2,
       '& .MuiImageBackdrop-root': {
         opacity: 0.05,
       },
@@ -244,51 +248,69 @@ render() {
     if (this.state.area === ""){
       if(this.state.category === ""){//none selected
         selectedData = data;
-        pushAreaList(selectedData);
-        pushCatList(selectedData);
+        pushAreaList(selectedData, this.state.area);
+        pushCatList(selectedData, this.state.category);
       }
       else{//just category selected
         selectedData = data[this.state.category]
-        pushAreaList(selectedData);
-        pushCatList(data);
+        pushAreaList(selectedData, this.state.area);
+        pushCatList(data, this.state.category);
       }
     }
     else{ 
       if(this.state.category === ""){//just area selected
         selectedData = data[this.state.area]
-        pushAreaList(data);
-        pushCatList(selectedData);
+        pushAreaList(data, this.state.area);
+        pushCatList(selectedData, this.state.category);
       }
       else{//area and category selected
         selectedData = data[this.state.category][this.state.area]
-        pushAreaList(data[this.state.category]);
-        pushCatList(data[this.state.area]);
+        pushAreaList(data[this.state.category], this.state.area);
+        pushCatList(data[this.state.area], this.state.category);
       }
     }
   }
 
   return (
-    <div className="bigNoScrollContainer">
+    <div className="bigNoScrollContainer" style={{maxHeight:this.state.screenHeight*.99-86}}>
+      <div className="outerHomeBrandDiv" style={{zIndex: '1'}}>
+        <motion.div
+          key={"HomeKey"}
+          initial={{opacity: 0}}
+          exit={{opacity: 0}}
+          animate={this.state.isFilled ? "notShown" : "shown"}
+          variants={topHomeVariants}
+          className="homeBrandDiv"
+        >
+          <p className="home-brand" style={{fontSize:60}}>LA Food List</p>
+        </motion.div>
+      </div>
       <motion.div
       key={"HomeKey"}
       initial={{opacity: 0}}
       exit={{opacity: 0}}
       animate={{opacity: 1, transition: {duration: 1.4, delay: .1}}}>
-        <Row style={{minHeight: this.state.screenHeight*.98-86}}>
+        <Row>
           <Col style={{minWidth:540, maxWidth: 540}}>
-            <div style={{paddingTop: this.state.screenHeight*.33}}></div>
+            <div style={{paddingTop: this.state.screenHeight*.13-30}}></div>
             <motion.div
             animate={this.state.isFilled ? "side" : "center"}
             variants={midHomeVariants}
-            style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'1vh', borderRadius: '10px', zIndex: '2', position: 'relative'}}>
+            style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingBottom:'1vh', borderRadius: '10px', zIndex: '3', position: 'relative'}}>
               <Row className = "homeFormRow">
                 <p className="topStarterText">What Are You Looking For Today?</p>
               </Row>
               <Row>
                 <Col className="homeCatCol">
                   <Row className = "homeDropdown">
-                    <StyledForm sx={{ m: 1, minWidth: 200}} size="small">
-                      <InputLabel id="demo-select-small">Category</InputLabel>
+                    <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
+                      <InputLabel margin="none">
+                        <Typography
+                          component="span"
+                          className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>
+                          Category
+                        </Typography>
+                      </InputLabel>
                       <Select
                         labelId="demo-select-small"
                         id="demo-select-small"
@@ -297,7 +319,11 @@ render() {
                         onChange={this.handleCategoryChange}
                       >
                         <MenuItem value="">
-                          <em>Any</em>
+                          <Typography
+                            component="em"
+                            className="menuOptionList">
+                            Any
+                          </Typography>
                         </MenuItem>
                         {categoryList}
                       </Select>
@@ -310,7 +336,11 @@ render() {
                       loadingIndicator="Loading…"
                       variant="outlined"
                       style={{fontWeight:550, fontSize: 14}}>
-                      Category Inspo
+                        <Typography
+                          component="span"
+                          className="buttonTitleBold">
+                          Category Inspo
+                        </Typography>
                     </StyledButton>
                   </Row>
                 </Col>
@@ -319,7 +349,13 @@ render() {
                 </Col>
                 <Col className = "homeDropdown">
                   <StyledForm sx={{ m: 1, minWidth: 170 }} size="small">
-                    <InputLabel id="demo-select-small">Area</InputLabel>
+                    <InputLabel id="demo-select-small">
+                      <Typography
+                        component="span"
+                        className={this.state.area !== "" ? "menuTitleSmall" : "menuTitle"}>
+                        Area
+                      </Typography>
+                    </InputLabel>
                     <Select
                       labelId="demo-select-small"
                       id="demo-select-small"
@@ -328,7 +364,11 @@ render() {
                       onChange={this.handleAreaChange}
                     >
                       <MenuItem value="">
-                        <em>Any</em>
+                        <Typography
+                          component="em"
+                          className="menuOptionList">
+                          Any
+                        </Typography>
                       </MenuItem>
                       {areaList}
                     </Select>
@@ -338,19 +378,20 @@ render() {
             </motion.div>
             <motion.div
               animate={{x: this.state.screenWidth*.5-270, transition: {duration: .01}}}>
-              <Row className = "homeRow" style={{paddingTop: this.state.screenHeight*.57-148-86}}>
+              <Row className = "homeRow" style={{paddingTop: this.state.screenHeight*.80-171-86-196}}>
                 <p className="starterText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>Created Deliciously by Max Ginsberg</p>
               </Row>
             </motion.div>
           </Col>
           <Fade in={this.state.isFilled}
                       timeout={.1}>
-            <Col style={{paddingLeft: this.state.screenWidth*.35-300, zIndex: '1'}}>
+            <Col style={{paddingLeft: this.state.screenWidth*.35-300, zIndex: '2'}}>
                 <motion.div
                 initial={{opacity:0}}
                 animate={this.state.isFilled ? "filled" : "unfilled"}
                 variants={picsHomeVariants}
-                className="homePicCol">
+                className="homePicCol"
+                id="homePicCol">
                   <Col className = "homePicCol" style={{minHeight:this.state.screenHeight*.8}}>
                     <Row className = "homePicRow">
                       <ImageButton
@@ -377,6 +418,7 @@ render() {
                               pt: 2,
                               pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                             }}
+                            style={{fontFamily:"Butler_Bold"}}
                           >
                             Map View
                             <ImageMarked className="MuiImageMarked-root" />
@@ -409,6 +451,7 @@ render() {
                                 pt: 2,
                                 pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
                               }}
+                              style={{fontFamily:"Butler_Bold"}}
                             >
                             List View
                             <ImageMarked className="MuiImageMarked-root" />

@@ -20,7 +20,7 @@ function Navbar(props) {
         <BSNavbar expand="lg" {...props}>
             <Link to="/" className="navbar-brand" >
                 <span className="font-link">
-                    The List
+                    LA Food List
                 </span>
             </Link>
             <BSNavbar.Toggle aria-controls="navbar-nav" />

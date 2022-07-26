@@ -14,6 +14,7 @@ import {motion} from 'framer-motion'
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import googleMapStyles from "../mapStyles";
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -29,7 +30,8 @@ const gleOptions = ["≤","≥","="]
 const formColor = '#F3F0D7'
 const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
-    backgroundColor: formColor
+    backgroundColor: formColor,
+    fontSize: 23
   },
 });
 
@@ -108,15 +110,15 @@ const withRouter = WrappedComponent => props => {
 };
 
 
-function pushAreaList(areaData){
+function pushAreaList(areaData, areaState){
   for (let areaNum in areaData["Areas"]){
-    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}>{areaData["Areas"][areaNum]}</MenuItem>)
+    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}><Typography component="p" className={areaState === areaData["Areas"][areaNum] ? "menuOptionSelected":"menuOptionList"}>{areaData["Areas"][areaNum]}</Typography></MenuItem>)
   }
 }
 
-function pushCatList(catData){
+function pushCatList(catData, catState){
   for (let catNum in catData["Cats"]){
-    categoryList.push(<MenuItem value={catData["Cats"][catNum]}>{catData["Cats"][catNum]}</MenuItem>)
+    categoryList.push(<MenuItem value={catData["Cats"][catNum]}><Typography component="p" className={catState === catData["Cats"][catNum] ? "menuOptionSelected":"menuOptionList"}>{catData["Cats"][catNum]}</Typography></MenuItem>)
     categoryListValues.push(catData["Cats"][catNum])
   }
 }
@@ -129,13 +131,13 @@ function pushPriceLists(priceData, currentState){
     for (let itemNum in priceData["Prices"]){
       [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
       if (gleOpt === currentState.gle){
-        priceList.push(<MenuItem value={priceOpt}>{priceOpt}</MenuItem>)
+        priceList.push(<MenuItem value={priceOpt}><Typography component="em" className={currentState.price === priceOpt ? "menuOptionSelected":"menuOptionList"}>{priceOpt}</Typography></MenuItem>)
       }
     }
   }
   else{
     for (let priceNum in priceMenuOptions){
-      priceList.push(<MenuItem value={priceMenuOptions[priceNum]}>{priceMenuOptions[priceNum]}</MenuItem>)
+      priceList.push(<MenuItem value={priceMenuOptions[priceNum]}><Typography component="em" className={currentState.price === priceMenuOptions[priceNum] ? "menuOptionSelected":"menuOptionList"}>{priceMenuOptions[priceNum]}</Typography></MenuItem>)
     }
   }
   
@@ -145,13 +147,13 @@ function pushPriceLists(priceData, currentState){
     for (let itemNum in priceData["Prices"]){
       [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
       if (priceOpt === currentState.price){
-        gleList.push(<MenuItem value={gleOpt}>{gleOpt}</MenuItem>)
+        gleList.push(<MenuItem value={gleOpt}><Typography component="p" className={currentState.gle === gleOpt ? "menuOptionSelected":"menuOptionList"}>{gleOpt}</Typography></MenuItem>)
       }
     }
   }
   else{
     for (let gleNum in gleOptions){
-      gleList.push(<MenuItem value={gleOptions[gleNum]}>{gleOptions[gleNum]}</MenuItem>)
+      gleList.push(<MenuItem value={gleOptions[gleNum]}><Typography component="p" className={currentState.gle === gleOptions[gleNum] ? "menuOptionSelected":"menuOptionList"}>{gleOptions[gleNum]}</Typography></MenuItem>)
     }
   }
 }
@@ -569,15 +571,15 @@ render() {
       if(this.state.category === ""){
         if(this.state.gle === "" || this.state.price === ""){//none selected
           selectedData = data;
-          pushAreaList(selectedData);
-          pushCatList(selectedData);
+          pushAreaList(selectedData, this.state.area);
+          pushCatList(selectedData, this.state.category);
           priceData = selectedData;
           pushPriceLists(priceData, this.state);
         }
         else{//just price selected
           selectedData = data[this.state.gle + " " + this.state.price]
-          pushAreaList(selectedData);
-          pushCatList(selectedData);
+          pushAreaList(selectedData, this.state.area);
+          pushCatList(selectedData, this.state.category);
           priceData = data;
           pushPriceLists(priceData, this.state);
         }
@@ -585,15 +587,15 @@ render() {
       else{
         if(this.state.gle === "" || this.state.price === ""){//just category selected
           selectedData = data[this.state.category]
-          pushAreaList(selectedData);
-          pushCatList(data);
+          pushAreaList(selectedData, this.state.area);
+          pushCatList(data, this.state.category);
           priceData = selectedData;
           pushPriceLists(priceData, this.state);
         }
         else{//category and price selected
           selectedData = data[this.state.category][this.state.gle + " " + this.state.price]
-          pushAreaList(selectedData);
-          pushCatList(data[this.state.gle + " " + this.state.price]);
+          pushAreaList(selectedData, this.state.area);
+          pushCatList(data[this.state.gle + " " + this.state.price], this.state.category);
           priceData = data[this.state.category];
           pushPriceLists(priceData, this.state);
         }
@@ -604,15 +606,15 @@ render() {
       if(this.state.category === ""){
         if(this.state.gle === "" || this.state.price === ""){ //just area selected
           selectedData = data[this.state.area]
-          pushAreaList(data);
-          pushCatList(selectedData);
+          pushAreaList(data, this.state.area);
+          pushCatList(selectedData, this.state.category);
           priceData = selectedData;
           pushPriceLists(priceData, this.state);
         }
         else{//area and price selected
           selectedData = data[this.state.gle + " " + this.state.price][this.state.area]
-          pushAreaList(data[this.state.gle + " " + this.state.price]);
-          pushCatList(selectedData);
+          pushAreaList(data[this.state.gle + " " + this.state.price], this.state.area);
+          pushCatList(selectedData, this.state.category);
           priceData = data[this.state.area];
           pushPriceLists(data[this.state.area], this.state);
         }
@@ -620,15 +622,15 @@ render() {
       else{
         if(this.state.gle === "" || this.state.price === ""){//area and category selected
           selectedData = data[this.state.category][this.state.area]
-          pushAreaList(data[this.state.category]);
-          pushCatList(data[this.state.area]);
+          pushAreaList(data[this.state.category], this.state.area);
+          pushCatList(data[this.state.area], this.state.category);
           priceData = selectedData;
           pushPriceLists(selectedData, this.state);
         }
         else{//all selected
           selectedData = data[this.state.category][this.state.gle + " " + this.state.price][this.state.area]
-          pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price]);
-          pushCatList(data[this.state.gle + " " + this.state.price][this.state.area]);
+          pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price], this.state.area);
+          pushCatList(data[this.state.gle + " " + this.state.price][this.state.area], this.state.category);
           priceData = data[this.state.category][this.state.area];
           pushPriceLists(priceData, this.state);
         }
@@ -656,21 +658,31 @@ render() {
       <Row className="mapStartRow">
         <Col className="mapFormColOne">
           <Row className="mapFormRow">
-            <StyledForm sx={{ m: 1, minWidth: 155 }} size="small">
-              <InputLabel id="demo-select-small">Category</InputLabel>
-              <Select
-                labelId="demo-select-small"
-                id="demo-select-small"
-                value={this.state.category}
-                label="Category"
-                onChange={this.handleCategoryChange}
-              >
-                <MenuItem value="">
-                  <em>Any</em>
-                </MenuItem>
-                {categoryList}
-              </Select>
-            </StyledForm>
+          <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
+            <InputLabel margin="none">
+              <Typography
+                component="span"
+                className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>
+                Category
+              </Typography>
+            </InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={this.state.category}
+              label="Category"
+              onChange={this.handleCategoryChange}
+            >
+              <MenuItem value="">
+                <Typography
+                  component="em"
+                  className="menuOptionList">
+                  Any
+                </Typography>
+              </MenuItem>
+              {categoryList}
+            </Select>
+          </StyledForm>
           </Row>
           <Row className="mapFormRow">
             <StyledButton
@@ -678,16 +690,33 @@ render() {
               onClick={this.recommendCategory}
               loadingIndicator="Loading…"
               variant="outlined">
-              Category Inspo
+              <Typography
+                component="p"
+                className="buttonTitleBold"
+                style={{fontSize:15}}>
+                Category Inspo
+              </Typography>
             </StyledButton>
           </Row>
         </Col>
         <Col className="mapFormCol">
-          <h4 className='in-between-text-map'>in</h4>
+          <motion.div
+          initial={{x: '.3vw'}}>
+            <div>
+              <div style={{paddingTop:20}}></div>
+              <h4 style={{paddingLeft:3,backgroundColor:'rgba(185, 211, 196, .6)',borderRadius: '10px'}} className='in-between-text-map'>in</h4>
+            </div>
+          </motion.div>
         </Col>
         <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 140 }} size="small">
-            <InputLabel id="demo-select-small">Area</InputLabel>
+          <StyledForm sx={{ m: 1, minWidth: 167 }} size="small">
+            <InputLabel id="demo-select-small">
+              <Typography
+                component="span"
+                className={this.state.area !== "" ? "menuTitleSmall" : "menuTitle"}>
+                Area
+              </Typography>
+            </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
@@ -696,15 +725,21 @@ render() {
               onChange={this.handleAreaChange}
             >
               <MenuItem value="">
-                <em>Any</em>
+                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>Any</Typography>
               </MenuItem>
               {areaList}
             </Select>
           </StyledForm>
         </Col>
         <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 80 }} size="small">
-            <InputLabel id="demo-select-small">≤, ≥, =</InputLabel>
+          <StyledForm sx={{ m: 1, minWidth: 100 }} size="small">
+            <InputLabel id="demo-select-small">
+              <Typography
+                component="span"
+                className={this.state.gle !== "" ? "menuTitleSmall" : "menuTitle"}>
+                ≤, ≥, =
+              </Typography>
+            </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
@@ -713,7 +748,7 @@ render() {
               onChange={this.handleGLEChange}
             >
               <MenuItem value="">
-                <em>None</em>
+                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
               </MenuItem>
               {gleList}
             </Select>
@@ -721,7 +756,13 @@ render() {
         </Col>
         <Col className="mapFormCol">
           <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small">Price</InputLabel>
+            <InputLabel id="demo-select-small">
+              <Typography
+                component="span"
+                className={this.state.price !== "" ? "menuTitleSmall" : "menuTitle"}>
+                Price
+              </Typography>
+            </InputLabel>
             <Select
               labelId="demo-select-small"
               id="demo-select-small"
@@ -730,25 +771,29 @@ render() {
               onChange={this.handlePriceChange}
             >
               <MenuItem value="">
-                <em>None</em>
+                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
               </MenuItem>
               {priceList}
             </Select>
           </StyledForm>
         </Col>
-        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-1000, paddingTop: this.state.screenHeight*.02+8}}>
+        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-1100, paddingTop: this.state.screenHeight*.018+8}}>
           <StyledButton
             size="medium"
             onClick={this.resetCategories}
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'bold', maxHeight:40, fontSize: 16
+                    fontStyle: 'bold', fontSize: 16, maxHeight: 36
                     }}>
-            Reset
+            <Typography
+              component="span"
+              className="buttonTitleBold">
+              Reset
+            </Typography>
           </StyledButton>
         </Col>
-        <Col className="mapFormCol" style={{minWidth: 170, paddingRight: 30, paddingTop: this.state.screenHeight*.02+8}}>
+        <Col className="mapFormCol" style={{minWidth: 170, paddingRight: 30, paddingTop: this.state.screenHeight*.018+8}}>
           <StyledButton
             component={Link}
             onClick={this.setToMapList}
@@ -763,8 +808,12 @@ render() {
             loadingIndicator="Loading…"
             variant="outlined"
             style={{
-                    fontStyle: 'italic', maxHeight:40, fontSize: 16}}>
-            {"To List →"}
+                    fontStyle: 'italic', maxHeight: 36, fontSize: 16}}>
+            <Typography
+              component="span"
+              className="buttonTitleBold">
+              {"To List →"}
+            </Typography>
           </StyledButton>
         </Col>
       </Row>
@@ -825,11 +874,12 @@ render() {
                   }}
                   state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
                 loadingIndicator="Loading…"
-                variant="outlined"
-                style={{
-                  fontSize: 16
-                }}>
-                Recommend Me!
+                variant="outlined">
+                <Typography
+                  component="span"
+                  className="buttonTitleBold mapRec">
+                  Recommend Me!
+                </Typography>
               </StyledButton>
             </Col>
             <Col>

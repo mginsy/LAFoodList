@@ -1,6 +1,9 @@
 import { Marker } from 'google-maps-react';
 import {Link} from 'react-router-dom';
 
+const showCatsSet = new Set(["American","Asian","Asian Fusion","BBQ","Bakery","Bars","Boba","Burgers","Chinese","Coffee","Cookies","Deli","Dessert","Dumplings","Filipino","French","Fried Chicken","Ice Cream","Indian","Italian","Japanese","Jewish","KBBQ","Kebab","Korean","Latino","Classic LA", "Innovative","Life Changing","Loud","Matcha","Mediterranean","Mexican","Middle Eastern","Noodles","Peruvian","Pizza","Ramen","Sandwiches","Seafood","Soup","Spicy","Steakhouse","Sushi","Tacos","Thai","Warm Dessert"]);
+const vSet = new Set(["Vegan Options","Vegetarian Options"])
+
 export default class Restaurant{
     constructor(restObj, currentArea){
         this.Addresses = restObj.Addresses
@@ -24,6 +27,8 @@ export default class Restaurant{
     }
 
     createMarker(onMarkerClick){
+      console.log(this.Name)  
+      console.log(this.Locations[this.locationNum])
         let locArrayStrings = this.Locations[this.locationNum].split(",")
         let locArrayFloats = []
         for (let locNum in locArrayStrings){
@@ -44,13 +49,33 @@ export default class Restaurant{
 
     createMapListText(handleCategoryChangeClick, category, area, gle, price){
         let catArr = []
+        let lastCatName = []
         for (let catNum in this.Categories){
           let cat = this.Categories[catNum]
-          let catName = (catNum != this.Categories.length-1 ? cat + ", " : cat)
-          catArr.push(
-            <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{catName}</p></Link>
-          )
+          if (showCatsSet.has(cat)){
+            catArr.push(
+              <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{cat + ", "}</p></Link>
+            )
+            lastCatName = [cat,cat]
+          }
+          if (vSet.has(cat)){
+            let showCat = ""
+            if (cat === "Vegan Options"){
+              showCat = "VE"
+            }
+            else{
+              showCat = "V"
+            }
+            catArr.push(
+              <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{showCat + ", "}</p></Link>
+            )
+            lastCatName = [cat,showCat]
+          }
         }
+        let newVal = lastCatName[0]
+        let newShow = lastCatName[1]
+        catArr.splice(catArr.length-1,1,<Link value={newVal} onClick={handleCategoryChangeClick(newVal)} to="#"><p className='categories-text-small'>{newShow}</p></Link>)
+        
         return(
           <div className="fullMapRestaurantText">
             <div className = "inMapRowText">
@@ -72,13 +97,33 @@ export default class Restaurant{
     
     createListListText(handleCategoryChangeClick, category, area, gle, price){
       let catArr = []
+      let lastCatName = []
       for (let catNum in this.Categories){
         let cat = this.Categories[catNum]
-        let catName = (catNum != this.Categories.length-1 ? cat + ", " : cat)
-        catArr.push(
-          <Link value={cat} onClick={handleCategoryChangeClick(cat)}  to="#"><p className='categories-text-small'>{catName}</p></Link>
-        )
+        if (showCatsSet.has(cat)){
+          catArr.push(
+            <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{cat + ", "}</p></Link>
+          )
+          lastCatName = [cat,cat]
+        }
+        if (vSet.has(cat)){
+          let showCat = ""
+          if (cat === "Vegan Options"){
+            showCat = "VE"
+          }
+          else{
+            showCat = "V"
+          }
+          catArr.push(
+            <Link value={cat} onClick={handleCategoryChangeClick(cat)} to="#"><p className='categories-text-small'>{showCat + ", "}</p></Link>
+          )
+          lastCatName = [cat,showCat]
+        }
       }
+      let newVal = lastCatName[0]
+      let newShow = lastCatName[1]
+      catArr.splice(catArr.length-1,1,<Link value={newVal} onClick={handleCategoryChangeClick(newVal)} to="#"><p className='categories-text-small'>{newShow}</p></Link>)
+      
       return(
         <div className="fullListRestaurantText">
           <div className = "inMapRowText">

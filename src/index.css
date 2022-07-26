@@ -3,13 +3,58 @@
   --wild-color: #76c5d3;
   --navbar-color: #5E454B;
   --text-color: rgb(255, 255, 255);
-  --main-color: #1f1f1f;
+  --main-color: #5E454B;
   --nav-link-color: #D8B384;
   --nav-brand-color: #F3F0D7;
   --highlight-color: #d67c21;
   --footer-color: rgb(0, 0, 0);
-  --cololkfjdlfkdjsjklfd: #95dd83;
 }
+
+@font-face {
+  font-family: Stanley;
+  src: url("fonts/Stanley.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler_Regular;
+  src: url("fonts/Butler_Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler_Regular_Stencil;
+  src: url("fonts/Butler_Regular_Stencil.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler_Bold;
+  src: url("fonts/Butler_Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler_Medium;
+  src: url("fonts/Butler_Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Butler_Black;
+  src: url("fonts/Butler_Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Cormorant-Regular;
+  src: url("fonts/Cormorant-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Cormorant-Bold;
+  src: url("fonts/Cormorant-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Cormorant-Italic;
+  src: url("fonts/Cormorant-Italic.ttf") format("opentype");
+}
+
 /* rgba(185, 211, 196, .5) */
 html {
   height: 100%;
@@ -19,7 +64,7 @@ html {
 
 html,
 body {
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Butler_Regular","Poppins", Helvetica, Arial, sans-serif;
   height: 100%;
   width: 100%;
   background-color: var(--background-color);
@@ -60,11 +105,71 @@ a {
   color: var(--main-color);
 }
 
+.menuTitle{
+  font-family:'Cormorant-Bold' !important;
+  font-size: 21px !important;
+}
+.menuTitleSmall{
+  font-family:'Cormorant-Bold' !important;
+}
+.menuOptionSelected{
+  font-family:'Cormorant-Bold' !important;
+  font-size: 21px !important;
+  font:'#616056' !important;
+}
+.menuOptionList{
+  font-family:'Cormorant-Regular' !important;
+  font-size: 20px !important;
+}
+.buttonTitle{
+  font-family:'Butler_Regular' !important
+}
+.buttonTitleBold{
+  font-family:'Butler_Bold' !important
+}
+
+.restaurantRegularText{
+  font-family:'Cormorant-Regular';
+}
+
+.mapRec{
+  font-size: 50 !important
+}
+
 .font-link {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Stanley';
   font-weight: normal;
+  font-size: 23px;
   color: '#F3F0D7' !important;
 }
+
+.home-brand {
+  font-family: 'Stanley';
+  font-weight: normal;
+  color: '#F3F0D7';
+}
+
+.homeBrandDiv{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  padding-left:50px;
+  padding-right:50px;
+  width:fit-content;
+  height:fit-content;
+  border-radius: 20px;
+  background-color:rgba(185, 211, 196, .5);
+}
+
+.outerHomeBrandDiv{
+  padding-top:80px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display:flex;
+}
+
 
 .mapfront{
   background-color:var(--background-color);
@@ -103,19 +208,31 @@ a {
 .navbar .navbar-nav .nav-link {
   color: var(--nav-link-color);
   margin-right: 30px;
-  font-size: 18px;
+  font-size: 22px;
   transition: 0.25s all;
+  font-family: 'Butler_Regular_Stencil';
 }
 
-.navbar .navbar-nav .nav-link:hover {
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:focus-visible {
   transition: 0.25s all;
+  color: var(--background-color);
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus,
+.navbar .navbar-brand:focus-visible {
+  transition: 0.25s all;
+  color: #e4e0c5;
 }
 
 .navbar-title-text{
-  padding-top: 9%;
+  padding-top: 16%;
   color: var(--background-color);
   justify-content: center;
   align-items: center;
+  font-family: 'Butler_Regular_Stencil';
 }
 
 .box {
@@ -183,7 +300,7 @@ a {
 
 .listStartRow {
   padding-left:2%;
-  padding-top:1%;
+  padding-top:.5%;
   height:fit-content;
   justify-content: space-between;
 }
@@ -194,7 +311,7 @@ a {
 }
 
 .mapFormCol{
-  padding-top:1%;
+  padding-top:.5%;
   justify-content: center;
   display: flex;
 }
@@ -205,7 +322,7 @@ a {
 }
 
 .mapFormColOne{
-  padding-top:1%;
+  padding-top:.5%;
   justify-content: center;
   align-items: center;
   width:min-content;
@@ -259,22 +376,26 @@ a {
 
 .restTitleText{
   color: #000000;
-  font-size: x-large;
+  font-size: 27px;
 }
 
 .restLocText{
   color: #000000;
   font-style: italic;
+  font-size: 20px;
+  font-family: "Cormorant-Bold"
 }
 
 .topStarterText{
   color:rgb(0, 0, 0);
-  font-size:x-large;
+  font-size:29px;
+  font-family: 'Butler_Regular';
 }
 
 .starterText{
   color:rgb(0, 0, 0);
-  font-size:large;
+  font-size:20px;
+  font-family: 'Butler_Regular';
 }
 
 .about-text{
@@ -295,6 +416,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: "Cormorant-Bold";
 }
 
 .aboutPic{
@@ -365,17 +487,18 @@ a {
 }
 
 .in-between-text-home{
-  font-size:22px;
+  font-size:28px;
   color:#1f1f1f;
-  padding-left:23%;
-  padding-bottom:130%;
+  padding-left:48%;
+  padding-bottom:120%;
+  font-family: 'Butler_Black';
 }
 
 
 .in-between-text-map{
+  font-size:24px;
   color:#1f1f1f;
-  padding-left:13px;
-  padding-top:17px;
+  font-family: 'Butler_Black';
 }
 
 .restInfo{
@@ -575,15 +698,16 @@ a {
 
 .recommend-text-big{
   color:#000000;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   background-color:rgba(185, 211, 196, .5);
 }
 
 .restaurant-text-big{
   color:#000000;
-  font-size: larger;
+  font-size: 23px;
   font-style: italic;
+  font-family: "cormorant-bold"
 }
 
 .lol-text-big{
@@ -593,9 +717,10 @@ a {
 
 .categories-text-small{
   color:#000000;
-  font-size: small;
+  font-size:medium;
   display:inline-block;
   padding-right:5px;
+  font-family: "cormorant-bold"
 }
 .categoryContainer{
   line-height: 20%;
@@ -603,7 +728,7 @@ a {
 
 .dollar-text-med{
   color:#000000;
-  font-size: medium;
+  font-size: 18px;
 }
 
 .GMap{
@@ -648,6 +773,7 @@ a {
 
 .test-text{
   color:#1f1f1f;
+  font-family:'Cormorant-Bold';
 }
 
 .auth input {
@@ -696,7 +822,8 @@ a {
 
 .buttonText{
   padding-top:12px;
-  font-size: larger;
+  font-size: 21px;
+  font-family: 'Butler_Bold'
 }
 
 
@@ -709,3 +836,4 @@ a {
 
 @media only screen and (max-width: 360px) {
 }
+

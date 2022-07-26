@@ -10,12 +10,17 @@ import axios from 'axios';
 import 'reactjs-popup/dist/index.css';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 //import 'react-calendar/dist/Calendar.css';
 
 const formColor = '#F3F0D7'
 const StyledText = styled(TextField)({
   '& .MuiInputBase-formControl': {
-    backgroundColor: formColor
+    backgroundColor: formColor,
+    fontFamily: ['Butler_Regular'].join(',')
+  },
+  '& .MuiInputLabel-formControl': {
+    fontFamily: ['Butler_Regular'].join(',')
   },
 });
 
@@ -184,7 +189,11 @@ function Contact() {
                         variant="outlined"
                         style={{
                                 fontStyle: 'bold', fontSize: 16}}>
+                        <Typography
+                        component="span"
+                        className="buttonTitleBold">
                         Submit
+                        </Typography>
                     </StyledButton>
                 </Fade>
             </Row>
