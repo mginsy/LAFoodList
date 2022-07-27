@@ -136,7 +136,7 @@ for (let areaNum in otherData["totAreas"]){
                         <p className="price-text" style={{fontSize:20,backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Price}</p>
                       </Col>
                     </Row>
-                    <p className="test-text" style={{fontSize: quadFontSize,backgroundColor:"rgba(185, 211, 196, .6)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
+                    <p className="test-text" style={{fontSize: quadFontSize,backgroundColor:"rgba(185, 211, 196, .7)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
                     <Row>
                       <Col></Col>
                       <Col xs={9}>{currentRestaurant.Picture}</Col>

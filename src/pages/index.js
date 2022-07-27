@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-
+import { Link} from 'react-router-dom'
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
 import AnimatedRoutes from './AnimatedRoutes'
 import background from '../background.jpg'
@@ -60,4 +59,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
