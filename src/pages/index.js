@@ -2,6 +2,7 @@ import { Link} from 'react-router-dom'
 import { Navbar as BSNavbar, Nav } from 'react-bootstrap'
 import AnimatedRoutes from './AnimatedRoutes'
 import background from '../background.jpg'
+import {isMobile} from 'react-device-detect';
 
 function NavbarLink(props) {
     return (
@@ -17,8 +18,8 @@ function Navbar(props) {
 
     return (
         <BSNavbar expand="lg" {...props}>
-            <Link to="/" className="navbar-brand" >
-                <span className="font-link">
+            <Link to="/" className={isMobile ?  "navbar-brand-mobile" : "navbar-brand"} >
+                <span className={isMobile ?  "font-link-mobile" : "font-link"}>
                     LA Food List
                 </span>
             </Link>

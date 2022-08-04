@@ -15,6 +15,7 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 import googleMapStyles from "../mapStyles";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {isMobile} from 'react-device-detect';
 
 const data = require('../../restaurantData2.json');
 const otherData = require('../../otherData.json');
@@ -32,6 +33,12 @@ const StyledForm = styled(FormControl)({
   '& .MuiInputBase-input': {
     backgroundColor: formColor,
     fontSize: 23
+  },
+});
+const StyledFormMobile = styled(FormControl)({
+  '& .MuiInputBase-input': {
+    backgroundColor: formColor,
+    fontSize: '18px'
   },
 });
 
@@ -112,13 +119,13 @@ const withRouter = WrappedComponent => props => {
 
 function pushAreaList(areaData, areaState){
   for (let areaNum in areaData["Areas"]){
-    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}><Typography component="p" className={areaState === areaData["Areas"][areaNum] ? "menuOptionSelected":"menuOptionList"}>{areaData["Areas"][areaNum]}</Typography></MenuItem>)
+    areaList.push(<MenuItem value={areaData["Areas"][areaNum]}><Typography component="p" className={areaState === areaData["Areas"][areaNum] ? isMobile ? "menuOptionSelectedMobile" : "menuOptionSelected": isMobile ? "menuOptionListMobile" : "menuOptionList"}>{areaData["Areas"][areaNum]}</Typography></MenuItem>)
   }
 }
 
 function pushCatList(catData, catState){
   for (let catNum in catData["Cats"]){
-    categoryList.push(<MenuItem value={catData["Cats"][catNum]}><Typography component="p" className={catState === catData["Cats"][catNum] ? "menuOptionSelected":"menuOptionList"}>{catData["Cats"][catNum]}</Typography></MenuItem>)
+    categoryList.push(<MenuItem value={catData["Cats"][catNum]}><Typography component="p" className={catState === catData["Cats"][catNum] ? isMobile ? "menuOptionSelectedMobile" :"menuOptionSelected": isMobile ? "menuOptionListMobile" : "menuOptionList"}>{catData["Cats"][catNum]}</Typography></MenuItem>)
     categoryListValues.push(catData["Cats"][catNum])
   }
 }
@@ -131,13 +138,13 @@ function pushPriceLists(priceData, currentState){
     for (let itemNum in priceData["Prices"]){
       [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
       if (gleOpt === currentState.gle){
-        priceList.push(<MenuItem value={priceOpt}><Typography component="em" className={currentState.price === priceOpt ? "menuOptionSelected":"menuOptionList"}>{priceOpt}</Typography></MenuItem>)
+        priceList.push(<MenuItem value={priceOpt}><Typography component="em" className={currentState.price === priceOpt ? isMobile ? "menuOptionSelectedMobile" : "menuOptionSelected": isMobile ? "menuOptionListMobile" :"menuOptionList"}>{priceOpt}</Typography></MenuItem>)
       }
     }
   }
   else{
     for (let priceNum in priceMenuOptions){
-      priceList.push(<MenuItem value={priceMenuOptions[priceNum]}><Typography component="em" className={currentState.price === priceMenuOptions[priceNum] ? "menuOptionSelected":"menuOptionList"}>{priceMenuOptions[priceNum]}</Typography></MenuItem>)
+      priceList.push(<MenuItem value={priceMenuOptions[priceNum]}><Typography component="em" className={currentState.price === priceMenuOptions[priceNum] ? isMobile ? "menuOptionSelectedMobile" : "menuOptionSelected": isMobile ? "menuOptionListMobile" : "menuOptionList"}>{priceMenuOptions[priceNum]}</Typography></MenuItem>)
     }
   }
   
@@ -147,13 +154,13 @@ function pushPriceLists(priceData, currentState){
     for (let itemNum in priceData["Prices"]){
       [gleOpt, priceOpt] = priceData["Prices"][itemNum].split(" ");
       if (priceOpt === currentState.price){
-        gleList.push(<MenuItem value={gleOpt}><Typography component="p" className={currentState.gle === gleOpt ? "menuOptionSelected":"menuOptionList"}>{gleOpt}</Typography></MenuItem>)
+        gleList.push(<MenuItem value={gleOpt}><Typography component="p" className={currentState.gle === gleOpt ? isMobile ? "menuOptionSelectedMobile" : "menuOptionSelected": isMobile ? "menuOptionListMobile" : "menuOptionList"}>{gleOpt}</Typography></MenuItem>)
       }
     }
   }
   else{
     for (let gleNum in gleOptions){
-      gleList.push(<MenuItem value={gleOptions[gleNum]}><Typography component="p" className={currentState.gle === gleOptions[gleNum] ? "menuOptionSelected":"menuOptionList"}>{gleOptions[gleNum]}</Typography></MenuItem>)
+      gleList.push(<MenuItem value={gleOptions[gleNum]}><Typography component="p" className={currentState.gle === gleOptions[gleNum] ? isMobile ? "menuOptionSelectedMobile" : "menuOptionSelected":isMobile ? "menuOptionListMobile" : "menuOptionList"}>{gleOptions[gleNum]}</Typography></MenuItem>)
     }
   }
 }
@@ -561,335 +568,593 @@ class MapPage extends Component {
 
 render() {
 
-  if (this.state.refreshMap){
+  if (isMobile){
+    if (this.state.refreshMap){
 
-    resetLists();
+      resetLists();
 
-    //category area gle price
+      //category area gle price
 
-    if (this.state.area === ""){
-      if(this.state.category === ""){
-        if(this.state.gle === "" || this.state.price === ""){//none selected
-          selectedData = data;
-          pushAreaList(selectedData, this.state.area);
-          pushCatList(selectedData, this.state.category);
-          priceData = selectedData;
-          pushPriceLists(priceData, this.state);
+      if (this.state.area === ""){
+        if(this.state.category === ""){
+          if(this.state.gle === "" || this.state.price === ""){//none selected
+            selectedData = data;
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//just price selected
+            selectedData = data[this.state.gle + " " + this.state.price]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = data;
+            pushPriceLists(priceData, this.state);
+          }
         }
-        else{//just price selected
-          selectedData = data[this.state.gle + " " + this.state.price]
-          pushAreaList(selectedData, this.state.area);
-          pushCatList(selectedData, this.state.category);
-          priceData = data;
-          pushPriceLists(priceData, this.state);
+        else{
+          if(this.state.gle === "" || this.state.price === ""){//just category selected
+            selectedData = data[this.state.category]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(data, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//category and price selected
+            selectedData = data[this.state.category][this.state.gle + " " + this.state.price]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(data[this.state.gle + " " + this.state.price], this.state.category);
+            priceData = data[this.state.category];
+            pushPriceLists(priceData, this.state);
+          }
         }
+        listsPush(selectedData, false, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
       }
-      else{
-        if(this.state.gle === "" || this.state.price === ""){//just category selected
-          selectedData = data[this.state.category]
-          pushAreaList(selectedData, this.state.area);
-          pushCatList(data, this.state.category);
-          priceData = selectedData;
-          pushPriceLists(priceData, this.state);
+      else{ 
+        if(this.state.category === ""){
+          if(this.state.gle === "" || this.state.price === ""){ //just area selected
+            selectedData = data[this.state.area]
+            pushAreaList(data, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//area and price selected
+            selectedData = data[this.state.gle + " " + this.state.price][this.state.area]
+            pushAreaList(data[this.state.gle + " " + this.state.price], this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = data[this.state.area];
+            pushPriceLists(data[this.state.area], this.state);
+          }
         }
-        else{//category and price selected
-          selectedData = data[this.state.category][this.state.gle + " " + this.state.price]
-          pushAreaList(selectedData, this.state.area);
-          pushCatList(data[this.state.gle + " " + this.state.price], this.state.category);
-          priceData = data[this.state.category];
-          pushPriceLists(priceData, this.state);
+        else{
+          if(this.state.gle === "" || this.state.price === ""){//area and category selected
+            selectedData = data[this.state.category][this.state.area]
+            pushAreaList(data[this.state.category], this.state.area);
+            pushCatList(data[this.state.area], this.state.category);
+            priceData = selectedData;
+            pushPriceLists(selectedData, this.state);
+          }
+          else{//all selected
+            selectedData = data[this.state.category][this.state.gle + " " + this.state.price][this.state.area]
+            pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price], this.state.area);
+            pushCatList(data[this.state.gle + " " + this.state.price][this.state.area], this.state.category);
+            priceData = data[this.state.category][this.state.area];
+            pushPriceLists(priceData, this.state);
+          }
         }
+        listsPush(selectedData, true, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
       }
-      listsPush(selectedData, false, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
+      resetPrices();
+      pushPriceLists(priceData, this.state);
     }
-    else{ 
-      if(this.state.category === ""){
-        if(this.state.gle === "" || this.state.price === ""){ //just area selected
-          selectedData = data[this.state.area]
-          pushAreaList(data, this.state.area);
-          pushCatList(selectedData, this.state.category);
-          priceData = selectedData;
-          pushPriceLists(priceData, this.state);
-        }
-        else{//area and price selected
-          selectedData = data[this.state.gle + " " + this.state.price][this.state.area]
-          pushAreaList(data[this.state.gle + " " + this.state.price], this.state.area);
-          pushCatList(selectedData, this.state.category);
-          priceData = data[this.state.area];
-          pushPriceLists(data[this.state.area], this.state);
-        }
-      }
-      else{
-        if(this.state.gle === "" || this.state.price === ""){//area and category selected
-          selectedData = data[this.state.category][this.state.area]
-          pushAreaList(data[this.state.category], this.state.area);
-          pushCatList(data[this.state.area], this.state.category);
-          priceData = selectedData;
-          pushPriceLists(selectedData, this.state);
-        }
-        else{//all selected
-          selectedData = data[this.state.category][this.state.gle + " " + this.state.price][this.state.area]
-          pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price], this.state.area);
-          pushCatList(data[this.state.gle + " " + this.state.price][this.state.area], this.state.category);
-          priceData = data[this.state.category][this.state.area];
-          pushPriceLists(priceData, this.state);
-        }
-      }
-      listsPush(selectedData, true, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
+    else if (this.state.refreshPrices){
+      resetPrices();
+      pushPriceLists(priceData, this.state);
     }
-    resetPrices();
-    pushPriceLists(priceData, this.state);
-  }
-  else if (this.state.refreshPrices){
-    resetPrices();
-    pushPriceLists(priceData, this.state);
-  }
-  
-  let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
 
-  return (
-    <motion.div className="bigNoScrollContainer"
-      key={"MapKey"}
-      exit={this.state.toMapList ? "slideLeft" : "regular"}
-      initial={(this.state.fromMapList) ? {opacity: 0, x: -100, transition: {duration: 1}} : {opacity: 0, y: -30, transition: {duration: 1}}}
-      animate={{opacity: 1, y: 0, x: 0, transition: {duration: 1}}}
-      variants={exitVariants}
-      >
-      <Row className="mapStartRow">
-        <Col className="mapFormColOne">
-          <Row className="mapFormRow">
-          <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
-            <InputLabel margin="none">
+    return (
+      <motion.div className="bigNoScrollContainer"
+        key={"MapKey"}
+        exit={this.state.toMapList ? "slideLeft" : "regular"}
+        initial={(this.state.fromMapList) ? {opacity: 0, x: -100, transition: {duration: 1}} : {opacity: 0, y: -30, transition: {duration: 1}}}
+        animate={{opacity: 1, y: 0, x: 0, transition: {duration: 1}}}
+        variants={exitVariants}
+        >
+        <Row className="mapStartRow">
+          <Col className="mapFormCol">
+            <Row className="mapFormRow">
+            <StyledFormMobile sx={{ m: 1, minWidth: 170}} size="small" margin="none">
+              <InputLabel margin="none">
+                <Typography
+                  component="span"
+                  className={this.state.category !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
+                  Category
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.category}
+                label="Category"
+                onChange={this.handleCategoryChange}
+              >
+                <MenuItem value="">
+                  <Typography
+                    component="em"
+                    className="menuOptionListMobile">
+                    Any
+                  </Typography>
+                </MenuItem>
+                {categoryList}
+              </Select>
+            </StyledFormMobile>
+            </Row>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledFormMobile sx={{ m: 1, minWidth: 134 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.area !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
+                  Area
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.area}
+                label="Area"
+                onChange={this.handleAreaChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em"  className="menuOptionListMobile" style={{fontFamily:"Butler_Regular"}}>Any</Typography>
+                </MenuItem>
+                {areaList}
+              </Select>
+            </StyledFormMobile>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledFormMobile sx={{ m: 1, minWidth: 80 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.gle !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
+                  ≤, ≥, =
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.gle}
+                label="Area"
+                onChange={this.handleGLEChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
+                </MenuItem>
+                {gleList}
+              </Select>
+            </StyledFormMobile>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledFormMobile sx={{ m: 1, minWidth: 80 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.price !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
+                  Price
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.price}
+                label="Price"
+                onChange={this.handlePriceChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em" className="menuOptionListMobile" style={{fontFamily:"Butler_Regular"}}>None</Typography>
+                </MenuItem>
+                {priceList}
+              </Select>
+            </StyledFormMobile>
+          </Col>
+          <Col className="mapFormCol" style={{paddingTop:this.state.screenHeight*.02}}>
+            <StyledButton
+              size="medium"
+              onClick={this.resetCategories}
+              loadingIndicator="Loading…"
+              variant="outlined"
+              style={{
+                      fontStyle: 'bold', fontSize: 16, maxHeight: 36
+                      }}>
               <Typography
                 component="span"
-                className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>
-                Category
-              </Typography>
-            </InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.category}
-              label="Category"
-              onChange={this.handleCategoryChange}
-            >
-              <MenuItem value="">
-                <Typography
-                  component="em"
-                  className="menuOptionList">
-                  Any
-                </Typography>
-              </MenuItem>
-              {categoryList}
-            </Select>
-          </StyledForm>
-          </Row>
-          <Row className="mapFormRow">
-            <StyledButton
-              size="small"
-              onClick={this.recommendCategory}
-              loadingIndicator="Loading…"
-              variant="outlined">
-              <Typography
-                component="p"
-                className="buttonTitleBold"
-                style={{fontSize:15}}>
-                Category Inspo
+                className="buttonTitleBold">
+                Reset
               </Typography>
             </StyledButton>
-          </Row>
-        </Col>
-        <Col className="mapFormCol">
-          <motion.div
-          initial={{x: '.3vw'}}>
-            <div>
-              <div style={{paddingTop:20}}></div>
-              <h4 style={{paddingLeft:3,backgroundColor:'rgba(185, 211, 196, .6)',borderRadius: '10px'}} className='in-between-text-map'>in</h4>
-            </div>
-          </motion.div>
-        </Col>
-        <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 167 }} size="small">
-            <InputLabel id="demo-select-small">
-              <Typography
-                component="span"
-                className={this.state.area !== "" ? "menuTitleSmall" : "menuTitle"}>
-                Area
-              </Typography>
-            </InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.area}
-              label="Area"
-              onChange={this.handleAreaChange}
-            >
-              <MenuItem value="">
-                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>Any</Typography>
-              </MenuItem>
-              {areaList}
-            </Select>
-          </StyledForm>
-        </Col>
-        <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 100 }} size="small">
-            <InputLabel id="demo-select-small">
-              <Typography
-                component="span"
-                className={this.state.gle !== "" ? "menuTitleSmall" : "menuTitle"}>
-                ≤, ≥, =
-              </Typography>
-            </InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.gle}
-              label="Area"
-              onChange={this.handleGLEChange}
-            >
-              <MenuItem value="">
-                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
-              </MenuItem>
-              {gleList}
-            </Select>
-          </StyledForm>
-        </Col>
-        <Col className="mapFormCol">
-          <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small">
-              <Typography
-                component="span"
-                className={this.state.price !== "" ? "menuTitleSmall" : "menuTitle"}>
-                Price
-              </Typography>
-            </InputLabel>
-            <Select
-              labelId="demo-select-small"
-              id="demo-select-small"
-              value={this.state.price}
-              label="Price"
-              onChange={this.handlePriceChange}
-            >
-              <MenuItem value="">
-                <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
-              </MenuItem>
-              {priceList}
-            </Select>
-          </StyledForm>
-        </Col>
-        <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-1100, paddingTop: this.state.screenHeight*.018+8}}>
-          <StyledButton
-            size="medium"
-            onClick={this.resetCategories}
-            loadingIndicator="Loading…"
-            variant="outlined"
-            style={{
-                    fontStyle: 'bold', fontSize: 16, maxHeight: 36
-                    }}>
-            <Typography
-              component="span"
-              className="buttonTitleBold">
-              Reset
-            </Typography>
-          </StyledButton>
-        </Col>
-        <Col className="mapFormCol" style={{minWidth: 170, paddingRight: 30, paddingTop: this.state.screenHeight*.018+8}}>
-          <StyledButton
-            component={Link}
-            onClick={this.setToMapList}
-            size="large"
-            to={{pathname: "/list"}}
-            state={{ 
-              Category: this.state.category, 
-              Area: this.state.area, 
-              Gle: this.state.gle, 
-              Price: this.state.price,
-              fromMapList: true}}
-            loadingIndicator="Loading…"
-            variant="outlined"
-            style={{
-                    fontStyle: 'italic', maxHeight: 36, fontSize: 16}}>
-            <Typography
-              component="span"
-              className="buttonTitleBold">
-              {"To List →"}
-            </Typography>
-          </StyledButton>
-        </Col>
-      </Row>
-      <Row className="mapPaddingRow">
-      </Row>
-      <Row>
-        <Col xs={5}>
-          <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight*.80-86 }}
-                      autoHide
-                      autoHideTimeout={1000}
-                      autoHideDuration={200}>
-            {listList}
-          </Scrollbars>
-        </Col>
-        <Col>
-          <Row className='mapPaddingRow2'></Row>
-          <Row style={{height:this.state.screenHeight*.7-86}}>
-            <Col md={11}>
-              <Map
-                  google={this.props.google}
-                  zoom={11}
-                  styles={this.props.mapStyle}
-                  initialCenter={
-                      {
-                      lat: 34.0744189,
-                      lng: -118.2621198
-                      }
-                  }
-                  onClick={this.onMapClicked}
-                >
-                  {markerList}
-                  
-                <InfoWindow
-                  marker={this.state.activeMarker}
-                  visible={this.state.showingInfoWindow}
-                  onClose={this.onClose}
-                >
-                      <BrowserRouter>
-                        <Link  to={{
-                          pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
-                        }} 
-                        state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}>{this.state.selectedPlace.name}
-                        </Link>
-                      </BrowserRouter>
-                </InfoWindow>
-              </Map>
-            </Col>
-            <Col>
-            </Col>
-          </Row>
-          <Row className="rightMapRow">
-            <Col md={12} className="recCol">
+          </Col>
+        </Row>
+        <Row className="mapPaddingRowMobile">
+        </Row>
+        <Row>
+          <Col>
+            <Row style={{minHeight:this.state.screenHeight}}>
+              <Col md={11}>
+                <Map
+                    google={this.props.google}
+                    zoom={11}
+                    styles={this.props.mapStyle}
+                    initialCenter={
+                        {
+                        lat: 34.0744189,
+                        lng: -118.2621198
+                        }
+                    }
+                    onClick={this.onMapClicked}
+                  >
+                    {markerList}
+                    
+                  <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onClose}
+                  >
+                        <BrowserRouter>
+                          <Link  to={{
+                            pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
+                          }} 
+                          state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}>{this.state.selectedPlace.name}
+                          </Link>
+                        </BrowserRouter>
+                  </InfoWindow>
+                </Map>
+              </Col>
+              <Col>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+
+      </motion.div>
+    );
+  }
+
+
+
+  else{
+    if (this.state.refreshMap){
+
+      resetLists();
+
+      //category area gle price
+
+      if (this.state.area === ""){
+        if(this.state.category === ""){
+          if(this.state.gle === "" || this.state.price === ""){//none selected
+            selectedData = data;
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//just price selected
+            selectedData = data[this.state.gle + " " + this.state.price]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = data;
+            pushPriceLists(priceData, this.state);
+          }
+        }
+        else{
+          if(this.state.gle === "" || this.state.price === ""){//just category selected
+            selectedData = data[this.state.category]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(data, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//category and price selected
+            selectedData = data[this.state.category][this.state.gle + " " + this.state.price]
+            pushAreaList(selectedData, this.state.area);
+            pushCatList(data[this.state.gle + " " + this.state.price], this.state.category);
+            priceData = data[this.state.category];
+            pushPriceLists(priceData, this.state);
+          }
+        }
+        listsPush(selectedData, false, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
+      }
+      else{ 
+        if(this.state.category === ""){
+          if(this.state.gle === "" || this.state.price === ""){ //just area selected
+            selectedData = data[this.state.area]
+            pushAreaList(data, this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = selectedData;
+            pushPriceLists(priceData, this.state);
+          }
+          else{//area and price selected
+            selectedData = data[this.state.gle + " " + this.state.price][this.state.area]
+            pushAreaList(data[this.state.gle + " " + this.state.price], this.state.area);
+            pushCatList(selectedData, this.state.category);
+            priceData = data[this.state.area];
+            pushPriceLists(data[this.state.area], this.state);
+          }
+        }
+        else{
+          if(this.state.gle === "" || this.state.price === ""){//area and category selected
+            selectedData = data[this.state.category][this.state.area]
+            pushAreaList(data[this.state.category], this.state.area);
+            pushCatList(data[this.state.area], this.state.category);
+            priceData = selectedData;
+            pushPriceLists(selectedData, this.state);
+          }
+          else{//all selected
+            selectedData = data[this.state.category][this.state.gle + " " + this.state.price][this.state.area]
+            pushAreaList(data[this.state.category][this.state.gle + " " + this.state.price], this.state.area);
+            pushCatList(data[this.state.gle + " " + this.state.price][this.state.area], this.state.category);
+            priceData = data[this.state.category][this.state.area];
+            pushPriceLists(priceData, this.state);
+          }
+        }
+        listsPush(selectedData, true, this.state, this.handleAreaChangeClick, this.handleCategoryChangeClick, this.onMarkerClick);
+      }
+      resetPrices();
+      pushPriceLists(priceData, this.state);
+    }
+    else if (this.state.refreshPrices){
+      resetPrices();
+      pushPriceLists(priceData, this.state);
+    }
+    
+    let randomRestaurantPick = Math.floor(Math.random() * restaurantList.length);
+
+    return (
+      <motion.div className="bigNoScrollContainer"
+        key={"MapKey"}
+        exit={this.state.toMapList ? "slideLeft" : "regular"}
+        initial={(this.state.fromMapList) ? {opacity: 0, x: -100, transition: {duration: 1}} : {opacity: 0, y: -30, transition: {duration: 1}}}
+        animate={{opacity: 1, y: 0, x: 0, transition: {duration: 1}}}
+        variants={exitVariants}
+        >
+        <Row className="mapStartRow">
+          <Col className="mapFormColOne">
+            <Row className="mapFormRow">
+            <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
+              <InputLabel margin="none">
+                <Typography
+                  component="span"
+                  className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>
+                  Category
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.category}
+                label="Category"
+                onChange={this.handleCategoryChange}
+              >
+                <MenuItem value="">
+                  <Typography
+                    component="em"
+                    className="menuOptionList">
+                    Any
+                  </Typography>
+                </MenuItem>
+                {categoryList}
+              </Select>
+            </StyledForm>
+            </Row>
+            <Row className="mapFormRow">
               <StyledButton
-                component={Link}
-                size="large"
-                to={{
-                  pathname: restaurantList[randomRestaurantPick].createPath(),
-                  }}
-                  state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
+                size="small"
+                onClick={this.recommendCategory}
                 loadingIndicator="Loading…"
                 variant="outlined">
                 <Typography
-                  component="span"
-                  className="buttonTitleBold mapRec">
-                  Recommend Me!
+                  component="p"
+                  className="buttonTitleBold"
+                  style={{fontSize:15}}>
+                  Category Inspo
                 </Typography>
               </StyledButton>
-            </Col>
-            <Col>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+            </Row>
+          </Col>
+          <Col className="mapFormCol">
+            <motion.div
+            initial={{x: '.3vw'}}>
+              <div>
+                <div style={{paddingTop:20}}></div>
+                <h4 style={{paddingLeft:3,backgroundColor:'rgba(185, 211, 196, .6)',borderRadius: '10px'}} className='in-between-text-map'>in</h4>
+              </div>
+            </motion.div>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledForm sx={{ m: 1, minWidth: 167 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.area !== "" ? "menuTitleSmall" : "menuTitle"}>
+                  Area
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.area}
+                label="Area"
+                onChange={this.handleAreaChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em" style={{fontFamily:"Butler_Regular"}}>Any</Typography>
+                </MenuItem>
+                {areaList}
+              </Select>
+            </StyledForm>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledForm sx={{ m: 1, minWidth: 100 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.gle !== "" ? "menuTitleSmall" : "menuTitle"}>
+                  ≤, ≥, =
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.gle}
+                label="Area"
+                onChange={this.handleGLEChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
+                </MenuItem>
+                {gleList}
+              </Select>
+            </StyledForm>
+          </Col>
+          <Col className="mapFormCol">
+            <StyledForm sx={{ m: 1, minWidth: 120 }} size="small">
+              <InputLabel id="demo-select-small">
+                <Typography
+                  component="span"
+                  className={this.state.price !== "" ? "menuTitleSmall" : "menuTitle"}>
+                  Price
+                </Typography>
+              </InputLabel>
+              <Select
+                labelId="demo-select-small"
+                id="demo-select-small"
+                value={this.state.price}
+                label="Price"
+                onChange={this.handlePriceChange}
+              >
+                <MenuItem value="">
+                  <Typography component="em" style={{fontFamily:"Butler_Regular"}}>None</Typography>
+                </MenuItem>
+                {priceList}
+              </Select>
+            </StyledForm>
+          </Col>
+          <Col className="mapFormCol" style={{paddingRight: this.state.screenWidth-1100, paddingTop: this.state.screenHeight*.018+8}}>
+            <StyledButton
+              size="medium"
+              onClick={this.resetCategories}
+              loadingIndicator="Loading…"
+              variant="outlined"
+              style={{
+                      fontStyle: 'bold', fontSize: 16, maxHeight: 36
+                      }}>
+              <Typography
+                component="span"
+                className="buttonTitleBold">
+                Reset
+              </Typography>
+            </StyledButton>
+          </Col>
+          <Col className="mapFormCol" style={{minWidth: 170, paddingRight: 30, paddingTop: this.state.screenHeight*.018+8}}>
+            <StyledButton
+              component={Link}
+              onClick={this.setToMapList}
+              size="large"
+              to={{pathname: "/list"}}
+              state={{ 
+                Category: this.state.category, 
+                Area: this.state.area, 
+                Gle: this.state.gle, 
+                Price: this.state.price,
+                fromMapList: true}}
+              loadingIndicator="Loading…"
+              variant="outlined"
+              style={{
+                      fontStyle: 'italic', maxHeight: 36, fontSize: 16}}>
+              <Typography
+                component="span"
+                className="buttonTitleBold">
+                {"To List →"}
+              </Typography>
+            </StyledButton>
+          </Col>
+        </Row>
+        <Row className="mapPaddingRow">
+        </Row>
+        <Row>
+          <Col xs={5}>
+            <Scrollbars className="Scrollbar" style={{ height: this.state.screenHeight*.80-86 }}
+                        autoHide
+                        autoHideTimeout={1000}
+                        autoHideDuration={200}>
+              {listList}
+            </Scrollbars>
+          </Col>
+          <Col>
+            <Row className='mapPaddingRow2'></Row>
+            <Row style={{height:this.state.screenHeight*.7-86}}>
+              <Col md={11}>
+                <Map
+                    google={this.props.google}
+                    zoom={11}
+                    styles={this.props.mapStyle}
+                    initialCenter={
+                        {
+                        lat: 34.0744189,
+                        lng: -118.2621198
+                        }
+                    }
+                    onClick={this.onMapClicked}
+                  >
+                    {markerList}
+                    
+                  <InfoWindow
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onClose}
+                  >
+                        <BrowserRouter>
+                          <Link  to={{
+                            pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
+                          }} 
+                          state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}>{this.state.selectedPlace.name}
+                          </Link>
+                        </BrowserRouter>
+                  </InfoWindow>
+                </Map>
+              </Col>
+              <Col>
+              </Col>
+            </Row>
+            <Row className="rightMapRow">
+              <Col md={12} className="recCol">
+                <StyledButton
+                  component={Link}
+                  size="large"
+                  to={{
+                    pathname: restaurantList[randomRestaurantPick].createPath(),
+                    }}
+                    state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
+                  loadingIndicator="Loading…"
+                  variant="outlined">
+                  <Typography
+                    component="span"
+                    className="buttonTitleBold mapRec">
+                    Recommend Me!
+                  </Typography>
+                </StyledButton>
+              </Col>
+              <Col>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
 
-    </motion.div>
-  );
+      </motion.div>
+    );
+  }
 }
 }
 

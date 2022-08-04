@@ -109,6 +109,10 @@ a {
   font-family:'Cormorant-Bold' !important;
   font-size: 21px !important;
 }
+.menuTitleMobile{
+  font-family:'Cormorant-Bold' !important;
+  font-size: 14px !important;
+}
 .menuTitleSmall{
   font-family:'Cormorant-Bold' !important;
 }
@@ -117,10 +121,22 @@ a {
   font-size: 21px !important;
   font:'#616056' !important;
 }
+.menuOptionSelectedMobile{
+  font-family:'Cormorant-Bold' !important;
+  font-size: 16px !important;
+  font:'#616056' !important;
+}
+
 .menuOptionList{
   font-family:'Cormorant-Regular' !important;
   font-size: 20px !important;
 }
+.menuOptionListMobile{
+  font-family:'Cormorant-Regular' !important;
+  font-size: 20px !important;
+}
+
+
 .buttonTitle{
   font-family:'Butler_Regular' !important
 }
@@ -143,6 +159,13 @@ a {
   color: '#F3F0D7' !important;
 }
 
+.font-link-mobile {
+  font-family: 'Stanley';
+  font-weight: normal;
+  font-size: 17px;
+  color: '#F3F0D7' !important;
+}
+
 .home-brand {
   font-family: 'Stanley';
   font-weight: normal;
@@ -162,8 +185,36 @@ a {
   background-color:rgba(185, 211, 196, .5);
 }
 
+.homeBrandDivMobile{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+  padding-left:10px;
+  padding-right:10px;
+  width:fit-content;
+  height:fit-content;
+  border-radius: 20px;
+  background-color:rgba(185, 211, 196, .5);
+}
+
 .outerHomeBrandDiv{
   padding-top:80px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display:flex;
+}
+
+.outerHomeBrandDivMobile{
+  padding-top:40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display:flex;
+}
+
+.centerDivMobile{
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -200,6 +251,12 @@ a {
 .navbar .navbar-brand {
   margin-left: 60px;
   margin-right: 80px;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--nav-brand-color);
+}
+
+.navbar-brand-mobile {
   font-size: 36px;
   font-weight: 700;
   color: var(--nav-brand-color);
@@ -386,9 +443,22 @@ a {
   font-family: "Cormorant-Bold"
 }
 
+.restLocTextMobile{
+  color: #000000;
+  font-style: italic;
+  font-size: 15px;
+  font-family: "Cormorant-Bold"
+}
+
 .topStarterText{
   color:rgb(0, 0, 0);
   font-size:29px;
+  font-family: 'Butler_Regular';
+}
+
+.topStarterTextMobile{
+  color:rgb(0, 0, 0);
+  font-size:22px;
   font-family: 'Butler_Regular';
 }
 
@@ -494,9 +564,22 @@ a {
   font-family: 'Butler_Black';
 }
 
+.in-between-text-home-mobile{
+  font-size:18px;
+  color:#1f1f1f;
+  padding-bottom:100%;
+  font-family: 'Butler_Black';
+}
+
 
 .in-between-text-map{
   font-size:24px;
+  color:#1f1f1f;
+  font-family: 'Butler_Black';
+}
+
+.in-between-text-map-mobile{
+  font-size:10px;
   color:#1f1f1f;
   font-family: 'Butler_Black';
 }
@@ -542,6 +625,10 @@ a {
   padding-top:2%;
 }
 
+.mapPaddingRowMobile{
+  padding-top:5%;
+}
+
 .listPaddingRow{
   padding-top:1%;
 }
@@ -554,8 +641,6 @@ a {
   align-items: center;
   justify-content: center;
   display: flex;
-  padding-top: 3%;
-  padding-right:3%;
 }
 
 .mapColright{
@@ -640,6 +725,13 @@ a {
 .listPics{
   padding-top: .5%;
   padding-bottom: .5%;
+}
+
+.listPicsMobile{
+  padding-top: .5%;
+  padding-bottom: .5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .fullMapRestaurantText{
@@ -823,6 +915,12 @@ a {
 .buttonText{
   padding-top:12px;
   font-size: 21px;
+  font-family: 'Butler_Bold'
+}
+
+.buttonTextMobile{
+  padding-top:7px;
+  font-size: 11px;
   font-family: 'Butler_Bold'
 }
 

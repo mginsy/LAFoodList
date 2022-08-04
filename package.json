@@ -1,6 +1,6 @@
 {
     "name": "LAFoodList",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "homepage": "http://lafoodlist.com",
     "private": true,
     "dependencies": {
@@ -34,6 +34,7 @@
         "fitty": "^2.3.6",
         "framer-motion": "^6.3.12",
         "g": "^2.0.1",
+        "google-map-react": "^2.2.0",
         "google-maps-react": "^2.0.6",
         "lodash": "^4.17.21",
         "lottie-react": "^2.2.1",
@@ -47,6 +48,7 @@
         "react-bootstrap": "^1.6.4",
         "react-calendar": "^3.7.0",
         "react-custom-scrollbars-2": "^4.5.0",
+        "react-device-detect": "^2.2.2",
         "react-dom": "^17.0.1",
         "react-ga": "^3.3.1",
         "react-hot-toast": "^1.0.2",
