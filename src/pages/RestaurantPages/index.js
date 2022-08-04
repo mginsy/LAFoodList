@@ -127,7 +127,7 @@ for (let areaNum in otherData["totAreas"]){
                   </Row>
                   <Row className="bigRestInfo" style={{minHeight:this.state.screenHeight-120}}>
                     <Col xs={10} className="restInfo">
-                      <h4 className="restTitleText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Name}</h4>
+                      <h4 className="restTitleText" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center', maxWidth:this.state.screenWidth*.7}}>{currentRestaurant.Name}</h4>
                       <Row className="locRestpage">
                         <Col xs={5}>
                           <p className="test-text" style={{fontSize:20,backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.2vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Areas[currentRestaurant.locationNum]}</p>

@@ -785,7 +785,7 @@ render() {
               <Col md={11}>
                 <Map
                     google={this.props.google}
-                    zoom={11}
+                    zoom={10}
                     styles={this.props.mapStyle}
                     initialCenter={
                         {
