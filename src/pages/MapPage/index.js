@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {isMobile} from 'react-device-detect';
 
-const data = require('../../restaurantData2.json');
+const data = require('../../restaurantData.json');
 const otherData = require('../../otherData.json');
 
 

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 const showCatsSet = new Set(["American","Asian","Asian Fusion","BBQ","Bakery","Bars","Boba","Burgers","Chinese","Coffee","Cookies","Deli","Dessert","Dumplings","Filipino","French","Fried Chicken","Ice Cream","Indian","Italian","Japanese","Jewish","KBBQ","Kebab","Korean","Latino","Classic LA", "Innovative","Life Changing","Loud","Matcha","Mediterranean","Mexican","Middle Eastern","Noodles","Peruvian","Pizza","Ramen","Sandwiches","Seafood","Soup","Spicy","Steakhouse","Sushi","Tacos","Thai","Warm Dessert"]);
 const vSet = new Set(["Vegan Options","Vegetarian Options"])
+const descs = require('./restaurantDescs.json');
 
 export default class Restaurant{
     constructor(restObj, currentArea){
@@ -12,7 +13,7 @@ export default class Restaurant{
         this.Locations = restObj.Locations
         this.Name = restObj.Name
         this.Price = restObj.Price
-        this.Description = restObj.Description
+        this.Description = descs[restObj.Name]
         this.locationNum = restObj.Areas.indexOf(currentArea)
         this.Picture = <img 
                         src={require(`./photos/${restObj.Name.replaceAll("!","").replaceAll(" ","-")}.jpg`)}

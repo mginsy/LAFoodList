@@ -18,7 +18,7 @@ import mapPic from './mapViewBlur.jpg'
 import listPic from './listViewBlur.jpg'
 
 
-const data = require('../../restaurantData2.json');
+const data = require('../../restaurantData.json');
 const otherData = require('../../otherData.json');
 
 const aspectRatio = 1900/860

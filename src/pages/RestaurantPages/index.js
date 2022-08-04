@@ -13,7 +13,7 @@ import {isMobile} from 'react-device-detect';
 
 const solve = require("quadratic-equations-solver");
 
-const data = require('../../restaurantData2.json');
+const data = require('../../restaurantData.json');
 const otherData = require('../../otherData.json');
 
 const StyledButton = styled(Button)({
@@ -100,7 +100,7 @@ for (let areaNum in otherData["totAreas"]){
               initial={{opacity: 0}}
               exit={{opacity: 0}}
               animate={{opacity: 1, transition: {duration: 1}}}>
-              <Row style={{height:this.state.screenHeight-86}}>
+              <Row style={{height:this.state.screenHeight}}>
                 <Col className="mapCol">
                   <Row style={{paddingLeft:'25px', paddingTop:'7px'}}>
                     <StyledButton
@@ -137,7 +137,7 @@ for (let areaNum in otherData["totAreas"]){
                         </Col>    
                       </Row>
                       <a href={mapLink} target="_blank" rel="noreferrer" className="restLocTextMobile" style={{backgroundColor:"rgba(185, 211, 196, .5)", paddingTop:'.2vh', paddingBottom:'.8vh', paddingLeft:'.2vw', paddingRight:'.2vw', borderRadius: '10px', width: 'max-content',display:'inline-block',textAlign: 'center'}}>{currentRestaurant.Addresses[currentRestaurant.locationNum]}</a>
-                      <p className="test-text" style={{fontSize: quadFontSize+4,backgroundColor:"rgba(185, 211, 196, .7)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
+                      <p className="test-text" style={{fontSize: quadFontSize+6,backgroundColor:"rgba(185, 211, 196, .7)", paddingTop:'.5vh', paddingBottom:'.5vh', paddingLeft:'.5vw', paddingRight:'.5vw', borderRadius: '10px'}}>{currentRestaurant.Description}</p>
                       <Row>
                         <Col></Col>
                         <Col xs={9}>{currentRestaurant.Picture}</Col>

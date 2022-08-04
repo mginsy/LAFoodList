@@ -16,7 +16,7 @@ import {isMobile} from 'react-device-detect';
 import Typography from '@mui/material/Typography';
 
 
-const data = require('../../restaurantData2.json');
+const data = require('../../restaurantData.json');
 const otherData = require('../../otherData.json');
 
 let totAreas = otherData["AreasADMINONLY"]
