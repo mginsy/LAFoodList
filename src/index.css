@@ -136,6 +136,15 @@ a {
   font-size: 20px !important;
 }
 
+.infoText{
+  font-family:'Cormorant-Regular' !important;
+  font-size: 20px !important;
+}
+.infoTextMobile{
+  font-family:'Cormorant-Regular' !important;
+  font-size: 15px !important;
+  padding-right:10px;
+}
 
 .buttonTitle{
   font-family:'Butler_Regular' !important

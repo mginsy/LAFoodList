@@ -806,7 +806,7 @@ render() {
                           <Link  to={{
                             pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
                           }} 
-                          state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}>{this.state.selectedPlace.name}
+                          state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}><div><p className="infoTextMobile">{this.state.selectedPlace.name}</p></div>
                           </Link>
                         </BrowserRouter>
                   </InfoWindow>
@@ -1119,6 +1119,7 @@ render() {
                           <Link  to={{
                             pathname: createPath(this.state.selectedPlace.name, this.state.selectedPlace.locationNumber),
                           }} 
+                          className="infoText"
                           state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}>{this.state.selectedPlace.name}
                           </Link>
                         </BrowserRouter>

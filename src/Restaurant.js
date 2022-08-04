@@ -27,8 +27,6 @@ export default class Restaurant{
     }
 
     createMarker(onMarkerClick){
-      console.log(this.Name)  
-      console.log(this.Locations[this.locationNum])
         let locArrayStrings = this.Locations[this.locationNum].split(",")
         let locArrayFloats = []
         for (let locNum in locArrayStrings){
