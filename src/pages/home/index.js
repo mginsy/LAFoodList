@@ -611,7 +611,7 @@ render() {
                       <StyledButton
                         size="medium"
                         onClick={this.recommendCategory}
-                        loadingIndicator="Loading…"
+                        
                         variant="outlined"
                         style={{fontWeight:550, fontSize: 14}}>
                           <Typography

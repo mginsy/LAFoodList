@@ -181,7 +181,7 @@ function Contact() {
                             onClick={sendEmail}
                             size="large"
                             to={{pathname: "/"}}
-                            loadingIndicator="Loading…"
+                            
                             variant="outlined"
                             style={{
                                     fontStyle: 'bold', fontSize: 16}}>
@@ -254,7 +254,7 @@ function Contact() {
                             onClick={sendEmail}
                             size="large"
                             to={{pathname: "/"}}
-                            loadingIndicator="Loading…"
+                            
                             variant="outlined"
                             style={{
                                     fontStyle: 'bold', fontSize: 16}}>

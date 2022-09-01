@@ -764,7 +764,7 @@ render() {
             <StyledButton
               size="medium"
               onClick={this.resetCategories}
-              loadingIndicator="Loading…"
+              
               variant="outlined"
               style={{
                       fontStyle: 'bold', fontSize: 16, maxHeight: 36
@@ -952,7 +952,7 @@ render() {
               <StyledButton
                 size="small"
                 onClick={this.recommendCategory}
-                loadingIndicator="Loading…"
+                
                 variant="outlined">
                 <Typography
                   component="p"
@@ -1045,7 +1045,7 @@ render() {
             <StyledButton
               size="medium"
               onClick={this.resetCategories}
-              loadingIndicator="Loading…"
+              
               variant="outlined"
               style={{
                       fontStyle: 'bold', fontSize: 16, maxHeight: 36
@@ -1069,7 +1069,7 @@ render() {
                 Gle: this.state.gle, 
                 Price: this.state.price,
                 fromMapList: true}}
-              loadingIndicator="Loading…"
+              
               variant="outlined"
               style={{
                       fontStyle: 'italic', maxHeight: 36, fontSize: 16}}>
@@ -1138,7 +1138,7 @@ render() {
                     pathname: restaurantList[randomRestaurantPick].createPath(),
                     }}
                     state={{Category: this.state.category, Area:this.state.area, Gle:this.state.gle, Price:this.state.price, Page:"/Map"}}
-                  loadingIndicator="Loading…"
+                  
                   variant="outlined">
                   <Typography
                     component="span"

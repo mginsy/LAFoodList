@@ -112,7 +112,7 @@ for (let areaNum in otherData["totAreas"]){
                           Area:(typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""), 
                           Gle:(typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""), 
                           Price:(typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : "")}}
-                        loadingIndicator="Loading…"
+                        
                         variant="outlined"
                         style={{
                                 fontStyle: 'bold',
@@ -170,7 +170,7 @@ for (let areaNum in otherData["totAreas"]){
                             Area:(typeof(this.props.locState.Area) != "undefined" ? this.props.locState.Area : ""), 
                             Gle:(typeof(this.props.locState.Gle) != "undefined" ? this.props.locState.Gle : ""), 
                             Price:(typeof(this.props.locState.Price) != "undefined" ? this.props.locState.Price : "")}}
-                          loadingIndicator="Loading…"
+                          
                           variant="outlined"
                           style={{
                                   fontStyle: 'bold',

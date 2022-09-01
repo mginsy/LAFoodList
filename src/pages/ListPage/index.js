@@ -771,7 +771,7 @@ render(){
             <StyledButton
               size="medium"
               onClick={this.resetCategories}
-              loadingIndicator="Loading…"
+              
               variant="outlined"
               style={{
                       fontStyle: 'bold', fontSize: 16, maxHeight: 36
@@ -908,7 +908,7 @@ render(){
                 Gle: this.state.gle, 
                 Price: this.state.price,
                 fromMapList: true}}
-              loadingIndicator="Loading…"
+              
               variant="outlined"
               style={{
                       fontStyle: 'italic', fontSize: 18, maxHeight: 36
@@ -1022,7 +1022,7 @@ render(){
                   <StyledButton
                     size="medium"
                     onClick={this.resetCategories}
-                    loadingIndicator="Loading…"
+                    
                     variant="outlined"
                     style={{
                             fontStyle: 'bold', fontSize: 16, maxHeight: 36
