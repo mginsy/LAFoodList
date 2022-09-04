@@ -1,6 +1,6 @@
 {
     "name": "LAFoodList",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "homepage": "http://lafoodlist.com",
     "private": true,
     "dependencies": {

@@ -33,7 +33,7 @@ function Navbar(props) {
                     <NavbarLink to="/contact">Contact Me</NavbarLink>
                 </Nav>
                 <Nav>
-                    <div className='navbar-title-text'><p className='navbar-title-text'>1.2.1</p></div>
+                    <div className='navbar-title-text'><p className='navbar-title-text'>1.2.2</p></div>
                     
                 </Nav>
             </BSNavbar.Collapse>
