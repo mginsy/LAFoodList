@@ -665,7 +665,7 @@ render() {
           <Col className="mapFormCol">
             <Row className="mapFormRow">
             <StyledFormMobile sx={{ m: 1, minWidth: 170}} size="small" margin="none">
-              <InputLabel margin="none">
+              <InputLabel>
                 <Typography
                   component="span"
                   className={this.state.category !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
@@ -923,7 +923,7 @@ render() {
           <Col className="mapFormColOne">
             <Row className="mapFormRow">
             <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
-              <InputLabel margin="none">
+              <InputLabel>
                 <Typography
                   component="span"
                   className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>

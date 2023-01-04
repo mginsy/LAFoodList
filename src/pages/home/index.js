@@ -315,7 +315,7 @@ render() {
                 <Row  className = "homeFormRow" >
                   <Col>
                     <StyledFormMobile sx={{ m: 1, minWidth: 140}} size="small" margin="none">
-                      <InputLabel margin="none">
+                      <InputLabel>
                         <Typography
                           component="span"
                           className={this.state.category !== "" ? "menuTitleSmall" : "menuTitleMobile"}>
@@ -582,7 +582,7 @@ render() {
                   <Col className="homeCatCol">
                     <Row className = "homeDropdown">
                       <StyledForm sx={{ m: 1, minWidth: 210}} size="small" margin="none">
-                        <InputLabel margin="none">
+                        <InputLabel>
                           <Typography
                             component="span"
                             className={this.state.category !== "" ? "menuTitleSmall" : "menuTitle"}>
