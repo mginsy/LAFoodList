@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Route, useLocation, Routes} from 'react-router-dom'
 import _ from 'lodash'
 
-import Home from './Home'
+import Home from './home'
 import { About} from './About'
 import List from './ListPage'
 import MapPage from './MapPage'
